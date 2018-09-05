@@ -1,2 +1,2 @@
 # Code-Generation
-Goal is the perform Natural Language to Code Conversion using Neural Machine Translation for various Data Science applications
+Goal is to convert a Natural Language instruction to Code using Neural Machine Translation for various Data Science applications
