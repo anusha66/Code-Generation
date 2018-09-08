@@ -11,11 +11,11 @@ def get_data(filename):
 
 
 def get_content(data):
-    content = []
-    for cell in data['cells']:
+    content = dict()
+    for i, cell in enumerate(data['cells']):
         if cell['cell_type'] == 'markdown':
             continue
-        content.extend(cell['source'])
+        content[i] = cell['source']
     return content
 
 
@@ -31,7 +31,7 @@ def get_examples(intents, snippets, data):
 
 
 def dump_pickle(filename, obj):
-    with open(filename, 'w') as fp:
+    with open(filename, 'wb') as fp:
         pickle.dump(obj, fp)
 
 
@@ -39,7 +39,9 @@ def main():
     data = get_data('matplotlib/data/712.ipynb')
     intents, snippets = get_examples([], [], data)
     dump_pickle('pickles/intents.pickle', intents)
-    dump_pickle('pickles/snippets.pickle', intents)
+    dump_pickle('pickles/snippets.pickle', snippets)
+    content = get_content(data)
+    print('Done !')
 
 
 if __name__ == '__main__':
