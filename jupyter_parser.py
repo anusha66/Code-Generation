@@ -1,6 +1,22 @@
-import json
 import pdb
+import json
+import glob
 import pickle
+import tokenize
+from io import StringIO
+
+def get_comments(content):
+    tokenizer = tokenize.generate_tokens(StringIO(content).readline)
+
+    for token in tokenizer:
+
+        if token[0] == tokenize.COMMENT:
+
+            return (token[1],1)
+
+        else:
+
+            return (token[4],0)
 
 
 def get_data(filename):
@@ -37,10 +53,73 @@ def dump_pickle(filename, obj):
 
 
 def main():
-    data = get_data('matplotlib/data/712.ipynb')
-    code_2_intent = get_examples(data)
-    content = get_content(data)
+
+    dataset = []
+
+    path = '/home/anushap/git-downlaod/pandas_notebooks/*'
+    files = glob.glob(path)
+
+    for file in files:
+
+        print(file)
+
+        data = get_data(file)
+        code_2_intent = get_examples(data) #closest intent
+        content = get_content(data)
+
+        #print(code_2_intent)
+
+        #print(content)
+
+        comments_dic = {}
+        code_dic = {}
+
+        for k, v in content.items():
+
+            comments = []
+            code = []
+
+            for i in range(len(v)):
+
+                val = get_comments(v[i])
+
+                if val[1] == 1:
+                    comments.append(val[0])
+                else:
+                    code.append(val[0])
+
+            code_dic[k] = code
+
+            comments_dic[k] = comments
+
+        #print(comments_dic)
+
+        #print("-------------\n")
+
+        #print(code_dic)
+
+        for key in code_2_intent.keys():
+
+            intent = code_2_intent.get(key)
+            comment = comments_dic.get(key)
+
+            intent.extend(comment)
+
+            comments_dic[key] = intent
+
+        #print("-------------\n")
+
+        #print(comments_dic)
+
+        for k in code_dic.keys():
+
+            dataset.append((code_dic.get(k),comments_dic.get(k)))
+
+        dump_pickle('dataset.pkl',dataset)
+
     print('Done !')
+
+
 
 
 if __name__ == '__main__':
