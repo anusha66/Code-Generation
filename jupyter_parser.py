@@ -134,7 +134,7 @@ def main():
 
             dataset.append((code_dic.get(k),comments_dic.get(k)))
 
-        dump_pickle('pandas_dataset.pkl',dataset)
+    dump_pickle('pandas_dataset.pkl',dataset)
 
     print('Done !')
 
