@@ -5,18 +5,35 @@ import pickle
 import tokenize
 from io import StringIO
 
-def get_comments(content):
+def get_comments(content, begin):
+
+    if ("'''" in content or '"""' in content) and begin == 0:
+
+            begin = 1
+
+            return (content, 1), begin
+
+    elif ("'''" in content or '"""' in content) and begin == 1:
+
+            begin = 0
+
+            return (content, 1), begin
+
+    elif begin == 1:
+
+            return (content, 1), begin
+
     tokenizer = tokenize.generate_tokens(StringIO(content).readline)
 
     for token in tokenizer:
 
         if token[0] == tokenize.COMMENT:
 
-            return (token[1],1)
+            return (token[1],1), begin
 
         else:
 
-            return (token[4],0)
+            return (token[4],0), begin
 
 
 def get_data(filename):
@@ -63,6 +80,8 @@ def main():
 
         print(file)
 
+        begin = 0
+
         data = get_data(file)
         code_2_intent = get_examples(data) #closest intent
         content = get_content(data)
@@ -81,7 +100,7 @@ def main():
 
             for i in range(len(v)):
 
-                val = get_comments(v[i])
+                val, begin = get_comments(v[i],begin)
 
                 if val[1] == 1:
                     comments.append(val[0])
@@ -115,7 +134,7 @@ def main():
 
             dataset.append((code_dic.get(k),comments_dic.get(k)))
 
-        dump_pickle('dataset.pkl',dataset)
+        dump_pickle('pandas_dataset.pkl',dataset)
 
     print('Done !')
 
