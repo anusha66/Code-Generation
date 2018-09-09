@@ -46,20 +46,27 @@ def get_data(filename):
 # key is cell id of code, value is its previous markdown value
 def get_content(data):
     content = dict()
-    for i, cell in enumerate(data['cells']):
-        if cell['cell_type'] == 'markdown':
-            continue
-        content[i] = cell['source']
+    try:
+    	for i, cell in enumerate(data['cells']):
+        	if cell['cell_type'] == 'markdown':
+            		continue
+        	content[i] = cell['source']
+    except:
+        return False
+
     return content
 
 
 def get_examples(data):
     code_2_intent = dict()
-    for i in range(len(data['cells']) - 1):
-        prev = data['cells'][i]
-        current = data['cells'][i + 1]
-        if prev['cell_type'] == 'markdown' and current['cell_type'] == 'code':
-            code_2_intent[i+1] = prev['source']
+    try:
+    	for i in range(len(data['cells']) - 1):
+        	prev = data['cells'][i]
+        	current = data['cells'][i + 1]
+        	if prev['cell_type'] == 'markdown' and current['cell_type'] == 'code':
+            		code_2_intent[i+1] = prev['source']
+    except:
+        return False
 
     return code_2_intent
 
@@ -83,9 +90,16 @@ def main():
         begin = 0
 
         data = get_data(file)
+	
         code_2_intent = get_examples(data) #closest intent
-        content = get_content(data)
 
+        if code_2_intent is False:
+            continue
+
+        content = get_content(data)
+        
+        if content is False:
+           continue
         #print(code_2_intent)
 
         #print(content)
@@ -134,7 +148,7 @@ def main():
 
             dataset.append((code_dic.get(k),comments_dic.get(k)))
 
-        dump_pickle('pandas_dataset.pkl',dataset)
+    dump_pickle('pandas_dataset.pkl',dataset)
 
     print('Done !')
 
