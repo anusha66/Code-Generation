@@ -1,0 +1,5 @@
+.idea/*
+*.ipynb
+pickles/*
+matplotlib/data/*
+pandas/data/*
