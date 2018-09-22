@@ -1,990 +1,990 @@
-from tempfile import mkstemp$ fs, temp_path = mkstemp("gensim_temp")  $ model.save(temp_path)  
-df.to_csv("../../data/msft_piped.txt",sep='|')$ !head -n 5 ../../data/msft_piped.txt
-data.describe().transpose()
-df1['label'] = df[forcast_col].shift(-forcast_out)$ df1['label'].head()
-help(pd.read_csv)
-high_idx = afx['dataset']['column_names'].index('High')$ low_idx = afx['dataset']['column_names'].index('Low')$ change_values = [entry[high_idx] - entry[low_idx] for entry in afx['dataset']['data'] if entry[high_idx] and entry[low_idx]]
-df.Visitors.tolist()
-merged2.shape$
-from matplotlib.dates import MonthLocator, WeekdayLocator, DateFormatter$ %pylab inline$ pylab.rcParams['figure.figsize'] = (15, 9)$
-df['name'].value_counts()
-fig,ax=plt.subplots(1,2,figsize=(15,3))$ ax[0].boxplot(joined['Promo2SinceYear'],vert=False)$ ax[1].boxplot(joined['Promo2Days'],vert=False)
-from features.build_features import remove_invalid_data$ df = remove_invalid_data(pump_data_path)$ df.shape
-yourstartdate=datetime.strptime(input('Enter End date in the format %Y-%m-%d'), '%Y-%m-%d')$ yourenddate=datetime.strptime(input('Enter End date in the format %Y-%m-%d'), '%Y-%m-%d')$ calc_temps(yourstartdate,yourenddate)
-back_to_h2o_frame = h2o.H2OFrame(pandas_small_frame)$ print(type(back_to_h2o_frame))$ back_to_h2o_frame
-train_topics_df=pd.DataFrame([dict(ldamodel[item]) for item in train_corpus], index=graf_train.index)$ test_topics_df=pd.DataFrame([dict(ldamodel[item]) for item in test_corpus], index=graf_test.index)$
-gram_collection.find_one({"account": "deluxetattoochicago"})['date_added']$
-tlen.plot(figsize=(16,4), color='r');
-import pickle$ bild = pickle.load(file=open("facebookposts_bild.pickle", "rb"))$ spon = pickle.load(file=open("facebookposts_spon.pickle", "rb"))
-new_df = df.replace(['poor','average','good','exceptional'], [1,2,3,4])$ new_df
-customer_emails = sales_data_clean[['Email', 'Paid at']].drop_duplicates()$ customer_emails.dropna(inplace=True)
-df.to_csv('GageData.csv',index=False)
-print(airquality_pivot.head())
-raw_data = pd.read_csv("kickstarter.csv") #Example$ raw_data.head()$ print ("The provided data set consists of",raw_data.shape[0],"rows and",raw_data.shape[1],"columns (features.")
-df2.shape
-ebola_tidy = pd.concat([ebola_melt_1, status_country], axis = 1)$ print(ebola_tidy.shape)$ print(ebola_tidy.head())$
-cityID = '488da0de4c92ac8e'$ for tweet in tweepy.Cursor(api.search, q=q, contained_within=cityID, wait_on_rate_limit=True, lang="en").items(500):    $         Plano.append(tweet) 
-display(data.head())
-np.mean(cross_val_score(lgb1, train_X, train_Y, scoring='r2', cv=5, verbose=5))
-data =[]      $ for row in result_proxy:$     data.append({'station':row.stations.name,'RainFall':row.rainfall})
-df['text'] = df.apply(clean, args=(emojistring,), axis=1)
-print('Number of rows with invalid values = {}'.format(len(joined[joined.isnull().any(axis=1)])))$ joined[joined.isnull().any(axis=1)]
-S_distributedTopmodel.decision_obj.hc_profile.options, S_distributedTopmodel.decision_obj.hc_profile.value
-data['2018-5-1']['res_time_avg'].plot()$ plt.show()
-network_simulation[network_simulation.generations.isin([8])]$
-df = df.loc[df['game_type'] == 'R',]
-kyt_lat = 34.955205 #35.005205$ kyt_long = 135.675300 #135.7353$ diff_wid = (135.795300 - 135.675300)/grid_size$
-r = requests.get(url_api)$ print(r.status_code)
-average_chart_upper_control_limit = average_of_averages + 3 * d_three * average_range / \$                                     (d_two * math.sqrt(subgroup_size))
-aug2014 = pd.Period('2014-08',freq='M')$ aug2014
-hs_path = utils.install_test_cases_hs(save_filepath)
-B2.print_all_paths()$
-news_sentiments.to_csv("News_Sentiments.csv")
-db = client.Mars_db$ collection = db.mars_news
-tfidf_vect = TfidfVectorizer(stop_words="english")$ tfidf_mat = tfidf_vect.fit_transform(PYR['soup'].values)
-kushy_prod_data_path = "products-kushy_api.2017-11-14.csv"$ kushy_prod_df = pd.read_csv(kushy_prod_data_path, low_memory=False)$ kushy_prod_df.tail(10)
-X_train_valid, X_test, y_train_valid, y_test = train_test_split(pm_final.drop('status', axis = 1)$                                                     ,pm_final[['status']],$                                                     test_size=0.20)
-display(data.head(10))
-r = requests.get("https://www.quandl.com/api/v3/datasets/FSE/AFX_X/data.json?api_key="+API_KEY)
-citydata_with_nbr_rides = pd.merge(citydata_avg_fare_work, city_nbr_rides, on='city', how='left')$ citydata_with_nbr_rides.head()
-xml_in_sample1['authorId'].nunique()
-extract_nondeduped_cmp.loc[(extract_nondeduped_cmp.APP_SOURCE=='SFL')$                           &(extract_nondeduped_cmp.APPLICATION_DATE_short>=datetime.date(2018,6,1))$                           &(extract_nondeduped_cmp.app_branch_state=='CA')].groupby('APP_PROMO_CD').size()
-merged = pd.merge(train,properties,how='left',on='parcelid')
-print("Min " + str(dc['created_at'].min()) + " Max " + str(dc['created_at'].max()))$
-converted = ts.asfreq('45Min', method='pad')
-rate_change['rating'].sort_values(ascending=False)[0:2]
-urban_ride_total = urban_type_df.groupby(["city"]).count()["ride_id"]$ urban_ride_total.head()
-result_new.summary2()
-columns = inspector.get_columns('clean_hawaii_stations.csv')$ for c in columns:$     print(c['name'], c['type'])$
-pd.DataFrame(data['data']['children'])    # will give us the kind of data as well as the subreddit id
-df.head()
-model.wv.doesnt_match("aku ngentot anda sex".split())
-data_frame['CLASS1'].value_counts()
-pivoted.T.shape
-inflex_words = en_translation_counts[en_translation_counts < 2]$ print("Total: {} unique words".format(len(inflex_words)))$ inflex_words.sample(10)
-path = "C:\\Users\\Alvaro\\Documents\\Python_Projects\\Pandas\\Pandas-Project2\\car_data.txt"$ df = pd.read_table(path, sep ='\s+', na_values=['.'])$ df.head(5)
-a['SA'] = np.array([ analyze_sentiment(tweet) for tweet in a['Tweets'] ])$ b['SA'] = np.array([ analyze_sentiment(tweet) for tweet in b['Tweets'] ])
-siteMask = nitrodata['MonitoringLocationIdentifier'].isin(siteInfo.index)$ dfSubSites = nitrodata[siteMask]$ dfSubSites.shape
-import matplotlib.pyplot as plt$ import seaborn as sns$ %matplotlib inline
-recommendationTable_df = recommendationTable_df.sort_values(ascending=False)$ recommendationTable_df.head()
-gbm_model.plot()
-sss = list(spp.season.unique())
-train_small_data = pd.read_feather("../../../data/talking/train_small_data.feather")$ val_small_data = pd.read_feather("../../../data/talking/val_small_data.feather")$ test = pd.read_feather("../../../data/talking/test_small_data.feather")
-ecxels=pd.merge(ecxels, ecxels, on=['אורחת','מארחת','מועד המשחק']).drop_duplicates(subset=['אורחת','מארחת','מועד המשחק'],keep="first")
-data.head(10)
-net.save_edges(edges_file_name='edges.h5', edge_types_file_name='edge_types.csv', output_dir=directory_name)
-payments_all_yrs_ZERO_discharge_rank = (df_providers.loc[idx_ZERO_discharge_rank,:].groupby(['id_num','year'])[['discharge_rank']].sum())$ payments_all_yrs_ZERO_discharge_rank = payments_all_yrs_ZERO_discharge_rank.sort_values(['discharge_rank'], ascending=[False])$ print('payments_all_yrs_ZERO_discharge_rank.shape',payments_all_yrs_ZERO_discharge_rank.shape)
-for url in soup.find_all('a'):$     print (url.get('href'))
-y=dataframe1['Chaikin']$ plt.plot(y)$ plt.show()
-B_INCR2 = 0.293$ B_DECR2 = -0.293
-response = requests.get(url)
-last_year = dt.date(2017, 8, 23) - dt.timedelta(days=365)$ print(last_year)$
-sub = pd.DataFrame()$ sub['click_id'] = test_df['click_id']$ print("Sub dimension "    + str(sub.shape))
-number_pos = data_df[data_df['is_high_val'] == 1].shape[0]$ number_all = data_df.shape[0]$ print(f'Target labels of class \'1\': {number_pos} or {(number_pos/number_all)*100:.2f}% over all.')
-d = nc.Dataset('data/otn200_20170802T1937Z_a755_2845_bd51_e1ca_6d36_6133.nc', 'r')
-url = 'https://www.quandl.com/api/v3/datasets/FSE/EON_X?start_date=2017-01-01&end_date=2017-12-31&' + API_KEY$ r = requests.get(url)$ json_data = r.json()
-y = list(train_50m_ag.is_attributed)$ X = train_50m_ag.drop(['is_attributed'],axis=1)$ X_train, X_val, y_train, y_val = train_test_split(X, y, test_size = 0.2)
-cbs = news_sentiment('@CBSNews')$ cbs['Date'] = pd.to_datetime(cbs['Date'])$ cbs.head()
-validation.analysis(observation_data, Jarvis_resistance_simulation_0_5)
-temp_df = temp_df.reset_index()[['titles', 'timestamp']]
-tables=db_engine.table_names()$
-userProfile = userGenreTable.transpose().dot(inputMovies['rating'])$ userProfile
-all_text.head()
-pp = rf.predict_proba(X_train)$ pp = pd.DataFrame(pp, columns=['The_Onion_Prob', 'VICE_Prob', 'GoldenStateWarriors_Prob'])
-sentiments_pd.to_excel("NewsMood.xlsx", encoding="UTF-8")
-elms_all_0604 = pd.read_excel(cwd+'\\ELMS-DE backup\\elms_all_0604.xlsx')$ elms_all_0604['ORIG_DATE'] = [datetime.date(int(str(x)[0:4]),int(str(x)[5:7]),int(str(x)[8:10]))$                              for x in elms_all_0604.ORIG_DATE.values]
-dfa=new_table.groupby("type")
-df3.duplicated().sum()
-lsi = models.LsiModel(tfidf_corpus, id2word=id2word, num_topics = topics)
-kick_projects[['goal', 'pledged', 'backers','usd_pledged','usd_pledged_real','usd_goal_real','state']].corr()
-salida_all = getFacebookPageFeedData(page_id, access_token, 1000)$ columns = ['post_from', 'post_id', 'post_name', 'post_type', 'post_message', 'post_link', 'post_shares', 'created_time']$ df_posts = pd.DataFrame(columns=columns)
-tag_df = pd.get_dummies(tag_df)$ tag_df.head()
-data = pd.read_csv('http://www-bcf.usc.edu/~gareth/ISL/Advertising.csv', index_col=0)
-yc200902_short = yc[::1000]$ yc200902_short.shape
-grouped_by_letter = df1.groupby(['tactic_letter'])$ list_of_letter = df1['tactic_letter'].unique()$
-import json$ r = requests.get('https://www.quandl.com/api/v3/datasets/FSE/AFX_X.json?start_date=2017-01-01&end_date=2017-12-31&api_key=apikey')$
-results.summary2()
-cur.execute('SELECT results FROM trials WHERE trial_id = 1')$ trial1_results = cur.fetchone()$ pd.read_csv(io.StringIO(trial1_results[0]), index_col=0)$
-data['SA'] = np.array([ analize_sentiment(tweet) for tweet in data['Tweets'] ])
-data = pd.read_sql("SELECT * FROM session_privs",xedb)$ print(data)$
-final.loc[(((final.loc[:,'RA']-261.8475)**2+(final.loc[:,'DEC']-55.1813888889)**2)**0.5).idxmin(),:]
-crimes['month'] = crimes.DATE_OF_OCCURRENCE.map(lambda x: x.month)
-new_messages['sub'] = (new_messages.timestamp - new_messages.watermark)$ new_messages['day'] = pd.to_datetime(new_messages.watermark, unit='ms').dt.date$
-m.fit([X], Y, epochs=10, batch_size=16, validation_split=0.1)$
-df_treat= df2[df2['group'] == 'treatment']['converted'].mean()$ print("{} is the probability they converted.Thus, given that an individual was in the treatment group.".format(df_treat))
-! mkdir census_data$ ! curl https://archive.ics.uci.edu/ml/machine-learning-databases/adult/adult.data --output census_data/adult.data$ ! curl https://archive.ics.uci.edu/ml/machine-learning-databases/adult/adult.test --output census_data/adult.test
-len([earlyPair for earlyPair in BDAY_PAIR_qthis.pair_age if earlyPair < 3])
-experiment_df = pd.read_csv('multi_arm_bandit_example_distrib.csv')$ experiment_df.drop(['Unnamed: 0'], axis=1, inplace=True)$ experiment_df.head(2)
-from pyspark.ml.feature import StringIndexer, VectorIndexer
-resp_dict = r.json()$ type(resp_dict)
-sns.distplot(temp_df[temp_df.total_companies > 100].proportion_no_psc)
-the_data = tmp_df.applymap(lambda x: 1 if x > 3 else 0).as_matrix()$ print(the_data.shape)
-search2 = search2.sample(frac=1)
-sentences = [['first', 'sentence'], ['second', 'sentence']]$ model = gensim.models.Word2Vec(sentences, min_count=1)
-station = pd.DataFrame(hawaii_measurement_df.groupby('Station').count()).rename(columns={'Date':'Count'})$ station_count = station[['Count']]$ station_count 
-!wget -nv https://data.wprdc.org/datastore/dump/40776043-ad00-40f5-9dc8-1fde865ff571 -O 311.csv
-df.set_value(306, 'yob',1998)
-temps_df.Missoula > 82
-USvideos = pd.read_csv('data/USvideos.csv', parse_dates=['trending_date', 'publish_time'])
-pd.to_datetime(['2009/07/31', 'asd'], errors='raise')
-fix_comma = lambda x: pd.Series([i for i in reversed(x.split(','))])
-unordered_df = USER_PLANS_df.iloc[unordered_timelines]
-labeled_news = pd.read_csv('./labeled_news.csv', encoding='cp1252', header=None, names = ["class", "discription", "source", "title"])$ labeled_news = resample(labeled_news)$ labeled_news.head()
-graph = facebook.GraphAPI(access_token=access_token, version='2.7')
-top_genre= pd.read_sql_query('select * from top_genre', engine)$ top_genre.head()
-payments_total_yrs.head(2)
-BASE_URL = 'https://orgdemo.blastmotion.com'
-session.query(func.count(Station.station)).all()
-future = m.make_future_dataframe(periods=90)$ future.tail()
-fcc_nn.plot(y='score', use_index=True)
-fh_1 = FeatureHasher(input_type='string', non_negative=True) # so we can use NaiveBayes$ %time fit = fh_1.fit_transform(train.device_model)
-url = "https://www.quandl.com/api/v3/datasets/FSE/AFX_X/data.json?&limit=1&api_key=JyyZ2KQSdpCZHjbk1E9x"$ req  = requests.get(url)$
-pd.Series([2, 4, 6], index=['a','b','c'])
-print ("The number Unique userid in dataset is {}".format(df.user_id.drop_duplicates().count()))
-p(locale.getdefaultlocale)
-df3.values
-taxi_sample = conn.select_ipc_gpu(query, device_id=2)
-params = {'figure.figsize': [6,6],'axes.labelsize': 'Medium', 'font.size': 12.0, 'lines.linewidth': 2}$ plot_partial_autocorrelation(doc_duration, params=params, lags=30, alpha=0.05, \$     title='Weekly Doctor Hours Partial Autocorrelation')
-ward_df['Crime Count'] = ser.values
-top_allocs = hist_alloc.loc[pd.to_datetime(intervals)].sum(axis=0).sort_values(ascending=False)$ top_allocs[:10], top_allocs[-10:]
-tweets['hashtags'] = tweets['hashtags'].apply(lambda x: x.strip('[]').lower().replace("'",'').split(', '))$ tweets['user_mentions'] = tweets['user_mentions'].apply(lambda x: x.strip('[]').lower().replace("'",'').split(', '))
-pgh_311_data['REQUEST_ID'].resample("M").count().plot()
-path = "https://raw.githubusercontent.com/arqmain/Python/master/Pandas/Project2/Sample_Superstore_Sales.xlsx"$ df = pd.read_excel(path)$ df.head(5)
-from pyspark.ml.evaluation import BinaryClassificationEvaluator$ evaluator = BinaryClassificationEvaluator(rawPredictionCol="prediction", labelCol="label", metricName="areaUnderROC")$ print 'Area under ROC curve = {:.2f}.'.format(evaluator.evaluate(results))
-csv2 = pd.read_csv(csv_files[1])$ print(csv2.head())
-html=HTML(html=doc)$ html.links
-keys_0611 = keys.copy()$ keys_0611.to_excel(cwd + '\\ELMS-DE backup\\keys_0611.xlsx', index=False)
-import pandas as pd$ pd_cat = pd.get_dummies(ibm_hr_cat.select("*").toPandas())$ pd_cat.head(3)
-data_df.desc[17]
-calls_nocontact.ticket_status.value_counts()
-df['created_at_time'] = pd.to_datetime(df.created_at)
-to_plot.plot.hist(by='Days Between Int', bins=100);$ plt.title("Actual number of days between purchases")$
-datetime.now().strftime('%A')
-%matplotlib inline$ commits_per_year.plot(kind='bar',title='Linux Commits by Year',legend=False)
-local = mngr.connect(dsdb.LOCAL)$ local
-bands.columns = ['BAND_'+str(col) for col in bands.columns]
-retweet_plot = t_ret.plot(figsize=(16,4), label="Retweets", color="g", legend=True, title='Number of retweets for tweets over time')$ retweet_vs_time_fig = retweet_plot.get_figure()$ retweet_vs_time_fig.savefig('num_ret_over_time.png')
-mgxs_lib = openmc.mgxs.Library.load_from_file(filename='mgxs', directory='mgxs')
-hits_df = number_one_df.drop_duplicates(subset=['URL','Region'], keep ='first')
-mRF.predict(test)
-data.loc[9323,'Tweets']$
-cityID = '095534ad3107e0e6'$ for tweet in tweepy.Cursor(api.search, q=q, contained_within=cityID, wait_on_rate_limit=True, lang="en").items(500):    $         Louisville.append(tweet) 
-x.loc[:,"B":"C"]
-result = DBRunQuery(q)$ print("Result = ")$ print(json.dumps(result, indent=2))
-authors = EQCC(git_index)$ authors.get_cardinality("author_uuid").by_period()$ print(pd.DataFrame(authors.get_ts()))
-df = df[['Adj. Close','HL_PCT','PCT_change','Adj. Volume']]
-plantlist[plantlist['commissioned'].isnull()]
-print('Loading models...')$ model_source = gensim.models.Word2Vec.load('model_CBOW_jp_wzh_2.w2v')$ model_target = gensim.models.Word2Vec.load('model_CBOW_en_wzh_2.w2v')
-bar_outlets = avgComp["Target"]$ bar_Compound = avgComp["Compound"]$ x_axis = np.arange(0, len(bar_Compound), 1)
-n_user_days.hist()$ plt.axvline(x=4, c='r', linestyle='--')
-final_rm=final.drop(target0.index)$ X=create_time_list(final_rm)
-ccp_df = cc_df[coins].div(market_cap_df['Total Market Cap'], axis=0)$ ccp_df = ccp_df[::-1]    # Reverse order of df$ ccp_df.head()
-iris_new = pd.DataFrame(iris_mat, columns=['SepalLength','SepalWidth','PetalLength','PetalWidth','Species'])$ iris_new.head(20)
-year2 = driver.find_elements_by_class_name('yr-button')[1]$ year2.click()
-from templates.invoicegen import create_invoice
-X = reddit['title'].values$ y = reddit['engagement']$ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random_state=42)
-cur.execute("SELECT * FROM pgsdwh.pgsparts.geps_distinct_order_lines_dw_t")
-intervention_train.reset_index(inplace=True)$ intervention_train.set_index(['INSTANCE_ID', 'CRE_DATE_GZL'], inplace=True)
-recortados = [recortar_tweet(t) for t in tweets_data_all]$ tweets = pd.DataFrame(recortados)
-mars_table = mars_df.to_html()$ print(mars_table)
-json_data = r.json()
-from spacy.lang.en.stop_words import STOP_WORDS$ print('Example stop words: {}'.format(list(STOP_WORDS)[0:10]))
-print(checking['age'].iloc[z])$ print(test_checking['age'].iloc[zt])
-cityID = 'e4a0d228eb6be76b'$ for tweet in tweepy.Cursor(api.search, q=q, contained_within=cityID, wait_on_rate_limit=True, lang="en").items(500):    $         Philadelphia.append(tweet) 
-X_copy['crfa_c'] = X_copy['crfa_c'].apply(lambda x: ord(x))
-logging.info('Saving')$ df_final.to_csv('~\\df_final.csv')
-cwd = os.getcwd()$ cwd
-print example1_df.printSchema()
-from sklearn.metrics import r2_score$ r2_score(y_test, pred)$
-reviews = np.array(tf.review)$ reviews_vector = vectorizer.transform(reviews)$ predictions = clf.predict(reviews_vector)$
-y.head()
-new_model = gensim.models.Word2Vec.load('lesk2vec')
-data_set.to_csv("hiv_antibody_found.csv", index=False, encoding='utf-8')$
-listings.loc[0]$
-with open('./data/model/age_prediction_sk.pkl', 'wb') as picklefile:$     pickle.dump(grid, picklefile)
-days = ['day1', 'day2']$ nocol=pd.DataFrame(index=days)$ nocol
-grid.best_params_
-Top_tweets = data.drop(['text','text_lower'],axis=1)$ Top_tweets.head()
-groupedNews = sentiments_df.groupby(["Target"], as_index=False)$
-bp = USvideos.boxplot(column='like_ratio', by='category_name', vert = False)$
-cm = our_nb_classifier.conf_matrix(our_nb_classifier.data_results['out_y'],$                             our_nb_classifier.data_results['out_n'])$ print(ascii_confusion_matrix(cm))
-url = "https://space-facts.com/mars/"$ table = pd.read_html(url)$ print(table)
-testdata = np.load(outputFile)$ data = pd.read_csv(inputFile, delimiter=',', header=None)
-column_list2 = ['Temperature','DewPoint']$ df[column_list2].plot()$ plt.show()
-dts = list(map(pd.to_datetime, observation_dates))$ dts
-ax = trump_histogram(trump_df)$ plt.show()
-year_with_most_commits=commits_per_year[commits_per_year == commits_per_year.max()].sort_values(by='num_commits').head(1).reset_index()['timestamp'].dt.year$ year_with_most_commits='2016'$ print(year_with_most_commits)
-p_val = (p_diffs > act_diff).mean()$ print("Proportion greater than actual difference: %.4f" %p_val)
-screen_name = 'cdvel'$ with open(os.path.join(os.getcwd(),"data/credentials.json")) as data_file:    $     key = json.load(data_file)$
-cleanedData[cleanedData['text'].str.contains("&amp;")].text
-datetime.strptime('2016-03-28','%Y-%m-%d') < datetime.strptime('2016-03-29','%Y-%m-%d')$ print(datetime.strptime('2016-03-28','%Y-%m-%d'))
-dfEtiquetas.dropna(subset=["created_time"], inplace=True)
-j = requests.get('https://www.quandl.com/api/v3/datasets/FSE/AFX_X/data.json?&start_date=2014-01-01&end_date=2014-01-02&api_key=' + API_KEY)$
-bob_shopping_cart = pd.DataFrame(items, columns=['Bob'])$ bob_shopping_cart
-pernan = 0.80$ nbart_allsensors = nbart_allsensors.dropna('time',  thresh = int(pernan*len(nbart_allsensors.x)*len(nbart_allsensors.y)))
-from src.image_manager import ImageManager$
-CON = CON.sort_values(by = ['Contact_ID','OppName'])
-BUMatrix.plot(x='eventOccurredDate', y=['event_Observation','event_Incident'],style=".",figsize=(15,15))$ plt.show()$
-pm_data.dropna(inplace = True)$ pm_data.shape
-cells_file = 'network/recurrent_network/node_types.csv'$ rates_file = configure['output']['rates_file']$ plot_rates_popnet(cells_file,rates_file,model_keys='pop_name')
-env = gym.make('MountainCar-v0')$ env.seed(505);
-df_p3.loc[df_p3["CustID"].isin([customer])]
-cityID = '0c2e6999105f8070'$ for tweet in tweepy.Cursor(api.search, q=q, contained_within=cityID, wait_on_rate_limit=True, lang="en").items(500):    $         Anaheim.append(tweet)  
-coarse_fuel_mgxs = coarse_mgxs_lib.get_mgxs(fuel_cell, 'nu-fission')$ coarse_fuel_mgxs.get_pandas_dataframe()
-%config InlineBackend.figure_format='svg'$ plt.plot(x, np.sin(x)/x)
-print(re.match('AA', 'AAbc'))$ print(re.match('AA', 'bcAA'))
-portfolio_df = pd.read_excel('Sample stocks acquisition dates_costs.xlsx', sheetname='Sample')$ portfolio_df.head(10)
-df2.drop(df2.index[2893])$ df2.user_id.duplicated().sum()
-bd.reset_index()
-brand_names = np.unique(np.asarray(data.brand[:]))$ model_names = np.unique(np.asarray(data.model[:]))
-pre_name=list(twitter[twitter.name==twitter.name.str.lower()].name)$ for item in pre_name:$     t1['name'].replace(item, 'None', inplace=True)
-df.loc[0:2, ['A', 'C']]
-SCR_PLANS_df = USER_PLANS_df.drop(free_mo_churns)
-data.fillna(0).describe()
-engine=create_engine(seng)$ data['Actor Name'] = pd.read_sql_query('select UPPER(concat(first_name," ", last_name))  from actor', engine)$ data
-resdf=resdf.drop(['Unnamed: 0'], axis=1)$ resdf.head(3)$
-raw_data.head()
-df.mean() # same as df.mean(0)
-df['word_count'] = df['body'].apply(lambda x: len(str(x).split(" ")))$ df[['body','word_count']].head()
-auth = tweepy.OAuthHandler(consumer_key=consumerKey, consumer_secret=consumerSecret)$ api = tweepy.API(auth)
-foxnews_df = constructDF("@FoxNews")$ display(constructDF("@FoxNews").head())
-df = pd.read_csv('Pro3ExpFinal0602.csv',index_col ='Unnamed: 0' , engine='python')
-df_cod2 = df_cod.copy()$ df_cod2 = df_cod2.dropna()
-msft.dtypes
-for url in soup.find_all('loc'):$     print (url.text)
-logit2_countries = sm.Logit(newset['converted'], $                            newset[['ab_page', 'country_UK', 'country_US', 'intercept']])$ result_final = logit2_countries.fit()
-df_new[['US','UK']] = pd.get_dummies(df_new['country'])[['US','UK']]$ df_new.tail()
-url = requests.get('https://www.quandl.com/api/v3/datasets/FSE/AFX_X.json?api_key=xQWdR8uvz6QJeQ6gqN5g&start_date=2017-01-01&end_date=2017-12-31')$ json_data = url.json()$ data = json.dumps(json_data['dataset'])$
-dailyplay = pd.read_excel('data.xlsx', sheetname = 'dailyplay')$ promotions = pd.read_excel('data.xlsx', sheetname = 'promotions')$
-cityID = '3df0e3eb1e91170b'$ for tweet in tweepy.Cursor(api.search, q=q, contained_within=cityID, wait_on_rate_limit=True, lang="en").items(500):    $         Columbus.append(tweet) 
-engine.execute('SELECT * FROM station LIMIT 10').fetchall()
-sum(contractor.address1.isnull())
-df2.info()
-poparr2.shape
-url = 'https://www.quandl.com/api/v3/datasets/FSE/AFX_X/data.json?api_key='+API_KEY\$ +'&start_date=2018-05-18&end_date=2018-05-18'$ r = requests.get(url)
-filepath = os.path.join('input', 'input_plant-list_SE.csv')$ data_SE = pd.read_csv(filepath, encoding='utf-8', header=0, index_col=None)$ data_SE.head()
-df3.index
-psy = pd.get_dummies(psy, columns = cat_vars, drop_first=False)
-df['pb_prod'] = df['pledged'] * df['backers']$ df['pb_avg'] = df[['pledged', 'backers']].mean(axis=1)
-from bs4 import BeautifulSoup$ import requests$ url = 'https://mars.nasa.gov/news/?page=0&per_page=40&order=publish_date+desc%2Ccreated_at+desc&search=&category=19%2C165%2C184%2C204&blank_scope=Latest'
-print data.describe()
-top_10_authors = git_log['author'].value_counts().iloc[:10]$ print(top_10_authors)
-df[df.client_event_time >= datetime.datetime(2018,4,2,0,0)][['client_event_time', 'client_upload_time', 'event_time', 'server_received_time']].sort_values('client_event_time').head()
-new_df = df.dropna()$ new_df
-daily_df.reset_index(inplace=True)
-url=("/Users/maggiewest/Projects/detroit_census.csv")$ detroit_census = pd.read_csv(url)
-df_writer_combined_text['combined_text_tokenized'] = df_writer_combined_text['combined_text'].apply(lambda x: nlp(x))$
-gene_df.sort_values('length').head()
-data.loc[:, ['TMAX']].head()
-df_date_precipitation.describe()
-pd.concat([df1,df2,df3])$
-forcast_out=int(math.ceil(.01*len(df1)))$ forcast_out$
-(trainingData, testData) = data.randomSplit([0.7, 0.3])$
-high = max(v.Open for v in data.values() )$ low = min(v.Open for v in data.values())$ print('=>The high and low opening prices for this stock in 2017 were {:.2f} and {:.2f} '.format(high, low) + 'respectively.')
-tmax_day_2018 = xr.open_dataset('/Users/annalisasheehan/Dropbox/Climate_India/Data/climate/CPC/cpc_global temperature/maximum temperature/tmax.2018.nc', decode_times = False)
-players=df.groupby('Player').agg({'Pts':np.average,'REB':np.average,'AST':np.average})$ top_five=players.nlargest(5,'Pts').index.tolist()$ players.nlargest(5,'Pts')
-json = r1.json()$ print(type(json)) #result is dictionary. yay!$ print(json)
-val_pred_svm = lin_svc_clf.predict(X_valid_cont_doc)
-results=pd.read_csv("results.csv")$ results.tail()$
-fig, ax = plt.subplots(nrows=1, ncols=1, sharex=True)$ toma.iloc[::20].plot(ax=ax, logy=True, ms=5, style=['.', '.', '.', '.', '.', '.'])$ ax.set_ylabel('Relative error')$
-calls = pd.read_csv("311_Calls__2012-Present_.csv")
-precip_df = pd.DataFrame(precip)$ date_precip_df = precip_df.set_index("date")$ date_precip_df.head()$
-for names in asdf:$     name = names.div['data-name']$ name
-elon['nlp_text'] = elon.text.apply(lambda x: tokenizer.tokenize(x.lower()))$ elon.nlp_text = elon.nlp_text.apply(lambda x: [lemmatizer.lemmatize(i) for i in x])$ elon.nlp_text = elon.nlp_text.apply(lambda x: ' '.join(x))
-train = pd.read_csv('../../input/preprocessed_data/trainW-0.csv') #沒有重複的user$ train.info()
-data = pd.DataFrame(data=[tweet.text for tweet in tweets], columns=['Tweets'])$ display(data.head(10))
-df_new[['CA', 'UK', 'US']] = pd.get_dummies(df_new['country'])$ df_new.head()
-for c in ccc[:2]:$     spp[c] /= spp[c].max()
-station_count = session.query(Station).count()$ station_count
-post_gen_paired_cameras_missing_from_shopify_orders = np.setdiff1d(BPAIRED_GEN['shopify_order_id'],ORDERS_GEN['order_number'].astype(str))$ np.array_equal(post_gen_paired_cameras_missing_from_shopify_orders,post_gen_paired_cameras_missing_from_join)
-auth = tweepy.OAuthHandler(consumerKey, consumerSecret)$ api = tweepy.API(auth)
-from pyspark.sql.functions import *$ display(flight2.select(max("start_date")).show())$ display(flight2.select(min("start_date")).show())
-all_tables_df.loc[[2, 3, 4, 10, 2000], ['OBJECT_NAME', 'OBJECT_TYPE']]
-top_10_authors = git_log.author.value_counts().nlargest(10)$ top_10_authors
-tweet_df = tweet_df.sort_values(['source', 'created_at'], ascending=False).reset_index()$ del tweet_df['index']$ tweet_df.head()
-rdf.loc[pd.isna(rdf.accident_counts),'accident_counts'] = 0.0
-response_raw = requests.get(url,params)$ response_clean = response_raw.content.decode('utf-8')
-news_sentiments = pd.DataFrame.from_dict(sentiments)$ news_sentiments.head()
-now = pd.Timestamp('now')$ now, now.tz is None
-with open('../data/rockville_unclean.json') as f:$     data = json.load(f)$     $
-dictionary=json.loads(json_string) #Convert string to dictionary
-max_retweet = DataSet['tweetRetweetCt'].max()$ max_retweet
-df['sin_day_of_year'] = np.sin(2*np.pi*df.day_of_year/365)$ df['cos_day_of_year'] = np.cos(2*np.pi*df.day_of_year/365)
-stations_df.to_csv('clean_hawaii_stations.csv', index=False)
-sample_weight = np.array([1 if not p else 1.25 for p in joined_train.perishable])
-df['y'].plot.hist()
-pd.set_option('max_colwidth', 100) #Its nice to see all columns
-parameter = '00060'$ Shoal_Ck_15min = pull_nwis_data(parameter=parameter, site_number='08156800', start_date='2018-02-01', end_date='2018-02-18', site_name='08156800')$ Shoal_Ck_15min.head(10)$
-data.groupby(['Year', 'Department'])['Salary'].sum()
-inter = est.get_prediction(X_tab.astype(float))$ inter = inter.summary_frame(alpha=0.05)[['mean_ci_lower','mean_ci_upper']]$ inter.rename(columns={ 'mean_ci_lower':'CI lower', 'mean_ci_upper':'CI upper'})
-data.drop(catFeatures, axis=1,inplace=True)
-dfLikes.groupby("año").agg({"fan_count": "mean"}).astype(int)
-df = pd.read_csv('basic_graphics_single_column_data.csv')
-session = tf.Session()$ session.run(tf.global_variables_initializer())
-plt.scatter(dataframe['lat'], dataframe['lon'],c = dataframe['label'],cmap=plt.cm.Paired)$ plt.scatter(center['lat'],center['lon'],marker='s')$ plt.show()
-df_geo_segments.crs = {'init': 'epsg:4326'}
-popular_programs = challange_1["program_code"].value_counts()$ popular_programs
-all_tables_df.OBJECT_NAME
-df["DATE_TIME"] = pd.to_datetime(df.DATE + " " + df.TIME, format="%m/%d/%Y %H:%M:%S")$ df.head(5)
-no3Mask = nitrogen['DetectionQuantitationLimitMeasure/MeasureUnitCode'] == 'mg/l NO3'$ nitrogen.loc[no3Mask,'TotalN'] = nitrogen['TotalN'] * 0.2259
-all_turnstiles.head()
-Largest_change_in_one_day = (mydata['High'] - mydata['Low']).max()$ Largest_change_in_one_day
-train_data, test_data, train_labels, test_labels = train_test_split(spmat, y_data, test_size=0.10, random_state=42)  
-!curl -L -O  https://www.dropbox.com/s/zlfyiwa70poqg74/ProductPurchaseData.txt
-X = dfX[fNames].values$ y = dfY.values
-dfLikes.dropna(subset=["created_time"], inplace=True)
-print(data.learner_id.nunique())
-containers[0].find("span",{"class":"date"}).contents[0]
-df['intercept']=1$ df[['control', 'treatment']] = pd.get_dummies(df['group'])$
-news_df = (news_df.groupby(['topic'])$               .filter(lambda x: len(x) >= 25))
-bc['newdate'] = pd.DatetimeIndex(bc.date).normalize()
-print(temp_nc)$ for v in temp_nc.variables:$     print(temp_nc.variables[v])
-cohort_retention_df.fillna(0,inplace=True)
-expected_index = pd.DatetimeIndex(start=raw.index[0], end=raw.index[-1], freq='1H')$ ideal_index_df = pd.DataFrame(index=expected_index)$ clean = pd.concat([ideal_index_df, raw], axis=1)$
-views = containers[0].find("li", {"class":"views"}).contents[1][0:3]$ views
-df_concat.drop(df_concat.columns[[0,1,2]], axis=1, inplace= True)
-type(df_master.tweet_id[1])
-logging.info('Finishing dataset')$ df_final['Close: t'] = df_final['Close: t'].shift(1)$ df_final = df_final[2:-15]
-merged1.drop('Id', axis=1, inplace=True)
-calls.head()
-if 1 == 1:$     ind_shed_word_dict = pd.read_pickle(config.IND_SHED_WORD_DICT_PKL)$     print(ind_shed_word_dict.values())
-authors = Query(git_index).get_cardinality("author_name").by_period()$ print(get_timeseries(authors, dataframe=True).tail())
-feature_cols = ['TV', 'radio', 'newspaper']$ X = data[feature_cols]$ y = data.sales
-with open(output_folder+Company_Name+"_Forecast_"+datetime.datetime.today().strftime("%m_%d_%Y")+".pkl",'wb') as fp:$     pickle.dump(final_data,fp)
-to_week = lambda x: x.dt.week
-tree_features_df[~(tree_features_df['p_hash'].isin(manager.image_df['p_hash']) | tree_features_df['filename'].isin(manager.image_df['filename']))]
-file = open('chinese_stopwords_2.txt','rb').read().decode('utf8').split('\n')$ stop_words = list(set(file))
-birth_dates.set_index("BirthDate_dt").loc["2014-01-01":,:]
-gdf = gdf.copy()$ gdf['length'] = gdf['end'] - gdf['start'] + 1$ gdf.head()
-engine = create_engine('sqlite:///hawaii.sqlite')
-compound_df.columns = target_terms$ compound_df.head()
-f = {'total_cost':['sum','count'], 'date_of_birth':['first']}$ total_spending = df.groupby(['uid'])['total_cost','date_of_birth'].agg(f)$
-url = 'https://www.quandl.com/api/v3/datasets/FSE/AFX_X/data.json?limit=1&api_key='API_KEY$ r = requests.get(url)
-hourly_df = pd.concat([twitter_delimited_hourly, stock_delimited_hourly], axis=1, join='inner')$ hourly_df.reset_index(inplace=True)$ hourly_df.head()
-grouped_df = xml_in.groupby(['authorId', 'authorName'], as_index=False)['publicationKey'].agg({'countPublications': 'count'})
-grouped.get_group('MSFT')
-df2.user_id.duplicated().sum()
-time_length.plot(figsize = (16, 4), color = 'r')$ time_fav.plot(figsize = (16,4), color = 'g')$
-DataSet.head(2)
+df_events = pd.read_csv("data_output/df_events.csv",low_memory=False)
+merged1['Specialty'].isnull().sum(), merged1['Specialty'].notnull().sum()
+fitfile = FitFile('fit_files/2871238195.fit')#longer swim two way$ fitfile = FitFile('fit_files/2913114523.fit')#krumme lanke swim$
+df2.isnull().sum()
+df.to_csv("newsOutletTweets.csv")
+tOverweight = len(df[(df['bmi'] >= 25.0) & (df['bmi'] < 30.0)])$ tOverweight
+probarr = fe.toar(lossprob)$ fe.plotn(fe.np.sort(probarr), title="tmp-SORTED-prob")
+Google_stock['Adj Close'].describe()
+for temp_col in temp_columns:$     dat[temp_col]=LVL1.hampel(dat[temp_col], k=7) #remove outliers with hampel filter$     dat[temp_col]=LVL1.basic_median_outlier_strip(dat[temp_col], k=8, threshold=4, min_n_for_val=3) #remove remaining outliers; spikes where val exceeds 2-hr rolling median by 4C    
+df.dtypes
+print('Loading models...')$ model_source = gensim.models.Word2Vec.load('model_CBOW_zh_wzh_2.w2v')$ model_target = gensim.models.Word2Vec.load('model_CBOW_en_wzh_2.w2v')
+contractor_final.to_sql('contractor', con=engine,if_exists='append',index = False)
+engine.execute('SELECT * FROM measurements LIMIT 15').fetchall()$
+lm.score(x_test,y_test)
+df_concensus['esimates_count'].describe()$
+df['w'].unique()
+nbar_clean.time
+import warnings$ warnings.filterwarnings('ignore')
+temp['c'] = temp['contents'].str.split()
+current_weather=soup.find('p', class_='TweetTextSize TweetTextSize--normal js-tweet-text tweet-text').text$ current_weather
+openmc.run()
+df_events.to_csv("data_output/df_events.csv", encoding="utf-8", index=False)
+y = df['comments']$ X = df[['subreddit', 'title']].copy(deep=True) 
+df_sb.head(2)
+stories = pd.concat([stories, tag_df], axis=1)
+chunker = ConsecutiveNPChunker(train_trees)$ print(chunker.evaluate(valid_trees))
+plt.title('Burberry ngram', fontsize=18)$ burberry_ng.plot(kind='barh', figsize=(20,16));$ plt.savefig('../visuals/Burberry_ngram.jpg')
+RDDTestScorees.map(lambda entry: (entry[0], entry[1] * 0.9)).collect()
+deck = pd.DataFrame(titanic3['cabin'].dropna().str[0])$ deck.columns = ['deck']  # Get just the deck column$ sns.factorplot('deck', data=deck, kind='count')
+model_x.summary2() # For categorical X.
+useful_indeed.isnull().sum()$
+df2.drop(labels=1899, axis=0, inplace=True)$ df2[df2['user_id']==773192]
+df.to_html('resources/html_table_marsfacts.html')
 cur.execute("SELECT * FROM pgsdwh.pgsparts.geps_distinct_shipping_lines_dw_t")
-df.head()
-tlen.plot(figsize=(16,4), color='r');$
-%matplotlib inline$ from IPython.display import Image$ from IPython.core.display import HTML
-bg2 = pd.read_csv('Libre2018-01-03.txt') # when saved locally$ print(bg2)$ type(bg2) # at bottom we see it's a DataFrame$
-avg_order_intervals = np.fromiter(result.values(), dtype=float)$ avg_order_intervals.size
-df.iloc[1] # select row by integer location 1$
-new_stops = merged_stops[['stopid', 'stop_name', 'lat', 'lng', 'routes']]$ new_stops = new_stops.rename(columns={'stop_name': 'address'})$ new_stops.head(5)
-import pandas as pd$ pd.set_option('display.max_columns', None)
-temps_df.Missoula
-aTL[['system.record_id','system.created_at','APP_LOGIN_ID','APP_PRODUCT_TYPE','BRANCH','AREA_MANAGER','REGIONAL_MANAGER']].to_excel(cwd + '\\CA TL 0521-0526.xlsx', index=False)$ aSL[['system.record_id','system.created_at','APP_LOGIN_ID','APP_PRODUCT_TYPE','BRANCH','AREA_MANAGER','REGIONAL_MANAGER']].to_excel(cwd + '\\CA SL 0521-0526.xlsx', index=False)
-dr = dr.resample('W-MON').sum()$ RNPA = RNPA.resample('W-MON').sum()$ ther = ther.resample('W-MON').sum()
-data[(data.phylum.str.endswith('bacteria')) & (data.value>1000)]
-git_log['timestamp']=pd.to_datetime(git_log['timestamp'], unit='s')$ print(git_log['timestamp'].describe())
-yxe_tweets = pop_tweets('stoonTweets.json')
-station_availability_df['avail_docks'].plot(kind='hist', rot=70, logy=True)
-df_providers.head()$ idx = df_providers[ (df_providers['id_num']==50030)].index.tolist()$ df_providers.loc[idx[:3],:]$
-prcp = Base.classes.prcp$ tobs = Base.classes.tobs$ stations = Base.classes.stations
-alldata = pd.merge(data_FCBridge, data_FCInspevnt_latest, on='brkey')$ alldata.loc[alldata['bridge_id'] == 'LMY-S-FOSL']$
-df = pd.read_csv('../Data/bidsmerged_update__2_.csv') $ df.shape$
-auth = tweepy.OAuthHandler(consumer_key, consumer_secret)$ auth.set_access_token(access_token, access_token_secret)$ api = tweepy.API(auth)
-filtered_df = data_df.drop(labels=['id', 'fst_subject', 'fst_tutor_type'], axis=1)
-data.iloc[:,10:14] = data.iloc[:,10:14].fillna("0")  # Overall_Credit_Status, Delivery_Block, Billing_Block, Block_flag$ data.iloc[:,26] = data.iloc[:,26].fillna("0")   # state$ data.dropna(how='any',axis='rows',inplace=True) # district
-grouper = dta.groupby(dta.results)
-[k for val in train_x[0] for k,v in words.items() if v==val]
-template_df = pd.concat([X_valid, y_valid], axis=1)$ template_df['is_test'] = np.repeat(True, template_df.shape[0])
-! rm -rf recs2$ ! mrec_predict --input_format tsv --test_input_format tsv --train "splits1/u.data.train.*" --modeldir models2 --outdir recs2
-theta = np.minimum(1,np.maximum(0,np.random.normal(loc=0.75, scale=0.1, size=(10000,5))))
-movies['year']=movies['title'].str.extract('(\(\d\d\d\d\)$)',expand=True)$ movies['year'] = movies['year'].str.replace('(', '')$ movies['year'] = movies['year'].str.replace(')', '')
-%matplotlib inline$ sns.violinplot(data=october, inner="box", orient = "h", bw=.03)$
-from sklearn.model_selection import train_test_split $ X_train,X_test,y_train,y_test = train_test_split(X,y, random_state=42)
-df.index = df['Date']
-dfCountry = pd.read_csv('countries.csv')$ dfCountry.head()
-from IPython.core.interactiveshell import InteractiveShell$ InteractiveShell.ast_node_interactivity = "all"
-logodds.drop_duplicates().sort_values(by=['count']).head(10)$ logodds.drop_duplicates().sort_values(by=['count']).tail(10)$
-import pandas as pd$ y= pd.Period('2016')$ y
-print(data.petal_length.std(),$       data.petal_length.var(),$       data.petal_length.sem())
-print("Age:-",result_set.age,"workclass:-",result_set.workclass)
-typesub2017 = typesub2017.rename(index=str, columns={"Solar  - Actual Aggregated [MW]": "Solar", "Wind Offshore  - Actual Aggregated [MW]": "Wind Offshore", "Wind Onshore  - Actual Aggregated [MW]" : "Wind Onshore" })$ typesub2017.head()
-intervention_history.sort_values(['INSTANCE_ID', 'CRE_DATE_GZL', 'INCIDENT_NUMBER'], inplace=True)
-pd.set_option('display.mpl_style', 'default')
-dates_D = load_dates('../data/worldnews_2016_10-2017_9_submissiondates.txt')$
-df = pickle.load(open( "lyincomey.p", "rb" ))
-df.describe()
-from gensim import corpora, models$ dictionary = corpora.Dictionary(sws_removed_all_tweets)
-la_inspections = pd.read_csv('/Users/salilketkar/thinkful/LA_health_score_inspections.csv')
-pd.concat([msftAV[:5], aaplAV[:3]], axis=1, keys=['MSFT', 'AAPL'])
-combined_df[combined_df['classifier_summary'].isnull() == True]
-btc.describe()
-df.drop(bad_indices, inplace=True)
-auth = tweepy.OAuthHandler(consumer_key, consumer_secret)$ auth.set_access_token(access_token, access_secret)$ api = tweepy.API(auth, parser=tweepy.parsers.JSONParser())
-val = val.split(b'\r\n\r\n',1)[1]$ print(val.decode('utf-8'))
-fan_zip = [zipcode.isequal(str(zc)) for zc in questions['zipcode']]$ questions['zipcode'] = fan_zip
-new_items = [{'bikes': 20, 'pants': 30, 'watches': 35, 'glasses': 4}]$ new_store = pd.DataFrame(new_items, index=['store 3'])$ new_store
-print(festivals.dtypes)$ print(festivals.info())$
-ab_df2 = ab_df2.drop(labels=2893)
-model = gensim.models.Word2Vec(sentences, workers=4)
-%matplotlib notebook$ plt.style.use('seaborn-paper')$ mpl.rcParams['figure.facecolor'] = (0.8, 0.8, 0.8, 1)
-r = requests.get("https://www.quandl.com/api/v3/datasets/FSE/AFX_X/data.json?start_date=2018-07-11&end_date=2018-07-11&api_key={}".format(API_KEY), $                  auth=('user', 'pass'))
-ldf['Traded Volume'].median()
-cruise_data = pd.read_table(data_file, delim_whitespace=True, header=None, skiprows=1)$ cruise_data = cruise_data.rename( columns={ 0:'Pressure', 1:'Temperature', 13:'Salinity' } )$ cruise_data[0:5]
-df = pd.read_csv('artist-pitch.csv')$ df.head()
-rain = session.query(Measurements.date, Measurements.prcp).\$     filter(Measurements.date > last_year).\$     order_by(Measurements.date).all()
-pp.pprint(r.json())
-name =contractor.groupby('contractor_bus_name')['contractor_number'].nunique() $ print(name[name>1])
-df = pd.DataFrame(results, columns=['date', 'precipitation'])$ df.set_index(df['date'], inplace=True)$ df.head()
-os.environ['PROJECT'] = PROJECT$ os.environ['BUCKET'] = BUCKET$ os.environ['REGION'] = REGION
-data4.crs= "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs"
-df = pd.read_csv('msa.csv')
-S.decision_obj.simulStart.value = "2007-07-01 00:00"$ S.decision_obj.simulFinsh.value = "2007-08-20 00:00"
-pd.DataFrame(np.array([[10, 11], [20, 21]]))
-p_tags = sample_soup.find_all("p")$ for p in p_tags:$     print(p.text)
-prcp_df =pd.read_sql_query(prcp_data, session.bind)$ prcp_df.set_index('date',inplace=True)$ prcp_df.head()
-temp_us_full = temp_nc.variables['air'][:, lat_li:lat_ui, lon_li:lon_ui]
-from sklearn.model_selection import train_test_split$ x_train, x_test, y_train, y_test = train_test_split($     data, targets, test_size=0.25, random_state=23)
-datetime.now().toordinal()/365$
-data.name.duplicated(keep=False).sum()
-last = session.query(Measurement.date).order_by(Measurement.date.desc()).first()[0]$ last_date = datetime.strptime(last, '%Y-%m-%d')$ year_ago = last_date - dt.timedelta(days=365)
-df.isnull().sum()
-df["Diff"] = df["Close"] - df["Open"]$ df["Percent_Diff"] = (df["Diff"]/df["Open"])*100$ df.head()
-betas_mask = np.zeros(shape=(mcmc_iters, n_bandits))$ betas_mask[np.arange(mcmc_iters), betas_argmax] = 1
-impact_effort = pd.read_csv('impact_effort.csv')
-stars = dataset.groupby('rating').mean()$ stars.corr()
-sns.set_style('whitegrid')$ sns.distplot(data_final['countCollaborators'], kde=False,color="red", bins=25) $
-df_notnew = df.query('landing_page != "new_page"')$ df_3 = df_notnew.query('group == "treatment"')$ df_3.nunique()$
-print("State space:", env.observation_space)$ print("- low:", env.observation_space.low)$ print("- high:", env.observation_space.high)
-Base.prepare(engine, reflect=True)
-containers[0].find("div",{"class":"key"}).a['title'].split()[1].replace(',',"")
-df.Date = pd.to_datetime(df.Date_Hour)$ df = df.set_index('Date_Hour').sort_index(ascending=True)
-rtime = [x.text for x in soup.find_all('time', {'class':'live-timestamp'})]$
-graf['DETAILS2']=graf['DETAILS'].progress_apply(text_process)
-joined['Retire'].dtypes
-! rm -rf ~/s3/comb/flight_v1_0.pq
-df.to_csv('dataframe-kevin.csv')$
-combined_df4['split_llpg1']=combined_df4['llpg_usage'].apply(lambda x: '-'.join(str(x).split(',')[1:2]))$ combined_df4['split_llpg2']=combined_df4['llpg_usage'].apply(lambda x: '-'.join(str(x).split(',')[1:3]))$ combined_df4.head()
-plt = r6s.num_comments.hist(bins = 1000)$ plt.set_xlim(0,50)
-data.to_json('nytimes_oped_articles.json')
-df = pd.DataFrame(x_9d)$ df = df[[0,1,2]] # only want to visualise relationships between first 3 projections$ df['X_cluster'] = X_clustered
-model.most_similar("man")$
-path = "C:\\Users\\Alvaro\\Documents\\Python_Projects\\Pandas\\Pandas-Project2\\adult.data.csv"$ df  = pd.read_csv(path, sep =',') # df  = pd.read_csv(path) may be too. sep =',' is by deffect.$ df.head(5)
-cityID = 'a307591cd0413588'$ for tweet in tweepy.Cursor(api.search, q=q, contained_within=cityID, wait_on_rate_limit=True, lang="en").items(500):    $         Buffalo.append(tweet) 
-data['SA'] = np.array([ analize_sentiment(tweet) for tweet in data['Tweets'] ])$ display(data.head(10))
-df.loc[:50,'name'].value_counts()
-df_estimates_false = df_estimates_false.dropna(axis=0, subset=['points'])$ print(df_estimates_false)$
-s2 = pd.Series([1, 2, 3, 4], index=['a', 'b', 'c', 'd'])$ s2
-citydata_nbr_rides_renamed = citydata_with_nbr_rides.rename(columns={"ride_id": "nbr_rides"})$ citydata_work = citydata_nbr_rides_renamed[['city', 'driver_count', 'type', 'average_fare', 'nbr_rides']]$
-country_with_least_expectancy = le_data.idxmin(axis=0)$ country_with_least_expectancy
-foursquare_data_dict['response'].items()[2][1][0]
-u235_scatter_xs = fuel_xs.get_values(nuclides=['(U235 / total)'], $                                 scores=['(scatter / flux)'])$ print(u235_scatter_xs)
-s_filled.plot()$ plt.show()
-tweet_df = tweet_df[['tweet', 'source', 'created_at', 'compound', 'positive', 'neutral', 'negative']]$ tweet_df.head()
-new_page_converted.mean()-old_page_converted.mean()
-x = store_items.isnull().sum()$ print(x)
-calls_nocontact.zip_code.value_counts()
-my_gempro.get_dssp_annotations()
-set(hourly_dat.columns) - set(out_temp_columns+incremental_precip_columns+general_data_columns+ wind_dir_columns)
-number_of_commits = git_log['timestamp'].count()$ number_of_authors = git_log['author'].nunique()$ print("%s authors committed %s code changes." % (number_of_authors, number_of_commits))
-assert (ebola >= 0).all().all()
-sentiments_pd.to_csv("NewsMood.csv", encoding="UTF-8")
-result_df, total_count = search_scopus(key, 'TITLE-ABS-KEY(gender in science)')$ from IPython.display import display, HTML$ display(result_df)$
-print(df['Confidence'].nunique())
-elms_all_0611.iloc[1048575:].to_excel(cwd+'\\ELMS-DE backup\\elms_all_0611_part2.xlsx', index=False)
-with open(content_analysis_save, mode='w', encoding='utf-8') as f:$     f.write(wikiContentRequest.text)
-y_train=bow["label"]$ X_train=bow.drop({"ID","label"},axis=1)$
-from textblob import TextBlob$ from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer$ analyzer = SentimentIntensityAnalyzer()
-df.drop(["urlname"], axis = 1, inplace=True)$ top_rsvp.drop(["urlname"], axis = 1, inplace=True)$ top_rsvp.head(5)
-$hadoop fs -put /data/tg_cg18_bigdata/rc_2018_02.csv /user/sohom/$
-precipitation_totals.describe()
-INT['Create_Date']= pd.to_datetime(INT.Create_Date)
-prcp_df.describe()
-soup = BeautifulSoup(response.text, 'html.parser')
-print("Action space:", env.action_space)$ print("Action space samples:")$ print(np.array([env.action_space.sample() for i in range(10)]))
-!wget https://download.pytorch.org/tutorial/faces.zip$ !unzip faces.zip
-m.__repr__()$
-df.count()
-from pyspark.sql.functions import regexp_extract, col$
-result = dta.groupby((dta.results, dta.dba_name)).size()
-df.plot(kind='scatter', x='RT', y='fav', xlim=[0,300], ylim=[0,300], title="Favorites and Retweets:300x300")$
-df_merge.head()
-sprintsWithStoriesAndEpics_df = sprintsWithStoriesAndEpics_df[(sprintsWithStoriesAndEpics_df['Sprint Age In Days'] > 3) | (sprintsWithStoriesAndEpics_df['Age In Days'] > 3)]$ sprintsWithStoriesAndEpics_df[['key_story', 'Team_story', 'fixVersions_story', 'summary_story', 'status_story', 'Age In Days', 'Sprint Age In Days', 'Open Set To Date']].sort_values(by=['Age In Days', 'Sprint Age In Days'], ascending = False)
-stn_rainfall = session.query(Measurement.station, func.sum(Measurement.prcp)).filter(Measurement.date >= data_oneyear).group_by(Measurement.station).order_by(func.sum(Measurement.prcp).desc()).all()$ stn_rainfall$
-from sklearn.feature_extraction.text import TfidfVectorizer$ from sklearn.cluster import KMeans$ from sklearn.metrics import silhouette_samples, silhouette_score
-! mrec_tune -d 'splits1/u.data.train.0' --input_format tsv --l1_min 0.001 --l1_max 1.0 --l2_min 0.0001 --l2_max 1 --max_sims 200 --min_sims 1 --max_sparse 0.3
-crimes.tail()
-df.shape$ df.tail()
-def load_train_pp(data_path=DATA_PATH,ssize):$     train_pp_path = os.path.join(data_path, "train_pp.csv")$     return pd.read_csv(train_pp_path,nrows=ssize)
-engine = create_engine("sqlite:///dropna_hawaii.sqlite")
-tickers = portfolio_df['Ticker'].unique()$ tickers
-labeled_news[0].describe()
-for index, row in susp.iterrows():$     print(row.link)
-dict_1=request.json()$ dict_1.get('dataset_data')
-plt.axis('equal')$ plt.plot(  np.nancumsum(tab.delta_long), np.nancumsum(tab.delta_lat))$ plt.show()$
-df['2018-05-21'] # Try to understand the error ... Its searching in columns !!! $
-sns.distplot(questions_scores[:int(len(questions_scores)*0.99)])
-tm_2020 = pd.read_csv('input/data/trans_2020_m.csv', encoding='utf8', index_col=0)
-save_filepath = os.path.expanduser("~")
-cityID = '8e9665cec9370f0f'$ for tweet in tweepy.Cursor(api.search, q=q, contained_within=cityID, wait_on_rate_limit=True, lang="en").items(500):    $         Minneapolis.append(tweet) 
-df.head()
-rural_summary_table = pd.DataFrame({"Average Fare": rural_avg_fare, $                                    "Total Rides": rural_ride_total})$ rural_summary_table.head()
-state = environment.reset()$ state, reward, done=environment.execute(env.action_space.sample())$ state.shape
-data = pd.read_excel("D:\ML\AnomalyDetection\datasetFun_cleaned.xls")$
-punct_re = '[^\w\s]'$ trump['no_punc'] = trump['text'].str.replace(punct_re, " ")$
-df_survival_by_donor = df_survival[['Donor ID', 'Donation Received Date']].groupby('Donor ID')$ mean_time_diff = df_survival_by_donor.apply(lambda df: df['Donation Received Date'].diff().mean())$
-df[y_col] = df['variety'].str.lower().replace(repl_dir)$ df_noblends = df[df[y_col].replace(repl_dir).str.lower().isin(keep_vars)]$ df_noblends[y_col].unique().size
-appleNegs.groupby('group_id').tweet_id.count().reset_index()$
-people_with_one_or_zero_collab['authorId'].nunique()
-df.head(10)
-data_store_id_relation.count()
-apple.resample('M').mean().plot(grid=True)
-result_final.summary2()
-nasa_url = 'https://mars.nasa.gov/news/'$ jpl_url = 'https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars'
-readRenviron("~/.Renviron")
-z_score, p_value = sm.stats.proportions_ztest([convert_old, convert_new], [n_old, n_new])$ from scipy.stats import norm$ z_score,1-p_value/2$
-elements.head(5)
-df_estimates_false.groupby('metric').count()$
-grid = sns.FacetGrid(train_df, row='Embarked', size=2.2, aspect=1.6)$ grid.map(sns.pointplot, 'Pclass', 'Survived', 'Sex', palette='deep')$ grid.add_legend()
-sns.pairplot(data, hue='species', size=3)
-df_cities = pd.read_csv('cities.csv')$ df_cities
-siteIDs = dfSubSites['MonitoringLocationIdentifier'].unique().tolist()$ siteIDs
-mod_model.scen2xls(version=None)
-mta_avg = dfs_morning.groupby(by = 'STATION').ENTRIES_MORNING.mean().reset_index()$ mta_census = mta_avg.merge(census_zip, left_on=['STATION'], right_on=['station'], how='left')$ mta_census.drop('station', axis = 1, inplace = True)
-active_station = session.query(Measurement.station, func.count(Measurement.id)).group_by(Measurement.station).order_by(func.count(Measurement.id).desc()).all()$ active_station
-dfQ1['flow_MGD'] = dfQ1['meanflow_cfs'] * 0.64631688969744$ dfQ2['flow_MGD'] = dfQ2['meanflow_cfs'] * 0.64631688969744$ dfQ3['flow_MGD'] = dfQ3['meanflow_cfs'] * 0.64631688969744
-stc.checkpoint("checkpoint10")
-result = api.search(q='%23arena') $ len(result)
-%%time$ tcga_target_gtex_expression_hugo_tpm = tcga_target_gtex_expression_hugo \$     .apply(np.exp2).subtract(0.001).groupby(level=0).aggregate(np.sum).add(0.001).apply(np.log2)
-pp.pprint(tweet._json)
-url = "https://mars.nasa.gov/news/"$ response = requests.get(url)
-a =R16df.rename({'Create_Date': 'Count-2016'}, axis = 'columns')$
-conf = SparkConf().setAll([('spark.executor.memory', '6g'), ('spark.executor.cores', '6'), ('spark.cores.max', '6'), ('spark.sql.session.timeZone', 'UTC')])$ sc = SparkContext("local", "llite", conf=conf)
-f.index = [1,3,2,1,5] ; f
-df['is_rank_1'] = False$ df.loc[df['Rank'] == 1, 'is_rank_1'] = True
-! rm -rf ../../results/mrec-4-2 && mkdir -p ../../results/mrec-4-2$ ! cp -R tmp/* ../../results/mrec-4-2
-output= "Delete from user where user_id='@Pratik'"$ cursor.execute(output)$
-header = cylData.first()$ cylHPData= cylData.filter(lambda line: line != header)$ print (cylHPData.collect())
-station_df = pd.read_csv(station, encoding="iso-8859-1", low_memory=False)$ station_df.head()
-dat_before_fill=dat.copy()$ for temp_col in temp_columns:$     dat.loc[:,temp_col]=dat[temp_col].interpolate(method='linear', limit=3)
-ground_alt = merged_data['rtk_alt'].mode()[0]$ ground_alt
-c_date = scratch['created_at']$ c_date.shape
-Y = np.ones((num_names,1))$ Y[df['Gender'] == 'F',0] = 0
-df.iloc[0]
-import matplotlib.cm as cm$ dots_c, vhlines_c, *_ = cm.Paired.colors
-URL = "http://www.reddit.com/hot.json"$ res = requests.get(URL, headers = {'User-agent':'Caitlin Bot 0.1'})
-prcp_df = pd.DataFrame(prcp_in_last_year, columns=['date', 'prcp'])$ prcp_df.head(11)
-n_new = df2.query(('landing_page == "new_page"')).count()[0]$ n_new
-yc_new3.describe()
-result = pd.concat([df1, df3], axis = 0) # concatenate one dataframe on another along rows$ result
-LabelsReviewedByDate = wrangled_issues_df.groupby(['created_at','DetectionPhase']).created_at.count()$ dateLabelsFig = LabelsReviewedByDate.unstack().plot(kind='bar',stacked=True,  color=['blue','yellow', 'purple', 'red', 'green'], grid=False)
-set(bookings.columns).intersection(set(releases.columns))
-! rm -rf models2$ ! mrec_train -n4 --input_format tsv --train "splits1/u.data.train.*" --outdir models2 --model=knn
-len(df.user_id.unique())$
-avg_monthly = np.mean(df.month.value_counts())$ std_monthly = np.std(df.month.value_counts())$ print('The average beers drank per month is {:.2f} beers and the standard deviation is {:.2f} beers.'.format(avg_monthly, std_monthly))
-so.loc[(so['score'] >= 5) & (so['ans_name'] == 'Scott Boston')]
-weekly_videosGB = weekly_dataframe(nodesGB)$ weekly_videosGB[0].head()
-df.to_csv("C:/Users/cvalentino/Desktop/UB/Project/data/tweets_publics_ext.csv", sep=',')
-result = cur.fetchall()$
-df.game_type.value_counts()
-t1.info()
-comments = pd.concat([comments_df, comments_df_middle])$ comments = comments.drop_duplicates()$ comments.to_csv('seekingalpha_top_comments.csv')$
-bldg_data_0 = bldg_data[bldg_data['255_elec_use']==0]$ bldg_data_0.groupby([bldg_data_0.index.year,bldg_data_0.index.month]).agg('count').head(100)$
-response = requests.get(nasa_url)$ print(response.text)
-ccc = td.columns
-input_shape_param = (X_train.shape[1],X_train.shape[2])$ input_shape_param
-print(prec_nc)$ for v in prec_nc.variables:$     print(prec_nc.variables[v])
-mylist = session.query(measurement.date, measurement.prcp).filter(measurement.date.between('2016-08-23', '2017-08-23')).all() $ 
-files = [name for name in listdir() if 'csv' in name]$ fileName = files[0]$ fileName = '866192035974276_AXIO.csv'
-data.count(axis=0)
-from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer$ analyzer = SentimentIntensityAnalyzer()
-validation.analysis(observation_data, Simple_resistance_simulation)
-print (test.shape)
-from gensim.models import Doc2Vec$ model = Doc2Vec.load('/tmp/movie_model.doc2vec')
-result = api.search(q='%23puravida') #%23 is used to specify '#'$ len(result)
-urls_to_shorten = [link for link in urls if ux.is_short(link)]$ urls_to_shorten
-average_of_averages = df['average'].mean()
-response = requests.get('https://www.purdueexponent.org/search/?f=html&q=gun+control&d1=2018-02-14&d2=2018-06-25&sd=desc&l=100&t=article%2Ccollection&nsa=eedition')$ soupresults1 = BeautifulSoup(response.text,'lxml')$
-eth_market_info.drop(['Date'],inplace=True,axis=1)$ scaler_eth = MinMaxScaler(feature_range=(0, 1))$ scaled_eth = scaler_eth.fit_transform(eth_market_info)$
-df.describe()
-health_data_row.loc[2013, 1, 'Guido']  # index triplet
-orig_ct = len(dfd)$ dfd = dfd.query('hspf >= 10.0 and hspf <= 18')$ print(len(dfd) - orig_ct, 'eliminated')
-filtered_df[filtered_df['M_pay_3d'] == 0].shape[0]
-closed_issue_age = Issues(github_index).is_closed()\$                                        .fetch_results_from_source('time_to_close_days', 'id_in_repo', dataframe=True)$ print(closed_issue_age.head())
-USvideos.describe()$ USvideos.head()
-twitter_df = pd.DataFrame(results_dict)$ twitter_df.head()
-columns_chosen = ['Adj. Open', 'Adj. High', 'Adj. Low', 'Adj. Close','Adj. Volume']$ df = df[columns_chosen]
-gdf = gdf[gdf['seqid'].isin(chromosomes_list)]$ gdf.drop(['start', 'end', 'score', 'strand', 'phase', 'attributes'], axis=1, inplace=True)$ gdf.sort_values('length').iloc[::-1]
-y = df['comments']$ X = df[['title', 'age', 'subreddit']].copy(deep=True)
-pivoted.T[labels == 0].T.plot(legend=False, alpha=0.1)
-d['pasttweets_text']=d['pasttweets'].apply(lambda x: ', '.join(x))
-results.to_csv("mb.csv")$ results.to_pickle("football_pickle")$ pd.read_pickle("football_pickle")
-max_div_stock=df.iloc[df["Dividend Yield"].idxmax()]$ max_div_stock$ print("The stock with the max dividend yield is %s with yield %s" % (max_div_stock['Company Name'],max_div_stock['Dividend Yield']))
-all_features = pd.get_dummies(all_features, dummy_na=True) $ all_features.shape
-from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer$ analyze = SentimentIntensityAnalyzer()
-free_sub = free_data.loc[:,['country','y']]
-ab_df2.query('group == "control"')['converted'].mean()
-response = requests.get(url)$ soup = BeautifulSoup(response.text, 'html.parser')
-nodes = nodereader.values.tolist() 
-datascience_tweets[datascience_tweets["text"].str.contains("RT")==False]['text'].count() # 895
-cbs_df = constructDF("@CBS")$ display(constructDF("@CBS").head())
-df1 = pd.read_feather('new_sensor_data2') $ df1.head(10)
-d = {'id': ids, 'sentiment': solution}$ output = pd.DataFrame(data=d)$ output.to_csv( "Word2Vec_Keras_AverageVectors.csv", index=False, quoting=3 )
-df_sched2 = df_sched.iloc[:,1:].apply(pd.to_datetime,format='%Y-%m-%d')
-df['cowbell'] = df['body'].apply(lambda x: len([x for x in x.split() if '(((' in x]))
-trump = trump.drop(["id_str"], axis = 1)
-data_compare['SA_textblob_de'] = np.array([ analize_sentiment_german(tweet) for tweet in data_compare['tweets_original'] ])$ data_compare['SA_google_translate'] = np.array([ analize_sentiment(tweet) for tweet in data_compare['tweets_translated'] ])
-Base.prepare(engine, reflect=True)$ Base.classes.keys()
-print()$ print(df.groupby('Class').size())
-page_html= uClient.read()$ uClient.close()
-df.loc[df['waiting_days']>=0]['waiting_days'].describe()
-appmag_lim = 21.0$
-btc = pd.read_csv('/home/rkopeinig/workspace/Time-Series-Analysis/data/btc.csv')$ btc['date'] = pd.to_datetime(btc['date'])$ btc = btc.set_index('date')
-turnstiles_df = turnstiles_df.rename(columns=lambda x: x.strip())$
-df = pd.DataFrame(results, columns=['date', 'precipitation'])$ df.set_index(df['date'], inplace=True)$ df.tail()
-news_items = soup.find_all(class_='slide')$ news_title = news_items[0].find(class_='content_title').text$ print (news_title)
-nsw_bb = Polygon([[-35.52052802079999,140.999279200001],[-28.1570199879999,140.999279200001],$                   [-28.1570199879999,159.105444163417],[-37.5052802079999,159.105444163417]])
-r = requests.get('https://www.quandl.com/api/v3/datasets/FSE/AFX_X?start_date=2017-01-01&end_date=2017-12-31&api_key=a2rusGHVqV67tgCdY38x')$ r.headers['content-type']  #Type of data format queried for.  In this case, json. $ json_string=r.text  #Convert object to text so that it can be converted to a dictionary.
-nu_fiss_xs = fuel_xs.get_values(scores=['(nu-fission / flux)'])$ print(nu_fiss_xs)
-element = driver.find_element_by_xpath('//*[@id="comic"]/img')$ element.get_attribute("title")
-ddp = dfd.dropna(axis=0, subset=['in_reply_to_screen_name'], how='any')
-for h in heap:$     h.company = [t.author_id for t in h.tweets if t.author_id in names][0]
-index_remove = list(ab_df[mismatch1].index) + list(ab_df[mismatch2].index)$ ab_df2 = ab_df.drop(labels=index_remove,axis=0)
-deltadf.to_csv('exports/trend_deltas_chefkoch.csv')
-print(df.info())
-master_df['day of week']=master_df['day of week'].astype(str)
-clean_stations.columns = ['station', 'name', 'latitude', 'longitude', 'elevation', 'city', 'country', 'state']
-df1 = pd.DataFrame(X_selected_features)$ df1['labels'] = pd.Series(y)$ sns.pairplot(df1, hue='labels')
-p_old = df2[df2['landing_page']=='old_page']['converted'].mean()$ print("Probability of conversion for old page (p_old):", p_old)
-store_items = store_items.append(new_store)$ store_items
-df.loc[:,['A','B']]
-k = 4$ neigh = KNeighborsClassifier(n_neighbors = k).fit(X_train,y_train)$ neigh
-tlen = pd.Series(data = data['len'].values, index = data['Date'])$ tfav = pd.Series(data = data['Likes'].values, index = data['Date'])$ tret = pd.Series(data = data['RTs'].values, index = data['Date'])$
-stat_info_st = stat_info[0].apply(fix_space_0)$ print(stat_info_st)
-df['MeanFlow_cms'] = df['MeanFlow_cfs'] * 0.028316847
-my_gempro.map_uniprot_to_pdb(seq_ident_cutoff=.3)$ my_gempro.df_pdb_ranking.head()
-ftr_imp=zip(features,xgb_model.feature_importances_)
-centroids1 = clusters_kmeans1.cluster_centers_
-vals = Inspection_duplicates.index.values$ vals = list (vals)$ vals
-mean = np.mean(data['len'])$ print("The lenght's average in tweets: {}".format(mean))
-model_with_loss = gensim.models.Word2Vec(sentences, min_count=1, compute_loss=True, hs=0, sg=1, seed=42)$ training_loss = model_with_loss.get_latest_training_loss()$ print(training_loss)
-text = df.section_text[2461]$ text
-readme = processing_test.README()$ readme = open(readme, "r")$ print(readme.read())
-engine.execute('SELECT * FROM Station').fetchall()
-DF1.describe()
-geometry = openmc.Geometry(root_universe)
-status = client.training.get_status(training_run_guid_async)$ print(json.dumps(status, indent=2))
-URL = "http://www.reddit.com"
-store_items = store_items.rename(columns = {'bikes': 'hats'})$ store_items
-y=dataframe1['Close']$ plt.plot(y)$ plt.show()
-fig, ax = plt.subplots(figsize=(12,12))$ xgb.plot_importance(model, max_num_features=50, height=0.8, ax=ax)$ plt.show()
-my_model_q2 = SuperLearnerClassifier(clfs=clf_base_default, stacked_clf=clf_stack_rf, training='label')$ cross_validation.cross_val_score(my_model_q2, X_test, y_test, cv=10, scoring='accuracy')
-db = client.insight_database$ collection = db.posts
-p_old = df2['converted'].mean()$ p_old
-df_birth.population = pd.to_numeric(df_birth.population.str.replace(',',''))
-init = tf.global_variables_initializer()$ sess.run(init)
-crimes.PRIMARY_DESCRIPTION[3:10]
-utils.add_coordinates(data)
-payload = "elec,id=500 value=24 "#+str(pd.to_datetime('2018-03-05T19:29:00.000Z\n').value // 10 ** 9)$ r = requests.post(url, params=params, data=payload)
-dummies = pd.get_dummies(plate_appearances['events']).rename(columns=lambda x: 'event_' + str(x))$ plate_appearances = pd.concat([plate_appearances, dummies], axis=1)
-Measurement = Base.classes.measurements
-df2=df.copy()$ print(id(df),sep='\n')$ print(id(df2),sep='\n')
-max_date = session.query(Measurement.date).order_by(Measurement.date.desc()).first()$ print("Max Date is ", max_date)
-data_tickers = data_tickers.resample(sampling, how='last') $ data_tickers.head()
-number_of_commits = len(git_log.index)$ number_of_authors = git_log.author.nunique()$ print("%s authors committed %s code changes." % (number_of_authors, number_of_commits))
-conn.execute(sql)
-import os # To use command line like instructions$ if not os.path.exists(DirSaveOutput): os.makedirs(DirSaveOutput)
-financial_crisis.drop('Spain defaults 7x', inplace = True)$ print(financial_crisis)
-mask = y_test.index$ t_flag = y_test == 1$ p_flag = pred == 0
-output_path = os.path.join(output_dir, 'prediction.csv')$ write_output(ids, ids_col, y_pred, label_col, output_path)
-my_model_q9 = SuperLearnerClassifier(clfs=clf_base_default, stacked_clf=clf_stack_knn, training='label')$ my_model_q9.fit(X_train, y_train)$ base_model_relation, base_accuracy_comparison = my_model_q9.base_model_eval()
-auth = tweepy.OAuthHandler(consumer_key, consumer_secret)$ auth.set_access_token(access_token, access_token_secret)$ api = tweepy.API(auth, parser=tweepy.parsers.JSONParser())
-data['team']$ data.team
-df_sched.iloc[:,1:] = df_sched.iloc[:,1:].apply(lambda x: x.str[:10])
-df2[df2.duplicated('user_id')]$
-dat_hcad['blk_lower'] = dat_hcad['0'] - dat_hcad['0'] % 100$ dat_hcad['blk_upper'] = dat_hcad['blk_lower'] + 99$ dat_hcad['blk_range'] = dat_hcad['blk_lower'].map(str)+'-'+dat_hcad['blk_upper'].map(str)+' '+dat_hcad['COMMERCE'].map(str)
-reddit.info()
-tree_chunker = ConsecutiveNPChunker(train_trees)$ print(tree_chunker.evaluate(valid_trees))
-fig, axs = plot_partial_dependence(clf, X_test[X_test.age_well_years != 274], [ 7,8], feature_names=X_test.columns, grid_resolution=70, n_cols=7)$ fig, axs = plot_partial_dependence(clf, X_test[X_test.age_well_years != 274], [ 10], feature_names=X_test.columns, grid_resolution=70, n_cols=7)$
-df.loc['20180103','A']
-df.resample('M').mean()
-theft = crimes[theft_bool]$ theft.head()
-stats = session.query(func.min(Measurement.tobs), func.max(Measurement.tobs), func.avg(Measurement.tobs)).\$ filter(Measurement.station=="USC00519281").group_by(Measurement.station).all()$ stats
-cityID = '60e2c37980197297'$ for tweet in tweepy.Cursor(api.search, q=q, contained_within=cityID, wait_on_rate_limit=True, lang="en").items(500):    $         St_Paul.append(tweet) 
-pd.date_range('1/1/2000', '1/1/2000 23:59', freq='4h')$
-sentiment_pd.to_csv('Senitment_On_Tweets.csv')
-df_new.head()
-<img src="/images/MongoDB1.png" alt="[img: MongoDB view]" title="MongoDB View" />
-df_all_payments  = ( df_providers.groupby(['id_num','year'])[['disc_times_pay']].sum())$ df_all_payments.head()$
-sp500.at['MMM', 'Price']
-df_data = pd.read_csv(CSV_FILE, dtype=str)$ print '%d rows' % len(df_data)$ df_data.head()
-daily = hourly.asfreq('D')$ daily
-theft = crimes[crimes['PRIMARY_DESCRIPTION']=='THEFT']$ theft.head()
-data.tail(6)
-attend_with = attend_with.drop(['[', ']'], axis=1)$ attend_with = attend_with.drop(attend_with.columns[0], axis=1)
-%%html$ <img src = "https://data.globalchange.gov/assets/e5/ee/9329d76bf3f5298dad58d85887bd/cs_ten_indicators_of_a_warming_world_v6.png", width=700, height=700>
-with open('datasets/git_log_excerpt.csv') as f:$     print(f.read())$     f.close()
-prcp_analysis_df = df.rename(columns={0: "Date", 1: "precipitation"})$ prcp_analysis_df.head()
-news_df = pd.DataFrame(news_dict)$ news_df.head()
-base_col = 't'$ df.rename(columns={target_column: base_col}, inplace=True)
-avgcomp = groupedNews['Compound'].mean()$ avgcomp.head()
-compacted.to_csv(basedirectory+projectname+'/'+projectname+'_images.csv')
-AFX_X_2017 = r.json()
-data = res.json()
-r = requests.get("https://www.quandl.com/api/v3/datasets/FSE/AFX_X.json?start_date=2017-01-01&end_date=2017-12-31&api_key=", auth=('', ''))$
-test = all_sets.cards["XLN"]$ test.loc["Search for Azcanta", ["manaCost", "types", "printings"]]
-DataSet.tail()$
-iris.iloc[iris.iloc[:,1].between(3.5, 3.6).values,1]
-Bot_tweets.groupby('sentiment').count()
-train2014 = data[np.logical_and(data['date'] > '2013-12-31',data['date'] < '2015-01-01')]$ print(train2014.shape)
-url1 = 'https://www.quandl.com/api/v3/datasets/FSE/AFX_X.json?start_date=2017-01-01&end_date=2017-12-31&collapse=null&api_key=my_API_KEY'
-df_ct = pd.read_csv("can_tire_all_final.csv", encoding="latin-1")
-import numpy as np$ x = np.array([0,1,2,3,4,5,6,7])$ x.dtype
-merged1 = pd.merge(left=merged1, right=offices, how='left', left_on='OfficeId', right_on='id')
-plt.rcParams['figure.figsize'] = 8, 6 $ plt.rcParams['font.size'] = 12$ viz_importance(rf_reg, wine.columns[:-1])
-yc_new4 = yc_new3[yc_new3.tipPC > 1]
-df_all_wells_wKNN_DEPTHtoDEPT.tail()
-tag_df = tag_df.stack()$ tag_df
-fin_r_monthly = fin_r.resample('M').asfreq()
-assert pd.notnull(ebola).all().all()
-customers_df = pd.read_csv('./data/User_Information.csv')$ print(len(customers_df))$ customers_df.head()
-yc_merged = yc_trimmed.merge(yc_sd, left_on='Unnamed: 0', right_on='Unnamed: 0', how='inner')
-orders = pd.read_csv('../data/raw/orders.csv')$ products = pd.read_csv('../data/raw/products.csv')$ order_details_prior = pd.read_csv('../data/raw/order_products__prior.csv')$
-seng = 'mysql+pymysql://root:'+spassword+'@localhost/sakila'$ engine=create_engine(seng)$ data = pd.read_sql_query('select * from actor', engine)$
-round((model_x.rsquared_adj), 3)
-url  = "http://h2o-public-test-data.s3.amazonaws.com/smalldata/iris/iris_wheader.csv"$ iris = h2o.import_file(url)
-df.head()
-DataSet.head(100)
-filename = "HubProcessDurations.xlsx"$ xl = pd.ExcelFile(filename)$ tabs = xl.sheet_names
-X = preprocessing.scale(X)$
-df.index = pd.to_datetime(df.index)
-windfield_matched_array=windfield_matched.ReadAsArray()$ print('windfield shape = '+ str(shape(windfield_matched_array)))$ print('ndvi_change shape = '+ str(shape(ndvi_change.values)))
-data.describe()
-client.repository.delete('50017ab0-237c-451b-befe-ef435c1b5d86')
-auth = tweepy.OAuthHandler(api_key, api_secret)$ auth.set_access_token(access_token, access_secret)$ api = tweepy.API(auth)
-from textblob import TextBlob$ data_df['sent_pola'] = data_df.apply(lambda x: TextBlob(x['clean_desc']).sentiment.polarity, axis=1)$ data_df['sent_subj'] = data_df.apply(lambda x: TextBlob(x['clean_desc']).sentiment.subjectivity, axis=1)
-from IPython.display import HTML$
-print activity_df.iloc[-3]
-df_indices = df_sp_500.unionAll(df_nasdaq).unionAll(df_russell_2k)$ df_indices.sample(False, 0.01).show()
-index = similarities.MatrixSimilarity(lsi[corpus])
-from scipy.stats import norm$ print(norm.cdf(z_score))$ print(norm.ppf(1-(0.05/2)))$
-dd = pd.read_csv("processed_users_verified.csv")$ dd.head()$
-overallDf = pd.DataFrame({$     "News Outlet": overallOutlet,$     "Compound Score" : overallCompound})
-engine = create_engine("sqlite:///hawaii.sqlite", echo = False)
-from sklearn.linear_model import LinearRegression$ from sklearn.model_selection import train_test_split
-atdist_4x_positive = atdist_4x[atdist_4x['emaResponse'].isin(["Yes! This info is useful, I'm going now.", "Yes. This info is useful but I'm already going there."])]$ atdist_4x_positive.merge(atloc_4x, how='left', on=['vendorId', 'taskLocationId'])
-data = pd.DataFrame(data=[tweet.text for tweet in tweets], columns=['Tweets'])$ display(data.head(10))
-ngrams_summaries = cvec_2.build_analyzer()(summaries)$ Counter(ngrams_summaries).most_common(10)
-words_only_scrape_freq = FreqDist(words_only_scrape)$ print('The 20 most frequent terms (terms only): ', words_only_scrape_freq.most_common(20))
-temp_df2['titles'] = temp_df2['titles'].str.lower()
-df1 = pd.DataFrame([pd.Series(np.arange(10, 15)), pd.Series(np.arange(15, 20))])$ df1
-mgxs_lib.mgxs_types = ['nu-transport', 'nu-fission', 'fission', 'nu-scatter matrix', 'chi']
-import json$ import pandas as pd$ import matplotlib.pyplot as plt
-open_price = [x[1] for x in data2 if x[1]!=None]  # needs to exclude None. $ print('The highest opening price during 2017 is : ',max(open_price))$ print('The lowest opening price during 2017 is : ',min(open_price))
-files8= files8.drop('EndDate',axis=1)$ files8= files8.drop('StartDate',axis=1)$ files8.head()$
-print('There are {} news articles'.format(len(news)))$ print('Timewise, we have news from {} to {}'.format(min(news.date), max(news.date)))
-s4.shape
-s2 = pd.Series([10,100,1000,10000],subset.index)$ s2
-goog.plot(y='Close')
-model.compile(loss='binary_crossentropy',optimizer='adam',metrics=['accuracy'])
-writer = pd.ExcelWriter('my_dataframe.xlsx')$ merged_df.to_excel(writer, 'Sheet1')$ writer.save()
-df3_obs.loc['Churn Date'] = obs_end_date - dt.timedelta(df3_obs.loc['Frequency of donations'])
-ds = tf.data.TFRecordDataset(train_path)$ ds = ds.map(_parse_function)$ ds
-m_vals = np.linspace(m_true-3, m_true+3, 100) $ c_vals = np.linspace(c_true-3, c_true+3, 100)
-pre_number = len( niners[niners['Jimmy'] == 'no']['GameID'].unique() )$ print pre_number
-data.iloc[[1]]
-df_geo = pd.DataFrame(sub_data["id_str"]).reset_index(drop=True)$ df_geo["geo_code"] = geo_code$ df_geo.head()
-kick_projects = df_kick[(df_kick['state'] == 'failed') | (df_kick['state'] == 'successful')]$ kick_projects['state'] = (kick_projects['state'] =='successful').astype(int)
-city_group_df_merge_urban = city_group_df_merge.loc[city_group_df_merge['City Type']=='Urban',:]$ city_group_df_merge_suburban = city_group_df_merge.loc[city_group_df_merge['City Type']=='Suburban',:]$ city_group_df_merge_rural = city_group_df_merge.loc[city_group_df_merge['City Type']=='Rural',:]$
-lm = smf.ols(formula='sales ~ TV + radio + newspaper + TV*radio', data=data).fit()$ lm.params
-cityID = '7a863bb88e5bb33c'$ for tweet in tweepy.Cursor(api.search, q=q, contained_within=cityID, wait_on_rate_limit=True, lang="en").items(500):    $         Anchorage.append(tweet) 
-df_test_user_2 = df_test_user.copy()$ df_test_user_2['created_on'] = '2017-09-20 00:00:00'
-sortedprecip_12mo_df=precip_12mo_df.sort_values('date',ascending=True)$ sortedprecip_12mo_df.head()
-cityID = '5c2b5e46ab891f07'$ for tweet in tweepy.Cursor(api.search, q=q, contained_within=cityID, wait_on_rate_limit=True, lang="en").items(500):    $         Las_Vegas.append(tweet) 
-xml_in['authorId'].nunique()
-teams=pd.unique(results[['home_team','away_team']].values.ravel())$ teams
-actual_diff = (df2[df2['group'] == "treatment"]['converted'].mean()) - (df2[df2['group'] == "control"]['converted'].mean())$ actual_diff
-data.describe()  # 看所有统计值，然后根据中位值的标准差三倍原则来找
-nb_pipe.fit(X_train, y_train)$ nb_pipe.score(X_test, y_test)
-lr = LogisticRegression(random_state=20, max_iter=10000)$ param_grid = { 'C': [1, 0.5, 5, 10,100], 'multi_class' : ['ovr','multinomial'], 'solver':['saga','newton-cg', 'lbfgs']}$ grid = GridSearchCV(lr, param_grid=param_grid, cv=10, n_jobs=-1)
-df_final.sort_values(by='Pct_Passing_Overall', ascending=False).head(5)
-plt.pie(total_fare, explode=explode, autopct="%1.1f%%", labels=labels, colors=colors, shadow=True, startangle=140)$ plt.show()$
-reddit['Class_comments'] = reddit.apply(lambda x: 'High' if x['num_comments'] > median_comments else 'Low', axis = 1)$ reddit.head()
-DBPATH = 'results.db'$ conn = sqlite3.connect(DBPATH)$ cur = conn.cursor()
-conn = 'mongodb://localhost:27017'$ client = pymongo.MongoClient(conn)$
-%matplotlib inline$ import matplotlib.pyplot as plt
-plot_BIC_AR_model(data=RN_PA_duration.diff()[1:], max_order_plus_one=8)
-attend_with = questions['attend_with'].str.get_dummies(sep="'")
-df_all_wells_wKNN_DEPTHtoDEPT_KNN1PredTopMcM['closerToBotOrTop'] = np.where(df_all_wells_wKNN_DEPTHtoDEPT_KNN1PredTopMcM['FromTopWell']<=df_all_wells_wKNN_DEPTHtoDEPT_KNN1PredTopMcM['FromBotWell'], 'FromTopWell', 'FromBotWell')
-tips['total_bill'] = pd.to_numeric(tips['total_bill'], errors='coerce')$ tips['tip'] = pd.to_numeric(tips['tip'], errors = 'coerce')$ print(tips.info())$
-keep_cols = ['Follow up Telepsychiatry', 'Follow up', 'Therapy Telepsychiatry', 'Returning Patient', 'Returning Patient MD Adult']$ dr_existing = dr_existing[dr_existing['ReasonForVisitName'].isin(keep_cols)]
-Customer.withdraw(jeff, 200.0)$ jeff.balance           # Shows 700.0
-modCrimeData = crimeData$ modCrimeData.set_index("Year", inplace=True)$ modCrimeData.head()
-s1.values
-data = pd.read_csv('Eplusfanpage.csv')$ data$
-from sklearn.utils import shuffle$ qs = shuffle(qs)$ print len(qs)
-df = df[df.launched_year != 1970]
-data.quantile(0.25)
-tmax_day_2018.attrs
-df_control = df2.query('group=="control"')$ y_control = df_control["user_id"].count()$
-slope, intercept, r_value, p_value, std_err = stats.linregress(data['timestamp'],data['rate'])
-sentiments_pd.to_csv("NewsMood.csv", encoding="UTF-8")
-flight = spark.read.parquet("/home/ubuntu/parquet/flight.parquet")
-df2 = df.drop(remove_index)$ print(df2.shape)  # This should be 294478 - 3893$ df2.head()
-np.shape(temp_fine)
-pass_file_name = "C:\KUBootCamp\\passw.json"$ data = json.load(open(pass_file_name))$ spassword = data['mysql_root']
-history = model.fit(train_X, train_Y, epochs=num_epochs, batch_size=1, verbose=2, shuffle=False) $
-data = pd.DataFrame(data=[tweet.text for tweet in tweets], columns=['Tweets'])$ display(data.head(10))
-df_new[['ca','uk','us']] = pd.get_dummies(df_new['country'])
-sample=train.head(100).copy()$
-spreadsheet = '1LTXIPNb7MX0qEOU_DbBKC-OwE080kyRvt-i_ejFM-Yg'$ wks_name = 'CleanedData'$ d2g.upload(df_dn,spreadsheet,wks_name,col_names=True,clean=True)
-!hdfs dfs -cat 32B_results-output/part-0000* > 32B_results-output.txt$ !head 32B_results-output.txt
-bc = pd.read_csv("bitcoinity_all.csv")
-eegRaw_df.to_csv(outputData, index=False, header=False) 
-print(stock_data.shape)$ print("The number of rows in the dataframe is: ", stock_data.shape[0])$ print("The number of columns in the dataframe is: ", stock_data.shape[1])$
-df["grade"].cat.categories = ["very good", "good", "very bad"]$ df["grade"]
-df = PredClass.df_model$ print df.dtypes.loc[df.dtypes == 'object']
-url = "http://www.fdic.gov/bank/individual/failed/banklist.html"$ banks = pd.read_html(url)$ banks[0][0:5].ix[:,0:4]
-a = pd_series.sort_values()$ a.to_csv("stackoverflow.csv")$ a
-print("Predicted:", "\n",' '.join(y_pred[0]))$ print('\n')$ print("Correct:", "\n" ,' '.join(sent2labels(sample_sent)))
-(a + b).describe()$
-cohort_churned_df = pd.DataFrame(index=daterange,columns=daterange).fillna(0)
-affair_children = pd.crosstab(data.children, data.affair.astype(bool))$ affair_children
-r.groupby('cat').count()
-(a_diff<np.array(p_diffs)).mean()
-print(actual_value_second_measure[actual_value_second_measure==2])$ holdout_results.loc[holdout_results.wpdx_id == ('wpdx-00063550') ]
-dates = pd.date_range('20130101', periods=6)$ df = pd.DataFrame(np.arange(24).reshape((6,4)),index=dates, columns=['A','B','C','D'])$ df.A.max
-full_act_data = steps.join(heart, how='left')
-df2[df2.duplicated(['user_id'], keep=False)]
-c.index = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"]$ c
-btc.plot(y=['price'])$ plt.show()
-gbm.predict(test)
-accuracy=100*metrics.accuracy_score(y_test, y_hat)$ print(accuracy)
-Twitter_map2.save('Twitter_FSGutierres_map.html') #save HTML
-tweet_df.head()$
-act_diff = df[df["group"]=='treatment']["converted"].mean() - df[df["group"]=='control']["converted"].mean()$ act_diff
-data = pd.read_csv('data/analisis_invierno_3.csv')
-us_rhum = rhum_fine.reshape(844,1534).T #.T is for transpose$ np.shape(us_rhum)
-df = pd.read_excel("mails taggen.xlsx")
-get_nps(combined_df, 'country').sort(columns='score', ascending=False).head(10)
-fcc_nn = indexed.loc[indexed['parent_id'] == 't3_7ej943'].reset_index()$
-df_users = df_users.dropna(axis=0)$ print(df_users.shape)$ df_users.head(10)
-data = data.dropna()
-with open(output_folder+Company_Name+"_Forecast_"+datetime.datetime.today().strftime("%m_%d_%Y")+".pkl",'rb') as fp:$     dummy_var = pickle.load(fp)
-data_df.clean_desc[22]
-data = pd.read_sql("SELECT * FROM session_privs",xedb)$ print(data)$
-x = content_performance_bytime.groupby(['document_type', pd.Grouper(freq='M')])['pageviews'].sum()
-if 0 == 1:$     news_titles_sr.to_pickle(news_period_title_docs_pkl)
-ndExample = df.values$ ndExample
-small_ratings_file = os.path.join(dataset, 'ml-latest-small', 'ratings.csv')$ print('small_ratings_file: '+ small_ratings_file)$ small_ratings_raw_data , small_ratings_raw_data_header = read_file(small_ratings_file)
-df_students.head()
-train_ratio = 0.75$ train_size = int(samp_size * train_ratio); train_size$ val_idx = list(range(train_size, len(df)))
-exportparams = urllib.parse.urlencode({$     'action': 'tweet-export',$     'format': 'csv'})
-r.json()['dataset']['data'][0]$
-print 'Python Version: %s' % (sys.version.split('|')[0])$ hdfs_conf = !hdfs getconf -confKey fs.defaultFS ### UNCOMMENT ON DOCKER$ print 'HDFS filesystem running at: \n\t %s' % (hdfs_conf[0])
-utility_patents_subset_df['figure_density'] = utility_patents_subset_df['number-of-figures'] / utility_patents_subset_df['number-of-drawing-sheets']$ utility_patents_subset_df['figure_density'].describe()
-df['Injury_Type'].value_counts()
-def trip_start_date(x):$     return re.search(r'(\d{4})-(\d{2})-(\d{2})', x).group(0)
-X_train[['temp_c', 'prec_kgm2', 'rhum_perc']].plot(kind='density', subplots = True,$                                              layout = (1, 3), sharex = False)
-cityID = '7d62cffe6f98f349'$ for tweet in tweepy.Cursor(api.search, q=q, contained_within=cityID, wait_on_rate_limit=True, lang="en").items(500):    $         San_Jose.append(tweet) 
-session.query(measurements.date)[-1]
-df.tail()
-import IPython  # for displaying parse trees inline$ for tree in parser.parse(sentence):$     IPython.display.display(tree)  # instead of tree.draw()
-des2doc = dict()$ for index,row in temp.iterrows():$     des2doc[index] = row['description']
-festivals.at[2,'latitude'] = 41.9028805$ festivals.head(3)
-p(sys.getfilesystemencoding)
-fed_reg_dataframe['token_text'] = fed_reg_dataframe['str_text'].apply(lambda x: word_tokenize(x.lower()))
-cat_sz = [(c, len(full_data[c].unique())) for c in cats]$ emb_szs = [(c, min(50, (c+1)//2)) for _,c in cat_sz]$ n_conts = len(full_data.columns) - len(cats)
-precip_data = session.query(Measurements).first()$ precip_data.__dict__
-print ('Python Version: %s' % (sys.version.split('|')[0]))$ hdfs_conf = !hdfs getconf -confKey fs.defaultFS ### UNCOMMENT ON DOCKER$ print ('HDFS filesystem running at: \n\t %s' % (hdfs_conf[0]))
-params =  {'reg_alpha': 0.1, 'colsample_bytree': 0.9, 'learning_rate': 0.1, 'min_child_weight': 1$           , 'n_estimators': 300, 'reg_lambda': 1.0, 'random_state': 1, 'max_depth': 4} $ reg_final = xgb.XGBRegressor(**params).fit(X, y)#**params$
-p = len(train_att)/len(train)$ print(len(train_att))$ print('The percentage of converted clicks is {num:.10%}'.format(num=p))
-df_a = pd.DataFrame(df_graph.groupby('dates')['click_rec_menues'].value_counts())
-cityID = 'd98e7ce217ade2c5'$ for tweet in tweepy.Cursor(api.search, q=q, contained_within=cityID, wait_on_rate_limit=True, lang="en").items(500):    $         Stockton.append(tweet) 
-pattern = re.compile('AA')$ print(pattern.sub('BB', 'AAbcAA'))$ print(pattern.sub('BB', 'bcAA'))
-print("Percentage of positive tweets: {}%".format(len(pos_tweets)*100/len(data['Tweets'])))$ print("Percentage of neutral tweets: {}%".format(len(neu_tweets)*100/len(data['Tweets'])))$ print("Percentage of negative tweets: {}%".format(len(neg_tweets)*100/len(data['Tweets'])))
-r = requests.get('https://www.quandl.com/api/v3/datasets/OPEC/ORB.json?start_date=2013-01-01&end_date=2013-01-01&api_key='+API_KEY)
-url2 = 'https://www.quandl.com/api/v3/datasets/FSE/EON_X?start_date=2017-01-02&end_date=2017-12-31&api_key=mVyTTi52QUPLHnmV-tx_'$ r2 = requests.get(url2)$ jd = r2.json()$
-Base.classes.keys()
-df1 = df[df['Title'].str.contains(search_terms)]$ df1.shape
-if create_sql_indexes:$     conn.execute('create index left_ix on left(key, key2)')$     conn.execute('create index right_ix on right(key, key2)')$
-birth_dates.head(3)
-month_counts = df.month.value_counts().sort_index()
-url = 'https://mars.nasa.gov/news/?page=0&per_page=40&order=publish_date+desc%2Ccreated_at+desc&search=&category=19%2C165%2C184%2C204&blank_scope=Latest'
-new_user_recommendations_rating_RDD = new_user_recommendations_RDD.map(lambda x: (x.product, x.rating))$ new_user_recommendations_rating_title_and_count_RDD = new_user_recommendations_rating_RDD.join(complete_movies_titles).join(movie_rating_counts_RDD)$ new_user_recommendations_rating_title_and_count_RDD.take(3)
-pd.set_option("display.max_rows", 20)$ np.random.seed(12)
-grouped_newsorgs = news_sentiment_df.groupby(["News Organization"], as_index = False)
-merged2 = pd.DataFrame.merge(merged,omdb_df,on="movie",how="inner")$ merged2.head()
-filepath = os.path.join('input', 'input_plant-list_NO.csv')$ data_NO = pd.read_csv(filepath, encoding='utf-8', header=0, index_col=None)$ data_NO.head()
-plate_appearances['pitcher_throws_left'] = np.where(plate_appearances['p_throws'] == 'L', 1, 0)$ plate_appearances['left_handed_batter'] = np.where(plate_appearances['stand'] == 'L', 1, 0)
-r_forest['has_extended_profile'] = r_forest['has_extended_profile'].fillna(0)
-print(soup.find_all('div', 'sammy')[0])$
-sumPre = dfPre['MeanFlow_cfs'].describe(percentiles=[0.1,0.25,0.75,0.9])$ sumPost = dfPost['MeanFlow_cfs'].describe(percentiles=[0.1,0.25,0.75,0.9])
-df.head()
-cityID = '28ace6b8d6dbc3af'$ for tweet in tweepy.Cursor(api.search, q=q, contained_within=cityID, wait_on_rate_limit=True, lang="en").items(500):    $         Chula_Vista.append(tweet) 
-my_gempro.uniprot_mapping_and_metadata(model_gene_source='TUBERCULIST_ID')$ print('Missing UniProt mapping: ', my_gempro.missing_uniprot_mapping)$ my_gempro.df_uniprot_metadata.head()
-all_tables_df.iloc[2:4, 1:]
-brands_np = np.asarray(brands)$ models_np = np.asarray(models)
-scores[scores.IMDB == max_IMDB]
-std_df = choose_local_df('STD')$ std_df.loc[std_df['Sold_to_Party']=='0000101348'][['Sold_to_Party','Sales_document','Material_Description','Unit_Price','Document_Date']]
-df.iloc[99:110,3:]
-park = load_data('../../static/parkinson_1960tonow.csv')
-ratings = ['review_scores_rating','review_scores_accuracy','review_scores_cleanliness','review_scores_checkin','review_scores_communication','review_scores_location','review_scores_value']$ filtered_df.dropna(axis=0, subset=[ratings], inplace=True)
-words_mention_sk = [term for term in words_sk if term.startswith('@')]$ corpus_tweets_streamed_keyword.append(('mentions', len(words_mention_sk))) # update corpus comparison$ print('List and total number of mentions: ', len(set(words_mention_sk))) #, set(terms_mention_stream))
-from app.crawler import Crawler$ crawler = Crawler()$ crawler.pull_save_data()
-df_obj2['G'] = df_obj2['D'] + 4$ print(df_obj2.head())
-mvrs = ratings.groupby('movieId').size().sort_values(ascending=False)$ tmp_ratings = ratings.ix[mvrs[mvrs > rating_count].index].dropna()
-y_train.value_counts(normalize=True)
-df2 = df2.add_suffix(' Closed')$ df4 = pd.merge(df,df2,how='left',left_on='Date Closed',right_on='date Closed')$
-dci = indices(dcaggr, 'text', 'YearWeek')$ dci.head()
-colnames = ['log***','gfhdfxh']$ df.columns = colnames
-print 'Date range: %s - %s' % (response_df.created.min(), response_df.created.max())
-results = soup.find_all('div', class_='slide')$ print(results)
-fin_coins_r.isnull().sum()
-df1.dropna(inplace=True)
-twitter_data = pd.DataFrame(list(twitter_coll_reference.find()))$ twitter_data.head()
-client = MongoClient()$ db = client.test_database #acessa ou cria o banco$
-precipitation_df = pd.DataFrame(sq.prec_last_12_months())
-df2['Change'].abs()  
+precip_data_df = pd.DataFrame(precip_data_dict)$ precip_data_df = precip_data_df.rename(columns={"prcp":"Precipitation"})$ precip_data_df.head()$
+weather_df_byday = weather_df.loc[weather_df.index.weekday == weekday]$ weather_df_byday.info()$ weather_df_byday.head()
+data['Age'].value_counts()
+fig, ax = plt.subplots(1, figsize=(12,4))$ plot_with_moving_average(ax, 'Seasonal AVG RN/PAs', RN_PA_duration, window=52)
+list = [1,3,4,30]$ list.append(21)$ print(list)
+data.groupby(['Name'])['Salary'].sum()
+(trainingData, testData) = data.randomSplit([0.7, 0.3])$
+x.dtype = 'int32' # (need to revert)$ x.astype(float) # creates a new array
+import logging$ logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
+df_names = pd.read_csv('names.csv')$ df_names
+df.boxplot('MeanFlow_cms');
 import numpy as np$ X_nonnum = X.select_dtypes(exclude=np.number)
-for iter_x in np.arange(lookforward_window)+1:$     df['y+{0}'.format(str(iter_x))] = df[base_col].shift(-iter_x)
-dfs['DE'].groupby(['comment', 'data_source'])['electrical_capacity'].sum().to_frame()$ dfs['DE'].groupby(['comment', 'energy_source_level_2'])['electrical_capacity'].sum().to_frame()
-news_sentiment_df.to_csv("twitter_news_org_sentiment.csv", encoding="utf-8", index=False)
-releases = pd.read_csv('../input/jail_releases.csv')$ bookings = pd.read_csv('../input/jail_bookings.csv')
-plt.title("Aggregate Media Sentiment baed on Twitter")$ plt.ylabel("Tweet Polarity")
-dfClientes.loc[(dfClientes["MES"] == 201701) & (dfClientes["EDAD"] < 30)].head()
-google['high'].apply(custome_roune).value_counts().sort_index()
-sample = rng.choice(sizes, sample_size, replace=True)$ print(f'Mean (one sample) = {np.mean(sample):5.3f}')$ print(f'Standard deviation (one sample) = {np.std(sample):5.3f}')
-print(discharge_list[0].date)$ print(discharge_list[len(discharge_list)-1].date)
-sl['second_measurement'] = np.where((sl.new_report_date==sl.maxdate) & (sl.mindate!=sl.maxdate),1,0)
-data = pd.DataFrame(data=[tweet.text for tweet in results], columns=['Tweets'])$ display(data.head(10))$ display(data.tail(10))
-for a in cells: $     ct.save_reconstruction(a['id'], file_name='allen_morpho/ai'+str(a['id'])+'.swc')$     ct.save_reconstruction_markers(a['id'],file_name='allen_morpho/ai'+str(a['id'])+'_marker.swc')
-dates = pd.date_range(date.today(), periods=2)$ dates
-dj_df = pd.read_table(data_file_path)$ print(dj_df.head())$ print(dj_df.info())
-td_alpha = td ** (1/3)$ td_alpha = td_alpha / td_alpha.max().max()
-coming_next_reason.to_csv('../data/coming_next_reason.csv')
-i = 0$ sample_sent = valid_labels[i]$ print(' '.join(sent2tokens(sample_sent)), end='\n')
-for word in STOP_WORDS:$     nlp.vocab[word].is_stop = True
-df = pd.DataFrame([x._json for x in tweets])[['text', 'created_at', 'user']]$ df['label'] = df.user.map(lambda x: x.get('name'))$ df.head()
-malebydatenew  = malebydate[['Sex','Offense']].copy()$ malebydatenew.head(3)
-TripData_merged2.isnull().sum()
-url_domains = grouped['domain'].agg({'domain': lambda x: np.unique(x)})$ unique_urls = pd.merge(unique_urls, url_domains)$ unique_urls.head()
-invalid_sets = ["UGL", "UNH", "UST", "pCEL", "pHHO", "VAN"]$ all_sets = all_sets.loc[~all_sets.code.map(lambda x: x in invalid_sets)]
-tweet_archive.name.value_counts().head(5)$
-print(len(countdf['user'].unique()))$ print(len(countdf['user'].unique())-len(count1df['user'].unique()))$ print(len(countdf['user'].unique())-len(count6df['user'].unique()))
-df['is_application'] = df.application_date.apply(lambda x: 'No Application' if x == None else 'Application')$ df.head(5)
-import requests$ base_url = 'http://www.mlssoccer.com/stats/season'$ response = requests.get(base_url)$
-new_df = df.dropna(subset=['driver_id'],inplace=False)
-Rural = rides_analysis[rides_analysis["City Type"].notnull() & (rides_analysis["City Type"] == "Rural")]$
-tlen.plot(figsize=(16,4), color='r');
-femalebydate = female.groupby(['Date','Sex']).count().reset_index()$ femalebydate.head(3)
-instance.assumptionbreaker()
-masked['user_age'] = masked['created_at'] - pd.to_datetime(masked['user_created_at'])
-df = pd.concat(map(pd.read_csv, glob.glob("*.csv")))
-most_yards[['Date','PlayType','Yards.Gained','qtr','desc','Rusher','Receiver', 'Jimmy']][:10]
-festivals.head(5)
-df.to_sql('tw_posts', engine, schema=schema, if_exists='append')
-experience.to_csv('../data/experience.csv')
-print(dfx.dropna(how='any'))
+executable_path = {'executable_path': 'chromedriver.exe'}$ browser = Browser('chrome', **executable_path, headless=False)
+print("prediction: {0}, actual: {1}, 2018-03-31".format(y_pred_list[0], y_test_aapl[0,0]))
+stc.checkpoint("checkpoint10")
+df_release = pd.read_csv( pwd+'/releases.052317.csv', encoding='utf-8') #earning release?
+cursor = collection_reference.aggregate([{'$sample': {'size': 5}}])$ tw_sample_df = pd.DataFrame(list(cursor))$ tw_sample_df
+group_sizes = (data.$               groupby('species')$               .size())
+mlp_pc_fp = 'data/richmond_median_list_prices_percent_change.csv'$ mlp_pc.to_csv(mlp_pc_fp, index=True) # Pass index=True to ensure our DatetimeIndex remains in the output
+df1=files3.pivot_table(index='candidateid', columns='dimensiontype', values='finalscore')$ df1new = pd.DataFrame(df1.to_records())$ df1new.head()
+walkmin = walk.resample("1Min")
+back_to_h2o_frame = h2o.H2OFrame(pandas_small_frame)$ print(type(back_to_h2o_frame))$ back_to_h2o_frame
+print(r.json())
+scratch['created_at'] = pd.to_datetime(scratch['created_at'], coerce=True)
+ved['season'] = ved.index.str.split('.').str[0]$ ved['term'] = ved.index.str.split('.').str[1]
+theft.sort_values('DATE_OF_OCCURRENCE', inplace=True, ascending=True)$
+Geocoder.geocode("4207 N Washington Ave, Douglas, AZ 85607").valid_address
+sentiments_df = pd.DataFrame.from_dict(sentiments)$ sentiments_df.head()
+df_newpage = df.query('landing_page == "new_page"')$ df_2 = df_newpage.query('group == "treatment"')$ df_2.nunique()$
+cityID = '300bcc6e23a88361'$ for tweet in tweepy.Cursor(api.search, q=q, contained_within=cityID, wait_on_rate_limit=True, lang="en").items(500):    $         Seattle.append(tweet) 
+session.query(func.count(Station.station)).all()
+df.plot(kind='scatter', x='RT', y='fav', xlim=[0,100], ylim=[0,100], title="Favorites and Retweets:100x100")
+df = pd.read_csv(SRC_FILE)$ df['CreatedDate'] = pd.to_datetime(df['CreatedDate'], format='%m/%d/%Y %I:%M:%S %p +0000')$ df.set_index('CreatedDate', inplace=True)
+int_and_tel.plot(y='sentiment_score', use_index= True, figsize=(18, 6))
+fh_1 = FeatureHasher(num_features=uniques.iloc[2, 1], input_type='string', non_negative=True) # so we can use NaiveBayes$ %time fit = fh_1.fit_transform(train.device_model)
+import sys$ src_dir = os.path.join('..', 'src')$ sys.path.append(src_dir)
+very_pop_df = au.filter_for_support(popular_trg_df, min_times=6)$ au.plot_user_dominance(very_pop_df)
+tickers = companies['tweet_ticker'].tolist()$
+from_6_cdf.plot(kind='barh', x='category', y='occurrence_count', figsize=(12, 10), title= 'Categories', label= "Occurrence Count")$ plt.gca().invert_yaxis()$ plt.legend(loc= 4, borderpad= True)
+S_1dRichards.decision_obj.hc_profile.options, S_1dRichards.decision_obj.hc_profile.value
+df2.head()$
+git_log['timestamp'] = pd.to_datetime(git_log['timestamp'], unit='s')
+df.to_excel("../../data/msft2.xlsx")
+adj_glm_int = smf.glm('hospital_expire_flag ~ C(inday_icu_wkd) * C(admission_type)', $                      data=data, family=sm.families.Binomial()).fit()$ adj_glm_int.summary2()$
+tw['tweet_id'].map(lambda x: len(str(x).strip())).value_counts()
+diff = [abs(list(r_close.values())[i] - list(r_close.values())[i-1]) for i in range (1,len(r_close))]$     $
+df.quantile(.75) - df.quantile(.25)
+df = df.drop(['Unnamed: 0', 'id', 'created_at', 'crawl_at'], axis=1)
+flights2.loc[[1950, 1951]]
+Base.classes.keys()
+import scipy.stats as stats$ t_stat, p_val = stats.ttest_ind(dftop['temp'],weather['temp'], equal_var=False)
+df_C = df_A.copy()$ columns = df_C.columns.tolist()$ res = pd.concat([pd.DataFrame(df_A.values, columns=columns), pd.DataFrame(df_B.values, columns=columns)], keys=["A", "B"])$
+df.to_csv(r'C:\Users\LW130003\cgv.csv', index=False)
+goodreads_users_df.replace('None', np.nan, inplace=True)
+pd.concat([df1,df2,df3])$
+churned_unordered = unordered_df.loc[churned_unord]
+print("Percentage of positive tweets: {}%".format(len(pos_tweets)*100/len(data['Tweets'])))$ print("Percentage of neutral tweets: {}%".format(len(neu_tweets)*100/len(data['Tweets'])))$ print("Percentage of negative tweets: {}%".format(len(neg_tweets)*100/len(data['Tweets'])))
+fulldf.to_csv('FullResults.csv', encoding='utf-8', index=False)
+path = "https://raw.githubusercontent.com/arqmain/Python/master/Pandas/Project2/adult.data.TAB.txt"$ mydata = pd.read_table(path, sep= '\t')$ mydata.head(5)
+tmi = indices(tmaggr, 'text', 'YearWeek')$ tmi.head()
+df['fetched time'] = df['fetched time'].astype('datetime64[s]')$ df['created_utc'] = df['created_utc'].astype('datetime64[s]')
+session.query(tobs.station, func.count(tobs.tobs)).group_by(tobs.station).\$                order_by(func.count(tobs.tobs).desc()).all() 
+tot = pd.merge(dailyplay, promotions, how = 'left', left_on = ['Date'], right_on = ['Date'])
+precp_df = pd.DataFrame(results, columns=['date', 'prcp'])$ precp_df.set_index('date', inplace=True, )$ precp_df.head(10)
+outfile = os.path.join("Resource_CSVs","Main_data_Likes.csv")$ merge_table1.to_csv(outfile, encoding = "utf-8", index=False, header = True)
+news_sentiments.to_csv('New_Source_sentiments.csv', encoding='utf-8', index=False)
+horizAAPL = AAPL.sort_index(axis=1)$ horizAAPL.head()
+adj_close_pivot_merged = pd.merge(adj_close_pivot, adj_close$                                              , on=['Ticker', 'Adj Close'])$ adj_close_pivot_merged.head()
+station_count = station_df['Station ID'].nunique()$ print(station_count)
+print("Percentage of positive tweets: {}%".format(len(pos_tweets)*100/len(data['Tweets'])))$ print("Percentage of neutral tweets: {}%".format(len(neu_tweets)*100/len(data['Tweets'])))$ print("Percentage de negative tweets: {}%".format(len(neg_tweets)*100/len(data['Tweets'])))
+movies=pd.read_csv('..\\Data\\ml-20m\\ml-20m\\movies.csv')
+plate_appearances.loc[plate_appearances.batter_name=='ryan howard',].head()
+metadata['reflectance_scale_factor'] = float(refldata.attrs['Scale_Factor'])$ metadata
+lr = LogisticRegression(random_state=20, max_iter=10000)$ param_grid = { 'C': [1, 0.5, 5, 10,100], 'multi_class' : ['ovr', 'multinomial'], 'solver':['saga','newton-cg', 'lbfgs']}$ grid_tfidf = GridSearchCV(lr, param_grid=param_grid, cv=10, n_jobs=-1)
+file_attrs_string = str(list(hdf5_file.items()))$ file_attrs_string
+joined=join_df(train,store,"Store")$ joined_test=join_df(test,store,"Store")$ sum(joined['State'].isnull()),sum(joined_test['State'].isnull())
+tlen = pd.Series(data=data['len'].values, index=data['Date'])$ tfav = pd.Series(data=data['Likes'].values, index=data['Date'])$ tret = pd.Series(data=data['RTs'].values, index=data['Date'])$
+last_date = session.query(Measurement.date).order_by(Measurement.date.desc()).first()$ last_date
+sl['mindate'] = sl.groupby('wpdx_id')["new_report_date"].transform('min')$ sl['maxdate'] = sl.groupby('wpdx_id')["new_report_date"].transform('max')
+from sklearn.externals import joblib$ joblib.dump(pca, '../models/pca_20kinput_6858comp.pkl')$ np.save('../models/crosstab_40937.pkl', crosstab_transformed)
+train_topics_df=pd.DataFrame([dict(ldamodel[item]) for item in train_corpus], index=graf_train.index)$ test_topics_df=pd.DataFrame([dict(ldamodel[item]) for item in test_corpus], index=graf_test.index)$
+if not os.path.isdir('output'):$     os.makedirs('output')
+scoring_url = client.deployments.get_scoring_url(deployment_details)$ print(scoring_url)
+print d.variables['trajectory']
+test_data_dir = '{}'.format(os.sep).join([gensim.__path__[0], 'test', 'test_data']) + os.sep$ lee_train_file = test_data_dir + 'lee_background.cor'$ print lee_train_file
+output_fn = "NewsMedia.csv"$ result.to_csv(output_fn)
+import numpy as np$ np.sqrt(s)
+tlen.plot(figsize=(16,4), color='b');
+data.plot(figsize=(16,6))$ plt.show()
+plt.scatter(USvideos['likes'], USvideos['views'])
+df_tobs.set_index('date',drop=True,inplace=True)
+conn.commit();$ conn.close();
+import logging$ logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
+import pandas as pd$ users_df = pd.read_csv('data/{country}_users.csv'.format(country=country).replace(' ', '+'))$ users_df.sample(5)
+((df-df_from_csv)**2 < 1e-25).all()
+data2['SA'] = np.array([ analyze_sentiment(tweet) for tweet in data2['Tweets'] ])$ display(data2.head(10))
+tfidf.fit(text)
+dti = pd.to_datetime(['Aug 1,2014','2014-08-2','2014.8.3',None])$ for l in dti: print(l)
+print("Percentage of positive tweet= {}".format(len(pos_tweet)*100/len(data['tweets'])))$ print("Percentage of negative tweet= {}".format(len(neg_tweet)*100/len(data['tweets'])))$ print("Percentage of neutral tweet= {}".format(len(neu_tweet)*100/len(data['tweets'])))
+user_df = pd.read_csv('verified_user.csv')$ print(len(user_df))$ print(user_df.created_at.min())$
+logit = sm.Logit(df3['converted'], df3[['ab_page', 'intercept']])$ result=logit.fit()$
+test_preds_df = pd.DataFrame(test_preds,index=test_target.index,columns=['kwh_pred'])$
+df_user[df_user['user.name'].str.contains('marco rubio', case=False)]
+list = ['a','b','c','d','e']$ list.insert(1,'x')$ print(list)
+scores_df.to_csv('../Results/News_Tweets.csv', encoding="utf-8", index=False)
+df.loc[df.userLocation == 'Manchester, PA', 'tweetText']$
+regr = linear_model.LinearRegression()
+plt.hist(np.nan_to_num(_delta.values()), bins=10)$ plt.tight_layout()
+lr = LogisticRegression(C=3.0, random_state=42)
+fin_r = fin_r.reindex(df.resample('D').index, method='ffill') #df.resample('D').index$ assert (fin_r.index == r_top10_mat.index).all()
+file_obj = open('BCH_person.csv', 'r')$ data = list(file_obj)
+scraped_batch6_top.to_csv('batch6_top.csv', encoding='utf-8')$ scraped_batch6_sec.to_csv('batch6_sec.csv', encoding='utf-8')
+from sklearn.cluster import KMeans$ kmeans_model = KMeans(n_clusters=7) $ kmeans_model.fit(df)
+df_tick = df_tick.loc['2017-08-24':'2017-08-30']
+outfile = path + '../output/allData_NoRetweets_May27_Cleaned.csv'$ cleanedDataNoRetweets.to_csv(outfile, index=False, encoding='utf-8')
+temp['c'] = temp['contents'].str.split()
+path = "C:\\Users\\Alvaro\\Documents\\Python_Projects\\Pandas\\Pandas-Project2\\car_data.txt"$ mydata = pd.read_csv(path, sep ='\s+', na_values=['.'], names=['x1', 'x2', 'x3', 'x4', 'x5', 'x6', 'class'])$ mydata.head(5)
+sumAll = df['MeanFlow_cfs'].describe(percentiles=[0.1,0.25,0.75,0.9])$ sumAll
+len(df.user_id.unique())$
+eth_market_info.drop(['Date'],inplace=True,axis=1)$ scaler_eth = MinMaxScaler(feature_range=(0, 1))$ scaled_eth = scaler_eth.fit_transform(eth_market_info)$
+def words_at_start(index, df):$     tweet_text = df["Words"][index]$     return tweet_text.split()[:3]$
+scoring_url = client.deployments.get_scoring_url(deployment_details)$ print(scoring_url)
+stations_df.to_csv('clean_hawaii_stations.csv', index=False)
+sqlCtx = pyspark.SQLContext(sc)$ sdf = sqlCtx.createDataFrame(df.astype(str))$ sdf.show(5)
+dfm = (filtered_df['l_req_3d'] - filtered_df['l_req_3d_num_tutors'])$ filtered_df.loc[dfm > 0, :]
+doesnt_meet_credit_policy = loan_stats['loan_status'].grep(pattern = "Does not meet the credit policy.  Status:",$                                                      output_logical = True)
+x_axis = np.arange(0,len(target_users))$ x_axis
+df2 = pd.read_csv('../output/data/expr_2/expr_2_pcs_nth_1_div_51_04-18.csv', comment='#')
+session.query(func.min(Measurement.tobs), func.max(Measurement.tobs), func.avg(Measurement.tobs)).\$     filter(Measurement.station == 'USC00519281').all()$
+for columns in DummyDataframe[["Positiv", "Negativ"]]:$     basic_plot_generator(columns, "Graphing Dummy Data" ,DummyDataframe.index, DummyDataframe)
+df["Source"].unique()
+gmm.fit(X)$ labels = gmm.predict(X)$ labels
+print("{} is the proportion of users converted.".format(df['converted'].mean()))
+X2.shape
+print(r.json()['dataset_data']['data'][:4])
+s4.unique()
+df["grade"] = df["raw_grade"].astype("category")$ df["grade"]
+data['len'].hist(bins=14)
+rf = RandomForestClassifier()$ rf.fit(X_train, y_train)$ rf.score(X_test, y_test)
+df_campaigns['Open Rate'] = df_campaigns['Open Rate'].apply(lambda x: x[:-1]).astype('float')$ df_campaigns['Click Rate'] = df_campaigns['Click Rate'].apply(lambda x: x[:-1]).astype('float')
+dates = pd.DatetimeIndex(pivoted.columns)$ dates[(labels == 0) & (dayofweek < 5)]
+tdf[tdf['smoker'] == 'No'].describe()
+s3 = pd.Series(0,pd.date_range('2013-01-01','2014-12-31'))$ s3['2013']
+def add_to_list(word_list, dictionary):$     for each in word_list:$         dictionary.append(each)
+yc_new3.describe()
+import pandas_datareader.data as web  #Not 'import pandas.io.data as web' as in the book.
+now_start = datetime.datetime.now()$ time_start = now_start.strftime("%Y-%m-%d (yyyy-mm-dd); %H:%M hrs.")$ print "# Starting time of computing: %s"%time_start
+Inspection_duplicates = data_FCInspevnt_latest.loc[data_FCInspevnt_latest['brkey'].isin(vals)]$ Inspection_duplicates
+compound_df = pd.DataFrame([avg_compound]).round(3)$ compound_df
+gdax_trans_btc = pd.merge(gdax_trans_btc, coinbase_btc_eur_min.iloc[:,:2], on="Timestamp", how="left")
+%%time$ model = AlternatingLeastSquares(use_gpu=False)$ model.fit(matrix_data)
+g = sns.FacetGrid(data=dataset, col='rating')$ g.map(plt.hist, 'text length', bins=50)$
+data.plot(legend=True,figsize=(15,8))
+health_data_row.loc[2013, 1, 'Guido']  # index triplet
+soup.findAll(attrs={'class':'yt-uix-tile-link'})[0]['href'][9:]
+end_date = (datetime.strptime(most_recent_tobs , '%Y-%m-%d') - timedelta(weeks=48)).\$     strftime('%Y-%m-%d') #converts datetime to string$ end_date
+population.loc['California':'Illinois']
+df_features_checkcorr = df_features$ df_features_checkcorr.to_csv("data new/features.csv", encoding="utf-8", sep=",", index=False)
+scores_mean = np.mean(raw_scores)$ scores_std = np.std(raw_scores)$ print('The mean is {:.5} and the standard deviation is {:.5}.'.format(scores_mean, scores_std))
+adj_close = all_data[['Adj Close']].reset_index()$ adj_close.head()
+pure_final_df=pure_final_df._get_numeric_data()$
+test_ind["Pred_state_XGB"] = xgb_model.predict(test_ind[features])$ train_ind["Pred_state_XGB"] = xgb_model.predict(train_ind[features])$ kick_projects_ip["Pred_state_XGB"] = xgb_model.predict(kick_projects_ip_scaled_ftrs)
+data.head()
+url = 'https://twitter.com/marswxreport?lang=en'$ browser.visit(url)
+print((fit.shape, fit1_test.shape))$ print((fit2.shape, fit2_test.shape))$ print((fit3.shape, fit3_test.shape))
+shows = pd.read_pickle("ismyshowcancelled_raw_pull.pkl")
+val = val.split(b'\r\n\r\n',1)[1]$ print(val.decode('utf-8'))
+df.drop(['Unnamed:_13', 'addressee', 'delivery_line_2', 'ews_match', 'suitelink_match', 'urbanization', 'extra_secondary_number', 'extra_secondary_designator', 'pmb_designator', 'pmb_number'], axis = 1, inplace=True)$ df.drop([326625], axis=0, inplace=True)
+url = "https://www.quandl.com/api/v3/datasets/FSE/AFX_X.json?api_key=As4uh8SmqPWoJ1s9XXDT&start_date=2017-01-01&end_date=2017-01-01"$ r = requests.get(url)
+q_all_pathdep = c.retrieve_query('https://v3.pto.mami-project.eu/query/8da2b65bd4f7cd8d56d90ddfcd85297e8aac54fcd0e04f0a0fa51b2937b3dc62')$ q_all_pathdep.metadata()
+df_2018.dropna(subset=['Specialty'], how='all', inplace=True)
+html_table_marsfacts = df.to_html()$ html_table_marsfacts
+url_test = "https://www.quandl.com/api/v3/datasets/FSE/AFX_X/data.json?" + \$       "&start_date=2017-01-01&end_date=2017-01-02&api_key=" + API_KEY$ req_test = requests.get(url_test)
+model.save('model/my_model_current.h5')$ model.summary()
+traded_volumes.sort()
+print(preprocessor(df.loc[0, 'review'][:-500]), '\n')$ print(preprocessor("</a>This :) is :( a test :-)!"))
+utility_patents_subset_df['prosecution_period'] = utility_patents_subset_df.grant_date - utility_patents_subset_df.filing_date$ utility_patents_subset_df.prosecution_period = utility_patents_subset_df.prosecution_period.apply(lambda x: x.days)$ utility_patents_subset_df.prosecution_period.describe()
+get_nps(combined_df, 'role_en').sort(columns='score', ascending=False)
+print(dfd.in_pwr_5F_max.describe())$ dfd.in_pwr_5F_max.hist()
+df.num_comments= df.num_comments.apply(lambda x:0 if x <= 74 else 1)
+exiftool -csv -createdate -modifydate cisnwh8/cisnwh8_cycle1.MP4 cisnwh8/cisnwh8_cycle2.MP4 cisnwh8/cisnwh8_cycle3.MP4 cisnwh8/cisnwh8_cycle4.MP4 cisnwh8/cisnwh8_cycle5.MP4 cisnwh8/cisnwh8_cycle6.MP4 > cisnwh8.csv
+db = client.Mars_db$ collection = db.mars_news
+df = df.loc[df['d_first_name'] != 'Unknown']$ df = df.loc[df['d_birth_date'] != 'nan']$ df.set_value(df.index[11650], 'd_birth_date', '04/26/1940')
+url='https://www.quandl.com/api/v3/datasets/FSE/AFX_X/data.json?start_date=2016-07-01&end_date=2016-07-01&api_key={}'.format(API_KEY)$ r=requests.get(url)$ print(r.json())
+df.info()
+input_node_types_DF = pd.read_csv(input_models_file, sep = ' ')$ input_node_types_DF
+y = x.loc[:,"A"]$ y.mean()$ np.mean(y)
+from IPython.core.display import display, HTML$ display(HTML("<style>.container { width:100% !important; }</style>"))
+env = Environment.from_studio("ticketing", "http://10.29.28.147:8090",$                               studio_api_token="dXNlci1kZXY6UGFzc3dvcmQ0REVW")$ exp = env.create_experiment('imdb-ratings')
+for i,x in top_likes.iteritems():$     print ('https://www.facebook.com/'+x )
+year_with_most_commits = ... 
+gene_df['gene_id'].unique().shape
+tobs_date = session.query(measurement.date, measurement.tobs).all()$ tobs_date                   
+climate_vars.head()
+store_items.fillna(method='ffill', axis=0)
+df['Injury_Type'] = df.Notes.map(extract_injury)
+bc.set_index('newdate', inplace=True)
+colors = ('blue', 'red', 'gold', 'green', 'c')$ lgd = zip(tweet_df["Tweet Source"].unique(),colors)$
+s_filled = s.fillna(0)$ s_filled
+chance = cnf_matrix[1:].sum() / cnf_matrix.sum()
+ch.setLevel(logging.WARNING)
+time_series.info()
+df = pd.read_csv(CSV_FILE_PATH,delim_whitespace=True)
+stock['daily_gain'] = stock.close - stock.open$ stock['daily_change'] = stock.daily_gain / stock.open
+history = model.fit(train_X, train_Y, epochs=num_epochs, batch_size=1, verbose=2, shuffle=False) $
+pMean = np.mean([pNew,pOld])$ pMean
+average_chart_lower_control_limit = average_of_averages - 3 * d_three * average_range / \$                                     (d_two * math.sqrt(subgroup_size))
+collection.delete_item('AAPL')
+tweets_df = tweets_df[tweets_df.userTimezone.notnull()]$ len(tweets_df)$
+!wget -nv https://data.wprdc.org/datastore/dump/40776043-ad00-40f5-9dc8-1fde865ff571 -O 311.csv
+df.groupby(['month']).agg([sum])$
+df.groupby(['year','month']).agg([sum])$
+import urllib3, requests, json, base64, time, os$ warnings.filterwarnings('ignore')
+D2 = [(str(v), str(t).replace("|","")) for v,t in D2]$ D2[0:5]
+measure_val_2014_to_2017.count()
 ADNI_diagnosis_data_description = pd.read_csv('ADNIMERGE_DICT.csv')$ print(ADNI_diagnosis_data_description['FLDNAME'].unique())$ ADNI_diagnosis_data_description[['FLDNAME','TEXT']]
-print(list(festivals.columns.values))$ festivals = festivals[['Index', 'Date', 'Location', 'latitude', 'longitude', 'Website']]$ festivals.head(3)
-coins_mcap_today[50:].index
-start = "2005-01-01"$ end = "2018-06-31"$ trading_days = fk.get_monthly_last_trading_days(start=start, end=end)$
-news_sentiment_df.to_csv('news_sentiment.csv', sep=',')
-from sklearn.model_selection import train_test_split$ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=101)
+for active_add_date in daterange:$     active_add_rows = active_df[active_df['start_date']==active_add_date]$     cohort_active_activated_df.loc[active_add_date,active_add_date:] = len(active_add_rows) 
+X_lowVar = df.copy()
+dfDay = dfDay[(dfDay['Date'].dt.year == 2018) | (dfDay['Date'].dt.year == 2019)]
+Measurement = Base.classes.measurement$ Station = Base.classes.station$
+df_proj_agg = df_proj[['ProjectId','DivisionName','UnitName','Borough','Sponsor','PhaseName',$  'ProjectType', 'Priority', 'DesignContractType', 'ConstructionContractType',$  'SourceSystem', 'MultipleFMSIds', 'DesignFiscalYear','ConstructionFiscalYear']].drop_duplicates()
+txt_tweets = txt_tweets[~txt_tweets.str.startswith('RT')]$ txt_tweets_position = tweets[~tweets['text'].str.startswith('RT')]['position']$ txt_tweets_position.value_counts()
+!grep -A 50 "build_estimator" taxifare/trainer/model.py
+Let's get started. First, let's import the Pandas package to use for the analysis. The Pandas package also allows the$
+df1=pd.read_csv("../Raw Data/approval data clean values only.csv")$ df1.head()
+temps_mosact = session.query(Measurements.station, Measurements.tobs).filter(Measurements.station == most_activity[0], Measurements.date > year_ago).all()
+pylab.rcParams['figure.figsize'] = (15, 9)   # Change the size of plots$  $ temp_data["CLOSE"].iloc[:].plot() # Plot the adjusted closing price of AAPL
+year_string = 'extracted_data/*.csv'
+userMovies = moviesWithGenres_df[moviesWithGenres_df['movieId'].isin(inputMovies['movieId'].tolist())]$ userMovies
+results.to_csv(path_or_buf=path + '/NFL_Fantasy_Search_2016_PreSeason.csv')
+data = pd.DataFrame(data=[tweet.text for tweet in public_tweets if tweet.lang == 'en'], columns=['Tweets'])$ display(data.head(10))
+(events.query('doc_type=="CNI" & index < "20170110" & ~status')$       .head())
+contextFreeList = [i/10 for i in range(1,3,step = 0.5)]$ for i in contextFreeList:$     print(i,tuning(w_contextFree = i))
+r = requests.get('https://www.quandl.com/api/v3/datasets/OPEC/ORB.json?start_date=2013-01-01&end_date=2013-01-01&api_key='+API_KEY)
+print "word    count"$ print "----------------------------\n"$ !hdfs dfs -cat /user/koza/hw3/3.2/issues/wordCount_part3/* | head -n 10
+data.to_csv('prepared_data_with_cuts.csv', index = True)$
+graf_train, graf_test=train_test_split(graf, test_size=.33, random_state=42)
+NS_active_2015_06 = data_non_seoul.loc[data_non_seoul["Month"]=='2015-06-01']$ NS_active_2016_06 = data_non_seoul.loc[data_non_seoul["Month"]=='2016-06-01']$ NS_active_2017_06 = data_non_seoul.loc[data_non_seoul["Month"]=='2017-06-01']
+total = scores.sum()$ scores[:2.75].sum()/total
+tweets_by_user_mentions = pd.read_sql_query(query, conn, parse_dates=['created_at'])$ tweets_by_user_mentions.head()
+all_tables_df.loc[0]
+retail_data = retail_data[['key', 'quantity', 'accountid']]$ retail_grouped = retail_data.groupby(['accountid', 'key']).sum().reset_index()
+doc_duration = doc_duration.resample('W-MON').sum()$ RN_PA_duration = RN_PA_duration.resample('W-MON').sum()$ therapist_duration = therapist_duration.resample('W-MON').sum()
+data.head()
+sample = sample[sample['polarity'] != 2]$ sample['sentiment'] = (sample['polarity'] ==4).astype(int)
+Base.classes.keys()
+%matplotlib inline$ env_test.unwrapped.render('notebook', close=True)$ env_test.unwrapped.render('notebook')
+grouped_authors_by_publication.tail()
+min_open = ldf['Open'].min()$ min_open
+pprint.pprint(test_collection.find_one())
+df = pd.merge(df,rsvp_df,how="left",on="urlname")$ df.head()
+periods = 31 * 24$ hourly = Series(np.arange(0,periods),pd.date_range('08-01-2014',freq="2H",periods=periods))$ hourly
+df_course_tags = pd.read_csv('course_tags.csv')  $ df_user_assess_scores = pd.read_csv('user_assessment_scores.csv')$ df_user_course_views = pd.read_csv('user_course_views.csv')
+pd.concat([msftA[:3], aaplA[:3]], ignore_index=True)
+W.WISKI_CODES
+PCA(2).fit(X)
+psy = pd.get_dummies(psy, columns = cat_vars, drop_first=False)
+model = gensim.models.Word2Vec(sentences, min_count=10)
+from sklearn.linear_model import LinearRegression$ from sklearn.model_selection import train_test_split
+messages = pd.read_csv('message_read.csv')
+files = [f for f in listdir('Twitter_SCRAPING/scraped/') if f.endswith('.csv') and isfile(join('Twitter_SCRAPING/scraped/', f))]$ d_scrape = pd.concat([pd.read_csv('Twitter_SCRAPING/scraped/'+f, encoding='utf-8') for f in files], keys=files)$ print(d_scrape.head())
+sl['second_measurement'] = np.where((sl.new_report_date==sl.maxdate) & (sl.mindate!=sl.maxdate),1,0)
+password_str = ""$ with open("dbpass.txt", mode="r") as pass_f:$     password_str = pass_f.readline()
+DummyDataframe = DummyDataframe.set_index("Date")$ DummyDataframe = DummyDataframe.apply(lambda x: update_values_category(x, "Tokens"), axis=1)$ DummyDataframe
+df2_no_outliers = df2.copy()$     $ df2_no_outliers['y'] = np.log(df2_no_outliers['y'])
+metrics = pd.read_json('../metadata/metrics.json')$ metrics
+ms_df = mt_df[mt_df['mortality_salience'] == 1]$ print("HI tweets between 18:07-18:21 AM 2019-01-13 labelled as mortality_salience: {}".format(len(ms_df)))$ print("percent mortality salience: {}".format(len(ms_df)/len(mt_df)))
+preci_df.set_index('date').head()$
+df_students.shape
+y_pred = regr.predict(X_test)
+appended = ad_data1.union(ad_data2)
+mapInfo = refl['Metadata']['Coordinate_System']['Map_Info'].value$ mapInfo
+print(len(sessions_p_caption), len(sessions_p_cuepoint), sessions.id.count())$
+client.training.get_details('training-WWmHAB5ig')
+print(regression_model.coef_)$ print(regression_model.intercept_)
+compound_df = pd.DataFrame(save_compound_list)$ compound_df = compound_df.transpose()$ compound_df.head()
+tallies_file = openmc.Tallies()
+y.end_time
+df_bud = pd.read_csv(budFile, usecols = budCols, $                  dtype = bud_dtypes)
+df_r2.loc[df_r2["CustID"].isin([customer])]
+fig = plot2.get_figure()$ fig.savefig("output_figure.svg")
+results['CharacteristicName'].value_counts()
+plot_data = df['amount_tsh']$ sns.kdeplot(plot_data, bw=100)$ plt.show()
+pivoted.T[labels == 1].T.plot(legend=False, alpha=0.1)
+pivoted.T[labels == 0].T.plot(legend=False, alpha=0.1)
+df.to_json('data\8oct_pre_processed_stemmed_polarity.json', orient='records', lines=True)
+from sklearn.decomposition import LatentDirichletAllocation$ from sklearn.feature_extraction.text import CountVectorizer
+df.to_csv('dataframe-kevin.csv')$
+plt.pie(sizes, explode=explode, labels=labels, colors=colors, autopct="%1.1f%%", shadow=True, startangle=180)
+len(calls_nocontact.location.unique())
+model = gensim.models.Word2Vec(sentences, workers=4)
+start_t = '2018-05-01 00:00:00'$ end_t=pd.to_datetime('today')- timedelta(days=1)$ end_t1=str(end_t)$
+dc['created_at'] = pd.to_datetime(dc['created_at'], format='%Y-%m-%d %H:%M:%S')$ tm['created_at'] = pd.to_datetime(tm['created_at'], format='%Y-%m-%d %H:%M:%S')$ dc.created_at.dtype #tm.created_at.dtype
+iex_coll_reference.count()
+expenses_df.melt(id_vars = ["Day", "Buyer"], value_vars = ["Type"])
+data_AFX_X.median()['Traded Volume']
+plt.bar(x_axis, bar_Compound, color=["gold","blue","green","red","lightblue"], align="edge")
+grouped_by_year_DRG.groupby(level=0)$
+aldf = indeed1.append(tia1, ignore_index=True)
+BuyingData = pd.read_excel('/Users/itsjustme/Desktop/BuyingBehaviourTwoYrs.xlsx')
+cityID = 'bced47a0c99c71d0'$ for tweet in tweepy.Cursor(api.search, q=q, contained_within=cityID, wait_on_rate_limit=True, lang="en").items(500):    $         Durham.append(tweet) 
+time6MDict = averagebytime(typesDict, '6M')$ time6MDict.keys()
+df.index
+rain_df = pd.DataFrame(rain)$ rain_df.head()
+tweets.sort_values(by="frequency", ascending=True).head()
+gmap = gmplot.GoogleMapPlotter(28.68, 77.13, 13)
+print(data.petal_length.mode())
+crimes.head()
+val_avg_preds2 = np.stack(val_pred2).mean(axis=0)$ print ("type(val_avg_preds2):", type(val_avg_preds2), val_avg_preds2.shape)$ print(val_avg_preds2[0:10, :])
+tweet_archive_clean['text'] = tweet_archive_clean['text'].apply(lambda x: x.split('https')[0])
+dr_new_patient_8_to_16wk_arima = dr_new_patient_data_plus_forecast['2018-06-25':'2018-08-26'][['Predicted Number of Patients']]$ dr_new_patient_8_to_16wk_arima.index = dr_new_patient_8_to_16wk_arima.index.date
+actual_value_second_measure=pd.DataFrame(actual_value_second_measure)$ actual_value_second_measure.replace(2,1, inplace=True)
+mean = np.mean(data['len'])$ print("The average length of all tweets is: {}".format(mean))
+delays = pd.read_csv('output.csv', header=None)$ delays.columns = ['Date','ID','Delay','Latitude','Longitude']$ delays_geo = GeoDataFrame(delays)
+temp_df = temp_df.reset_index()[['titles', 'timestamp']]
+auth = tweepy.OAuthHandler(consumer_key, consumer_secret)$ auth.set_access_token(access_token, access_token_secret)$ api = tweepy.API(auth)
+S_distributedTopmodel.decision_obj.thCondSoil.options, S_distributedTopmodel.decision_obj.thCondSoil.value
+events_filtered_1 = events_enriched_df[events_enriched_df['yes_rsvp_count']>50]$ events_filtered_2 = events_df[(events_df['yes_rsvp_count']>50) & (events_df['venue.city']=='Chicago')]
+X_nonnum = X_copy.select_dtypes(exclude=np.number)$ X_nnumcols = list(X_nonnum)$ print(X_nnumcols)
+station = Base.classes.stations
+X_copy['loc'] = X_copy['loc'].apply(lambda x: int(x))
+tweet_df_clean = tweet_df.rename(columns={'id':'tweet_id'})
+cur.execute("SELECT name FROM sqlite_master WHERE type='table';")$ print(cur.fetchall())
+joined=join_df(joined,weather,["State","Date"])$ joined_test=join_df(joined_test,weather,["State","Date"])$ sum(joined['Max_TemperatureC'].isnull()),sum(joined_test['Max_TemperatureC'].isnull())
+kyt_lat = 34.955205 #35.005205$ kyt_long = 135.675300 #135.7353$ diff_wid = (135.795300 - 135.675300)/grid_size$
+cityID = 'a6c257c61f294ec1'$ for tweet in tweepy.Cursor(api.search, q=q, contained_within=cityID, wait_on_rate_limit=True, lang="en").items(500):    $         Greensboro.append(tweet) 
+model_uid = client.repository.get_model_uid(saved_model_details)$ print("Saved model uid: " + model_uid)
+inter = est.get_prediction(X_tab.astype(float))$ inter = inter.summary_frame(alpha=0.05)[['mean_ci_lower','mean_ci_upper']]$ inter.rename(columns={ 'mean_ci_lower':'CI lower', 'mean_ci_upper':'CI upper'})
+df_new[['US','UK']] = pd.get_dummies(df_new['country'])[['US','UK']]$ df_new.tail()
+print(prec_long_df['date'].min(), prec_long_df['date'].max())
+poparr.shape
+S_1dRichards.decision_obj.groundwatr.options, S_1dRichards.decision_obj.groundwatr.value
+kwargs = {'num_workers': 4, 'pin_memory': True} if args.cuda else {}$ kwargs
+df.shape$ df.tail()
+import nltk$ from nltk.corpus import stopwords$ print(stopwords.words('english'))
+for i, row in companies.iterrows():$     print(companies['twitter'][i])
+infoExtractionRequest = requests.get(information_extraction_pdf, stream=True)$ print(infoExtractionRequest.text[:1000])
+news_p = soup.find("div", class_="rollover_description_inner").text
+news_t = soup.find("div", class_="content_title").text
+t = pd.read_hdf('../t.hdf','table')$ dd = pd.read_hdf('../dd.hdf','table')
+df.head()
+bd.index.name
+search_key_words = "\"" + search_key_words.replace(" ","+") + "\""$ df['newspaper_search'] = df['newspaper'].apply(lambda x: x.replace("/","%2F"))
+df_train = pd.merge(df_train, df_items, on='item_nbr', how='left')
+corrplot(corr=r[coins_infund].loc[start_date:end_date].corr())$ plt.title('Correlation matrix - monthly data \n from ' + start_date + ' to ' + end_date)$ plt.show()
+d.groupby(d['pasttweets'].str.len())['tweet_id'].count()
+features=list(kick_projects_ip)$ features.remove('state')$ response= ['state']
+station_count = session.query(func.count(distinct(Measurement.station))).all()$ station_count$
+data.loc[data.PRECIP.isnull()]
+response = requests.get(url)$ soup = BeautifulSoup(response.text, 'html.parser')$ print(soup.prettify())
+Twitter_map2.save('Twitter_FSGutierres_map.html') #save HTML
+params = {'figure.figsize': [6,6],'axes.labelsize': 'Medium', 'font.size': 12.0, 'lines.linewidth': 2}$ plot_autocorrelation(RN_PA_duration.diff()[1:], params=params, lags=30, alpha=0.05, \$     title='Weekly RN/PA Hours First Difference Autocorrelation')
+len_plot = t_len.plot(figsize=(16,4), label="Length", color='r', legend=True, title='Length of tweets over time')$ len_vs_time_fig = len_plot.get_figure()$ len_vs_time_fig.savefig('len_vs_time.png')
+print 'No duplicate IDs' if len(user_df.id.unique()) == len(user_df) else 'Duplicate IDs exist'
+year15 = driver.find_elements_by_class_name('yr-button')[14]$ year15.click()
+df_final = df_grouped.merge(df_schoo11, on='school_name', how='left')$ df_final.drop(['budget_x', 'size_x', 'School ID','size_y', 'budget_y'], axis = 1, inplace=True)$ df_final
+import pandas as pd$ git_log = pd.read_csv('datasets/git_log.gz', sep='#', header=None, encoding='latin-1', names=['timestamp','author'])$ print(git_log.head(5))
+response = chatbot.get_response("Where are you")$ print(response)
+file_name = "./data/train_preprocessed2.csv"$ train_df2 = pd.read_csv(file_name, low_memory = False)$ train_df2.head()
+plt.savefig(str(output_folder)+'NB01_5_NDVI02_'+str(cyclone_name)+'_'+str(location_name)+'_'+time_slice02_str)
+stream = tweepy.Stream(auth, l)
+allItemIDs = np.array(allData.map(lambda x: x[1]).distinct().collect())$ bAllItemIDs = sc.broadcast(allItemIDs)
+df3['Current Status'].unique()
+sprintsWithStoriesAndEpics_df = sprintsWithStoriesAndEpics_df.loc[sprintsWithStoriesAndEpics_df.groupby("key_story")["startDate"].idxmax()]$ sprintsWithStoriesAndEpics_df = sprintsWithStoriesAndEpics_df[pd.notnull(sprintsWithStoriesAndEpics_df.index)]$
+n_old = df2[df2.group == "control"].count()[0]$ print("The population of user under treatment group: %d" %n_old)
+btc = pd.read_csv('/home/rkopeinig/workspace/Time-Series-Analysis/data/btc.csv')$ btc['date'] = pd.to_datetime(btc['date'])$ btc = btc.set_index('date')
+mydata.iloc[0] 
+ts.get_k_data(code="sh",start="2016-08-02",end="2018-08-21")
+model_w = sm.formula.ols('y ~ C(w)',data=df).fit()$ anova_w_table = sm.stats.anova_lm(model_w, typ=1)$ anova_w_table.round(3)
+pvt = pvt.drop(['ga:dimension2', 'customerId'], axis=1)$ pvt = pvt[['ga:transactionId', 'ga:date', 'customerName', 'productAndQuantity']]$ pvt
+df_new['intercept']=1$ df_new[['CA','UK','US']]=pd.get_dummies(df_new['country'])
+temps_df.loc['2018-05-02'].index
+results = model_selection.cross_val_score(gnb, X_test, Y_test, cv=kfold)$ results.mean()
+mydata.head()
+walk.resample("1Min", closed="right")
+for tweet in query2:$     if replies_blm.get(tweet.in_reply_to_status_id_str) != None:$
+test[['clean_text','user_id','predict']][test['user_id']==1895520105][test['predict']==10].shape[0]
+bucket.upload_dir('data/heat-pump/raw/', 'heat-pump/raw', clear_dest_dir=True)
+soup.get_text()
+n_user_days.value_counts().sort_index()
+print example1_df.printSchema()
+df.head(10)
+opening_prices = [x for x in opening_prices if x is not None]$ print('Highest opening price - {} \nLowest opening price - {}'.format(max(opening_prices), min(opening_prices)))
+with open('key_phrases.pickle', 'wb') as f:$     pickle.dump(key_phrases, f, pickle.HIGHEST_PROTOCOL)
+req = requests.get("https://www.quandl.com/api/v3/datasets/FSE/AFX_X/data.json?start_date=2017-01-01&end_date=2017-12-31&api_key=" + API_KEY)$ json_data = req.json()
+lemmed = [WordNetLemmatizer().lemmatize(w, pos='v') for w in lemmed]$ print(lemmed)
+measurements_df.head()
+Base.prepare(engine, reflect=True)
+print "Total number of rows of table 'photoz_bcnz': ", len(df3) $ print df3.columns.values$ df3
+current_img = current_img_link[0]['style']$ print(current_img.find("('"))$ print(current_img.find("')"))
+projFile = "Projects.csv"$ schedFile = "Schedules.csv"$ budFile = "Budgets.csv"
+logit2 = sm.Logit(df_new['converted'], df_new[['intercept', 'US', 'CA']])$ result = logit2.fit()$ result.summary2()
+print "https://twitter.com/AirbnbHelp/status/{}".format(tweets_df['09/20/2017'].iloc[0]['twitter_id'])
+stemmer = nltk.stem.porter.PorterStemmer()$ %timeit articles['tokens'] = articles['tokens'].map(lambda s: [stemmer.stem(w) for w in s])
+tweet_group_df = tweet_df.groupby(["Target"])['Compound'].agg(['mean']).sort_index().reset_index()$ tweet_group_df = tweet_group_df.rename(columns={"mean":"Tweet Polarity"})$ tweet_group_df.head()
+repeat_customer_purchase_timing['first last gap'].hist()
+id_of_tweet = 932626561966247936$ tweet = api.get_status(id_of_tweet)$ print(tweet.text)
+X = [string.replace('\n', ' ') for string in X]
+path = 'https://www.quandl.com/api/v3/datasets/FSE/AFX_X.json?api_key=fr89z8vqESGWrVzvNFxC&start_date=2017-01-01&end_date=2018-01-01?api_key=API_KEY'$ r = requests.get(path).json()
+snap_data = df_snap.copy()
+crypto_combined = pd.concat([crypto_data, crypto_ggtrends], axis=1).dropna(how='any')$ crypto_combined_s = crypto_combined.copy(deep=True)$ print(crypto_combined_s.head(10))
+r = requests.get("https://www.quandl.com/api/v3/datasets/FSE/AFX_X.json?api_key={}".format(API_KEY))$ print(r.json()['dataset']['data'][0])
+DataSet = DataSet[DataSet.userName.notnull()]$ len(DataSet)
+from templates.invoicegen import create_invoice
+crime['Sex'].value_counts()
+tdf = sns.load_dataset('tips')$ tdf['size'].sample(5)
+vip_reason.columns = ['VIP_'+str(col) for col in vip_reason.columns]
+red_4['created_utc'] = red_4['created_utc'].astype('datetime64[s]')$ red_4['time fetched'] = red_4['time fetched'].astype('datetime64[s]')$ red_4.head()
+round((timelog.seconds.sum() / 60 / 60), 1)
+tweet_df_polarity = tweet_df.groupby(["tweet_source"]).mean()["tweet_vader_score"]$ pd.DataFrame(tweet_df_polarity)
+df.num_comments = df.num_comments.astype(int)
+cur.execute(query)$ cur.fetchall()
+group = {}$ for letters in list_of_letter:$     group[letters] = grouped_by_letter.get_group(letters)$
+taxdata_blocks = pd.merge(taxdata,parcel_blocks, how='left', left_on=['pin'], right_on=['PIN'])$ taxdata_blocks = taxdata_blocks.drop(['pin','PIN'],axis=1)$ taxdata_blocks = taxdata_blocks.dropna(subset=['TRACTCE10','BLOCKCE10'])
+predict.predict_score('Water_fluoridation')
+from google.cloud import bigtable$ client     = bigtable.Client.from_service_account_json(JSON_SERVICE_KEY,project=project_id, admin=True)$ instance   = client.instance(instance_id)$
+from dotce.visual_roc import roc_curve, precision_recall_curve
+universe = ["SAP.DE", "UN01.DE", "BAS.DE"]$ price_data = yahoo_finance.download_quotes(universe)
+aapl = pd.read_excel("../../data/stocks.xlsx", sheetname='aapl')$ aapl.head()
+(training,testing) = clean_data.randomSplit([0.7,0.3])
+store_items = store_items.drop(['watches', 'shoes'], axis = 1)$ store_items
+df[df.Target == 5]
+url_c = "https://raw.githubusercontent.com/cs109/2014_data/master/countries.csv"$ c = pd.read_csv(url_c)$ c
+elms_all_0604 = pd.read_excel(cwd+'\\ELMS-DE backup\\elms_all_0604.xlsx')$ elms_all_0604['ORIG_DATE'] = [datetime.date(int(str(x)[0:4]),int(str(x)[5:7]),int(str(x)[8:10]))$                              for x in elms_all_0604.ORIG_DATE.values]
+marsweath_url = 'https://twitter.com/marswxreport?lang=en'
+np.shape(prec_fine)
+sentences = [['first', 'sentence'], ['second', 'sentence']]$ model = gensim.models.Word2Vec(sentences, min_count=1)
+news_period_df.loc[3, 'news_title']
+nitrodata['Year'] = pd.DatetimeIndex(nitrodata['ActivityStartDate']).year$ nitrodata['Month'] = pd.DatetimeIndex(nitrodata['ActivityStartDate']).month
+topLikes.sort_values(by='Likes', ascending=[False])
+miner = TweetMiner(api, result_limit=200)$ trump_tweets = miner.mine_user_tweets("realDonaldTrump", max_pages=14)
+prcp = Base.classes.prcp$ tobs = Base.classes.tobs$ stations = Base.classes.stations
+%%time$ max_key = max( r_dict.keys(), key = get_nextday_chg )$ print('largest change in price between any two days: '+ str( get_nextday_chg(max_key) ) )
+for col in user_df.columns:$     print col, len(user_df[user_df[col].isnull()])
+df = pd.read_sql('SELECT * from payment', con=conn_b)$ df
+m_vals = np.linspace(m_true-3, m_true+3, 100) $ c_vals = np.linspace(c_true-3, c_true+3, 100)
+for tweet in negativeTweets['Tweets'].iteritems():$     print (tweet)
+min(close, key=close.get)
+df = pd.DataFrame()$ df
+grouped_df = xml_in.groupby(['authorId', 'authorName'], as_index=False)['publicationKey'].agg({'countPublications': 'count'})
+root_universe = openmc.Universe(name='root universe', cells=[cell])
+df.date[0]
+!pip install --upgrade tensorflow==1.4
+grouper = dta.groupby(dta.results)
+df_from_csv.equals(df)
+noise = [np.random.normal(0,noise_level*p,1) for p in weather.power_output]
+marvelPTags = wikiMarvelSoup.body.findAll('p')$ for pTag in marvelPTags[:8]:$     print(pTag.text)
+model.wv.most_similar("man")$
+session.query(func.count(Station.station)).all()
+u235_scatter_xs = fuel_xs.get_values(nuclides=['(U235 / total)'], $                                 scores=['(scatter / flux)'])$ print(u235_scatter_xs)
+clean_merge_df.to_csv("Desktop/Project-2/spotify_merged_data.csv", index=False, header=True)
+temp_wide_df = pd.concat([grid_df, temp_df], axis = 1)$ temp_wide_df.head()
+import matplotlib.pyplot as plt
+plt.pie(total_fare, explode=explode, autopct="%1.1f%%", labels=labels, colors=colors, shadow=True, startangle=140)$ plt.show()$
+import datetime $ now = datetime.datetime.now()$ print now
+df_plot = df_recommended_menues.sort_values(by=['dates'])
+auth = tweepy.OAuthHandler(api_key, api_secret)$ auth.set_access_token(access_token, access_token_secret)$ api = tweepy.API(auth, wait_on_rate_limit_notify=True, wait_on_rate_limit=True)
+nmf_tfidf_topic6_sample = mf.random_sample(selfharmmm_final_df, criterion1='non_lda_max_topic', value1='nmf_tfidf_topic6', use_one_criterion=True)
+results.summary2()
+df.plot(kind='scatter', x='RT', y='fav', xlim=[0,200], ylim=[0,200], title="Favorites and Retweets:200x200")
+with open(marvel_comics_save, mode='w', encoding='utf-8') as f:$     f.write(wikiMarvelRequest.text)
+float(df.converted.sum())/df_length
+tfav.plot(figsize=(16,4), label="Likes", legend=True)$ tret.plot(figsize=(16,4), label="Retweets", legend=True);$
+Counter(tag_df.values.ravel()).most_common(5)
+from scrapy.selector import Selector
+p_diffs = np.array(p_diffs)$ p_diffs
+data_set.to_csv("C://SHERYL MATHIAS/US Aug 2016/Fall 2017/INFM750/HillaryClintonTweets.csv", index=False, encoding='utf-8')
+DATADIC = pd.read_csv('DATADIC.csv')$ list(DATADIC['FLDNAME'].unique())$ DATADIC[['FLDNAME', 'TEXT']].head()
+events_df['event_day'] = events_df['event_time'].apply(lambda d: d.replace(hour=0,minute=0,second=0))$ events_df['event_week'] = events_df['event_day'].apply(lambda d: d - datetime.timedelta(d.weekday()))$ events_df['event_weekday'] = events_df['event_day'].apply(lambda d: d.weekday())
+index = pd.to_datetime(non_na_df['created_at'])$ non_na_df.index = index
+if not os.path.isdir('output/heat_demand'):$     os.makedirs('output/heat_demand')
+Suburban = rides_analysis[rides_analysis["City Type"].notnull() & (rides_analysis["City Type"] == "Suburban")]$
+x = np.arange(8).reshape(4,2)$ y = x.flatten()$ y[[0, 1, 5]]
+df.head()
+columns = inspector.get_columns('measurement')$ for c in columns:$     print(c['name'], c["type"])
+def day_of_week(date):$     days_of_week = {0: 'monday', 1: 'tuesday', 2: 'wednesday', 3: 'thursday', 4: 'friday', 5: 'saturday', 6: 'sunday'}$     return days_of_week[date.weekday()]
+status_data = pandas.read_csv("./Dataset Processed/mypersonality_final_classifiedByClass_onlyColumn.csv",encoding='cp1252')$
+df_categories = pd.read_csv('categories.csv')$ df_categories.head()
+post_discover_sales[post_discover_sales['Email'] == 'Jennyann57@yahoo.com.sg']
+temp_df2['timestamp'] = pd.to_datetime(temp_df2['timestamp'],infer_datetime_format=True)
+unique_words_sk = set(words_sk)$ corpus_tweets_streamed_keyword.append(('unique words', len(unique_words_sk))) # update corpus comparison$ print('Number of unique terms: ', len(unique_words_sk))
+a=contractor_clean.groupby(['contractor_id','contractor_bus_name'])['contractor_bus_name'].nunique()$ print a[a >1]$ contractor_clean[contractor_clean.contractor_number.duplicated() == True]
+df["mail ID"] = df["mail ID"].apply(lambda x: x.split('.')[0])$ df = df.set_index("mail ID")
+mars_images = requests.get('https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars')$ mars_soup = BeautifulSoup(mars_images.content, 'html.parser')$
+prophet_model.fit(prophet_df)
+ldamodel = gensim.models.ldamodel.LdaModel(corpus, num_topics=2, id2word = dictionary, passes=20)
+df_cod2 = df_cod.copy()$ df_cod2 = df_cod2.dropna()
+display(flight2.show(5))$
+conn = psycopg2.connect("dbname='pgsdwh' user='502689880' host='alpgpdbgp2prd.idc.ge.com' password='pass66824w'")
+dfs.sort_values(["C/A", "UNIT", "SCP", "STATION", "DATE_TIME"], inplace=True, ascending=False)$ dfs.drop_duplicates(subset=["C/A", "UNIT", "SCP", "STATION", "DATE_TIME"], inplace=True)
+tweets_df.iloc[3, 10]
+tallies_file.export_to_xml()
+ndvi_change= ndvi_of_interest02-ndvi_of_interest$ ndvi_change.attrs['affine'] = affine
+f = open('..\\Output\\GenreString.csv','w')$ f.write(GenresString) #Give your csv text here.$ f.close()
+X['is_cat'] = X['title'].map(lambda x: 1 if 'cat' in x else 0)$ X['is_funny'] = X['title'].map(lambda x: 1 if 'funny' in x else 0)
+DATA_PATH = "~chandler.mccann/Downloads/"$ INPUT_FILE = os.path.join(DATA_PATH, "cleaned_water_data2.csv") #after running prep_water_data.py$
+optimizer = tf.train.GradientDescentOptimizer(learning_rate=1.0).minimize(loss)$ tf.summary.scalar("loss", loss)$ merged_summary_op = tf.summary.merge_all()
+inter_by_date = niners.groupby('Date')['InterceptionThrown'].sum()$ inter_by_date;
+DummyDataframe2 = DummyDataframe2.apply(lambda x: calPercentage(x, "Token_Count", ["Positiv", "Negativ"]), axis=1)$ DummyDataframe2
+t_len = pd.Series(data=data['len'].values, index=data['Date'])$ t_fav = pd.Series(data=data['Likes'].values, index=data['Date'])$ t_ret = pd.Series(data=data['RTs'].values, index=data['Date'])
+df_CLEAN1A['AGE_groups'] = df_CLEAN1A['AGE_groups'].astype('category')
+lon_us = lon[lon_li:lon_ui]$ lat_us = lat[lat_li:lat_ui]$ print(np.min(lon_us), np.max(lon_us), np.min(lat_us), np.max(lat_us))
+auth = tweepy.AppAuthHandler(consumer_key, consumer_secret)$ auth.secure = True$ api = tweepy.API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True)
+pd.options.display.max_colwidth = 400$ data_df[['clean_desc','sent_pola','sent_subj', 'tone']][data_df.tone == 'impolite']
+!wget http://files.grouplens.org/datasets/movielens/ml-latest.zip
+p_new = df2['converted'].mean()
+print(data_tokenized.shape)$ print(label.shape)$ searchParameters(data_tokenized, np.ravel(label), MLPClassifier(max_iter=500, tol=0.00001), container, text='mlp')
+events_per_day = events_df[['event_day','event_id']].groupby('event_day').count()$ events_per_day.rename(columns={'event_id':'count_event_day'},inplace=True)$ events_per_day.reset_index(inplace=True)
+g_goodbad_index = sl_data.groupby(['goodbad','AGE_groups']).sum()$ g_goodbad_index
+df_chapters_read['referer'].value_counts()
+actualDiff = df2[df2['group'] == 'treatment']['converted'].mean() - df2[df2['group'] == 'control']['converted'].mean()$ (actualDiff < pDiffs).mean()
+twitter_page = requests.get("https://twitter.com/marswxreport?lang=en")$ twitter_soup = BeautifulSoup(twitter_page.content, 'html.parser')$ mars_weather = twitter_soup.find('p', class_="tweet-text").string
+tips['total_bill'] = pd.to_numeric(tips['total_bill'], errors='coerce')$ tips['tip'] = pd.to_numeric(tips['tip'], errors = 'coerce')$ print(tips.info())$
+data_issues.columns
+!tar -xzvf cudnn-8.0-linux-x64-v7.1.tgz
+i = np.random.randint(x.shape[0]-1)$ m_star = m_star + 2*learn_rate*(x[i]*(y[i]-m_star*x[i] - c_star))$ c_star = c_star + 2*learn_rate*(y[i]-m_star*x[i] - c_star)
+nu_fission_rates = fuel_rxn_rates.get_slice(scores=['nu-fission'])$ nu_fission_rates.get_pandas_dataframe()
+from pyspark.sql.types import DoubleType, IntegerType$ for col_name in data.columns:$     data = data.withColumn(col_name, data[col_name].cast(DoubleType()))
+print("Predicted:", "\n",' '.join(y_pred[0]))$ print('\n')$ print("Correct:", "\n" ,' '.join(sent2labels(sample_sent)))
+df['messages'].value_counts()
+df[df['text'].str.contains('appointment')]
+X_test = count_vect.transform(df_test.text)
+rddScaledScores.reduce(lambda s1,s2: s1 + s2) / rddScaledScores.count()
+results = Geocoder.reverse_geocode(41.9028805,-87.7035663)
+transform = am.tools.axes_check(np.array([x_axis, y_axis, z_axis]))$ b = transform.dot(burgers)$ print('Transformed Burgers vector =', b)
+path = "C:\\Users\\Alvaro\\Documents\\Python_Projects\\Pandas\\Pandas-Project2\\car_data.txt"$ df = pd.read_table(path, sep ='\s+') # Index in the first column "col=0" and header on the first "row"$ df.head(5)$
+from sklearn.model_selection import train_test_split$ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+QUIDS_wide.drop(labels=["qstot_12","qstot_14"], axis = 1, inplace=True)
+%config InlineBackend.figure_format='svg'$ plt.plot(x, np.sin(x)/x)
+crimes['year'] = crimes.DATE_OF_OCCURRENCE.map(lambda x: x.year)
+print(type(dicts))$ print(dicts.keys())
+gbm = H2OGradientBoostingEstimator()$ gbm.train(['sepal_len','sepal_wid','petal_len','petal_wid'],'class',train)
+df.tail()$
+data['Open'].max()
+lgb_mdl = lgb.LGBMClassifier(boosting_type= 'gbdt', $           objective = 'binary')$
+input_nodes_DF=nodes_table('network/source_input/nodes.h5', 'inputNetwork')$ input_nodes_DF[:5]
+vacancies['weekday'] = vacancies['created'].apply(lambda x: x.weekday() + 1)$ vacancies['hour'] = vacancies['created'].apply(lambda x: x.hour)
+chained2 = itertools.chain.from_iterable([[1, 2, 3, 4], [5, 6, 7, 8]])$ for letter in chained2:$     print(letter)
+experience = pd.get_dummies(questions['rate_experience'])
+tweets['id'].groupby(pandas.to_datetime(tweets['created_at']).dt.date).count().mean()
+engine.execute('SELECT * FROM station LIMIT 10').fetchall()
+city_dict = {}$ for city in cities_list:$     city_dict[city] = api.geo_search(query = city, wait_on_rate_limit=True, granularity = 'city')[0].id
+p_new = df2[df2['landing_page']=='new_page']['converted'].mean()$ print("Probability of conversion for new page (p_new):", p_new)
+lr = LogisticRegression(random_state=20, max_iter=10000)$ param_grid = { 'C': [1, 0.5, 5, 10,100], 'multi_class' : ['ovr','multinomial'], 'solver':['saga','newton-cg', 'lbfgs']}$ grid = GridSearchCV(lr, param_grid=param_grid, cv=10, n_jobs=-1)
+df_members['bd_c'] = pd.cut( df_members['bd'] , age_bins, labels=age_groups)
+station_distance.insert(loc=11, column='Distance(Miles)', value=distance)
+print('\n Row x Columns of imported data:')$ print(dfa.shape)$ print(type(dfa))
+def cosine_similarity(u, v):$     return(np.dot(u, v)/np.sqrt((np.dot(u, u) * np.dot(v, v))))
+options = webdriver.ChromeOptions()$ options.add_argument('user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_5) AppleWebKit 537.36 (KHTML, like Gecko) Chrome')
+from IPython.display import FileLink$ FileLink(str(FLASK_PATH/'final_df.csv'))
+len([b for b in BDAY_PAIR_df.pair_age if b<0 ])
+top_subreddit = subreddit.new(limit=None)
+r = requests.get("https://www.quandl.com/api/v3/datasets/FSE/AFX_X.json?api_key=uEEsBcH3CPhxJazrzGFz&start_date=2017-01-01&end_date=2017-12-31")$ r.json()
+params =  {'reg_alpha': 0.1, 'colsample_bytree': 0.9, 'learning_rate': 0.1, 'min_child_weight': 1$           , 'n_estimators': 300, 'reg_lambda': 1.0, 'random_state': 1, 'max_depth': 4} $ reg_final = xgb.XGBRegressor(**params).fit(X, y)#**params$
+data['intra_day_diff'].max()
+filename_2018 = os.path.join(input_folder, string_2018)
+stops.loc[~mask].head(10)
+le_data_all = wb.download(indicator="SP.DYN.LE00.IN",country=countries['iso2c'],start='1980',end='2012')$ le_data_all
+bigram_chunker = BigramChunker(train_trees)$ print(bigram_chunker.evaluate(valid_trees))
+y.head()
+dfCr = pd.read_csv('data/CC2017.csv')$ dfCr = dfCr[dfCr['Transaction']=='CREDIT'] $ dfCR= dfCr[dfCr['Memo'].notnull()] # remove null entries
+scores_mode = scores.sort_values(ascending=False).index[0]$ print('The mode is {}.'.format(scores_mode))
+sort_df.tail(10)
+data.shape
+print("Mean absolute percentage error: %.3f" % mean_absolute_percentage_error(y_test, y_pred) + '%')
+haw.to_csv('./haw_python.csv',index=True)
+plot_autocorrelation(series=dr_new_hours.diff()[1:], params=params, lags=30, alpha=0.05, title='ACF {}'.format('first difference of dr hours new patients'))$ plot_autocorrelation(series=dr_existing_hours.diff()[1:], params=params, lags=30, alpha=0.05, title='ACF {}'.format('first difference of dr hours existing patients'))
+c>0.7
+%%time$ max_key = max( r_dict.keys(), key = get_daily_chg )$ print('largest change in price in any one day: '+ str( get_daily_chg(max_key) ) )
+X_copy['avg_six_mnth_cnt'] = X_copy['avg_six_mnth_cnt'].apply(lambda x: float(x))
+reddit_master.shape
+npath = save_filepath + '/uva_hpc/pySUMMA_Demo_Example_Fig7_Using_TestCase_from_Hydroshare.ipynb'$ hs.addContentToExistingResource(resource_id, [npath])
+df['cowbell'] = df['body'].apply(lambda x: len([x for x in x.split() if '(((' in x]))
+cur.fetchall()
+slist = [s1, s2, s3]$ for item in slist:$     item.name == 'NAME':$
+data = pd.DataFrame(data=[tweet.text for tweet in tweets], columns=['Tweets'])$ display(data.head(10))
+df = pd.read_sql('SELECT * from booking', con=conn_b)$ df
+hits_df = number_one_df.drop_duplicates(subset=['URL','Region'], keep ='first')
+psa_proudlove = pd.read_csv('psa_proudlove.csv', parse_dates=True, index_col='Date')$ psa_perry = pd.read_csv('psa_perry.csv', parse_dates=True, index_col='Date')$ psa_all = pd.read_csv('psa_all.csv', parse_dates=True, index_col='Date')
+stoplist = stopwords.words('english')$ stoplist.append('free')$ print(stoplist)
+ms_columns = inspector.get_columns('measurements')$ for c in ms_columns:$     print(c['name'], c["type"])$
+df['time_detained'] = df['time_detained'] / np.timedelta64(1,'D')
+airline_df['sentiment'] = airline_df['tweet'].apply(lambda tweet: NBClassifier.classify(extract_features(getFeatureVector(processTweet2(tweet)))))$
+qt_ind_ARR[industries] = qt_ind_ARR[industries].applymap(lambda x: np.float(x))$ qt_ind_ARR
+breast_cancer_df = pd.read_csv('data/breast_cancer.csv')$ breast_cancer_df.head()
+df_concat_2["time"].str.split(':')$ df_concat_2["time"] = df_concat_2["time"].str.split(':').apply(lambda x: int(x[0]) * 60 + int(x[1]))
+march_2016 = pd.Period('2016-03', freq='M')$ print march_2016.start_time$ print march_2016.end_time
+print data.mean()
+df2['low_tempf'].mean()
+np.random.seed(1)
+temp_df = df.copy()$ temp_df.index = df.index.set_names('Desc.', level='Description')$ temp_df.head(3)
+df2["Temperature Groups"] = pd.cut(df2["tobs"], bins, labels=bin_names)$ df2_grp1=df2.groupby("Temperature Groups").count()$ df2_grp1["tobs"]
+cursor.execute('SELECT * FROM fib')$ print(cursor.fetchall())
+ts = pd.Timestamp(datetime.datetime(2016,5, 12, 3, 42, 56))$ ts
+ftr_imp_rf=zip(features,trained_model_RF.feature_importances_)$ for values in ftr_imp_rf:$     print(values)
+print(dfd.hspf.describe())$ dfd.hspf.hist()
+n_bandits = gb.size().shape[0]$ test_labels = [i for i in gb.size().index]$ mcmc_iters = 25000
+stat_info_city = stat_info[1].apply(fix_space)$ print(stat_info_city)
+pd.Series(HAMD.min(axis=1)<0).value_counts()  # no
+movies_df = pd.read_csv('movies.csv')$ ratings_df = pd.read_csv('ratings.csv')$ movies_df.head()
+from sklearn import model_selection$ kfold = model_selection.KFold(n_splits=10, shuffle=True)$ loocv = model_selection.LeaveOneOut()
+df.median() - 1.57 * (df.quantile(.75) - df.quantile(.25))/np.sqrt(df.count())
+gdax_trans_btc['Balance'] = gdax_trans_btc['Trade_amount'].cumsum();
+msft.dtypes
+tm_2050 = pd.read_csv('input/data/trans_2050_m.csv', encoding='utf8', index_col=0)
+trip_month_day = trip_dates.strftime('%m-%d')$ trip_month_day
+for h in heap:$     h.company = [t.author_id for t in h.tweets if t.author_id in names][0]
+weather_features = weather_features.resample('D').sum()
+print(type(df_final['created_time'][0]))$ pd.__version__
+slicer.apply(np.mean, axis=1)
+import random$ sample=movie1['ceiled_ratings'].tolist()$ x = np.linspace(1,5,100)
+ds_info = ingest.upload_dataset(database=db,$                                 dataset=test,$                                 validation_map={"bools": lambda x: isinstance(x, str)})
+extract_nondeduped_cmp.loc[(extract_nondeduped_cmp.APP_SOURCE=='SFL')$                           &(extract_nondeduped_cmp.APPLICATION_DATE_short>=datetime.date(2018,6,1))$                           &(extract_nondeduped_cmp.app_branch_state=='OH')].groupby('APP_PROMO_CD').size()
+us_rhum = rhum_fine.reshape(844,1534).T #.T is for transpose$ np.shape(us_rhum)
+excutable = '/media/sf_pysumma/a5dbd5b198c9468387f59f3fefc11e22/a5dbd5b198c9468387f59f3fefc11e22/data/contents/summa-master/bin'$ S.executable = excutable +'/summa.exe'
+_delta=_delta.to_dict()
+query.get_dataset(db, id=ds_info["DatasetId"][0])
+sns.set_style('whitegrid')$ sns.distplot(data_final['countPublications'], kde=False,color="red") # bins=30, $
+np.linspace(0, 100, 5)
+wordsearch_dict = {}$ for word in order.keys():$     wordsearch_dict.update({word: df.text.str.extractall(r'({})'.format(word), re.IGNORECASE).size})
+print contractor_clean['zip_part1'].head(); contractor_clean['zip_part2'].head()$
+params = {'figure.figsize': [8, 8],'axes.grid.axis': 'both', 'axes.grid': True,'axes.labelsize': 'Medium', 'font.size': 12.0, 'lines.linewidth': 2}$ plot_decomposition(RN_PA_duration, params=params, freq=31, title='RN/PA Decomposition')
+preds = lm.predict(X_new)$ preds
+dayofweek = pd.DatetimeIndex(pivoted.columns).dayofweek
+ad_source = ad_source.drop(['[', ']'], axis=1)$ ad_source = ad_source.drop(ad_source.columns[0], axis=1)
+raw_scores = df.rating_score[df.rating_score.notnull()]
+df = pd.read_json("data\8oct_pre_processed_stemmed.json", orient='records', lines=True)
+sorted_posts = gram_collection.find({"contains_tattoo": 1}).sort([("likes", pymongo.DESCENDING)])
+lm=sm.Logit(df_new['converted'],df_new[['intercept','ab_page','country_UK','country_US']])$ r=lm.fit()
+intervention_train.isnull().sum()
+ndvi_us = ndvi_nc.variables['NDVI'][0, lat_li:lat_ui, lon_li:lon_ui]$ np.shape(ndvi_us)
+lm = sm.Logit(df_new['converted'], df_new[['intercept', 'ab_page', 'CA', 'UK']])$ lm.fit().summary2()
+new_df = df.dropna(how = 'all')$ new_df
+pd.set_option("max.rows", 10)$ result
+save_filepath = '/media/sf_pysumma'$ hs_path = save_filepath+'/a0105d479c334764ba84633c5b9c1c01/a0105d479c334764ba84633c5b9c1c01/data/contents'$ S = Simulation(hs_path+'/summaTestCases_2.x/settings/wrrPaperTestCases/figure07/summa_fileManager_riparianAspenSimpleResistance.txt')
+from statsmodels.tsa.arima_model import ARIMA$ model_6203 = ARIMA(dta_690, (3, 1, 0)).fit() $ model_6203.forecast(5)[:1] 
+plt.figure(figsize=(15,8))$ ax = sns.boxplot(x = 'Type 1', y = 'Total', data = pokemon )$ plt.show()
+stocks['Date'] = stocks['Date'].dt.week
+wedate=data['Week Ending Date']$ wedate.head(10)
+print('RF:', rf.score(X_test, y_test))$ print('KNN:', knn.score(X_test, y_test))
+my_data.shape$
+with open('key_phrases_rake.pickle', 'wb') as f:$     pickle.dump(key_phrases_rake, f, pickle.HIGHEST_PROTOCOL)
+future = m.make_future_dataframe(periods=90)$ future.tail()
+date = session.query(prcp.date).order_by(prcp.date.desc()).first()$ print(date)
+from sklearn.metrics import f1_score$ f1_score(y_test, y_pred_lgr, average='macro')  
+x = topics_data.comms_num$ y = topics_data.score$ print("Correlation between Number of Comments and Total Score is:", round(np.corrcoef(x, y)[0,1], 2))$
+news_df = pd.DataFrame(news_dict)$ news_df.head()
+df_corr = result.groupby(['type', 'scope'])['user'].sum().reset_index()$ display(df_corr.sort_values('user',ascending=False).head(10))$ plot2D(df_corr, 'type', 'scope','user')
+int_and_tel = cw_df.loc[cw_df['category'] == 'Internet & Telecom']$ int_and_tel.sort_index(axis= 0, inplace= True)$ int_and_tel.reset_index(inplace= True, drop= True)
+file = 'https://assets.datacamp.com/production/course_2023/datasets/dob_job_application_filings_subset.csv'$ df = pd.read_csv(file)$ print(df.head())
+cityID = 'f995a9bd45d4a867'$ for tweet in tweepy.Cursor(api.search, q=q, contained_within=cityID, wait_on_rate_limit=True, lang="en").items(500):    $         Memphis.append(tweet) 
+dr_existing_patient_8_to_16wk_arima = dr_existing_patient_data_plus_forecast['2018-06-25':'2018-08-26'][['Predicted Number of Patients']]$ dr_existing_patient_8_to_16wk_arima.index = dr_existing_patient_8_to_16wk_arima.index.date
+cgm = cgm.rename(columns={"value": "mmol_L"})$ cgm["mg_dL"] = (cgm["mmol_L"] * 18.01559).astype(int)$ cgm.mg_dL.head()
+data.learner_id.value_counts()[:1]
+happiness_df=pd.DataFrame(columns=['dates','happiness'])$ for j in range(0,len(happiness)):$             happiness_df.loc[j]=[str(time[j])+"-12-31"+"T00:00:00Z",happiness[j]*33.33]$
+sim_ET_Combine = pd.concat([simResist_rootDistExp_1, simResist_rootDistExp_0_5, simResist_rootDistExp_0_25], axis=1)$ sim_ET_Combine.columns = ['simResist(Root Exp = 1.0)', 'simResist(Root Exp = 0.5)', 'simResist(Root Exp = 0.25)']
+df = pd.DataFrame.from_dict(dst_cap, orient="index")$ df.columns = ['Fequency']
+pd.concat([msftA[:5], aaplA[:3]], axis=1, join='inner', keys=['MSFT', 'AAPL'])
+afx_x_oneday = requests.get('https://www.quandl.com/api/v3/datasets/FSE/AFX_X/data.json?start_date=2014-12-01&end_date=2014-12-01&api_key=F57SPh3gyaXMHjLAp-pY')$
+print(soup.prettify())
+json_data = r.json()$ json_data
+predictions.show()
+dollars_per_unit.columns = pd.MultiIndex.from_product([['Dollars per Unit'], dollars_per_unit.columns])$ pd.concat([multi_col_lvl_df, dollars_per_unit], axis='columns').head(3)
+from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer$ analyzer = SentimentIntensityAnalyzer()$
+Mars_Weather_URL = 'https://twitter.com/MarsWxReport/status/1017925917065302016'$ Weather_response = requests.get(Mars_Weather_URL)$ Weather_soup = BeautifulSoup(Weather_response.text, 'html.parser')
+qs = qs.join(features, how="inner", rsuffix="_r")$ qs.head()
+import sys$ sys.path.append('../')$ sys._enablelegacywindowsfsencoding() 
+retweet_plot = t_ret.plot(figsize=(16,4), label="Retweets", color="g", legend=True, title='Number of retweets for tweets over time')$ retweet_vs_time_fig = retweet_plot.get_figure()$ retweet_vs_time_fig.savefig('num_ret_over_time.png')
+annual_returns.head() $
+validation.analysis(observation_data, Jarvis_resistance_simulation_1)
+%%time$ reader = pa.RecordBatchFileReader(data_dir + file_name + '.arrow')$ read_table = reader.read_all()
+colors = plt.cm.Spectral(np.linspace(0, 1, len(unique_labels)))$ colors
+selected_features=selected.index$ X_train_new=X_train[selected_features]$ X_test_new=X_test[selected_features]
+df['NDATE']=pd.to_datetime(df['DATE'],unit='s')
+files_txt = glob.glob("*.txt")
+from sqlalchemy import create_engine, func, inspect$ inspector = inspect(engine)$ inspector.get_table_names()$
+ibm_hr_int = ibm_hr_target.select(numerical)$ ibm_hr_int.show(3)
+((pf.cost.sum()/100)/(max(pf.day)-min(pf.day)).days)*365
+prcip_df.describe()$
+importances=model_tree_6_b.feature_importances_$ features=pd.DataFrame(data=importances, columns=["importance"], index=x.columns)$ features
+reddit = praw.Reddit(client_id=keyVars[0], client_secret=keyVars[1], password=keyVars[2],$                      user_agent=keyVars[3], username=keyVars[4])
+df_amznnews['publish_time'] = df_amznnews['publish_time'].astype(str)$ df_amznnews['publish_time'] = pd.to_datetime(df_amznnews['publish_time'], format='%Y%m%d%H%M')$ df_amznnews.info()$
+merged_portfolio_sp_latest = pd.merge(merged_portfolio_sp, sp_500_adj_close, left_on='Latest Date', right_on='Date')$ merged_portfolio_sp_latest.head()
+faa_data_destroyed_damage_pandas = faa_data_pandas[faa_data_pandas['DAMAGE'] == "D"]$ print(faa_data_destroyed_damage_pandas.shape)$ faa_data_destroyed_damage_pandas
+sentiment=sentiment.sort_values(by='Tweet_date', ascending = False)$ sentiment.head()
+crime = crime[crime.Sex != 'U']
+dfFull['OverallCondNorm'] = dfFull.OverallCond/dfFull.OverallCond.max()
+auth_key = 'yZVrH8Esn8zs7vGPN2zJ'$ main_df = pd.DataFrame # Lets create a blank dataframedf = quandl.get("FMAC/HPI_KOKIN", authtoken=auth_key)
+drop_list = ['FEDFUNDS','DGS1MO','DGS3MO','DGS6MO','DGS1','DGS2','DGS3']$ for drop_x in drop_list:$     df.drop(drop_x, axis=1, inplace=True)
+Base = automap_base()$ Base.prepare(engine, reflect=True)
+afx_volume = [day[6] for day in afx_dict['dataset_data']['data']]$ afx_avg_vol = sum(afx_volume)/len(afx_volume)$ print("The average daily trading volume for AFX_X in 2017 was " + str(round(afx_avg_vol,2)) + ".")
+plt.savefig(str(output_folder)+'NB01_7_windfield_vs_NDVIchange'+str(cyclone_name)+'_'+str(location_name))
+len(calls.location.unique())
+df2.tail(2)
+data.keys()
+top_songs['Month'] = top_songs['Date'].dt.month
+import pandas as pd$ weather = pd.DataFrame(weather_json['data'])$ weather['date']  = pd.to_datetime(weather['date'])
+dr_test_data = dr_test_data.resample('W-MON').sum()$ RN_PA_test_data = RN_PA_test_data.resample('W-MON').sum()$ therapist_test_data = therapist_test_data.resample('W-MON').sum()
+idx = data['dataset_data']['column_names'].index('Open')$ open_price = [day[idx] for day in data['dataset_data']['data'] if day[idx]]$ print('Highest and lowest opening prices in 2017 were {} and {}'.format(max(open_price), min(open_price)))
+overall_gps = pd.DataFrame.from_dict(dist_df,orient='columns')
+predict_day = weather_x.index[-60]
+df.in_response_to_tweet_id.isnull().sum()
+cityID = '8e9665cec9370f0f'$ for tweet in tweepy.Cursor(api.search, q=q, contained_within=cityID, wait_on_rate_limit=True, lang="en").items(500):    $         Minneapolis.append(tweet) 
+df = pd.read_sql(SQL, db)$ df
+x = x.assign(A2 = x["A"]**2)$ x
+t1.name.value_counts()
+data_path = 'Crimes_-_2001_to_present.csv'$ df = spark.read.csv(data_path, sep = ',', header = True)$ df.take(1)
+file_names = []$ file_names = glob.glob('*.csv')
+scores[scores.RottenTomatoes == scores.RottenTomatoes.max()]
+X = pd.get_dummies(X, columns=['subreddit'], drop_first = True)
+df_new[['ca','uk','us']] = pd.get_dummies(df_new['country'])
+for col in response_df.columns:$     if response_df[col].dtype in (object, str):$         print col, pd.np.where(response_df[col] == '', 1, 0).sum()
+vec1 = modelD2V.infer_vector(currentData[0].words)$ vec2 = modelD2V.infer_vector(currentData[1].words)$
+TEST_DATA = SHARE_ROOT + 'test_dataframe.pkl'$ df.to_pickle(TEST_DATA)
+temp_df2['timestamp'].max() - temp_df2['timestamp'].min()
+stations_df.head()
+cur = conn.cursor()$ cur.execute('UPDATE actor SET first_name = CASE WHEN first_name = \'HARPO\' THEN \'GROUCHO\' ELSE \'MUCHO GROUCHO\' END WHERE actor_id = 172;')$
+r6s.groupby('created')['num_comments'].sum().plot()
+print("Percentage of positive tweets: {}%".format(len(pos_tweets)*100/len(data['Tweets'])))$ print("Percentage of neutral tweets: {}%".format(len(neu_tweets)*100/len(data['Tweets'])))$ print("Percentage de negative tweets: {}%".format(len(neg_tweets)*100/len(data['Tweets'])))$
+year_prcp_df = pd.read_sql_query(year_prcp.statement, engine,index_col = 'date')$ year_prcp_df.head()
+retweets = pd.read_sql_query(query, conn)$ retweets.head()
+sent_groups_pivot_df = sent_groups_df.pivot(index="Sentiment group", columns="Twitter account", values="Group total")$ sent_groups_pivot_df
+search_term = input('Enter text to search for: ').upper()$ df_vendor_single = df_vendors[df_vendors['Vendor'].str.contains(search_term)]$ df_vendor_single
+reddit['Class_comments'] = reddit.apply(lambda x: 'High' if x['num_comments'] > median_comments else 'Low', axis = 1)$ reddit.head()
+df_tte_ri.drop(['UnBlendedRate'], axis=1, inplace=True)$ df_tte_ri.head(2)
+mlp_df.plot(figsize=(10, 10))$ plt.show()
+groups_topics_df.shape, groups_topics_unique_df.shape
+bc = pd.read_csv("bitcoinity_all.csv")
+random_integers.idxmax(axis=1)
+data = pd.read_csv('http://www-bcf.usc.edu/~gareth/ISL/Advertising.csv', index_col=0)
+sns.set_style('whitegrid')$ sns.distplot(data_final['countCollaborators'], kde=False,color="red")#, bins=20)$
+df_ratings.head()
+LSST_catalog_data.close();LSST_catalog_data.close();
+metadata['wavelength'] = refl['Metadata']['Spectral_Data']['Wavelength'].value$ metadata
+df = DataObserver.build_simply(file_path= '/Users/admin/Documents/Work/AAIHC/AAIHC-Python/Program/DataMine/Reddit/json_data/Processed_DataFrames/r-news/DF-version_2/DF_v2.json')$ cw_df = df[['ups', 'downs', 'category', 'sentiment_score', 'sentiment_magnitude', 'date_created', 'time_created']]
+df.to_csv('Tableau-CitiBike/TripData_2017_Winter.csv', index=False)
+sqladb=pd.read_csv('https://archive.ics.uci.edu/ml/machine-learning-databases/adult/adult.data',header=None,skipinitialspace=True)
+from IPython.core.interactiveshell import InteractiveShell$ InteractiveShell.ast_node_interactivity = "all"
+sample_weight = np.array([1 if not p else 1.25 for p in joined_train.perishable])
+for v in d.variables:$     print(v)
+print(df.shape)$
+my_gempro.uniprot_mapping_and_metadata(model_gene_source='ENSEMBLGENOME_ID')$ print('Missing UniProt mapping: ', my_gempro.missing_uniprot_mapping)$ my_gempro.df_uniprot_metadata.head()
+ebola_tidy = pd.concat([ebola_melt_1, status_country], axis = 1)$ print(ebola_tidy.shape)$ print(ebola_tidy.head())$
+pd.Series(0, index=days)
+stock_data = db.stock_data$ stock_data_id = stock_data.insert_one(realtime_stock_data).inserted_id$ stock_data_id
+    $ eng = create_engine("sqlite:///hawaii.sqlite")
+rpt_regex = re.compile(r"(.)\1{1,}", re.IGNORECASE);$ def rpt_repl(match):$     return match.group(1)+match.group(1)
+data.iloc[[1,10,3], [2, 3]]
+import seaborn as sns$ sns.set()$ sns.set_context("talk")
+title_alt = imgs.find_all("img", class_="thumb")$ title_alt
+obj.rank(ascending=False, method='max')
+prcp_query = session.query(Measurement.date, Measurement.prcp).filter(Measurement.date > year_to_date).statement$ prcp_year_df = pd.read_sql_query(prcp_query, session.bind)$ prcp_year_df.set_index('date').head()
+pd.read_pickle('data/wx/tmy3/proc/703950.pkl', compression='bz2').head()
+soup = bs(response.text, 'html.parser')
+from sightengine.client import SightengineClient$ client = SightengineClient("737618018", "bstrJ5VzARavYy5FsELN")$ output = client.check('face-attributes').set_url('https://instagram.fprg2-1.fna.fbcdn.net/vp/aa7a6811e2fbc814c91bb94e92aa8467/5B197538/t51.2885-19/s150x150/11875444_527830867370128_1019973931_a.jpg')
+words_only_sk = [term for term in words_sk if not term.startswith('#') and not term.startswith('@')]$ corpus_tweets_streamed_keyword.append(('words', len(words_only_sk))) # update corpus comparison$ print('The number of words only (no hashtags, no mentions): ', len(words_only_sk))
+iris.iloc[iris.iloc[:,1].between(3.5, 3.6).values,1]
+df.info()$
+from bmtk.analyzer import nodes_table$ input_nodes_DF = nodes_table(nodes_file, 'FridayHarborBiophysics')$ input_nodes_DF[:5]
+precipitation_df.describe()
+news_dict_df.to_json("Newschannel_tweets_df.json")
+X = reddit_master['title']$ y = reddit_master['Class_comments'].apply(lambda x: 1 if x == 'High' else 0)$ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.3, random_state = 42)
+daily_df.reset_index(inplace=True)
+score = model.evaluate(test_train_vecs_w2v, y_test_train, batch_size=128, verbose=2)$ print (score[1])
+results.head()
+tweetsPorFecha=tweet_frame[['tweetCreated','userID']]$ tweetsPorFecha.loc[:,('tweetCreated')]=tweetsPorFecha['tweetCreated'].map(lambda x: x.strftime('%Y/%m/%d') if x else '')$ tweetsPorFecha
+pax_raw.groupby('seqn').paxcal.mean().value_counts()
+if pattern.search('AAbc') is not None:$     print('asdfdsf')
+engine=create_engine(seng)$ Joe = pd.read_sql_query('select actor_id, first_name, last_name  from actor where first_name = "Joe"', engine)$ Joe
+dataset.User.value_counts()
+engine = create_engine("sqlite:///hawaii.sqlite")
+newdf.info()
+store_items.insert(5, 'shoes', [8, 5, 0])$ store_items
+url = "https://www.quandl.com/api/v3/datasets/FSE/AFX_X/data.json?limit=1?api_key="+API_KEY
+all_slices.sort(key = lambda slice: slice['expires'])$     $ print(f"Found {len(all_slices)} slices")    
+aaplA01 = aapl['2012-01'][['Adj Close']]$ withDups = pd.concat([msftA01[:3], aaplA01[:3]])$ withDups
+contractor_merge[contractor_merge.contractor_bus_name.duplicated() == True]$
+df2.columns
+news_titles_sr = news_period_df.resample('D', on='news_collected_time')['news_title'].apply(lambda x: '\n'.join(x))
+grouped_dpt["Revenue"].filter(lambda x: len(x) < 5)
+news_p = news_items[0].find(class_='rollover_description_inner').text$ print (news_p)
+totalfare_drivers_by_city= cityfare_driver.groupby(cityfare_driver['type']).sum().reset_index()$ citylabels = totalfare_drivers_by_city['type']$ totalarea_fares = totalfare_drivers_by_city['fare']
+model = pd.get_dummies(auto_new.CarModel)$ model = model.ix[:, ["ToyotaCamry", "ToyotaCorolla","ToyotaRav4", "ToyotaLandCruiserPrado", "ToyotaIpsum", "ToyotaSienna", "Toyota4-Runner"]]$ model.head()
+df2['Change'].abs()  
+data=requests.get("https://www.quandl.com/api/v3/datasets/FSE/AFX_X.json?start_date=2018-07-01&end_date=2018-07-31&api_key=%s" %API_KEY)
+apple["Regime"] = np.where(apple['20d-50d'] > 0, 1, 0)$ apple["Regime"] = np.where(apple['20d-50d'] < 0, -1, apple["Regime"])$ apple.loc[dt.date(2016,8,7):dt.date(2016,1,1),:].plot(ylim = (-2,2)).axhline(y = 0, color = "black", lw = 2)
+print(r.json()['dataset_data']['column_names'])#['start_date'])#
+display(data.head(10))
+xml_in_merged = pd.merge(xml_in, grouped_df, on=['authorId', 'authorName'], how='left')
+df['gender']=df['gender'].replace({'Male': 0, 'Female': 1})$ for col in ['Partner','Dependents','PhoneService','PaperlessBilling','Churn']:$      df[col].replace({'Yes': 1, 'No': 0}, inplace=True)
+prcp_year_df.describe()
+model_ft = FastText.load_fasttext_format('C:/Users/edwin/Desktop/FastText/wiki.zh.bin')$
+new_items = [{'bikes': 20, 'pants': 30, 'watches': 35, 'glasses': 4}]$ new_store = pd.DataFrame(new_items, index=['store 3'])$ new_store
+clean_stations.columns = ['station', 'latitude', 'longitude', 'elevation', 'name', 'country', 'state']
+number_of_commits = len(git_log)$ number_of_authors = git_log['author'].nunique()$ print("%s authors committed %s code changes." % (number_of_authors, number_of_commits))
+page_size = 200$ response = client.get('/users', q='footwork', limit=page_size,$                     linked_partitioning=1)$
+s = pd.Series([1,3,5,np.nan,6,8])$ print(s)
+type2017.head()
+requests.get(wikipedia_content_analysis)
+ibm_hr_cat = ibm_hr_no_numerical.select(categorical_no_target)$ ibm_hr_cat.show(3)
+psy = psy_native.copy()$ psy = psy.dropna(thresh=(psy.shape[1]/2), axis=0)$ psy.shape  # 18 people removed
+dfname2 = dfname.copy()$ dfmusic = dfname2[dfname2.main_category == 'Music']$ dfmusic.head()
+daily_constituent_count = QTU_pipeline.groupby(level=0).sum()$ QTU_pipeline.groupby(level=0).median().describe()
+tweets['hashtags'] = tweets['hashtags'].apply(lambda x: x.strip('[]').lower().replace("'",'').split(', '))$ tweets['user_mentions'] = tweets['user_mentions'].apply(lambda x: x.strip('[]').lower().replace("'",'').split(', '))
+df_new['country'].value_counts()
+LabelsReviewedByDate = wrangled_issues_df.groupby(['closed_at','Status']).closed_at.count()$ dateLabelsFig = LabelsReviewedByDate.unstack().plot(kind='bar',stacked=True,  color=['blue', 'purple', 'red'], grid=False)$
+year_with_most_commits = commits_per_year['commits'].idxmax().year
+from statsmodels.tsa.arima_model import ARIMA$ arima10 = ARIMA(dta_713,(1,0,0),freq='Q').fit()$ arima10.summary()$
+trains_fe2_y= trains_fe1[['reordered']]$ trains_fe2_y.head()
+pd.date_range(start='3/1/2016', periods=20)
+len(purchase_history.product_id.unique())
+review_df.date = pd.to_datetime(review_df.date)$ review_df=review_df[review_df['date']>='2017-01-01']
+e.instance_method
+output_path = os.path.join(output_dir, 'prediction.csv')$ write_output(ids, ids_col, y_pred, label_col, output_path)
+res4 = rs.get('http://bsr.twse.com.tw/bshtm/bsContent.aspx', headers = headers)$
+import pymysql$ pymysql.install_as_MySQLdb()$ import MySQLdb
+ans = df.groupby('A').sum()$ ans
+import datetime as dt$ start_time = dt.datetime.now()
+last_12_precip = session.query(Measurement.date, Measurement.prcp).\$ filter(Measurement.date >= '2016-08-24').filter(Measurement.date <= '2017-08-23').order_by(Measurement.date).all()
+df3_holidays = df3.copy()$ df3_holidays['y'] = np.log(df3_holidays['y'])
+df.set_index('Day') # this returns the new data frame with index set as 'Day' but does not modify the existing df dataframe$ df.head()
+reg_traffic_with_flags = search_algo(regular_traffic,honeypot_df,['id.orig_h','src'],['ts','ts_unix'])
+bymin = walk.resample("1Min")$ bymin.resample('S').mean()
+df['launched'] = pd.to_datetime(df.launched)$ df['deadline'] = pd.to_datetime(df.deadline)$
+w = np.zeros(shape=(2, 1))$ w[0] = m$ w[1] = c
+for word in STOP_WORDS:$     nlp.vocab[word].is_stop = True
+file = open('tweets/tweets_Trump.csv', 'w')$ for tweet in results:$     file.write("%s\n" % tweet)
+cityID =  '4b25aded08900fd8'$ for tweet in tweepy.Cursor(api.search, q=q, contained_within=cityID, wait_on_rate_limit=True, lang="en").items(500):    $         Reno.append(tweet) 
+path = "C:\\Users\\Alvaro\\Documents\\Python_Projects\\Pandas\\Pandas-Project2\\Sample_Superstore_Sales.xlsx"$ df = pd.read_excel(path, sheetname = 'Superstore2')$ df.head(5)
+cgm = data[data["type"] == "cbg"].copy()$ cgm.head()
+import builtins$ builtins.uclresearch_topic = 'GIVENCHY' # 226984 entires$ from configuration import config
+df = df.drop(['Count'], axis=1)
+tips.sex = tips.sex.astype('category')$ tips.smoker = tips.smoker.astype('category')$ print(tips.info())$
+userByCountry_df  = youtube_df[youtube_df["channel_title"].isin(channel_namesC)]
+len(cats_in['Animal ID'].unique())
+base_df.head()
+df = demo.make_df(35175,35180)$ df.head()
+plt.pie(drivers_totals, explode=explode, autopct="%1.1f%%", labels=labels, colors=colors, shadow=True, startangle=140)$ plt.show()
+nitrodata['Month'].value_counts().sort_index()
+logit_countries = sm.Logit(newset['converted'], $                            newset[['country_UK', 'country_US', 'intercept']])$ result_new = logit_countries.fit()
+from kipoi_veff.parsers import KipoiVCFParser$ vcf_reader = KipoiVCFParser("example_data/clinvar_donor_acceptor_chr22DeepSEA_variantEffects.vcf")$ print(list(vcf_reader.kipoi_parsed_colnames.values()))
+dfPre = df.loc['1930-01-01':'1979-12-31']$ dfPost = df.loc['1984-01-01':'2017-12-31']
+predicted_values = model_NB.predict_proba(X_test)
+columns = inspector.get_columns('measurements')$ for c in columns:$     print(c['name'], c["type"])
+cur.close()$ con.close()
+c = df.groupby(['education', 'purpose']).agg({'applicant_id': lambda x: len(set(x))}).reset_index()$ c['education+purpose'] = c['education']+c['purpose']$ sns.barplot(data=c, x='education+purpose', y='applicant_id')
+preds = gbm.predict(T_test_xgb)
+df_user = pd.read_csv(f_user)$ df_user.head(3)
+print(chunker.evaluate(valid_trees))
+writer = pd.ExcelWriter('output.xlsx')$ frame.to_excel(writer,'Sheet1')$ writer.save()
+d = datetime.date(1492, 10, 12)$ d.strftime('%A')
+import gensim, logging$ logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
+snowshoe_df = pd.read_pickle('..\data\interim\df_for_snowshoe_classification')$ snowshoe_df.drop(columns = ['datetime'],inplace=True)$ snowshoe_df.head()
+pulledTweets_df['Processed_tweet'] = pulledTweets_df['text'].apply(cleaner)$ pulledTweets_df['Processed_tweet'] = pulledTweets_df['Processed_tweet'].apply(remove_stopwords)$ pulledTweets_df['Processed_tweet'] = pulledTweets_df['Processed_tweet'].apply(lemmatize)
+newdf.describe()
+os.environ['PROJECT'] = PROJECT$ os.environ['BUCKET'] = BUCKET$ os.environ['REGION'] = REGION
+cycling_data = [10.7, 0, None, 2.4, 15.3, 10.9, 0, None]$ joined_data = list(zip(step_counts, cycling_data))$ print joined_data$
+ideas = categorical.join(ideas)
+columns_name = ["content","creationTime","isTop","referenceId","userClientShow","isMobile"]$ content = re.findall(r'"showOrderComment".*?"content":"(.*?)","creationTime":"(.*?)","isTop":(\w*).*?"referenceId":"(\d*)".*?"userClientShow":"(.*?)".*?"isMobile":(\w*).*?',c)$ content$
+combined_df = test.join(prediction_df)$ combined_df.head(15)
+print(pd.to_numeric(countdf['number_ratings']).sum())$ print(pd.to_numeric(countdf['number_ratings']).sum()-pd.to_numeric(count1df['number_ratings']).sum())$ print(pd.to_numeric(countdf['number_ratings']).sum()-pd.to_numeric(count6df['number_ratings']).sum())
+td_alpha = td ** (1/3)$ td_alpha = td_alpha / td_alpha.max().max()
+df.to_sql('fb_posts', engine, schema=schema, if_exists='append')
+ORDER_BPAIR_POSTGEN = pd.merge(left=BPAIRED_GEN,right=ORDERS_GEN[['order_number','created_at']].astype(dtype),left_on='shopify_order_id',right_on='order_number')
+df1.loc[0:8,['SerNo', 'By']]
+Base.prepare(engine, reflect=True)$ Base.classes.keys()
+match_results = pd.read_csv("data/afl_match_results.csv")$ odds = pd.read_csv("data/afl_odds.csv")$ player_stats = pd.read_csv("data/afl_player_stats.csv")
+df1 = pd.merge(left=dfWQ_annual,right=dfQ1_annual,how='inner',left_index=True,right_index=True)$ df2 = pd.merge(left=dfWQ_annual,right=dfQ2_annual,how='inner',left_index=True,right_index=True)$ df3 = pd.merge(left=dfWQ_annual,right=dfQ3_annual,how='inner',left_index=True,right_index=True)
+sp500[(sp500.Price < 10) & (sp500.Price > 0)][['Price']]
+empDf.select("name").show()
+from scipy import stats$ resid = model_arima121.resid$
+t2['p1'] = t2['p1'].str.title()$ t2['p2'] = t2['p2'].str.title()$ t2['p3'] = t2['p3'].str.title()
+tweet_df = pd.DataFrame(twitter_list)$ tweet_df.head()
+data_NL = data_NL.sort_values($     'capacity', ascending=False).groupby('name', as_index=False).first()$ data_NL = data_NL.reindex(columns=columns_sorted)
+filename = processed_dir+'pulledTweetsProcessedAndClassified_df'$ gu.pickle_obj(filename,pulledTweets_df)
+df_tweets.reset_index().to_pickle("../tweets_extended.pkl")
+vacation_data_df=pd.DataFrame(vacation_data)$ rain_per_station = pd.pivot_table(vacation_data_df,index=['station'],values=['prcp'], aggfunc=sum)$ rain_per_station
+BAL_analysis = team_analysis.get_group("BAL").groupby("Category") # Pulls only team transactions from sample, then groups$
+rain_df.set_index('date').head()
+challenge_dbname = "challenge"$ pos_series_name = "idx.position"$ challenge_client = DataFrameClient(host, port, user, password, challenge_dbname)
+dfd['brand'] = [b.strip().title() for b in dfd.brand]$ dfd.brand.unique()
+np.shape(prec_fine)
+openmoc_geometry = get_openmoc_geometry(mgxs_lib.geometry)
+import matplotlib.pyplot as plt$ import seaborn as sns
+first_row = session.query(Measurement).first()$ first_row.__dict__
+priors_product_reordered_spec= priors_reordered.groupby(["user_id","product_id"]).size().reset_index(name ='reordered_count_spec')$ priors_product_reordered_spec['userprod_id']=priors_product_reordered_spec['product_id'] + priors_product_reordered_spec['user_id'] *100000$ priors_product_reordered_spec.head(10)
+time_length = pd.Series(df.len.values, index=df.Date)$ time_favorite = pd.Series(df.Likes.values, index=df.Date)$ time_retweet = pd.Series(df.Retweets.values, index=df.Date)
+df_release = df_release.dropna(axis=0, subset=['actual'])$ df_release.shape
+predictions = rfModel.transform(testData)
+data_current = current.loc[(df['Date'] == '2018-05') | (df['Date'] == '2018-06')] $
+pd_review.shape
+results = soup.find_all('div', class_="slide")$ print(results)
+import gspread$ from oauth2client.service_account import ServiceAccountCredentials$ from operator import itemgetter
+ET_Combine = pd.concat([BallBerry_hour, Jarvis_hour, simResis_hour], axis=1)$ ET_Combine.columns = ['Ball-Berry', 'Jarvis', 'Simple resistance']
+df2.to_csv("SandP.csv")$ df2 = pd.read_csv("SandP.csv", parse_dates = True, index_col = 1)$ df2.head(15)$
+df = pd.read_csv(chat_file, error_bad_lines=False)
+def toDateTime(x):$     parsedStringDate = x[0:x.index(',')]$     return datetime.strptime(parsedStringDate, '%m/%d/%y').date()
+scores = cross_val_score(model, X, y, scoring='roc_auc', cv=5)$ print('CV AUC {}, Average AUC {}'.format(scores, scores.mean()))
+tweet_data.sort_values(['favorite_count','retweet_count'], ascending=[False, False]).head(5)$
+df.sample(5)
+plt.savefig('overall_media.png')$ plt.show()
+pca = PCA().fit(X_std) $
+df.head()$
+def tweet_extend (tweet_id):$     $     return api.get_status(tweet_id, tweet_mode='extended')._json['full_text']
+df['language'] = [np.nan if l == 'C' else l for l in df.language]
+twelve_months_prcp.head()
+(train_4.shape, y_train.shape)
+folium.GeoJson(watershed).add_to(m);
+a=unique_users[unique_users.created_at.isin(['0000-00-00 00:00:00'])].index.values$ unique_users.loc[a,'created_at']='2010-11-11 03:59:09'$
+forecast_range = forecast1[::-1]$ forecast_range.info()$ forecast_range.head()
+pgh_311_data.resample("M").count()
+!hdfs dfs -put CC_records.csv {HDFS_DIR}/Consumer_Complaints.csv
+ccc = td.columns
+datetime.now().strftime('%A')
+mean = np.mean(data['len'])$ print("the mean length of the tweets is: {}".format(mean))
+twelve_months = session.query(Measurements.date, Measurements.prcp).filter(Measurements.date > year_before)$ twelve_months_prcp = pd.read_sql_query(twelve_months.statement, engine, index_col = 'date')
+todays_date = datetime.datetime.now()
+ws.delete_cols(1)
+test_tweet = api.user_timeline(newsOutlets[0])$ print(json.dumps(test_tweet[0], sort_keys=True, indent=4))
+new_fan = questions.loc[questions['years_attend'] == 0]$ return_fan = questions.loc[questions['years_attend'] != 0]
+CON = CON.drop(columns =['Full Name'])
+df.dropna().shape == df.shape, df.shape
+date_max = news_df['Date'].max().replace(tzinfo=timezone.utc).astimezone(tz = 'US/Pacific').strftime('%D: %r') + " (PST)"$ date_min = date_min = news_df['Date'].min().replace(tzinfo=timezone.utc).astimezone(tz = 'US/Pacific').strftime('%D: %r') + " (PST)"
+X_test=tok.texts_to_sequences(X_test)$ x_test=sequence.pad_sequences(X_test,maxlen=maxlen)
+Top_tweets.groupby('sentiment').count()
+grid.fit(Xtrain, ytrain)
+df.shape$ df.to_csv('ny_times_url_dataframep3.csv', index=False,encoding = 'utf-8')$
+svc.score(X_tfidf_test, y_tfidf_test)
+%%time$ responded_all_jan23[fields].to_excel(export_filename_jan23, index=False)$ responded_all_feb5[fields].to_excel(export_filename_feb5, index=False)
+aapl = pd.read_csv(file_name, index_col='Date', usecols=['Date', 'Adj Close'])$ aapl.columns = ['AAPL']$ aapl
+FREEVIEW.plot_number_of_fixations(raw_fix_count_df, option=None)
+coin_data = quandl.get("BCHARTS/ITBITSGD")$
+logodds.drop_duplicates().sort_values(by=['count']).plot(kind='barh')
+all_sets = pd.read_json("AllSets.json", orient = "index")$ all_sets.head()
+df = df.set_index('email')
+citydata_with_nbr_rides = pd.merge(citydata_avg_fare_work, city_nbr_rides, on='city', how='left')$ citydata_with_nbr_rides.head()
+rain_score = session.query(Measurement.prcp, Measurement.date)\$                .filter(Measurement.date > past_year).\$                 order_by(Measurement.date).all()
+Output_three = New_query.ss_get_results(sport='football',league='nfl', ep='team_game_logs', season_id='nfl-2017-2018', game_id='nfl-2017-2018-ari-det-2017-09-10-1300')$ Output_three
+df_2016['bank_name'] = df_2016.bank_name.str.split(",").str[0]$
+measure_df = pd.read_csv(measure, encoding="iso-8859-1", low_memory=False)$ measure_df.head()
+tesla['nlp_text'] = tesla.text.apply(lambda x: tokenizer.tokenize(x.lower()))$ tesla.nlp_text = tesla.nlp_text.apply(lambda x: [lemmatizer.lemmatize(i) for i in x])$ tesla.nlp_text = tesla.nlp_text.apply(lambda x: ' '.join(x))
+df2.loc['2018-01-18', 'high_tempf']
+empDf.createOrReplaceTempView("employees")$ SpSession.sql("select * from employees where salary > 4000").show()
+confusion_mat = pd.DataFrame(confusion_matrix(y_test, y_hat), $                                               columns=['predicted_High(1)', 'predicted_low(0)'], $                       index=['is_High(1)', 'is_Low(0)'])
+mgxs_lib = openmc.mgxs.Library.load_from_file(filename='mgxs', directory='mgxs')
+df_dn.to_csv('data/DayorNight.csv', date_format="%d/%m/%Y %H:%M:%S",index=False)
+scores_firstq = np.percentile(raw_scores, 25)$ scores_thirdq = np.percentile(raw_scores, 75)$ print('The first quartile is {} and the third quartile is {}.'.format(scores_firstq, scores_thirdq))
+url = 'https://twitter.com/marswxreport?lang=en'$ response = requests.get(url)$ soup = bs(response.text, 'lxml')
+new_model = gensim.models.Word2Vec(min_count=1)  # an empty model, no training$ new_model.build_vocab(sentences)                 # can be a non-repeatable, 1-pass generator     $ new_model.train(sentences, total_examples=new_model.corpus_count, epochs=new_model.iter)                       $
+days_range = pd.date_range(start=min_date, end=max_date, freq='D')$ idx_days = [str(s)[:10] for s in days_range]
+woba_leaderboard = df.groupby(['batter_name', 'batter'])['woba_value'].agg(['mean', 'count'])$ woba_leaderboard.loc[woba_leaderboard['count']>100,].sort_values('mean', ascending=False).head()
+df.loc[:,"message"] = df['message'].str.findall('\w{3,}').str.join(' ') $ df.head()
+LR_prob=logisticRegr.predict_proba(train_ind[features])$ roc=roc_auc_score(test_dep[response], best_model_lr.predict_proba(test_ind[features])[:,1])
+cityID = '960993b9cfdffda9'$ for tweet in tweepy.Cursor(api.search, q=q, contained_within=cityID, wait_on_rate_limit=True, lang="en").items(500):    $         Bakersfield.append(tweet) 
+stop_words_update = list(pipe_cv.get_stop_words())$ stop_words_update.append('pron')$ stop_words_update.append('aa')
+compound_final.head()
