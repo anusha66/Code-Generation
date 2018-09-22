@@ -95,7 +95,8 @@ def dump_pickle(filename, obj):
 def main():
     dataset = []
 
-    path = 'matplotlib/data/*'
+    path = '/home/anushap/git-downlaod/pandas_notebooks/*'
+    #path = '/home/spothara/Code-Generation/matplotlib/data/*'
     files = glob.glob(path)
 
     for file in files:
@@ -147,7 +148,7 @@ def main():
         # print("-------------\n")
 
         # print(code_dic)
-
+        
         for key in code_2_intent.keys():
             intent = code_2_intent.get(key)
             comment = comments_dic.get(key)
@@ -155,12 +156,16 @@ def main():
             intent.extend(comment)
 
             comments_dic[key] = intent
-
+        
         # print("-------------\n")
 
         # print(comments_dic)
 
         for k in code_dic.keys():
+            if code_dic.get(k) == [] or comments_dic.get(k) == []:
+               continue
+            if (code_dic.get(k), comments_dic.get(k)) in dataset:
+               continue
             dataset.append((code_dic.get(k), comments_dic.get(k)))
 
     dump_pickle('pandas_dataset.pkl', dataset)
