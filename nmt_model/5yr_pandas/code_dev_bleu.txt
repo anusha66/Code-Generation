@@ -1,0 +1,1807 @@
+table_rows = driver . find_elements_by_tag_name ( _STR_ ) [ 18 ] . find_elements_by_tag_name ( _STR_ ) $
+( df2 [ _STR_ ] == _STR_ ) . mean ( ) $
+df_full [ _STR_ ] = df_full [ _STR_ ] . map ( DATA_L1_HDR_DICT )
+for url in soup . find_all ( _STR_ ) : $ print ( url . text )
+ks_cat_failed = ks_categories . drop ( ks_categories . index [ ks_categories . state != _STR_ ] ) $ ks_cat_failed . set_index ( _STR_ , inplace = True ) $ ks_cat_failed
+df_new [ [ _STR_ , _STR_ , _STR_ ] ] = pd . get_dummies ( df_new . country )
+with open ( _STR_ , _STR_ ) as file : $ sentiments = pickle . load ( file )
+years = df . groupby ( pd . TimeGrouper ( freq = _STR_ ) ) . count ( ) $ years
+a = [ ] $ b = [ item for item in new_tweets if any ( term in item . text . lower ( ) for term in search_terms ) ] $
+result = Geocoder . geocode ( _STR_ )
+store_items . fillna ( method = _STR_ , axis = 0 ) # filled with previous value from the column
+df . loc [ _STR_ : _STR_ , [ _STR_ , _STR_ ] ] . plot ( figsize = ( 20 , 10 ) )
+table_rows = driver . find_elements_by_tag_name ( _STR_ ) [ 2 ] . find_elements_by_tag_name ( _STR_ )
+log_reg_pred = log_reg . predict ( test )
+totalGoalsScoredByYear = wcups1 . groupBy ( [ _STR_ ] ) . agg ( fn . sum ( col ( _STR_ ) ) . alias ( _STR_ ) ) . sort ( desc ( _STR_ ) ) $ totalGoalsScoredByYear . show ( )
+print ( trump . axes ) $ print ( trump . shape )
+aqi . boxplot ( ) ;
+data = read_root ( _STR_ ) $ data . head ( )
+nu_fiss_xs = fuel_xs . get_values ( scores = [ _STR_ ] ) $ print ( nu_fiss_xs )
+DataSet . head ( 5 )         $
+df3 = make_df ( _STR_ , [ 0 , 1 ] ) $ df4 = make_df ( _STR_ , [ 0 , 1 ] ) $ display ( _STR_ , _STR_ , _STR_ )
+y_pred_mdl = mdl . predict ( X_test ) $ y_train_pred_mdl = mdl . predict ( X_train ) $ print ( _STR_ . format ( mdl . score ( X_test , y_test ) ) )
+data . isnull ( ) . sum ( )
+data [ _STR_ ] = 1.25 $ data
+afx_1d = requests . get ( ( _STR_ + $ _STR_ ) . format ( API_KEY ) ) . json ( )
+json_data = r . json ( )
+session . query ( measurement . date ) . \ $ filter ( measurement . station == _STR_ ) . \ $ order_by ( measurement . date ) . first ( )
+def add_agg_factor_column ( df , grpby_columns , factor_column , aggfunc , prefix ) : $ df [ _STR_ + _STR_ + factor_column + prefix ] = df . groupby ( grpby_columns ) [ factor_column ] . transform ( aggfunc ) $ return df
+np . random . seed ( 123456 ) $ ts = Series ( [ 1 , 2 , 2.5 , 1.5 , 0.5 ] , pd . date_range ( _STR_ , periods = 5 ) ) $ ts
+userMovies = userMovies . reset_index ( drop = True ) $ userGenreTable = userMovies . drop ( _STR_ , 1 ) . drop ( _STR_ , 1 ) . drop ( _STR_ , 1 ) . drop ( _STR_ , 1 ) $ userGenreTable
+df_new . groupby ( [ _STR_ ] , as_index = False ) . mean ( )
+graf [ _STR_ ] = graf [ _STR_ ] . progress_apply ( text_process )
+take_rate_grouped [ _STR_ ] = round ( ( take_rate_grouped [ _STR_ ] / take_rate_grouped [ _STR_ ] ) * 100 , 1 ) $ take_rate_grouped = pd . DataFrame ( take_rate_grouped [ _STR_ ] ) $ take_rate_grouped
+df [ _STR_ ] = df [ _STR_ ] . str . split ( expand = True ) [ 0 ]
+new_page_converted = np . random . choice ( [ 0 , 1 ] , size = ( 145310 ) , p = [ 0.88 , 0.12 ] )   $ p_new = ( new_page_converted == 1 ) . mean ( ) $
+date_precipitation = ( session . query ( Measurement . date , Measurement . prcp ) $ . filter ( Measurement . date >= start_date ) $ . order_by ( Measurement . date . desc ( ) ) . all ( ) )
+dbcon = sqlite3 . connect ( _STR_ ) $
+model = gensim . models . Word2Vec ( sentences , min_count = 10 )
+dfs_morning . loc [ dfs_morning [ _STR_ ] <= 0 , _STR_ ] = dfs_morning . ENTRIES_MORNING . quantile ( .5 )
+filter_df . shape
+print _STR_ , test_case . select ( _STR_ ) . take ( 1 ) $ actual_acct_id . select ( _STR_ ) . distinct ( ) . show ( 10 , False )
+noise_data = noise_data . dropna ( subset = [ _STR_ , _STR_ , _STR_ ] ) $ noise_data . shape
+adopted = user_engagement [ user_engagement . adopted == 1 ] $ abandonded = user_engagement [ user_engagement . adopted == 0 ]
+ArepaZone_tweetDF = pd . DataFrame ( data = ArepaZone_id , columns = [ _STR_ ] )
+dfFull [ _STR_ ] = dfFull . YearRemodAdd / dfFull . YearRemodAdd . max ( ) $
+y_pred = model . predict ( x_test , batch_size = 1024 , verbose = 1 )
+pgh_311_data = pd . read_csv ( _STR_ ) $ pgh_311_data . head ( )
+df_dates_final . to_csv ( _STR_ , sep = _STR_ , index_label = _STR_ , header = [ _STR_ ] )
+df [ _STR_ ] . value_counts ( ) # this will help us to see if there is repetition on the titles$
+plot_results = actual_value_second_measure . join ( predicted_probs_first_measure ) $
+model = linear_model . LinearRegression ( ) $ print ( _STR_ ) $ linear_model = reg_analysis ( model , X_train , X_test , y_train , y_test )
+from scipy . stats import norm $ critical_val = norm . ppf ( 1 - ( 0.05 / 2 ) ) $ critical_val
+STATION_traffic_weektotals = ( SCP_ENTRY_weektotals + SCP_EXIT_weektotals ) . groupby ( [ _STR_ ] ) . sum ( ) $ STATION_traffic_weektotals . sort_values ( ascending = False ) . head ( 10 )
+by_area [ _STR_ ] . value_counts ( ) . unstack ( )
+df . head ( 2 )
+def mape ( predictions , actuals ) : $ return ( ( predictions - actuals ) . abs ( ) / actuals ) . mean ( )
+df_combined [ _STR_ ] = ( df_combined [ _STR_ ] - df_combined [ _STR_ ] ) > 1 $ df_combined . drop ( [ _STR_ , _STR_ , _STR_ , _STR_ , _STR_ ] , axis = 1 , inplace = True )
+dl = df . groupby ( _STR_ ) . count ( ) $ dl $
+newfile . to_excel ( _STR_ , sheet_name = _STR_ )
+df_wna = df_selparams . dropna ( )
+df . head ( 2 )
+temp_df = df . copy ( ) $ temp_df . index = df . index . set_names ( _STR_ , level = _STR_ ) $ temp_df . head ( 3 )
+from jira . client import JIRA $ options = { _STR_ : _STR_ } $ jp = JIRA ( options = options , basic_auth = ( _STR_ , _STR_ ) )
+import datetime $ date = datetime . datetime ( year = 2017 , month = 6 , day = 13 ) $ date
+url = _STR_ $ response = requests . get ( url ) $ response
+print df_vow . index . weekday_name [ : 5 ] $
+data = r . json ( ) $
+df = pd . read_csv ( _STR_ ) $ df . head ( )
+data_summary = data . describe ( ) $ data_summary
+scores = cross_val_score ( model , X_top , y , scoring = _STR_ , cv = 5 ) $ print ( _STR_ . format ( scores , scores . mean ( ) ) )
+outfile = os . path . join ( _STR_ , _STR_ ) $ merge_table1 . to_csv ( outfile , encoding = _STR_ , index = False , header = True )
+df_4_test . columns = [ _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ ] $ print df_4_test
+cityID = _STR_ $ for tweet in tweepy . Cursor ( api . search , q = q , contained_within = cityID , wait_on_rate_limit = True , lang = _STR_ ) . items ( 500 ) :         $ Long_Beach . append ( tweet )
+df [ _STR_ ] . quantile ( q = 0.75 ) - df [ _STR_ ] . quantile ( q = 0.25 )
+hourly_df [ _STR_ ] . value_counts ( )
+ari_games = pd . DataFrame ( columns = [ _STR_ , _STR_ , _STR_ , _STR_ ] ) $ ari_games . MatchTimeROT = df_ari . MatchTimeROT . unique ( ) $ ari_games . MatchTimeC = df_ari . MatchTimeC . unique ( )
+df_arch_clean [ df_arch_clean [ _STR_ ] . notnull ( ) ]
+df2 . isnull ( ) . sum ( )
+from app . util import data_range $ data_range ( )
+dc [ _STR_ ] = dc [ _STR_ ] . apply ( lambda x : _STR_ % ( x . year , str ( x . week ) . zfill ( 2 ) ) ) $ tm [ _STR_ ] = tm [ _STR_ ] . apply ( lambda x : _STR_ % ( x . year , str ( x . week ) . zfill ( 2 ) ) )
+df . isnull ( ) . sum ( )
+sns . distplot ( temp_df [ temp_df . total_companies > 100 ] . proportion_no_psc )
+log_mod = sm . Logit ( df_new [ _STR_ ] , df_new [ [ _STR_ , _STR_ , _STR_ ] ] ) $ results = log_mod . fit ( ) $ results . summary ( )
+mod = sm . Logit ( df_new [ _STR_ ] , df_new [ [ _STR_ , _STR_ , _STR_ ] ] ) $ results = mod . fit ( ) $ results . summary ( )
+df_combined = df_combined . join ( pd . get_dummies ( df_combined [ _STR_ ] , prefix = _STR_ ) ) $ df_combined . head ( )
+session . query ( Measurement . id , func . max ( Measurement . tobs ) ) . filter ( Measurement . station == _STR_ ) . all ( )
+from scipy . stats import norm   $ norm . cdf ( z_score ) $ norm . ppf ( 1 - ( 0.05 / 2 ) ) $
+validation . analysis ( observation_data , Jarvis_resistance_simulation_1 )
+pd_review . shape
+session . query ( func . count ( Sta . name ) ) . all ( )
+requests . get ( saem_women )
+staff = staff . set_index ( _STR_ ) $ staff
+df2 . shape
+model . wv . most_similar ( _STR_ ) $
+ks = scipy . stats . ks_2samp ( df . ageM , df . ageF ) $
+df_new = df_country . set_index ( _STR_ ) . join ( df2 . set_index ( _STR_ ) , how = _STR_ ) $ df_new . head ( )
+cercanasA1_11_14Entre50Y75mts = cercanasA1_11_14 . loc [ ( cercanasA1_11_14 [ _STR_ ] >= 50 ) & ( cercanasA1_11_14 [ _STR_ ] < 75 ) ] $ cercanasA1_11_14Entre50Y75mts . loc [ : , _STR_ ] = cercanasA1_11_14Entre50Y75mts . apply ( descripcionDistancia , axis = 1 ) $ cercanasA1_11_14Entre50Y75mts . loc [ : , [ _STR_ , _STR_ ] ] . groupby ( _STR_ ) . agg ( np . mean )
+df . iloc [ 2893 ]
+df2 = df2 . drop_duplicates ( subset = [ _STR_ ] , keep = _STR_ )
+import pickle $ bild = pickle . load ( file = open ( _STR_ , _STR_ ) ) $ spon = pickle . load ( file = open ( _STR_ , _STR_ ) )
+network_simulation [ network_simulation . generations . isin ( [ 5 ] ) ] $
+d = datetime . date ( 2016 , 7 , 8 ) $ d . strftime ( _STR_ )
+j = r . json ( ) $
+inc = np . exp ( 0.0140 ) $ inc
+trn_lm , val_lm = sklearn . model_selection . train_test_split ( np . array ( df [ _STR_ ] ) , test_size = 0.1 ) $ len ( trn_lm ) , len ( val_lm )
+price2017 = price2017 . drop ( [ _STR_ , _STR_ ] , axis = 1 )
+df2 [ _STR_ ] . value_counts ( ) [ 0 ] / len ( df2 )
+tmp_df = tmp_ratings . pivot ( index = _STR_ , columns = _STR_ , values = _STR_ )
+df [ _STR_ ] = df [ _STR_ ] * ( 1 - df [ _STR_ ] ) $ df [ _STR_ ] = df [ _STR_ ] / np . timedelta64 ( 1 , _STR_ )
+cancel_df = data_df [ ( data_df [ _STR_ ] == _STR_ ) ] . copy ( ) $ cancel_df [ _STR_ ] = cancel_df [ _STR_ ] . apply ( lambda x : x == _STR_ ) $ cancel_df = cancel_df . sort_values ( [ _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ ] , ascending = False )
+avi_data = pd . read_csv ( _STR_ , encoding = _STR_ ) $
+dr_num_new_patients = dr_num_new_patients . astype ( _STR_ ) $ dr_num_existing_patients = dr_num_existing_patients . astype ( _STR_ )
+merged_portfolio_sp = pd . merge ( merged_portfolio , sp_500_adj_close , left_on = _STR_ , right_on = _STR_ ) $ merged_portfolio_sp . head ( )
+print _STR_ % ( Logistic_scrore * 100 ) $ print _STR_ % ( DT_Score * 100 ) $ print _STR_ % ( RF_Score * 100 )
+grouped_ct = events . groupBy ( _STR_ ) . agg ( count ( _STR_ ) ) $ grouped_ct = grouped_ct . withColumnRenamed ( _STR_ , _STR_ ) $ sorted_ct = grouped_ct . sort ( grouped_ct [ _STR_ ] . desc ( ) )
+df_final [ _STR_ ] = df . groupby ( _STR_ , as_index = False ) [ _STR_ ] . nunique ( )
+stream = tweepy . Stream ( auth , l )
+engine = create_engine ( _STR_ ) $ conn = engine . connect ( ) $ session = Session ( engine )
+import pandas as pd $ df_from_pd = pd . read_clipboard ( ) $ df_from_pd
+all_tables_df . OBJECT_TYPE . count ( )
+df . set_index ( [ _STR_ , _STR_ ] , inplace = True )
+sox . sort ( _STR_ , ascending = True , inplace = True ) $ sox . reset_index ( drop = False , inplace = True ) $ sox . rename ( columns = { _STR_ : _STR_ } , inplace = True )
+print ( type ( r . json ( ) ) ) $ json_dict = r . json ( ) $
+df2_control = df2 . query ( _STR_ )
+data = pd . read_csv ( _STR_ ) $ data
+tweet_archive_clean [ _STR_ ] . isin ( tweet_image_clean [ _STR_ ] ) . value_counts ( ) $
+for factor in factors_bettable : $ df_bettable [ _STR_ + factor ] = df_bettable . groupby ( _STR_ ) [ factor ] . transform ( lambda x : x . rank ( ascending = False ) ) $
+gdf = gdf [ gdf [ _STR_ ] . isin ( chromosomes_list ) ] $ gdf . drop ( [ _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ ] , axis = 1 , inplace = True ) $ gdf . sort_values ( _STR_ ) . iloc [ : : - 1 ]
+iris_new [ _STR_ ] = iris_new [ _STR_ ] * iris_new [ _STR_ ] $ iris_new [ _STR_ ] . quantile ( [ 0.25 , 0.5 , 0.75 ] )
+combined_df [ _STR_ ] = 1 $ logistic_model = sm . Logit ( combined_df [ _STR_ ] , combined_df [ [ _STR_ , _STR_ , _STR_ , _STR_ ] ] ) $ result = logistic_model . fit ( )
+df2 = df [ ( ( df . group == _STR_ ) & ( df . landing_page == _STR_ ) ) | ( ( df . group == _STR_ ) & ( df . landing_page == _STR_ ) ) ]
+data . T
+from sklearn . cross_validation import train_test_split $ X_train , X_test , y_train , y_test = train_test_split ( X , y , random_state = 1 )
+% % time $ pq . write_table ( crime_geo_table , data_dir + file_name + _STR_ )
+cur . execute ( _STR_ )
+corpus_Tesla = [ dictionary . doc2bow ( text ) for text in sws_removed_all_tweets ]
+lm = sm . Logit ( df2 [ _STR_ ] , df2 [ [ _STR_ , _STR_ , _STR_ ] ] ) $ results = lm . fit ( ) $ results . summary ( )
+from scipy . stats import norm $ norm . cdf ( z_score ) , norm . ppf ( 1 - ( 0.05 / 2 ) ) $
+print ( archive_copy [ _STR_ ] . value_counts ( ) ) $ archive_copy [ archive_copy . new_rating_denominator == _STR_ ] [ _STR_ ] $     $
+merged [ [ _STR_ , _STR_ , _STR_ ] ] = pd . get_dummies ( merged [ _STR_ ] )
+tweet_image_clean [ _STR_ ] . isin ( tweet_archive_clean [ _STR_ ] ) . value_counts ( ) $
+total_ctrl = ( df2 [ _STR_ ] == _STR_ ) . sum ( ) $ prob_ctrl = total_ctrl / unique_users $ df2 [ ( df2 [ _STR_ ] == _STR_ ) & ( df2 [ _STR_ ] == 1 ) ] . sum ( )   $
+health_data . iloc [ : 2 , : 2 ]
+bin_vars = [ col for col in Xtrain_pf . columns if Xtrain_pf [ col ] . nunique ( ) == 2 ] $ bin_vars
+prcp_df [ _STR_ ] = [ dt . datetime . strptime ( x , _STR_ ) for x in prcp_df [ _STR_ ] ]
+reviews_sample . to_csv ( _STR_ ) $
+df_new [ [ _STR_ , _STR_ ] ] = pd . get_dummies ( df_new [ _STR_ ] ) [ [ _STR_ , _STR_ ] ] $ df_new . head ( )
+twitter_Archive [ _STR_ ] = twitter_Archive [ _STR_ ] . apply ( lambda time : time . strftime ( _STR_ ) ) $ twitter_Archive [ _STR_ ] = twitter_Archive [ _STR_ ] . apply ( lambda time : time . strftime ( _STR_ ) )
+df2 [ df2 [ _STR_ ] == _STR_ ] [ _STR_ ] . mean ( )
+df [ ( df [ _STR_ ] == 0 ) ] . groupby ( _STR_ ) . count ( )
+group_by_kmeans = Cluster_df . groupby ( _STR_ ) . mean ( ) $ group_by_kmeans . head ( )
+pd . set_option ( _STR_ , 100 )
+theta_0 = 0.1 * np . random . randn ( X_train_1 . shape [ 1 ] ) $ theta = gradient_descent ( X_train_1 , y_train , theta_0 , 0.1 , 100 )
+b = R17df . rename ( { _STR_ : _STR_ } , axis = _STR_ ) $
+pd . concat ( [ s1 , s2 , s3 ] , axis = 0 , keys = [ _STR_ , _STR_ , _STR_ ] )
+data = pd . DataFrame ( data = [ tweet . text for tweet in tweets ] , columns = [ _STR_ ] ) $ display ( data . head ( 2 ) )
+mvrs = ratings . groupby ( _STR_ ) . size ( ) . sort_values ( ascending = False ) $ tmp_ratings = ratings . ix [ mvrs [ mvrs > rating_count ] . index ] . dropna ( )
+archive_clean [ _STR_ ] . replace ( archive_clean [ archive_clean . name . str . islower ( ) ] . name , np . nan , inplace = True ) $
+stats [ _STR_ ] = commit_df . commit . iloc [ - 1 ]
+X2 = now [ [ col for col in now . columns if col != _STR_ ] ]
+df_events . iloc [ : , 7 ] . value_counts ( )
+csvDF . columns = [ _STR_ , _STR_ , _STR_ , _STR_ , _STR_ ]
+df_country = pd . read_csv ( _STR_ ) $ df_country [ _STR_ ] . unique ( )
+last_year = session . query ( Measurement . date , Measurement . prcp ) . filter ( Measurement . date >= _STR_ ) . \ $ filter ( Measurement . date < _STR_ ) . order_by ( Measurement . date ) . all ( )
+if not os . path . isdir ( _STR_ ) : $ os . makedirs ( _STR_ )
+popular_programs = challange_1 [ _STR_ ] . value_counts ( ) $ popular_programs
+dfs [ _STR_ ] . groupby ( [ _STR_ , _STR_ ] ) [ _STR_ ] . sum ( ) . to_frame ( ) $ dfs [ _STR_ ] . groupby ( [ _STR_ , _STR_ ] ) [ _STR_ ] . sum ( ) . to_frame ( )
+df_train = pd . merge ( df_train , df_items , on = _STR_ , how = _STR_ )
+groups = contract_history [ [ _STR_ , _STR_ ] ] . merge ( intervention_train [ [ _STR_ , _STR_ ] ] )
+date_collected = datetime . strftime ( nytimes_df [ _STR_ ] [ 0 ] , _STR_ ) $
+df_new [ [ _STR_ , _STR_ ] ] = pd . get_dummies ( df_new [ _STR_ ] ) [ [ _STR_ , _STR_ ] ]
+ex4 . drop ( _STR_ , axis = 1 )
+df . query ( _STR_ ) . user_id . nunique ( ) / df [ _STR_ ] . nunique ( )
+len ( df . index ) $
+auth = tweepy . OAuthHandler ( consumer_key , consumer_secret ) $ auth . set_access_token ( access_token , access_token_secret ) $ api = tweepy . API ( auth , parser = tweepy . parsers . JSONParser ( ) )
+df_imputed_mean_NOTCLEAN1A = df_NOTCLEAN1A . fillna ( df_NOTCLEAN1A . mean ( ) )
+df_ari = df_ari . sort_values ( [ _STR_ , _STR_ ] , ascending = [ True , True ] )
+sns . barplot ( x = top_sub [ _STR_ ] , y = top_sub . index ) # challenge: annotate values in the plot$ plt.xlabel("number of posts")$ plt.title("Top 5 active subreddits by # of posts");
+search2 = search2 . sample ( frac = 1 )
+df_sentiment_means = pd . DataFrame ( news_sentiment_means ) $ df_sentiment_means . head ( 10 )
+y_test = df_test [ _STR_ ] . values $ y_test [ 0 : 5 ]
+autos_df = pd . DataFrame ( { _STR_ : price_dict , _STR_ : odom_dict } ) $ autos_df
+sf_business = graphlab . SFrame ( df_business . reset_index ( ) )
+countries_df = pd . read_csv ( _STR_ ) $ df_new = countries_df . set_index ( _STR_ ) . join ( df2 . set_index ( _STR_ ) , how = _STR_ )
+tweet_df = pd . DataFrame ( tweet_data ) $
+df . drop_duplicates ( subset = [ _STR_ , _STR_ ] , inplace = True )
+client . query ( _STR_ )
+null_vals = np . random . normal ( 0 , p_diffs . std ( ) , p_diffs . size ) $ ( null_vals > obs_diff ) . mean ( )
+df_users = pd . read_sql ( SQL , db ) $ print ( df_users . head ( ) ) $ print ( df_users . tail ( ) )
+teams = pd . unique ( results [ [ _STR_ , _STR_ ] ] . values . ravel ( ) ) $ teams
+summary_all = df [ _STR_ ] . describe ( percentiles = [ 0.1 , 0.25 , 0.75 , 0.9 ] ) $ summary_all
+x = datetime . strptime ( inner_list [ 0 ] [ 0 ] , _STR_ ) $ type ( x . year )
+Quantile_95_disc_times_pay = df . groupby ( [ _STR_ , _STR_ ] ) . agg ( [ np . sum , np . mean , np . std ] ) $ Quantile_95_disc_times_pay . head ( 8 ) $
+hspop = todf ( ( hs * 100.00 ) / pop )
+df2 . drop ( 2893 , inplace = True ) $
+t1 [ t1 [ _STR_ ] . notnull ( ) == True ]
+df . to_csv ( _STR_ , index = False )
+pd . Series ( [ 2 , 4 , 6 ] , index = [ _STR_ , _STR_ , _STR_ ] )
+time_series . info ( )
+df . plot ( ) $ plt . show ( )
+plt . axis ( _STR_ ) $ plt . plot ( np . nancumsum ( tab . delta_long ) , np . nancumsum ( tab . delta_lat ) ) $ plt . show ( ) $
+W . WISKI_CODES
+trump_origitnals [ _STR_ ] = trump_o [ _STR_ ] . map ( lambda x : x if type ( x ) != str else x . lower ( ) )
+sns . set_style ( _STR_ ) $ sns . set_context ( _STR_ , font_scale = 1.5 , rc = { _STR_ : 2.5 } )
+df [ _STR_ ] . mean ( ) * 100
+noatar_grades = noatar . groupby ( _STR_ ) . size ( ) $ print ( noatar_grades ) $ noatar_grades . plot . bar ( )
+style_bw . tail ( 5 )
+p2_table = profits_table . groupby ( [ _STR_ ] ) . Profit . sum ( ) . reset_index ( ) $ p2_result = p2_table . sort_values ( _STR_ , ascending = False ) $ p2_result . head ( )
+missing_info = list ( data . columns [ data . isnull ( ) . any ( ) ] )   $ missing_info
+z_score , p_value = sm . stats . proportions_ztest ( [ convert_old , convert_new ] , [ n_old , n_new ] ) $ z_score , p_value
+idx_trade = r . json ( ) [ _STR_ ] [ _STR_ ] . index ( _STR_ ) $ idx_trade
+my_gempro . set_representative_sequence ( ) $ print ( _STR_ , my_gempro . missing_representative_sequence ) $ my_gempro . df_representative_sequences . head ( )
+pred = train . predict ( X_test ) $ df = pd . DataFrame ( pred , index = users_usage_summaries_test . index . astype ( str ) , columns = [ _STR_ ] , dtype = str ) $ df . to_csv ( out_name , header = True , quoting = csv . QUOTE_NONNUMERIC )
+df . rename ( columns = { _STR_ : _STR_ } , inplace = True ) $ df . info ( )
+df_schools . shape
+tipsDF . tail ( )
+s_mean_df [ _STR_ ] = pd . to_datetime ( s_mean_df [ _STR_ ] , format = _STR_ ) $ s_mean_df . info ( )
+p_new = df2 . converted . mean ( ) $ p_new
+xyz = json . dumps ( youtube_urls , separators = ( _STR_ , _STR_ ) ) $ with open ( _STR_ , _STR_ ) as fp : $ fp . write ( xyz ) $
+dataset [ _STR_ ] . max ( ) - dataset [ _STR_ ] . min ( )
+print _STR_ , df_visitsbyCountry . shape $ df_visitsbyCountry . head ( )
+afx_volume = [ day [ 6 ] for day in afx_dict [ _STR_ ] [ _STR_ ] ] $ afx_avg_vol = sum ( afx_volume ) / len ( afx_volume ) $ print ( _STR_ + str ( round ( afx_avg_vol , 2 ) ) + _STR_ )
+Base = automap_base ( ) $ Base . prepare ( engine , reflect = True )
+df . query ( _STR_ ) . count ( ) [ _STR_ ] / df [ _STR_ ] . count ( )
+df_twitter_extract = pd . read_csv ( _STR_ ) $ df_twitter_extract_copy = df_twitter_extract . copy ( ) $ df_twitter_extract_copy . head ( )
+cur . execute ( _STR_ ) $ conn . commit ( ) # you must commit for it to become permanent$ cur.rowcount  # tells you how many rows written, sometimes, it's quirky
+round ( autos [ _STR_ ] . describe ( ) )
+precipitation_df = pd . DataFrame ( precipitation_data , columns = [ _STR_ , _STR_ ] ) $ precipitation_df . set_index ( _STR_ , inplace = True , ) $ precipitation_df
+df . zone . fillna ( _STR_ , inplace = True ) $ df . county_name . fillna ( _STR_ , inplace = True )
+autos [ _STR_ ] . unique ( )
+x = api . GetUserTimeline ( screen_name = _STR_ , count = 20 , include_rts = False ) $ x = [ _ . AsDict ( ) for _ in x ]
+max_activity = indexed_activity . station_count . max ( )
+s519281_df . describe ( )
+from keras . models import load_model $ y_pred = model . predict_classes ( val_x ) $ y_true = val_y
+test_df [ [ _STR_ , _STR_ ] ] . to_csv ( _STR_ , index = False )
+url = _STR_ $ table = pd . read_html ( url ) $ print ( table )
+r_client_previous = ft . Relationship ( es [ _STR_ ] [ _STR_ ] , $ es [ _STR_ ] [ _STR_ ] ) $ es = es . add_relationship ( r_client_previous )
+df_user . info ( ) $
+new_page_converted . mean ( ) - old_page_converted . mean ( ) $
+data [ data [ _STR_ ] == _STR_ ] #['link_weight']#.loc[3]
+df . info ( )
+from scipy . stats import norm $ norm . cdf ( z_score ) $ norm . ppf ( 1 - ( 0.05 / 2 ) ) $
+sentiments_df . to_csv ( _STR_ , encoding = _STR_ , index = False )
+file_creations = df3 [ [ _STR_ , _STR_ , _STR_ , _STR_ ] ] . set_index ( $ _STR_ ) . sort_index ( ) . cumsum ( ) . drop_duplicates ( )
+names . groupby ( _STR_ ) [ _STR_ ] . sum ( ) . sort_values ( ascending = False ) . head ( 10 )
+print ( _STR_ , tipsDF . shape )
+query_date = dt . date ( 2017 , 8 , 23 ) - dt . timedelta ( days = 7 ) $ print ( _STR_ , query_date )
+train_data , test_data , train_labels , test_labels = train_test_split ( spmat , y_data , test_size = 0.10 , random_state = 42 )
+training_RDD , test_RDD = complete_ratings_data . randomSplit ( [ 7 , 3 ] , seed = 42 )
+[ tweet for tweet in df_clusters [ df_clusters . cluster_cat == 40 ] . text [ : 10 ] ]
+df2 . groupby ( _STR_ ) . group . value_counts ( ) $
+cust_data2 = cust_data1 . set_index ( _STR_ ) $
+RNPA_new = RNPA [ RNPA [ _STR_ ] . str . contains ( _STR_ ) ] $ RNPA_existing = RNPA [ ~ RNPA [ _STR_ ] . str . contains ( _STR_ ) ]
+faa_data_substantial_damage_pandas = faa_data_pandas [ faa_data_pandas [ _STR_ ] == _STR_ ] $ print ( faa_data_substantial_damage_pandas . shape ) $ faa_data_substantial_damage_pandas . head ( )
+teama_merge = my_elo_df . merge ( final_elo , how = _STR_ , left_on = [ _STR_ , _STR_ ] , right_on = [ _STR_ , _STR_ ] ) $ teama_merge [ teama_merge [ _STR_ ] == _STR_ ] . tail ( 7 )
+df2 [ df2 . duplicated ( [ _STR_ ] , keep = False ) ]
+forcast = m . predict ( test_data_brand9 ) $ print ( forcast [ [ _STR_ , _STR_ , _STR_ , _STR_ ] ] . tail ( 100 ) ) $
+engine . execute ( _STR_ ) . fetchall ( )
+df_movies . to_csv ( _STR_ , sep = _STR_ , encoding = _STR_ , header = True )
+data [ _STR_ ] [ data [ _STR_ ] < 0 ] = 365 + data [ _STR_ ] $ data . iloc [ 140 : 170 , ] $
+control_conv = conv_ind . query ( _STR_ ) . shape [ 0 ] $ control_group = df2 . query ( _STR_ ) . shape [ 0 ] $ print ( _STR_ . format ( control_conv / control_group ) )
+from scipy . stats import norm $ norm . cdf ( z_score )
+old_page_converted = np . random . choice ( [ 1 , 0 ] , size = n_old , p = [ p_old , ( 1 - p_old ) ] )   $ old_page_converted
+demographics = pd . read_csv ( _STR_ ) $
+solar_wind_df . loc [ 3080 : 3085 ]
+print ( train_trees [ random . randrange ( len ( train_trees ) ) ] )
+from scipy import stats $ resid = model_arima121 . resid $
+lm . score ( x_test , y_test )
+pd . Timestamp ( _STR_ )
+data . fillna ( method = _STR_ )
+data [ _STR_ ] = np . array ( [ analize_sentiment ( tweet ) for tweet in data [ _STR_ ] ] ) $ display ( data . head ( 10 ) )
+1 / np . exp ( - 1.7227 ) , 1 / np . exp ( - 1.3968 ) , 1 / np . exp ( - 1.4422 ) $
+precip_df = pd . DataFrame ( precip ) $ date_precip_df = precip_df . set_index ( _STR_ ) $ date_precip_df . head ( ) $
+autos . ad_created_month . value_counts ( normalize = True ) $
+cur . execute ( _STR_ ) $ print ( cur . fetchall ( ) )
+data . groupby ( _STR_ ) . count ( )
+pd . value_counts ( ac [ _STR_ ] )
+reliableData . describe ( include = _STR_ )
+print ts . groupby ( _STR_ ) . sum ( ) . tail ( 5 )
+df2 = tier1_df . reset_index ( ) $ df2 = df2 . rename ( columns = { _STR_ : _STR_ , _STR_ : _STR_ } )
+engine = create_engine ( _STR_ , echo = False )
+logit_mod = sm . Logit ( df_new [ _STR_ ] , df_new [ [ _STR_ , _STR_ , _STR_ ] ] ) $ results = logit_mod . fit ( ) $ results . summary ( )
+n_old = df2 . query ( _STR_ ) . shape [ 0 ] $ n_old
+def near ( x , keep = 5 ) : $ return x . tail ( keep ) $
+preview [ _STR_ ] . value_counts ( )
+usgs_temp_cols = hourly_dat . columns [ hourly_dat . columns . str . contains ( _STR_ ) ] $ hourly_dat [ usgs_temp_cols ] [ _STR_ : _STR_ ] . plot ( )
+from sklearn . model_selection import train_test_split $ x_train , x_test , y_train , y_test = train_test_split ( $ data , targets , test_size = 0.25 , random_state = 23 )
+% % time $ corpus = load_headline_corpus ( verbose = True ) $ print ( _STR_ , len ( corpus . sents ( ) ) )
+metatable . describe ( )
+df . duration /= 60
+dicttagger_service = DictionaryTagger ( [ _STR_ ] )
+data = part . resample ( _STR_ ) . median ( ) $ plt . plot ( data [ _STR_ ] ) $ plt . show ( )
+cursor = collection_reference . aggregate ( [ { _STR_ : { _STR_ : 5 } } ] ) $ tw_sample_df = pd . DataFrame ( list ( cursor ) ) $ tw_sample_df
+df2 . user_id . duplicated ( ) . sum ( )
+trump [ _STR_ ] = trump . index . hour $ trump [ _STR_ ] = trump . index . weekday_name
+session . query ( Measurement . station , func . count ( Measurement . tobs ) ) . filter ( Measurement . tobs != None ) . group_by ( Measurement . station ) . order_by ( func . count ( Measurement . tobs ) . desc ( ) ) . first ( )
+bd . columns . name = _STR_ $ bd
+df_new = countries_df . set_index ( _STR_ ) . join ( df2 . set_index ( _STR_ ) , how = _STR_ ) $ df_new . head ( )
+max_IMDB = scores . IMDB . max ( )
+df2 = df2 . drop_duplicates ( subset = _STR_ ) ;
+new_n = df2 [ df2 [ _STR_ ] == _STR_ ] . shape [ 0 ] $ new_n
+descr = df . select ( _STR_ ) . toPandas ( ) $ descrGrp = descr . groupby ( _STR_ ) . size ( ) . rename ( _STR_ ) $ descrPlot = descrGrp . plot ( kind = _STR_ )
+sns . kdeplot ( utility_patents_subset_df . number_of_claims , shade = True , color = _STR_ ) $ plt . show ( )
+merged1 [ _STR_ ] = ( merged1 [ _STR_ ] - merged1 [ _STR_ ] ) . dt . days
+areacodes = [ 212 , 332 , 347 , 516 , 631 , 646 , 718 , 845 , 914 , 917 , 929 , 934 ] $ ny_df = df [ df . client_area_code . isin ( areacodes ) ] $
+words_only_sp = [ term for term in words_sp if not term . startswith ( _STR_ ) and not term . startswith ( _STR_ ) ] $ corpus_tweets_streamed_profile . append ( ( _STR_ , len ( words_only_sp ) ) ) # update corpus comparison$ print('The number of words only (no hashtags, no mentions): ', len(words_only_sp))
+new_page_converted = np . random . choice ( [ 1 , 0 ] , size = n_new , p = [ p_new , ( 1 - p_new ) ] )   $ new_page_converted
+ab_file2 . info ( )
+df_tidied = df_tidied . sort_values ( by = [ _STR_ ] ) $ df_tidied = df_tidied . drop_duplicates ( ) $ print ( _STR_ , df_tidied . shape )
+result = cur . fetchall ( ) $
+outputs = { } $ for key in predictions : $ outputs [ key ] = pd . DataFrame ( { id_label : ids , target_label : predictions [ key ] } )
+g8_groups [ _STR_ ] . mean ( )
+df2 [ df2 . duplicated ( [ _STR_ ] ) ] [ _STR_ ] . unique ( )
+SGDC = SGDClassifier ( ) $ model2 = SGDC . fit ( x_train , y_train )
+display ( data . head ( 10 ) )
+jobs_data . nunique ( ) $
+INC . dtypes $
+session . query ( func . min ( Measurement . tobs ) , func . max ( Measurement . tobs ) , func . avg ( Measurement . tobs ) ) \ $ . filter ( Measurement . station == _STR_ ) . all ( )
+index_vector = df . source == _STR_ $ gdf = df [ index_vector ] $ gdf . shape
+tl_2040 = pd . read_csv ( _STR_ , encoding = _STR_ , index_col = 0 )
+train_msk = ( ( train . click_timeDay == 8 ) & ( train . click_timeHour >= 9 ) ) |   \ $ ( ( train . click_timeDay == 9 ) & ( train . click_timeHour <= 8 ) ) $ val_msk = ( ( train . click_timeDay == 9 ) & ( train . click_timeHour >= 9 ) & ( train . click_timeHour <= 15 ) )
+dfData [ _STR_ ] = [ _STR_ if ( type ( x ) == NoneType ) else x for x in dfData [ _STR_ ] ] # 'Standard Sale' is the most common.$ dfData['financing'] = ['Conventional' if (type(x) == NoneType) else x for x in dfData['financing']]  # 'Conventional' is the most common.$ dfData.head(10)
+p_old = df2 [ _STR_ ] . mean ( ) $ print ( _STR_ , p_old )
+retweets = pd . read_sql_query ( query , conn ) $ retweets . head ( )
+old_page_converted = np . random . binomial ( 1 , p_old , n_old ) $ old_page_converted . mean ( )
+pandas_ds [ _STR_ ] . plot ( kind = _STR_ , logy = True )
+df_new [ [ _STR_ , _STR_ , _STR_ ] ] = pd . get_dummies ( df_new [ _STR_ ] ) $ df_new = df_new . drop ( _STR_ , axis = 1 ) #Making the CA column the baseline for country$ df_new.head()
+ibm_hr_cat_dum = spark . createDataFrame ( pd_cat ) $ ibm_hr_cat_dum . show ( 3 )
+import pandas as pd $ cs = pd . Series ( cleaned ) $ by_lga [ _STR_ ] = cs
+dfname2 = dfname . copy ( ) $ dfmusic = dfname2 [ dfname2 . main_category == _STR_ ] $ dfmusic . head ( )
+mars_html_table = mars_table . to_html ( ) $
+pgh_311_data_merged = pgh_311_data . merge ( pgh_311_codes , left_on = _STR_ , right_on = _STR_ ) $ pgh_311_data_merged . sample ( 10 )
+df . set_index ( _STR_ , inplace = True ) $ df . index
+questions = pd . concat ( [ questions . drop ( _STR_ , axis = 1 ) , coming_next_reason ] , axis = 1 )
+df = df . reindex ( np . random . permutation ( df . index ) )
+r = requests . get ( _STR_ )
+df . dropna ( subset = [ _STR_ ] , how = _STR_ , inplace = True )
+countries_df = pd . read_csv ( _STR_ ) $ countries_df . head ( )
+lossprob = fe . bs . smallsample_loss ( 2560 , poparr , yearly = 256 , repeat = 500 , level = 0.90 , inprice = 1.0 ) $
+merged1 = pd . merge ( left = merged1 , right = offices , how = _STR_ , left_on = _STR_ , right_on = _STR_ )
+a_df . index = a_df . TimeCreate $ a_df . rename ( columns = { 0 : _STR_ } , inplace = True ) $
+pt = jdfs . pushed_at . apply ( lambda x : time . mktime ( x . timetuple ( ) ) ) $ npt = pt - pt . min ( )
+prob_ind_conv = df2 [ df2 [ _STR_ ] == 1 ] . shape [ 0 ] / df2 . shape [ 0 ] $ prob_ind_conv
+df_new [ [ _STR_ , _STR_ ] ] = pd . get_dummies ( df_new [ _STR_ ] ) [ [ _STR_ , _STR_ ] ] $ df_new . head ( )
+psy_hx = psy_hx . dropna ( axis = 1 , how = _STR_ ) $
+import requests $ urlkorbase = _STR_ $ data = requests . get ( urlkorbase ) . text $
+df_p_diffs = pd . DataFrame ( p_diffs , columns = [ _STR_ ] ) $ df_p_diffs . to_csv ( _STR_ , index = False )
+conn . autocommit = True $ c = conn . cursor ( )
+number_of_commits = git_log [ _STR_ ] . count ( ) $ number_of_authors = git_log [ _STR_ ] . nunique ( ) $ print ( _STR_ % ( number_of_authors , number_of_commits ) )
+twitter_archive . loc [ twitter_archive [ _STR_ ] == 420 , [ _STR_ , _STR_ ] ]
+url = _STR_
+kNN500x = KNeighborsClassifier ( n_neighbors = 500 ) $ kNN500x . fit ( X_extra , y_extra )
+b_cal_q1 = pd . DataFrame ( b_cal [ b_cal [ _STR_ ] == _STR_ ] )
+my_model_q3_proba = SuperLearnerClassifier ( clfs = clf_base_default , stacked_clf = clf_stack_knn , training = _STR_ ) $ my_model_q3_proba . fit ( X_train , y_train ) $ my_model_q3_proba . stackData . head ( )
+for leg in plan [ _STR_ ] [ _STR_ ] [ 0 ] [ _STR_ ] : $ print ( _STR_ . \ $ format ( leg [ _STR_ ] , leg [ _STR_ ] , leg [ _STR_ ] , leg [ _STR_ ] , len ( leg [ _STR_ ] ) ) )
+news_df = pd . DataFrame ( news_dict ) $ news_df . head ( )
+df4 [ _STR_ ] . value_counts ( )
+train_test . loc [ train_test [ _STR_ ] == 112 , _STR_ ] = 1.5 $ train_test . loc [ train_test [ _STR_ ] == 10 , _STR_ ] = 1 $ train_test . loc [ train_test [ _STR_ ] == 20 , _STR_ ] = 2
+vacation_data_df = pd . DataFrame ( vacation_data ) $ rain_per_station = pd . pivot_table ( vacation_data_df , index = [ _STR_ ] , values = [ _STR_ ] , aggfunc = sum ) $ rain_per_station $
+import logging $ logging . basicConfig ( format = _STR_ , level = logging . INFO )
+from pyramid . arima import auto_arima
+df = df . loc [ df [ _STR_ ] != _STR_ ] $ df = df . loc [ df [ _STR_ ] != _STR_ ] $ df . set_value ( df . index [ 11650 ] , _STR_ , _STR_ )
+from scipy . stats import norm $ print ( norm . cdf ( z_score ) ) $ print ( norm . ppf ( 1 - ( 0.05 ) ) )
+times_zone = pd . DataFrame ( df_table [ _STR_ ] [ 771 : 797 ] ) $ times_created = pd . DataFrame ( df_table [ _STR_ ] [ 771 : 797 ] ) $ appV = pd . DataFrame ( df_table [ _STR_ ] [ 771 : 797 ] )
+from h2o . automl import H2OAutoML
+crimes . PRIMARY_DESCRIPTION . head ( )
+x = topics_data . comms_num $ y = topics_data . score $ print ( _STR_ , round ( np . corrcoef ( x , y ) [ 0 , 1 ] , 2 ) ) $
+print ( _STR_ . format ( df2 [ df2 [ _STR_ ] == _STR_ ] [ _STR_ ] . mean ( ) ) )
+train_topics_df = pd . DataFrame ( [ dict ( ldamodel [ item ] ) for item in train_corpus ] , index = graf_train . index ) $ test_topics_df = pd . DataFrame ( [ dict ( ldamodel [ item ] ) for item in test_corpus ] , index = graf_test . index ) $
+( actual_diff < p_diffs ) . mean ( )
+print ( data . petal_length . mode ( ) )
+df [ _STR_ ] = df [ _STR_ ] $ df [ _STR_ ] = pd . to_datetime ( df . DATETIME , infer_datetime_format = True )
+print ( client . version )
+TrainData = pd . read_csv ( _STR_ )
+t3 . drop ( t3 [ t3 [ _STR_ ] . notnull ( ) == True ] . index , inplace = True )
+obs_diff = new_conv_rate - old_conv_rate $ ( p_diffs > obs_diff ) . mean ( )
+recipes . iloc [ 0 ]
+cityID = _STR_ $ for tweet in tweepy . Cursor ( api . search , q = q , contained_within = cityID , wait_on_rate_limit = True , lang = _STR_ ) . items ( 500 ) :         $ Fort_Wayne . append ( tweet )
+nb = MultinomialNB ( ) $ nb . fit ( X_train_total , y_train ) $ nb . score ( X_test_total_checked , y_test )
+df_selection = df_selection . dropna ( how = _STR_ )
+user_engagement = pd . concat ( [ user_engagement , pd . get_dummies ( user_engagement . creation_source ) ] , axis = 1 ) $ user_engagement . head ( )
+preds = lm . predict ( X_new ) $ preds
+data = pd . DataFrame ( { _STR_ : [ 30 , 29 ] , _STR_ : [ 21 , 20 ] } ) $ print ( data )
+file = path + _STR_ $ ks_projects = pd . read_csv ( file , encoding = _STR_ ) $
+Measurements = Base . classes . metDF $ Stations = Base . classes . logDF
+finalData = dat . append ( Stockholm_data ) $ X . f = vectorizer . fit_transform ( finalData [ _STR_ ] ) $ y . f = finalData [ _STR_ ] $
+df = pd . read_csv ( _STR_ , parse_dates = [ _STR_ ] ) $ df
+news_title = soup . title . text $ print ( news_title )
+new_page_converted = np . random . choice ( [ 0 , 1 ] , n_new , p = [ p_new , 1 - p_new ] )
+fetch_measurements ( _STR_ )
+df2 [ _STR_ ] = 1 $ df2 [ _STR_ ] = pd . get_dummies ( df [ _STR_ ] ) [ _STR_ ] $ df2 . head ( )
+total_rows = df . shape [ 0 ] $ print ( _STR_ . format ( total_rows ) )
+df_grp1 = df . groupby ( _STR_ ) . mean ( ) $ display ( df_grp1 . head ( ) ) $ df_grp1 . plot ( y = _STR_ , title = _STR_ ) $
+engine . execute ( _STR_ ) . fetchall ( )
+Base . classes . keys ( ) $
+auth = tweepy . OAuthHandler ( consumer_key , consumer_secret ) $ auth . set_access_token ( access_token , access_token_secret ) $ api = tweepy . API ( auth )
+def day_of_week ( date ) : $ days_of_week = { 0 : _STR_ , 1 : _STR_ , 2 : _STR_ , 3 : _STR_ , 4 : _STR_ , 5 : _STR_ , 6 : _STR_ } $ return days_of_week [ date . weekday ( ) ]
+r = rq . get ( _STR_ )
+breakdown [ breakdown != 0 ] . sort_values ( ) . plot ( $ kind = _STR_ , title = _STR_ $ )
+df = DataObserver . build_simply ( file_path = _STR_ )
+df_joined . columns
+df [ _STR_ ] . mean ( )
+eth_market_info . drop ( [ _STR_ ] , inplace = True , axis = 1 ) $ scaler_eth = MinMaxScaler ( feature_range = ( 0 , 1 ) ) $ scaled_eth = scaler_eth . fit_transform ( eth_market_info ) $
+num_sources = ... $ ... $
+times = bird_data . timestamp [ bird_data . bird_name == _STR_ ] $ elapsed_time = [ time - times [ 0 ] for time in times ] $ print ( elapsed_time [ : 10 ] )
+df2 [ df2 . user_id == 773192 ]
+tmax_day_2018 . values
+from collections import Counter $ words = set ( ) $ word_counts = data [ _STR_ ] . apply ( lambda x : pd . value_counts ( x . split ( _STR_ ) ) ) . sum ( axis = 0 ) $
+train . info ( )
+best_parameters , score , _ = max ( GSCV . grid_scores_ , key = lambda x : x [ 1 ] ) $ print ( _STR_ , best_parameters )
+sentiment_df = pd . DataFrame ( sentiments ) $ sentiment_df . head ( )
+sns . barplot ( data = df . groupby ( _STR_ ) . agg ( { _STR_ : lambda x : len ( set ( x ) ) } ) . reset_index ( ) , $ x = _STR_ , y = _STR_ )
+comments = [ x . text for x in soup . find_all ( _STR_ , { _STR_ : _STR_ } ) ]
+example_tweets [ 0 ] $ import pprint ; pprint . pprint ( vars ( example_tweets [ 0 ] ) ) $
+station_count2 = session . query ( Measurement . station , func . count ( Measurement . tobs ) ) . group_by ( Measurement . station ) . order_by ( func . count ( Measurement . tobs ) . desc ( ) ) . all ( ) $ station_count2
+ptgeom = [ Point ( xy ) for xy in zip ( df [ _STR_ ] , df [ _STR_ ] ) ] $ gdf = gpd . GeoDataFrame ( df , geometry = ptgeom , crs = { _STR_ : _STR_ } ) $ gdf . head ( 5 )
+df [ df [ _STR_ ] < 60 * 45 ] [ _STR_ ] . plot . hist ( bins = 30 )
+np . sin ( df * np . pi / 4 )
+mydata = requests . get ( _STR_ )
+df . isnull ( ) . values . any ( )
+len ( df [ _STR_ ] . unique ( ) )
+for row in spark_df . take ( 2 ) : $ print row
+params = { _STR_ : [ 6 , 6 ] , _STR_ : _STR_ , _STR_ : 12.0 , _STR_ : 2 } $ plot_autocorrelation ( doc_duration , params = params , lags = 30 , alpha = 0.05 ,   \ $ title = _STR_ )
+df [ ( _STR_ < df [ _STR_ ] ) & ( df [ _STR_ ] < _STR_ ) ] [ _STR_ ] . mean ( )
+df_master [ df_master . favorite_count == 144118 ] . jpg_url
+df2 . user_id [ df2 . user_id . duplicated ( ) ]
+df_stock1 = df_stock . filter ( [ _STR_ , _STR_ ] , axis = 1 ) $ df_test = df_test . filter ( [ _STR_ , _STR_ ] , axis = 1 ) $
+v_invoice_link . drop ( v_invoice_link_dropper , axis = 1 , inplace = True ) $ invoice_link . drop ( invoice_link_dropper , axis = 1 , inplace = True )
+latest_time_entries = toggl . request ( _STR_ )
+df_proj_agg = df_proj [ [ _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , $ _STR_ , _STR_ , _STR_ , _STR_ , $ _STR_ , _STR_ , _STR_ , _STR_ ] ] . drop_duplicates ( )
+month [ _STR_ ] = month [ _STR_ ] . diff ( ) $ month [ _STR_ ] = month [ _STR_ ] . shift ( periods = - 1 ) $ month
+df_arch . head ( )
+( elms_all . shape , elms_all_0611 . shape )
+% matplotlib inline $ train . num_points . value_counts ( normalize = True ) [ 0 : 20 ] . plot ( )
+valence_df . positive = 1.0 * valence_df . positive
+df_group_by . head ( 20 )
+engine = create_engine ( _STR_ , echo = False )
+findM = re . compile ( _STR_ , re . IGNORECASE ) $ for i in range ( 0 , len ( postsDF ) ) : $ print ( findM . findall ( postsDF . iloc [ i , 0 ] ) )
+old_page_converted = np . random . choice ( [ 0 , 1 ] , n_old , replace = True , p = [ 1 - p_old , p_old ] ) $ np . bincount ( old_page_converted )
+tokens . sort_values ( _STR_ , ascending = True ) . head ( 10 )
+if __name__ == _STR_ : $ get_all_tweets = api . user_timeline ( _STR_ ) $ print ( get_all_tweets )
+top_songs [ _STR_ ] = top_songs [ _STR_ ] . dt . day
+from sklearn . linear_model import LogisticRegression $ logit_mod = sm . Logit ( df2 [ _STR_ ] , df2 [ [ _STR_ , _STR_ ] ] ) $ results = logit_mod . fit ( ) $
+P_old = df2 . converted . mean ( ) $ print ( _STR_ . format ( P_old ) )
+round ( 1 / np . exp ( - 0.0099 ) , 2 ) , round ( 1 / np . exp ( - 0.0507 ) , 2 )
+df_goog [ _STR_ ] . unique ( )
+$ mfacts = pd . read_html ( marsfacts_url ) $ mfacts
+openmoc_geometry = get_openmoc_geometry ( mgxs_lib . geometry )
+for date_col in [ _STR_ , _STR_ , _STR_ , _STR_ ] : $ ORDER_BPAIR_SCN_SHOPIFY [ date_col ] = pd . to_datetime ( ORDER_BPAIR_SCN_SHOPIFY [ date_col ] ) . dt . strftime ( _STR_ ) $
+df_clean . drop ( df_clean [ df_clean [ _STR_ ] . isnull ( ) == False ] . index , inplace = True ) $
+dfa = df . query ( _STR_ ) $ dfb = df . query ( _STR_ ) $ sum ( dfa [ _STR_ ] == _STR_ ) + sum ( dfb [ _STR_ ] == _STR_ )
+grouped = joined . groupby ( [ _STR_ , _STR_ ] ) . aggregate ( lambda x : tuple ( x ) ) $ grouped = grouped . reset_index ( )
+len ( chefdf . name )
+p_old = df2 [ _STR_ ] . mean ( ) $ print ( _STR_ . format ( round ( p_old , 4 ) ) )
+import pandas as pd $ review_df = pd . read_json ( _STR_ , orient = _STR_ , lines = True )
+print ( checking [ _STR_ ] . iloc [ z ] ) $ print ( test_checking [ _STR_ ] . iloc [ zt ] )
+print d . variables [ _STR_ ]
+scores [ scores . RottenTomatoes == scores . RottenTomatoes . min ( ) ]
+calls_nocontact . street_address . value_counts ( )
+i = 0 $ sample_sent = valid_labels [ i ] $ print ( _STR_ . join ( sent2tokens ( sample_sent ) ) , end = _STR_ )
+Base . classes . keys ( ) $
+data_AFX_X [ _STR_ ] = data_AFX_X [ _STR_ ] - data_AFX_X [ _STR_ ] $ data_AFX_X . describe ( )
+model . summary ( )
+noise_data [ noise_data [ _STR_ ] > _STR_ ] . head ( ) $ noise_data [ noise_data [ _STR_ ] . dt . month > 11 ] . head ( ) $ noise_data [ noise_data [ _STR_ ] . dt . dayofweek == 6 ] . head ( )
+df . head ( )
+results = pd . read_csv ( _STR_ . format ( team_accronym ) , parse_dates = [ _STR_ ] ) $ results_postseason = pd . read_csv ( _STR_ . format ( team_accronym ) , parse_dates = [ _STR_ ] )
+closed_issue_age = Issues ( github_index ) . is_closed ( ) \ $ . fetch_results_from_source ( _STR_ , _STR_ , dataframe = True ) $ print ( closed_issue_age . head ( ) )
+cityID = _STR_ $ for tweet in tweepy . Cursor ( api . search , q = q , contained_within = cityID , wait_on_rate_limit = True , lang = _STR_ ) . items ( 500 ) :         $ Las_Vegas . append ( tweet )
+db = client . insight_database $ collection = db . posts
+rows = df . shape [ 0 ] $ df = df . dropna ( )
+rddScaledScores = RDDTestScorees . map ( lambda entry : ( entry [ 1 ] * 0.9 ) ) $
+df . shape [ 0 ]
+mlp_df . index
+pi_year10lambapoint9_PS11taskG = 2.02
+cityID = _STR_ $ for tweet in tweepy . Cursor ( api . search , q = q , contained_within = cityID , wait_on_rate_limit = True , lang = _STR_ ) . items ( 500 ) :         $ Charlotte . append ( tweet )
+autos [ _STR_ ] . str [ : 10 ] . \ $ value_counts ( normalize = True , dropna = False ) . \ $ sort_index ( ascending = True )
+locations = session . query ( Measurement ) . group_by ( Measurement . station ) . count ( ) $ locations
+df2 . user_id . nunique ( )
+import algo . search $ dir ( algo . search )
+df2 [ [ _STR_ , _STR_ ] ] = pd . get_dummies ( df [ _STR_ ] ) $ df2 . head ( ) $
+d = datetime . date ( 1492 , 10 , 12 ) $ d . strftime ( _STR_ )
+number_of_commits = len ( git_log ) $ number_of_authors = len ( git_log . dropna ( ) [ _STR_ ] . unique ( ) ) $ print ( _STR_ % ( number_of_authors , number_of_commits ) )
+with open ( os . path . join ( folder_name , url . split ( _STR_ ) [ - 1 ] ) , mode = _STR_ ) as file : $ file . write ( response . content )
+df . reindex ( [ _STR_ , _STR_ , _STR_ , _STR_ , _STR_ ] ) # compare to df2 above
+type ( df_master . tweet_id [ 1 ] )
+from utils import write_output $ output_path = os . path . join ( output_dir , _STR_ ) $ write_output ( ids , ids_col , y_pred , label_col , output_path )
+df . drop ( df . query ( _STR_ ) . index , inplace = True ) $ df . drop ( df . query ( _STR_ ) . index , inplace = True ) $ df . info ( )
+new_page_converted = np . random . choice ( [ 1 , 0 ] , size = df_newlen , p = [ pnew , ( 1 - pnew ) ] ) $
+res . summary ( )
+nba_df [ _STR_ ] = nba_df [ _STR_ ] / nba_df [ _STR_ ] $ nba_df [ _STR_ ] = nba_df [ _STR_ ] / nba_df [ _STR_ ]
+df3 = pd . merge ( df1 , df2 ) $ df3
+df = df . drop ( [ _STR_ , _STR_ ] , axis = 1 ) $ X = df [ [ col for col in df . columns if col != _STR_ ] ] $ y = df [ _STR_ ]
+old_page_converted = np . random . choice ( [ 1 , 0 ] , size = n_old , p = [ p_mean , 1 - p_mean ] ) $ old_page_converted . mean ( )
+average_reading_score = df_students [ _STR_ ] . mean ( ) $ average_reading_score
+jail_census . drop ( _STR_ , axis = 1 , inplace = True ) $ jail_census
+dd = pd . read_csv ( _STR_ ) $ dd . head ( ) $
+tips . sample ( 5 ) . reset_index ( drop = True )
+f . index = [ 1 , 3 , 2 , 1 , 5 ] ; f
+df = df [ [ _STR_ , _STR_ , _STR_ , _STR_ ] ] $ df $
+regressor = tree . DecisionTreeRegressor ( max_depth = 10 ) $ regressor . fit ( train_features , train_occupancy )
+sessions = pd . read_csv ( _STR_ ) $ sessions . head ( )
+from scipy . stats import norm $ norm . cdf ( z_score ) $
+test_classifier ( _STR_ , WATSON_CLASSIFIER_ID_2 ) $ plt . plot ( classifier_stats [ _STR_ ] , _STR_ ) $ plt . show ( )
+TERM2017 = INT . loc [ ( INT . Term == _STR_ ) ] $ TERM2018 = INT . loc [ ( INT . Term == _STR_ ) ] $ TERM2019 = INT . loc [ ( INT . Term == _STR_ ) ] $
+df_customers . tail ( )
+data_l2_end = tmpdf . index [ tmpdf [ tmpdf . isin ( DATA_SUM1_KEYS ) ] . notnull ( ) . any ( axis = 1 ) ] . tolist ( ) $ data_l2_end
+! wget - nv https : // www . py4e . com / code3 / mbox . txt - O mbox . txt
+tweet_archive_clean [ _STR_ ] = tweet_archive_clean . text . str . extract ( _STR_ , expand = True )
+engine . execute ( _STR_ ) . fetchall ( )
+recip_treatment = round ( 1 / np . exp ( - 0.0150 ) , 2 ) $ print ( _STR_ . format ( round ( recip_treatment , 2 ) ) )
+station = pd . DataFrame ( hawaii_measurement_df . groupby ( _STR_ ) . count ( ) ) . rename ( columns = { _STR_ : _STR_ } ) $ station_count = station [ [ _STR_ ] ] $ station_count
+x_new = df2 [ ( df2 [ _STR_ ] == _STR_ ) & ( df2 [ _STR_ ] != _STR_ ) ] . shape [ 0 ] $ y_new = df2 [ ( df2 [ _STR_ ] != _STR_ ) & ( df2 [ _STR_ ] == _STR_ ) ] . shape [ 0 ] $ x_new + y_new
+df [ ( ( df . group == _STR_ ) & ( df . landing_page == _STR_ ) ) | ( df . group == _STR_ ) & ( df . landing_page == _STR_ ) ] [ _STR_ ] . count ( ) $
+with open ( _STR_ , _STR_ ) as fout : $ fout . write ( _STR_ ) $ fout . write ( _STR_ )
+recipes . iloc [ 0 ]
+comm . columns
+df . loc [ : , [ _STR_ , _STR_ ] ]
+sentiments_pd . to_csv ( _STR_ )
+std_df = choose_local_df ( _STR_ ) $ std_df . loc [ std_df [ _STR_ ] == _STR_ ] [ [ _STR_ , _STR_ , _STR_ , _STR_ , _STR_ ] ]
+data [ _STR_ ] = np . array ( [ analyze_sentiment ( tweet ) for tweet in data [ _STR_ ] ] ) $ display ( data . head ( 10 ) )
+autos [ _STR_ ] . unique ( )
+len ( api_result_df . loc [ api_result_df [ _STR_ ] . isin ( project_df [ _STR_ ] ) ] )
+df . shape
+survey . head ( )
+f = e . instance_method $ e . instance_var = _STR_ $ f ( )
+mean = np . mean ( data [ _STR_ ] ) $ print ( _STR_ . format ( mean ) )
+tweet_favourite . plot ( figsize = ( 20 , 8 ) , label = _STR_ , legend = True ) $ tweet_retweet . plot ( figsize = ( 20 , 8 ) , label = _STR_ , legend = True )
+merged_data [ _STR_ ] = merged_data [ _STR_ ] . dt . day $ merged_data [ _STR_ ] = merged_data [ _STR_ ] . dt . month $ merged_data [ _STR_ ] = merged_data [ _STR_ ] . dt . year
+pres_df [ _STR_ ] . unique ( )
+session . query ( Measurement . station , Station . name , Station . latitude , Station . longitude , Station . elevation , func . sum ( Measurement . prcp ) ) \ $ . group_by ( Measurement . station ) . order_by ( func . sum ( Measurement . prcp ) . desc ( ) ) \ $ . filter ( Measurement . date >= start_date ) . filter ( Measurement . date <= end_date ) . all ( )
+df = pd . read_csv ( _STR_ ) $ df [ _STR_ ] = df [ _STR_ ] . where ( df [ _STR_ ] != df [ _STR_ ] . str . lower ( ) , - df [ _STR_ ] )
+df . shape
+df = df [ [ target_column ] ] . copy ( ) $ base_col = _STR_ $ df . rename ( columns = { target_column : base_col } , inplace = True )
+print ( df [ _STR_ , ] . head ( 3 ) ) $
+print ( series_of_converted_ages . mean ( ) ) / 365
+dat_before_fill = dat . copy ( ) $ for temp_col in temp_columns : $ dat . loc [ : , temp_col ] = dat [ temp_col ] . interpolate ( method = _STR_ , limit = 3 )
+red_4 [ _STR_ ] = red_4 [ _STR_ ] . astype ( _STR_ ) $ red_4 . head ( )
+temp_nc = Dataset ( _STR_ )
+inspector . get_table_names ( )
+save_filepath = _STR_ $ hs_path = save_filepath + _STR_ $ S = Simulation ( hs_path + _STR_ )
+df [ _STR_ ] = df [ _STR_ ] . cat . set_categories ( [ _STR_ , _STR_ , _STR_ , _STR_ , _STR_ ] ) $ df [ _STR_ ]
+country_dummies = pd . get_dummies ( df_new [ _STR_ ] ) $ df_new = df_new . join ( country_dummies )
+print ( df . columns . values )
+lm = sm . Logit ( sub_df2 [ _STR_ ] , sub_df2 [ [ _STR_ , _STR_ , _STR_ ] ] ) $ results = lm . fit ( ) $ results . summary ( )
+from IPython . display import display $ pd . options . display . max_columns = None
+df . describe ( )
+r = requests . get ( _STR_ + API_KEY ) $
+pd . to_datetime ( [ _STR_ , _STR_ ] , errors = _STR_ )
+classif_varieties = set ( ndf [ y_col ] . unique ( ) ) $ label_map = { val : idx for idx , val in enumerate ( ndf [ y_col ] . unique ( ) ) }
+driver = webdriver . Chrome ( executable_path = _STR_ )
+columns = [ _STR_ , _STR_ , _STR_ , _STR_ , _STR_ ] $ le = LabelEncoder ( ) $ model_df [ columns ] = model_df [ columns ] . apply ( lambda x : le . fit_transform ( x ) )
+from spacy . matcher import Matcher
+countries_df = pd . read_csv ( _STR_ ) $ df_new = countries_df . set_index ( _STR_ ) . join ( df2 . set_index ( _STR_ ) , how = _STR_ )
+from sklearn . model_selection import train_test_split $ from keras . utils import np_utils $ train_x , val_x , train_y , val_y = train_test_split ( x , y , test_size = 0.2 , stratify = y ) #, stratify = y)$
+df . nunique ( )
+west_2b = df2b . resample ( _STR_ ) . pad ( )
+doc . is_parsed
+t1 . name . value_counts ( )
+overall_gps = pd . DataFrame . from_dict ( dist_df , orient = _STR_ )
+number_of_commits = len ( git_log ) $ number_of_authors = len ( git_log [ _STR_ ] . dropna ( ) . unique ( ) ) $ print ( _STR_ % ( number_of_authors , number_of_commits ) )
+hs_path = utils . install_test_cases_hs ( save_filepath )
+full_df [ _STR_ ] = full_df . apply ( lambda x : x . price if x . bedrooms == 0 \ $ else x . price / x . bedrooms , axis = 1 )
+df [ ( ( df [ _STR_ ] == _STR_ ) == ( df [ _STR_ ] == _STR_ ) ) == False ] . shape [ 0 ]
+birth_dates . head ( )
+import statsmodels . api as sm $ log_mod = sm . Logit ( df2 [ _STR_ ] , df2 [ [ _STR_ , _STR_ ] ] ) $ results = log_mod . fit ( ) $
+path = _STR_ . format ( project_name ) $ fig . savefig ( path + _STR_ , transparent = False , dpi = 80 , bbox_inches = _STR_ ) $
+df2 [ df2 . duplicated ( [ _STR_ ] ) ] . user_id
+MyList = [ random . random ( ) for x in range ( 1000 ) ] $ MyList [ : 5 ] # print the first 5 items in the list
+model = sm . OLS ( df_new . converted , df_new [ [ _STR_ , _STR_ , _STR_ , _STR_ ] ] ) $ results = model . fit ( )
+sort_df . head ( 10 )
+result = api . search ( q = _STR_ )   $ len ( result )
+df_ml_features = df_reg . drop ( _STR_ , axis = 1 ) $ df_ml_target = df_reg [ _STR_ ]
+( null_vals > act_diff ) . mean ( )
+dates = pd . DatetimeIndex ( pivoted . columns ) $ dates [ ( labels == 0 ) & ( dayofweek < 5 ) ]
+contractor_merge [ contractor_merge . contractor_bus_name . duplicated ( ) == True ] $
+df . sample ( 5 ) # To check the data$
+model_w = sm . formula . ols ( _STR_ , data = df ) . fit ( ) $ anova_w_table = sm . stats . anova_lm ( model_w , typ = 1 ) $ anova_w_table . round ( 3 )
+y_cat . value_counts ( ) $
+df1 = df . drop ( df [ ( df . group == _STR_ ) & ( df . landing_page != _STR_ ) ] . index ) $ df2 = df1 . drop ( df1 [ ( df . group == _STR_ ) & ( df1 . landing_page != _STR_ ) ] . index ) $
+week_analysis_df = calc_temps ( _STR_ , _STR_ ) $ week_analysis_df . head ( )
+funding_type = merged_df [ _STR_ ] . value_counts ( ) $ funding_type
+path = _STR_ $ df = pd . read_stata ( path ) $ df . head ( 5 )
+print ( address_df [ _STR_ ] . value_counts ( ) . head ( 3 ) )
+df1 = clinton_df [ clinton_df [ _STR_ ] == _STR_ ] . head ( 10 ) $ df2 = clinton_df [ clinton_df [ _STR_ ] == _STR_ ] . head ( 10 ) $ pd . concat ( [ df1 , df2 ] )
+data . describe ( )
+tweet_df = tweet_df . reset_index ( ) [ [ _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ ] ]
+chgis . rename ( columns = { _STR_ : _STR_ } , inplace = True ) $ chgis . columns = [ _STR_ % x for x in chgis . columns ]
+mds = [ int ( k . split ( _STR_ ) [ 1 ] ) for k in power . columns . values ] $ booths = list ( mapping [ mapping [ _STR_ ] . isin ( mds ) ] [ _STR_ ] )
+stock_data . loc [ stock_data [ _STR_ ] > 80 ]
+s4 . value_counts ( )
+nold_sim = df2 . loc [ ( df2 [ _STR_ ] == _STR_ ) ] . sample ( nold , replace = True ) $ old_page_converted = nold_sim . converted $ old_page_converted . mean ( )
+fe . bs . bootstrap ( 3 , poparr ) $
+print ( _STR_ + str ( df_archive [ _STR_ ] . notnull ( ) . sum ( ) ) ) $ df_archive = df_archive [ df_archive [ _STR_ ] . isnull ( ) ] $ len ( df_archive )
+va = VectorAssembler ( inputCols = ( input_features ) , outputCol = _STR_ ) $ df = va . transform ( df ) . select ( _STR_ , _STR_ , _STR_ , _STR_ ) $
+data . dtypes $
+aaplA01 = aapl [ _STR_ ] [ [ _STR_ ] ] $ withDups = pd . concat ( [ msftA01 [ : 3 ] , aaplA01 [ : 3 ] ] ) $ withDups
+engine . execute ( _STR_ ) . fetchall ( )
+( act_diff < p_diffs ) . mean ( )
+prcp_analysis_df = prcp_analysis_df . loc [ prcp_analysis_df [ _STR_ ] >= pa_min_date ]
+jdfs . loc [ ~ jdfs . fork ]
+cityID = _STR_ $ for tweet in tweepy . Cursor ( api . search , q = q , contained_within = cityID , wait_on_rate_limit = True , lang = _STR_ ) . items ( 500 ) :         $ Miami . append ( tweet )
+csvFile = open ( _STR_ , _STR_ )
+autos . describe ( include = _STR_ ) # include both numeric and categorical variables
+pres_df . rename ( columns = { _STR_ : _STR_ } , inplace = True ) $ pres_df . head ( 2 )
+trip_data_sub = trip_data_sub . drop ( _STR_ , axis = 1 )
+Base = automap_base ( ) $ Base . prepare ( engine , reflect = True ) $
+total_df . drop_duplicates ( subset = _STR_ , keep = _STR_ , inplace = True )
+merge [ merge . columns [ 18 ] ] . value_counts ( ) . sort $
+data . count ( axis = 0 )
+sean = relevant_data [ relevant_data [ _STR_ ] == _STR_ ] $ sean [ _STR_ ] . value_counts ( ) . plot ( kind = _STR_ )
+display ( data . head ( 20 ) )
+doc = coll . find_one ( ) $ doc
+element = driver . find_element_by_xpath ( _STR_ ) $ element . get_attribute ( _STR_ )
+target_user = ( _STR_ , _STR_ , _STR_ , _STR_ , _STR_ ) $ total_tweets = pd . DataFrame ( columns = [ _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ ] ) $
+plt . bar ( 1 , dict [ _STR_ ] , color = _STR_ , yerr = dict [ _STR_ ] - dict [ _STR_ ] ) $ plt . title ( _STR_ ) $ plt . ylabel ( _STR_ )
+twelve_months = session . query ( Measurements . date , Measurements . prcp ) . filter ( Measurements . date > year_before ) $ twelve_months_prcp = pd . read_sql_query ( twelve_months . statement , engine , index_col = _STR_ )
+df [ _STR_ ] = df [ _STR_ ] . apply ( category )
+df2 . shape [ 0 ]
+plt . style . use ( _STR_ )
+StationCount = session . query ( Station . id ) . count ( ) $ print ( _STR_ )
+aggregates [ _STR_ ] = aggregates [ _STR_ ] . apply ( lambda x : str ( x . lower ( ) . strip ( ) ) ) $ aggregates [ _STR_ ] = aggregates [ _STR_ ] . astype ( str )
+df2 . drop ( labels = 1899 , axis = 0 , inplace = True )
+df [ _STR_ ] . cat . categories = [ _STR_ , _STR_ , _STR_ ] $ df [ _STR_ ]
+tweet_df . head ( ) $
+sorted_precip = index_date_df . sort_values ( by = [ _STR_ ] ) $ sorted_precip . head ( )
+df2 [ df2 [ _STR_ ] . duplicated ( ) ]
+total . iloc [ : 3 ]
+def avg_num_of_trees ( num_of_trees ) : $ a = [ 250 , 750 , 1250 , 2000 , 2500 ] $ return np . dot ( a , num_of_trees )
+r = requests . get ( _STR_ + API_KEY )
+user_converted = df [ _STR_ ] . mean ( ) $ print ( _STR_ . format ( user_converted * 100 ) )
+df [ _STR_ ] = df [ _STR_ ] . str . extract ( _STR_ )
+pgh_311_data [ _STR_ ] . value_counts ( )
+very_pop_df = au . filter_for_support ( popular_trg_df , min_times = 7 ) $ au . plot_user_dominance ( very_pop_df )
+card_layouts = [ _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ ] $ all_sets . cards = all_sets . cards . apply ( lambda x : x . loc [ x . layout . map ( lambda y : y in card_layouts ) ] ) $ all_sets . cards = all_sets . cards . apply ( lambda x : x . loc [ x . types . map ( lambda y : y != [ _STR_ ] ) ] )
+fig , ax = plt . subplots ( 1 , 2 , figsize = ( 15 , 3 ) ) $ ax [ 0 ] . boxplot ( joined [ _STR_ ] , vert = False ) $ ax [ 1 ] . boxplot ( joined [ _STR_ ] , vert = False )
+from scipy . stats import norm $ print ( norm . cdf ( z_score ) ) $ print ( norm . ppf ( 1 - ( 0.05 ) ) )
+validation_features = bind_features ( validation , train_test = _STR_ ) . cache ( ) $ validation_features . count ( )
+pres_df = pres_df . rename ( columns = { _STR_ : _STR_ } )
+p_new = df2 . query ( _STR_ ) . user_id . nunique ( ) / df2 . user_id . nunique ( ) $ p_new
+if _STR_ and _STR_ in dat . columns :         $ dat . loc [ dat . VecAvgWindDir . isnull ( ) , _STR_ ] = LVL1 . vector_average_wind_direction_individual_timestep ( WS = dat . WindSpeed [ dat . VecAvgWindDir . isnull ( ) ] , WD = dat . WindDir [ dat . VecAvgWindDir . isnull ( ) ] ) $
+r_dict = r . json ( ) $ print ( r_dict [ _STR_ ] [ _STR_ ] )
+df_dn . to_csv ( _STR_ , date_format = _STR_ , index = False )
+for i , x in top_likes . iteritems ( ) : $ print ( _STR_ + x )
+store_items . pop ( _STR_ ) $ store_items
+z_score , p_value = sm . stats . proportions_ztest ( [ 17489 , 17264 ] , [ 145274 , 145310 ] , alternative = _STR_ ) $ z_score , p_value $
+maxtobs = max ( tobsDateDFclean . tobs ) $ tobsDateDFclean . hist ( bins = 12 )
+plt . savefig ( str ( output_folder ) + _STR_ + str ( cyclone_name ) + _STR_ + str ( location_name ) )
+commits_per_year = corrected_log . groupby ( pd . Grouper ( key = _STR_ , freq = _STR_ ) ) . count ( ) $ commits_per_year . columns = [ _STR_ ] $ commits_per_year . head ( )
+sanne_data = bird_data [ bird_data . bird_name == _STR_ ] $ print ( sanne_data . timestamp . head ( ) )
+jobs = df [ _STR_ ] . unique ( )
+env = gym . make ( _STR_ ) $ env . seed ( 505 ) ;
+df . select ( _STR_ ) . describe ( ) . show ( ) $
+df2 . query ( _STR_ )
+df . groupby ( _STR_ ) [ _STR_ ] . nunique ( )
+nb_pipe . fit ( X_train , y_train ) $ nb_pipe . score ( X_test , y_test )
+print ( _STR_ , pass_students . ATAR . std ( ) ) $ print ( _STR_ , fail_students . ATAR . std ( ) )
+log . info ( _STR_ ) $ new_predictions_response = client . run_job ( body = req_body ) $ log . info ( _STR_ )
+db = client . nhl_db $ collection = db . articles
+date_df . plot . area ( stacked = False )
+overallQual = pd . get_dummies ( dfFull . OverallQual ) $
+data_spd = pd . DataFrame ( ) $ data_spd [ _STR_ ] = np . array ( tweet_spd ) $ data_spd . head ( n = 3 )
+combined_truck_df_csv_path = _STR_ + str ( time . time ( ) ) + _STR_ + _STR_ + _STR_ $ combined_truck_df . to_csv ( path_or_buf = combined_truck_df_csv_path , header = [ _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ ] , index = True , sep = _STR_ )
+base_df_body . head ( )
+df2 = df2 . drop ( df2 . index [ 2862 ] )
+soup = bs ( response . text , _STR_ )
+combined_salaries . to_csv ( directory + _STR_ , index = False )
+p_diffs_m = np . array ( p_diffs ) . mean ( )
+tobs_data = [ ] $ for row in temperature_data : $ tobs_data . append ( row [ 0 ] ) $
+import numpy as np $ date = np . array ( _STR_ , dtype = np . datetime64 ) $ date
+recommendation_sets = len ( sample . index ) $ recommendation_sets
+grid . fit ( Xtrain , ytrain )
+pandas_list_2d_rename = pandas_list_2d . rename ( columns = { 0 : _STR_ , 1 : _STR_ , 2 : _STR_ } ) $ print ( pandas_list_2d_rename )
+d = tran_time_diff [ tran_time_diff . msno == _STR_ ] $ d
+prob_convert = df2 . converted . mean ( ) $ prob_convert
+mydata . plot ( figsize = ( 15 , 6 ) )   $ plt . show ( )
+cars = cars [ ( cars . powerPS >= 10 ) & ( cars . powerPS <= 500 ) ] $ cars2 = cars2 [ cars2 . powerPS >= 10 & ( cars2 . powerPS <= 500 ) ]
+vhd [ _STR_ ] = vhd . index . str . split ( _STR_ ) . str [ 0 ] $ vhd [ _STR_ ] = vhd . index . str . split ( _STR_ ) . str [ 1 ]
+cur . close ( ) $ con . close ( )
+lc_review = pd_review [ _STR_ ] [ 0 ] . lower ( ) $
+from IPython . core . interactiveshell import InteractiveShell $ InteractiveShell . ast_node_interactivity = _STR_
+model_att = model_attention_nmt ( len ( human_vocab ) , len ( machine_vocab ) ) $ model_att . compile ( optimizer = _STR_ , loss = _STR_ , metrics = [ _STR_ ] )
+month = pd . get_dummies ( questions [ _STR_ ] )
+data_final . shape
+new_df = df . fillna ( method = _STR_ ) $ new_df
+% % time $ crime_geo . to_parquet ( data_dir + file_name + _STR_ , compression = _STR_ )
+car_brands = autos [ _STR_ ] . value_counts ( normalize = True ) . index
+df1_clean = df1_clean [ ~ ( df1_clean . doggo . isnull ( ) & df1_clean . floofer . isnull ( ) & df1_clean . pupper . isnull ( ) & $ df1_clean . puppo . isnull ( ) ) ]
+ldf [ _STR_ ] . mean ( )
+z_score , p_value = sm . stats . proportions_ztest ( [ convert_old , convert_new ] , [ n_old , n_new ] , alternative = _STR_ ) $ z_score , p_value
+url = _STR_ $ response = requests . get ( url )
+vow [ _STR_ ] = vow . index . day $ vow [ _STR_ ] = vow . index . month $ vow [ _STR_ ] = vow . index . year
+combined_df [ [ _STR_ ] ] = combined_df [ [ _STR_ ] ] . astype ( object ) $ combined_df = combined_df . rename ( columns = { _STR_ : _STR_ } ) $ print ( combined_df . dtypes )
+import warnings $ warnings . filterwarnings ( _STR_ )
+csvData [ _STR_ ] = csvData [ _STR_ ] . str . replace ( _STR_ , _STR_ ) $ csvData [ csvData [ _STR_ ] . str . match ( _STR_ ) ] [ _STR_ ]
+measurement_df [ _STR_ ] . value_counts ( ) . count ( )
+demographics [ _STR_ ] = demographics . registration_init_time . apply ( lambda x : datetime . strptime ( str ( x ) , _STR_ ) ) $
+writing_commit_df = commit_df . query ( _STR_ ) $ stats [ _STR_ ] = len ( writing_commit_df )
+from scipy . stats import norm $ print ( norm . cdf ( z_score ) ) $ print ( norm . ppf ( 1 - ( 0.05 ) ) )
+df [ _STR_ ] = df [ _STR_ ] . astype ( _STR_ ) $ df [ _STR_ ] = df [ _STR_ ] . astype ( _STR_ ) $ df [ _STR_ ] = df [ _STR_ ] . astype ( _STR_ )
+p_x = x . copy ( )
+dates_D = load_dates ( _STR_ ) $
+print ( data . json ( ) )
+stop_words_update . append ( _STR_ ) $ pipeline . set_params ( posf__stop_words = stop_words_list , cv__stop_words = stop_words_update )
+df2 = pd . read_csv ( _STR_ ) #July 2017
+zeros = ( grades . Mark == 0 )   $ grades_no_zeros = grades . drop ( grades . index [ zeros ] ) $ grades_no_zeros . describe ( ) $
+for column in [ _STR_ , _STR_ , _STR_ , _STR_ ] :   $ df [ column ] = pd . to_datetime ( df [ column ] )
+df_grp = df . groupby ( _STR_ ) $ df_grp . describe ( )
+dog_ratings = dog_ratings . dropna ( subset = [ _STR_ ] ) $ dog_ratings . info ( )
+tweets . to_csv ( _STR_ , sep = _STR_ , index = False , encoding = _STR_ ) $ users . to_csv ( _STR_ , sep = _STR_ , index = False , encoding = _STR_ )
+df . shape
+merge_df [ _STR_ ] = pd . to_numeric ( merge_df [ _STR_ ] . str . split ( _STR_ ) . str [ 0 ] ) * pd . to_numeric ( merge_df [ _STR_ ] . str . split ( _STR_ ) . str [ 1 ] ) $ merge_df [ _STR_ ] = pd . qcut ( x = merge_df [ _STR_ ] , labels = [ _STR_ , _STR_ , _STR_ ] , q = 3 )
+tweets [ _STR_ ] = tweets [ _STR_ ] . str . strip ( ) $ tweets_loc = tweets . groupby ( tweets . location ) . count ( ) [ _STR_ ] . sort_values ( ascending = False ) $ tweets_loc $
+userMovies = moviesWithGenres_df [ moviesWithGenres_df [ _STR_ ] . isin ( inputMovies [ _STR_ ] . tolist ( ) ) ] $ userMovies
+my_date_only_rows = autos [ _STR_ ] . str [ : 10 ] #strip first 9 characters$ my_date_only_rows$
+plt = r6s . score . hist ( bins = 10000 ) $ plt . set_xlim ( 0 , 50 )
+result = api . search ( q = _STR_ ) #%23 is used to specify '#'$ len(result)
+df1 = pd . merge ( left = dfWQ_annual , right = dfQ1_annual , how = _STR_ , left_index = True , right_index = True ) $ df2 = pd . merge ( left = dfWQ_annual , right = dfQ2_annual , how = _STR_ , left_index = True , right_index = True ) $ df3 = pd . merge ( left = dfWQ_annual , right = dfQ3_annual , how = _STR_ , left_index = True , right_index = True )
+list ( Users_first_tran . dropna ( thresh = int ( Users_first_tran . shape [ 0 ] * .9 ) , axis = 1 ) . columns )
+objects = attribute_df ( df , _STR_ ) $ objects . head ( )
+fitness_tests = sql_query ( _STR_ ) $ fitness_tests . head ( 3 )
+df . converted . mean ( )
+flights2 = flights . set_index ( [ _STR_ , _STR_ ] ) [ _STR_ ] $ flights2 . head ( )
+p_diffs = np . random . binomial ( n_new , p_new , 10000 ) / n_new - np . random . binomial ( n_old , p_old , 10000 ) / n_old $
+print ( _STR_ . format ( len ( tweets_positivos ) * 100 / len ( datos [ _STR_ ] ) ) ) $ print ( _STR_ . format ( len ( tweets_neutros ) * 100 / len ( datos [ _STR_ ] ) ) ) $ print ( _STR_ . format ( len ( tweets_negativos ) * 100 / len ( datos [ _STR_ ] ) ) )
+with connection : $ cursor . executemany ( _STR_ , $ [ ( str ( x ) , ) for x in fib ( 10 ) ] ) $
+df_new . ab_page . mean ( )
+train = train . drop ( columns = [ _STR_ ] ) $ test = test . drop ( columns = [ _STR_ ] )
+station_count . iloc [ : , 0 ] . idxmax ( ) $
+states . columns
+state = env . reset ( ) $ state , reward , done , info = env . step ( env . action_space . sample ( ) ) $ state . shape
+foobar = np . dtype ( [ ( _STR_ , int ) , ( _STR_ , float ) ] )
+git_log . timestamp = pd . to_datetime ( git_log . timestamp , unit = _STR_ ) $ git_log . timestamp . describe ( )
+df . drop ( _STR_ , axis = _STR_ , inplace = True )
+log_mod = sm . Logit ( df_new [ _STR_ ] , df_new [ [ _STR_ , _STR_ , _STR_ ] ] ) $ result = log_mod . fit ( ) $ result . summary ( )
+grouped2 = df_cod3 . groupby ( [ _STR_ , _STR_ ] ) $ grouped2 . size ( )
+data = pd . read_csv ( _STR_ , index_col = _STR_ ) $ data . index = pd . to_datetime ( data . index )
+df . show ( 1 )
+df_lit = pandas . read_csv ( _STR_ , sep = _STR_ , encoding = _STR_ , compression = _STR_ ) $ df_lit = df_lit . dropna ( subset = [ _STR_ ] ) $ df_lit
+S_distributedTopmodel = Simulation ( hs_path + _STR_ )
+news_df = news_df . set_index ( _STR_ ) $ news_df . head ( )
+df_tte_ri . drop ( [ _STR_ ] , axis = 1 , inplace = True ) $ df_tte_ri . head ( 2 )
+df_new [ [ _STR_ , _STR_ ] ] = pd . get_dummies ( df_new [ _STR_ ] ) [ [ _STR_ , _STR_ ] ] $ df_new [ _STR_ ] . astype ( str ) . value_counts ( )
+df_trimmed . event . unique ( ) $
+! rm - rf models3 $   ! mrec_train - n4 - - input_format tsv - - train _STR_ - - outdir models3 - - model = slim   \ $ - - l1_reg = 0.001 - - l2_reg = 0.1
+p_overall = df2 . converted . mean ( ) $ p_overall
+engine . execute ( _STR_ ) . fetchall ( )
+df3 = df3 . drop ( [ _STR_ , _STR_ ] , axis = 1 ) $ df3 [ _STR_ ] = df3 [ _STR_ ] . str . findall ( _STR_ ) # .findall returns list which causes issues later$ df3.reindex(columns = ['created_at','location','time_zone','tweet', 'hashtag'])
+df2 . info ( )
+reframed = series_to_supervised ( scaled , 1 , 1 ) $ reframed . drop ( reframed . columns [ [ 8 , 9 , 10 , 11 , 12 , 13 ] ] , axis = 1 , inplace = True ) $ print ( reframed . head ( ) )
+if not os . path . exists ( _STR_ ) : $ os . mkdir ( _STR_ ) $ records3 . to_csv ( _STR_ )
+pgh_311_data . resample ( _STR_ ) . mean ( )
+from pyspark . sql . functions import * $ display ( flight2 . select ( max ( _STR_ ) ) . show ( ) ) $ display ( flight2 . select ( min ( _STR_ ) ) . show ( ) )
+s4 . shape
+twitter_archive_df . tail ( 3 )
+kick_data = k_var_state [ [ _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ ] ] $ kick_data . head ( )
+ranking = pd . read_csv ( _STR_ ) # Obtained from https://us.soccerway.com/teams/rankings/fifa/?ICID=TN_03_05_01$ fixtures = pd.read_csv('datasets/fixtures.csv') # Obtained from https://fixturedownload.com/results/fifa-world-cup-2018$ pred_set = []$
+old_page_converted = np . random . choice ( [ 1 , 0 ] , size = n_old , p = [ p_mean , ( 1 - p_mean ) ] , replace = True )
+new_page_converted = np . random . choice ( [ 0 , 1 ] , N_new , p = ( p_new , 1 - p_new ) ) $ new_page_converted
+validation . analysis ( observation_data , simple_resistance_simulation_0_25 )
+tweets_df = tweets_df [ tweets_df . userTimezone . notnull ( ) ] $ len ( tweets_df ) $
+path_to_my_database = _STR_ $ conn = sqlite3 . connect ( path_to_my_database ) # connect to database$ cur = conn.cursor()  # create cursor
+s . index
+len ( df [ ~ ( df . user_properties == { } ) ] )
+for columns in DummyDataframe2 [ [ _STR_ , _STR_ ] ] : $ basic_plot_generator ( columns , _STR_ , DummyDataframe2 . index , DummyDataframe2 )
+! hdfs dfs - put ProductPurchaseData . txt { HDFS_DIR } / ProductPurchaseData . txt
+SNL . groupby ( [ _STR_ , _STR_ ] ) . size ( ) $
+LSST_sample_filename = _STR_ $ LSST_data = np . genfromtxt ( DirSaveOutput + LSST_sample_filename , usecols = [ 5 ] )
+CON = CON . rename ( columns = { _STR_ : _STR_ , _STR_ : _STR_ ,   $ _STR_ : _STR_ , _STR_ : _STR_ , _STR_ : _STR_ , _STR_ : _STR_ , $ _STR_ : _STR_ , _STR_ : _STR_ , _STR_ : _STR_ } )
+df . loc [ _STR_ ] = df [ : - 1 ] . sum ( ) #This [:-1] means it does not add the 'Total' column we just created above$ display(df)
+df2 [ _STR_ ] = np . where ( df2 [ _STR_ ] == _STR_ , 0 , 1 ) $ df2 . head ( )
+sm . Logit ( df_new [ _STR_ ] , df_new [ [ _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ ] ] ) . fit ( ) . summary ( )
+df2 . query ( _STR_ ) [ _STR_ ] . count ( ) / df2 [ _STR_ ] . count ( )
+tweets = pd . read_csv ( _STR_ ) $ tweets [ _STR_ ] = _STR_ $ tweets [ _STR_ ] = np . NaN
+merge_table_citytype = merge_table . groupby ( [ _STR_ ] ) $ merge_table_citytype . max ( )
+transactions . merge ( users , how = _STR_ , on = _STR_ )
+df . text . str . extractall ( _STR_ ) . index . size
+assert ( twitter_archive_clean [ twitter_archive_clean [ _STR_ ] . isnull ( ) == False ] . shape [ 0 ] == 0   $ and   $ twitter_archive_clean [ twitter_archive_clean [ _STR_ ] . isnull ( ) == False ] . shape [ 0 ] == 0 )
+len ( df . user_id . unique ( ) )
+p_old = df2 [ df2 [ _STR_ ] == _STR_ ] [ _STR_ ] . mean ( ) $ print ( _STR_ , p_old )
+loan [ pd . isnull ( loan [ _STR_ ] ) ] . shape $ loan [ pd . isnull ( loan [ _STR_ ] ) ] . shape $ loan [ pd . isnull ( loan [ _STR_ ] ) ] . shape
+API_CALL = _STR_ $ r = requests . get ( API_CALL + API_KEY )
+s6 = df_clean3 [ df_clean3 [ _STR_ ] == _STR_ ] . sample ( ) $ s6 . text . tolist ( )
+pvt . reset_index ( inplace = True ) $ pvt
+r_train , r_test , rl_train , rl_test = train_test_split ( r_forest . ix [ : , 0 : 10 ] , r_forest [ _STR_ ] , test_size = 0.2 , random_state = 2 )
+returned_orders_data = combined_df . loc [ combined_df [ _STR_ ] == _STR_ ] $ print ( returned_orders_data )
+data_helper = DataAggregator ( ) $ date_range = [ date . today ( ) . strftime ( _STR_ ) ] # Only today.$ df = data_helper.get_data(date_range=date_range)$
+p = ( null_vals > treatment_convert - control_convert ) . mean ( ) $ p
+data = df [ columns ] $ data = data . reset_index ( drop = True )
+df_tte_all [ df_tte_all [ _STR_ ] . str . contains ( _STR_ ) ] [ _STR_ ] . unique ( )
+data = pd . read_excel ( _STR_ ) $
+USER_PLANS_df [ _STR_ ] = pd . to_datetime ( USER_PLANS_df [ _STR_ ] . apply ( lambda x : x [ np . argmin ( x ) ] ) ) . dt . strftime ( _STR_ )
+cityID = _STR_ $ for tweet in tweepy . Cursor ( api . search , q = q , contained_within = cityID , wait_on_rate_limit = True , lang = _STR_ ) . items ( 500 ) :         $ Baton_Rouge . append ( tweet )
+_ = plt . scatter ( df [ df . amount > 5000 ] . amount . values , df [ df . amount > 5000 ] . donation_date . values ) $ plt . show ( )
+p_old = df2 . converted . mean ( ) $ p_old
+pd . to_datetime ( [ _STR_ , _STR_ ] , errors = _STR_ )
+df [ _STR_ ] = df [ _STR_ ] . str . lower ( ) $ print ( df [ [ _STR_ , _STR_ ] ] )
+import seaborn as sns $ sns . factorplot ( _STR_ , data = titanic3 , kind = _STR_ )
+df2 . head ( ) $
+data = pd . DataFrame ( data = [ tweet . text for tweet in tweets ] , columns = [ _STR_ ] ) $ display ( data . head ( 10 ) )
+test [ [ _STR_ , _STR_ , _STR_ ] ] [ test [ _STR_ ] == 1497996114 ] [ test [ _STR_ ] == 9 ] . shape [ 0 ]
+from scipy . stats import norm $ print ( norm . ppf ( 1 - ( 0.05 ) ) )
+pd . options . display . max_colwidth = 400 $ data_df [ [ _STR_ , _STR_ , _STR_ , _STR_ ] ] [ data_df . tone == _STR_ ]
+loan [ _STR_ ] = ( loan [ _STR_ ] - loan [ _STR_ ] ) . astype ( _STR_ ) $ loan [ _STR_ ] = ( loan [ _STR_ ] - loan [ _STR_ ] ) . astype ( _STR_ ) $ loan [ _STR_ ] = ( loan [ _STR_ ] - loan [ _STR_ ] ) . astype ( _STR_ )
+df_new = df_user . merge ( df_adopted , left_on = _STR_ , right_on = _STR_ , how = _STR_ ) $ df_new
+station_count = session . query ( Stations . station ) . group_by ( Stations . station ) . count ( )
+sub = pd . DataFrame ( np . column_stack ( ( ids , cts ) ) , columns = [ _STR_ , _STR_ ] ) $ sub . to_csv ( _STR_ , index = False )
+countries_df = pd . read_csv ( _STR_ ) $ df_new = countries_df . set_index ( _STR_ ) . join ( df2 . set_index ( _STR_ ) , how = _STR_ ) $ df_new . head ( 5 )
+requests . delete ( BASE + _STR_ + str ( sample_network_suids [ 0 ] ) )
+df2 [ df2 [ _STR_ ] . duplicated ( keep = False ) ] [ _STR_ ]
+p_new_real = df2 . query ( _STR_ ) [ _STR_ ] . mean ( ) $ p_new = df2 . query ( _STR_ ) . count ( ) [ 0 ] / df2 . count ( ) [ 0 ] $ p_new
+age = OneHotEncoder ( sparse = False ) . fit_transform ( dataset [ [ _STR_ ] ] ) $ salary = OneHotEncoder ( sparse = False ) . fit_transform ( dataset [ [ _STR_ ] ] ) $ d = np . hstack ( ( age , salary ) )
+df2 [ df2 [ _STR_ ] . duplicated ( ) ]
+listings = pd . read_csv ( _STR_ ) $ calendar = pd . read_csv ( _STR_ ) #NOTE I changed the British for the 'Merican pronunciation$ reviews = pd.read_csv('boston_reviews.csv')
+plt . savefig ( str ( output_folder ) + _STR_ + str ( cyclone_name ) + _STR_ + str ( location_name ) + _STR_ + time_slice_str )
+df . info ( ) $
+tweet_data [ _STR_ ] = tweet_data [ _STR_ ] . apply ( lambda x : word_tokenize ( x . lower ( ) ) ) $ tweet_data [ _STR_ ] = tweet_data [ _STR_ ] . apply ( lambda x : hash_tag ( x ) ) $ tweet_data [ _STR_ ] = tweet_data [ _STR_ ] . apply ( lambda x : at_tag ( x ) )
+title_sum = preproc_titles . sum ( axis = 0 ) $ title_counts_per_word = list ( zip ( pipe_cv . get_feature_names ( ) , title_sum . A1 ) ) $ sorted ( title_counts_per_word , key = lambda t : t [ 1 ] , reverse = True ) [ : ] $
+sentiments_pd . to_csv ( _STR_ , encoding = _STR_ )
+df = pd . read_csv ( _STR_ )
+pd . concat ( [ cust_demo . head ( 3 ) , cust_new . head ( 3 ) ] ) . fillna ( _STR_ )
+del merged_portfolio_sp_latest [ _STR_ ] $ merged_portfolio_sp_latest . rename ( columns = { _STR_ : _STR_ } , inplace = True ) $ merged_portfolio_sp_latest . head ( )
+! head - 5 _STR_
+% % time $ treehouse_expression_hugo_tpm = treehouse_expression . apply ( np . exp2 ) . subtract ( 1.0 ) . add ( 0.001 ) . apply ( np . log2 )
+df2 [ df2 . duplicated ( _STR_ ) ]
+print ( fee_types . get ( _STR_ , _STR_ ) ) $ print ( fee_types . get ( _STR_ , _STR_ ) )
+df_chunks = pd . read_csv ( LM_PATH / _STR_ , chunksize = chunksize )
+processing_test . files
+DataSet . head ( 5 )
+match = results [ 0 ] $ print lxml . html . tostring ( match )
+xmlData . drop ( _STR_ , axis = 1 , inplace = True )
+sqladb . head ( )
+series1 = pd . Series ( np . random . randn ( 1000 ) ) $ series2 = pd . Series ( np . random . randn ( 1000 ) )
+df_CLEAN1A [ _STR_ ] . max ( )
+df_uro_no_cat = df_uro_no_metac . drop ( columns = ls_other_columns )
+from fastai . fastai . structured import * $ from fastai . fastai . column_data import *
+pd . Series ( 5 , index = [ 100 , 200 , 300 ] )
+dta . query ( _STR_ ) . head ( )
+network . rebuild ( ) $ sim . run ( )
+clf_y_score = rfc . predict_proba ( X_test ) [ : , 1 ] #[:,1] is formatting the output$ clf_y_score
+pd . date_range ( _STR_ , periods = 8 , freq = _STR_ )
+df_ad_airings_4 . shape
+chunker . tagger . classifier . show_most_informative_features ( 15 )
+sentiments_df = sentiments_df . sort_values ( [ _STR_ , _STR_ ] , ascending = [ True , False ] ) $
+stations = session . query ( Measurement ) . group_by ( Measurement . station ) . count ( ) $ stations
+len ( fraud_data . user_id . unique ( ) ) == len ( fraud_data )
+features = list ( kick_projects_ip ) $ features . remove ( _STR_ ) $ response = [ _STR_ ]
+df_new . country . value_counts ( )
+df_countries . country . nunique ( )
+df_new [ [ _STR_ , _STR_ ] ] = pd . get_dummies ( df_new [ _STR_ ] ) [ [ _STR_ , _STR_ ] ] $ df_new . head ( )
+absorption_to_total = absorption . xs_tally / total . xs_tally $ absorption_to_total . get_pandas_dataframe ( )
+gene_df [ _STR_ ] = gene_df . end - gene_df . start + 1 $ gene_df [ _STR_ ] . describe ( )
+ss_sparse = ( ~ df_EMR_dd_dummies . isnull ( ) ) . sum ( ) < 3 $ ls_sparse_cols = ss_sparse [ ss_sparse ] . index . tolist ( )
+outliers_timeDict = { key : df [ abs ( df [ _STR_ ] - np . mean ( df [ _STR_ ] ) ) > 3 * np . std ( df [ _STR_ ] ) ] for key , df in typesDict . items ( ) } $ outliers_timeDict . keys ( )
+df5 = df4 . set_index ( pd . DatetimeIndex ( df4 [ _STR_ ] ) ) $ df5 = df5 [ [ _STR_ ] ] . copy ( ) $ df5
+btc [ _STR_ ] . plot ( y = _STR_ ) $ plt . show ( )
+import geopy . distance
+df2 . drop ( 2893 , inplace = True )
+model . wv . doesnt_match ( _STR_ . split ( ) ) $
+df_new . head ( 1 )
+null_vals = np . random . normal ( 0 , p_diffs . std ( ) , p_diffs . size ) $ null_vals
+stn = session . query ( Measurement . station , func . count ( Measurement . tobs ) ) . group_by ( Measurement . station ) . order_by ( func . count ( Measurement . tobs ) . desc ( ) ) . all ( ) $ dfA_stn = pd . DataFrame ( A_stn , columns = [ _STR_ , _STR_ ] ) $ dfA_stn . head ( 10 ) $
+data [ _STR_ ] $ data . team
+SelectedHighLows = AAPL . loc [ _STR_ : _STR_ , [ _STR_ , _STR_ ] ] $ SelectedHighLows
+nnew_sim = df2 . loc [ ( df2 [ _STR_ ] == _STR_ ) ] . sample ( nnew , replace = True ) $ new_page_converted = nnew_sim . converted $ new_page_converted . mean ( )
+model . init_sims ( replace = True )
+r = requests . get ( _STR_ + API_KEY )
+url = _STR_
+AFX_dict = dict ( r . json ( ) )
+df2_copy . drop ( [ _STR_ , _STR_ ] , axis = 1 , inplace = True )
+ad_source = questions [ _STR_ ] . str . get_dummies ( sep = _STR_ )
+beirut . head ( )
+autos = autos [ autos [ _STR_ ] . between ( 500 , 14000 ) ] $ autos [ _STR_ ] . hist ( )
+age_difference = jail_census [ _STR_ ] - jail_census [ _STR_ ] $ age_difference . value_counts ( )
+df_users = pd . read_sql ( SQL , db ) $ print ( df_users . head ( ) ) $ print ( df_users . tail ( ) )
+with open ( _STR_ , _STR_ ) as file : $ file . write ( r . content )
+files_aapl = read_files_that_start_with ( _STR_ , _STR_ ) $ files_msft = read_files_that_start_with ( _STR_ , _STR_ )
+df_customers [ _STR_ ] . median ( )
+import numpy as np $ cs = np . log ( df [ _STR_ ] ) $ cs = cs . reset_index ( )
+trip_prec_df = pd . DataFrame ( sq . history_rainfall_trip ( ) , columns = [ _STR_ , _STR_ ] ) $ trip_prec_df
+for h in heap : $ h . company = [ t . author_id for t in h . tweets if t . author_id in names ] [ 0 ]
+mean = np . mean ( data [ _STR_ ] ) $ print ( _STR_ . format ( mean ) )
+def ls_dataset ( name , node ) : $ if isinstance ( node , h5py . Dataset ) : $ print ( node )
+make_corrections ( _STR_ , _STR_ )
+X_testfinal = X_testfinal . rename ( columns = { _STR_ : _STR_ } )
+cohort_retention_df . fillna ( 0 , inplace = True )
+def location_column ( dataframe_list ) : $ for df in dataframe_list : $ df [ _STR_ ] = df . user . map ( extract_location )
+p1_true = twitter_archive_master [ twitter_archive_master [ _STR_ ] == True ] $ p1_true . p1 . value_counts ( ) . plot ( kind = _STR_ ) ;
+df_stars [ _STR_ ] . nunique ( ) , df_stars [ _STR_ ] . nunique ( )
+spks = np . loadtxt ( _STR_ ) $ print ( spks [ 1 : 10 , : ] )
+( act_diff < p_diffs ) . mean ( )
+inc_weath_df = pd . merge ( inc_summ_df , weath_summ_df , on = _STR_ ) $ inc_weath_df . head ( )
+rfmodel . score ( X_test , y_test )
+resp = r . json ( ) $ print ( resp )
+df_clean . info ( )
+jail_census [ _STR_ ] . value_counts ( ) [ _STR_ ]
+df [ ( df . amount == 0 ) ] . amount_initial . unique ( )
+sts_c_model = logit ( _STR_ ,   $ data = tdf ) . fit ( ) $ sts_c_model . summary ( )
+import csv $ data = pd . read_csv ( _STR_ ) $ display ( data )
+zone_train . corr ( )
+train_no_prices = train . loc [ : , [ _STR_ , _STR_ , _STR_ , _STR_ , _STR_ $ , _STR_ , _STR_ , _STR_ , $ _STR_ ] ]
+df . converted . mean ( )
+np . exp ( - 0.0674 ) , np . exp ( 0.0118 ) , np . exp ( 0.0783 ) , np . exp ( 0.0175 ) , np . exp ( 0.0469 )
+engine . execute ( _STR_ ) . fetchall ( )
+kickstarters_2017 [ cont_vars ] . corr ( )
+df = sf_permits [ [ _STR_ , _STR_ , _STR_ ] ] $ df . head ( )
+( ggplot ( all_lum_binned . query ( _STR_ ) , aes ( x = _STR_ , y = _STR_ ) ) + geom_smooth ( method = _STR_ ) ) + facet_wrap ( _STR_ ) + xlim ( - 1 , 4 )
+t = thisyear $ len ( t [ t . creation <= _STR_ ] )
+session . query ( Measurement . station , func . count ( Measurement . station ) ) \ $ . group_by ( Measurement . station ) . order_by ( func . count ( Measurement . station ) . desc ( ) ) . all ( )
+train_data , test_data , train_labels , test_labels = train_test_split ( spmat , labels , test_size = 0.10 , random_state = 42 )
+autos [ _STR_ ] . unique ( ) . shape
+building_pa_prc_shrink . to_csv ( _STR_ , index = False ) $ building_pa_prc_shrink = pd . read_csv ( _STR_ , parse_dates = [ _STR_ ] )
+df . drop ( 1899 )
+tmp = df . corr ( method = _STR_ ) [ [ _STR_ ] ] $
+jsummaries = jcomplete_profile [ _STR_ ] $ recent = pd . DataFrame . from_dict ( jsummaries ) $ print ( recent [ [ _STR_ , _STR_ , _STR_ , _STR_ ] ] [ - 5 : ] )
+df [ _STR_ ] = pd . to_datetime ( df . DATE + _STR_ + df . TIME , format = _STR_ ) $ df . head ( 5 )
+measurements = _STR_
+print ( _STR_ , ( wavelengths . value [ 1 ] - wavelengths . value [ 0 ] ) , _STR_ ) $ print ( _STR_ , ( wavelengths . value [ - 1 ] - wavelengths . value [ - 2 ] ) , _STR_ )
+c_df = c_df . dropna ( axis = 1 , how = _STR_ ) $ c_df . size
+df . shape $ df . to_csv ( _STR_ , index = False , encoding = _STR_ ) $
+goodreads_users_df . replace ( _STR_ , np . nan , inplace = True )
+measurements_df = pd . read_csv ( measurements , dtype = object )
+cars . isnull ( ) . sum ( ) / cars . shape [ 0 ] * 100
+site_visits [ _STR_ ] = pd . to_datetime ( site_visits [ _STR_ ] , format = _STR_ ) $ site_visits . set_index ( _STR_ , inplace = True )
+ser = pd . DataFrame ( { _STR_ : dates , _STR_ : [ 0 ] * len ( dates ) } ) $ ser
+day2int = { v . lower ( ) : k for k , v in enumerate ( calendar . day_name ) } $ day2int
+Measurements = Base . classes . hawaii_measurement $ Stations = Base . classes . hawaii_station
+print ( _STR_ . format ( ( df [ _STR_ ] . mean ( ) ) * 100 ) )
+imp_words = np . argwhere ( rfc_feat_sel . feature_importances_ >= 1e-6 ) $ blurb_to_vect_red = blurbs_to_vect [ : , imp_words . flatten ( ) ] $ print ( blurb_to_vect_red . shape )
+% matplotlib inline $ tweets_master_df . groupby ( tweets_master_df [ _STR_ ] . apply ( lambda x : x . month ) ) [ _STR_ ] . count ( ) . plot ( kind = _STR_ ) ;
+sns . set ( font_scale = 1.5 , style = _STR_ ) $ sns . set_palette ( sns . cubehelix_palette ( rot = - .4 ) )
+feables = pd . read_pickle ( _STR_ ) $ print ( feables . columns ) $ feables . head ( )
+tfav . plot ( figsize = ( 16 , 4 ) , color = _STR_ ) $
+auth = HydroShareAuthBasic ( username = _STR_ , password = _STR_ ) $ hs = HydroShare ( auth = auth ) $ resource_id = hs . createResource ( rtype , title , resource_file = fpath , keywords = keywords , abstract = abstract , metadata = metadata , extra_metadata = extra_metadata )
+stop = stopwords . words ( _STR_ ) $ tweetering [ _STR_ ] = tweetering [ _STR_ ] . apply ( lambda x : _STR_ . join ( [ word for word in x . split ( ) if word not in ( stop ) ] ) ) $ pd . Series ( _STR_ . join ( tweetering [ _STR_ ] ) . lower ( ) . split ( ) ) . value_counts ( ) [ : 50 ]
+new_page_converted = np . random . binomial ( 1 , p_new , n_new ) $ new_page_converted . mean ( )
+LR_prob = logisticRegr . predict_proba ( train_ind [ features ] ) $ roc = roc_auc_score ( test_dep [ response ] , best_model_lr . predict_proba ( test_ind [ features ] ) [ : , 1 ] )
+df_new [ [ _STR_ , _STR_ ] ] = pd . get_dummies ( df_new [ _STR_ ] ) $ df_new = df_new . drop ( _STR_ , axis = 1 ) $ df_new . head ( )
+print ( _STR_ + str ( np . exp ( results_m . params [ 1 ] ) ) ) $ print ( _STR_ + str ( 1 / np . exp ( results_m . params [ 2 ] ) ) ) $ print ( _STR_ ) $
+set ( df . donor_id . values ) . intersection ( noloc_df . donor_id . values )
+with open ( os . path . join ( os . getcwd ( ) , _STR_ ) ) as data_file :         $ key = json . load ( data_file ) $
+measure_nan = measure [ measure . isnull ( ) . any ( axis = 1 ) ]
+pd . set_option ( _STR_ , 150 ) $ clinton_df . head ( )
+df2 . info ( ) $
+analysis_historical . groupby ( _STR_ ) . apply ( lambda x : x . sort_index ( ascending = False , inplace = True ) ) $ analysis_historical [ _STR_ ] = ( np . log ( analysis_historical [ _STR_ ] / $ analysis_historical [ _STR_ ] . shift ( - 1 ) ) ) $
+rating_and_retweet [ _STR_ ] . corr ( rating_and_retweet [ _STR_ ] )
+df_countries [ [ _STR_ , _STR_ , _STR_ ] ] = pd . get_dummies ( df_countries [ _STR_ ] ) $ df_countries = df_countries . drop ( df_countries [ _STR_ ] ) $ df_countries [ _STR_ ] = 1
+questions [ _STR_ ] . unique ( ) $
+plt . hist ( p_diffs ) ; $
+df . columns = [ _STR_ , _STR_ ]
+pax_raw . columns = [ x . lower ( ) for x in pax_raw . columns ]
+df = actuals . merge ( backcast , on = _STR_ )
+people . shape
+all_features = pd . get_dummies ( all_features , dummy_na = True )   $ all_features . shape
+weather_norm = weather_features . apply ( lambda c : 0.5 * ( c - c . mean ( ) ) / c . std ( ) )
+executable_path = { _STR_ : _STR_ } $ browser = Browser ( _STR_ , ** executable_path ) $ browser . visit ( url )
+tweet_df . count ( )
+text = nltk . Text ( tokens ) $ text . dispersion_plot ( [ token for token , frequency in text_nostopwords ] )
+label_and_pred = dtModel . transform ( testData ) . select ( _STR_ , _STR_ ) $ label_and_pred . rdd . zipWithIndex ( ) . countByKey ( ) $
+df_all_wells_wKNN_DEPTHtoDEPT_KNN1PredTopMcM_20180724 = df_all_wells_wKNN_DEPTHtoDEPT_KNN1PredTopMcM $ pickle . dump ( df_all_wells_wKNN_DEPTHtoDEPT_KNN1PredTopMcM_20180724 , open ( _STR_ , _STR_ ) )
+opening_prices = [ ] $ for ele in r . json ( ) [ _STR_ ] [ _STR_ ] : $ opening_prices . append ( ele [ 1 ] )
+df = pd . merge ( applications , questions , on = _STR_ ) $ df [ _STR_ ] = np . where ( df [ _STR_ ] . isnull ( ) , _STR_ , df [ _STR_ ] ) $ df . head ( )
+convRate = pd . concat ( [ hired , shown ] , axis = 1 ) $ convRate [ _STR_ ] = convRate [ _STR_ ] / convRate [ _STR_ ]
+result_2 = pd . concat ( [ df1 , df3 ] , axis = 1 , join_axes = [ df1 . index ] ) # concatenate one dataframe on another along columns$ result_2
+act_diff = df2 [ df2 [ _STR_ ] == _STR_ ] [ _STR_ ] . mean ( ) - df2 [ df2 [ _STR_ ] == _STR_ ] [ _STR_ ] . mean ( ) $ act_diff $
+df_onc_no_metac [ _STR_ ] = df_onc_no_metac [ _STR_ ] . replace ( { _STR_ : _STR_ , _STR_ : _STR_ } ) $ df_onc_no_metac [ _STR_ ] . nunique ( )
+df2 = df . drop ( df . query ( _STR_ ) . index )
+proportion_converted = df . converted . value_counts ( normalize = True ) [ 1 ] $ proportion_converted
+results_df . describe ( )
+y_pred = model . predict ( x_test )
+results = soup . find ( _STR_ , class_ = _STR_ ) $ results2 = soup . find ( _STR_ , class_ = _STR_ )
+mismatch1 = ( ab_df [ _STR_ ] == _STR_ ) & ( ab_df [ _STR_ ] == _STR_ ) $ mismatch2 = ( ab_df [ _STR_ ] == _STR_ ) & ( ab_df [ _STR_ ] == _STR_ ) $ print ( ab_df [ mismatch1 ] . shape [ 0 ] + ab_df [ mismatch2 ] . shape [ 0 ] )
+stories = pd . concat ( [ stories . drop ( [ _STR_ ] , axis = 1 ) , user_df ] , axis = 1 ) $ stories . head ( )
+autos . loc [ max_price , _STR_ ] . count ( )
+tobs_values_df = pd . DataFrame ( [ tobs_values ] ) . T $ tobs_values_df . head ( )
+df_2 [ [ _STR_ , _STR_ ] ] = pd . get_dummies ( df_2 [ _STR_ ] ) [ [ _STR_ , _STR_ ] ] $ df_2 [ _STR_ ] . astype ( str ) . value_counts ( )
+application_month_range = [ _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ ] $ man_export_filename = cwd + _STR_         $
+top_allocs = hist_alloc . loc [ pd . to_datetime ( intervals ) ] . sum ( axis = 0 ) . sort_values ( ascending = False ) $ top_allocs [ : 10 ] , top_allocs [ - 10 : ]
+table = driver . find_element_by_xpath ( _STR_ ) $ table . get_attribute ( _STR_ ) . strip ( )
+df [ _STR_ ] = pd . to_datetime ( { _STR_ : df [ _STR_ ] , _STR_ : df [ _STR_ ] , _STR_ : df [ _STR_ ] } )
+loan = loan . loc [ loan [ _STR_ ] . isin ( [ _STR_ ] ) ] $ loan [ pd . isnull ( loan [ _STR_ ] ) ] . Approval_FY . unique ( ) $ loan = loan . loc [ loan [ _STR_ ] > 1990 ]
+tweet_df_polarity = tweet_df . groupby ( [ _STR_ ] ) . mean ( ) [ _STR_ ] $ pd . DataFrame ( tweet_df_polarity )
+data = pd . DataFrame ( data = [ tweet . text for tweet in tweets ] , columns = [ _STR_ ] ) $ print ( _STR_ ) $ display ( data . head ( 20 ) )
+train [ _STR_ ] = train . author . map ( authors [ _STR_ ] )
+np . array ( p_diffs ) . mean ( )
+hdf . head ( )
+session . query ( func . min ( Measurement . tobs ) , func . max ( Measurement . tobs ) , func . avg ( Measurement . tobs ) ) . \ $ filter ( Measurement . station == _STR_ ) . all ( )
+grouped . describe ( )
+np . random . seed ( 123456 ) $ bymin = pd . Series ( np . random . randn ( 24 * 60 * 90 ) , pd . date_range ( _STR_ , _STR_ , freq = _STR_ ) ) $ bymin
+from pyspark . ml import Pipeline $ from pyspark . ml . classification import DecisionTreeClassifier $ from pyspark . ml . feature import VectorAssembler , StringIndexer , VectorIndexer
+result_1 = pd . concat ( [ df1 , df3 ] , axis = 1 ) # concatenate one dataframe on another along columns$ result_1
+retweets [ _STR_ ] . groupby ( pandas . to_datetime ( retweets [ _STR_ ] ) . dt . date ) . count ( ) . mean ( ) # 2.86
+def clean_tweet ( tweet ) : $ return _STR_ . join ( re . sub ( _STR_ , _STR_ , tweet ) . split ( ) ) $
+print ( _STR_ , groceries . values ) $ print ( _STR_ , groceries . index )
+model4 = MNB . fit ( x_train , y_train ) $ model5 = SGDC . fit ( x_train , y_train )
+weekly = data . resample ( _STR_ ) . sum ( ) $ weekly . plot ( style = [ _STR_ , _STR_ , _STR_ ] ) $ plt . ylabel ( _STR_ )
+daily_change = [ ( daily_p [ 2 ] - daily_p [ 3 ] ) for daily_p in afx_17 [ _STR_ ] [ _STR_ ] ] $ dc = ( max ( daily_change ) ) $ print ( _STR_ % dc )
+df_json_tweet = pd . DataFrame ( extended_tweet_data , columns = [ _STR_ , _STR_ , _STR_ ] ) $ df_json_tweet . head ( )
+df_master [ df_master . favorite_count == [ df_master [ _STR_ ] . max ( ) ] ]
+obs_diff = ( sum ( ( df2 . group == _STR_ ) & ( df2 . converted == 1 ) ) / sum ( df2 . group == _STR_ ) ) - ( sum ( ( df2 . group == _STR_ ) & ( df2 . converted == 1 ) ) / sum ( df2 . group == _STR_ ) ) $ obs_diff
+df2 [ _STR_ ] = 1 $ ab_page = [ _STR_ , _STR_ ] $ df2 [ _STR_ ] = pd . get_dummies ( df2 . group ) [ _STR_ ]
+vals = Inspection_duplicates . index . values $ vals = list ( vals ) $ vals
+print ( _STR_ , metrics . accuracy_score ( y_test , yhat ) ) $ print ( _STR_ , metrics . f1_score ( y_test , yhat , average = _STR_ ) )
+ndvi_change = ndvi_of_interest02 - ndvi_of_interest $ ndvi_change . attrs [ _STR_ ] = affine
+Recent_Measurements . describe ( )
+traded_volumes . sort ( )
+y_pred = gnb . predict ( X_clf )
+import csv $ data . to_csv ( _STR_ , encoding = _STR_ , index = False )
+data = originaldata . copy ( ) $ data = data . reset_index ( ) $ del data [ _STR_ ]
+excutable = _STR_ $ S . executable = excutable + _STR_
+df2 [ df2 . duplicated ( _STR_ ) ]
+df_members . isnull ( ) . sum ( )
+store_items = store_items . rename ( index = { _STR_ : _STR_ } ) $ store_items
+countries_df . head ( )
+logit_mod = sm . Logit ( df_joined [ _STR_ ] , df_joined [ [ _STR_ , _STR_ , _STR_ , _STR_ ] ] ) $ results_3 = logit_mod . fit ( ) $ results_3 . summary ( )
+session . query ( Stations . station ) . count ( )
+df_comms = pd . DataFrame ( columns = [ _STR_ , _STR_ , _STR_ ] )
+np . random . seed ( 1 )
+ax = lll [ [ _STR_ ] ] . plot ( ) $ ng [ [ _STR_ ] ] . plot ( ax = ax ) $
+tweets [ _STR_ ] = tweets [ _STR_ ] . apply ( lambda x : x . strip ( _STR_ ) . lower ( ) . replace ( _STR_ , _STR_ ) . split ( _STR_ ) ) $ tweets [ _STR_ ] = tweets [ _STR_ ] . apply ( lambda x : x . strip ( _STR_ ) . lower ( ) . replace ( _STR_ , _STR_ ) . split ( _STR_ ) )
+df = pd . read_csv ( _STR_ ) $ df . head ( )
+p1_table = profits_table . groupby ( [ _STR_ ] ) . Profit . sum ( ) . reset_index ( ) $ p1_result = p1_table . sort_values ( _STR_ , ascending = False ) $ p1_result . head ( )
+countries_df . head ( )
+adjust_cols = [ _STR_ , _STR_ , _STR_ ] $ for col in adjust_cols : $ lq [ col ] = pd . to_numeric ( lq [ col ] . str . replace ( _STR_ , _STR_ ) , errors = _STR_ )
+pold = df2 [ df2 [ _STR_ ] == _STR_ ] [ _STR_ ] . mean ( ) $ pold
+data . sort_values ( by = _STR_ , ascending = True )
+top_songs . rename ( columns = { _STR_ : _STR_ } , inplace = True )
+df_new . groupby ( _STR_ ) . size ( )
+result3 . summary2 ( )
+with model : $ observation = pm . Poisson ( _STR_ , lambda_ , observed = summary [ _STR_ ] )
+df_kick = kickstarters_2017 . set_index ( _STR_ )
+borough = { _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ } $ df_input_clean = df_input . filter ( df_input [ _STR_ ] . isin ( borough ) == True )
+np . allclose ( df1 + df2 + df3 + df4 , $ pd . eval ( _STR_ ) )
+wb = openpyxl . load_workbook ( _STR_ ) $ wb . sheetnames
+y_hat = linreg . predict ( quadratic ) $ plt . plot ( y_hat , _STR_ ) $ plt . show ( )
+measurements_df . count ( )
+data = [ _STR_ , _STR_ , None , _STR_ , _STR_ ] $ [ s . capitalize ( ) for s in data ]
+stations_des = session . query ( Measurement . station , func . count ( Measurement . tobs ) ) . group_by ( Measurement . station ) . order_by ( func . count ( Measurement . tobs ) . desc ( ) ) . all ( ) $ stations_des
+tweets_by_user = pd . read_sql_query ( query , conn , parse_dates = [ _STR_ ] ) $ tweets_by_user . head ( )
+top_genre = pd . read_sql_query ( _STR_ , engine ) $ top_genre . head ( )
+df_mas [ _STR_ ] = df_mas [ _STR_ ] . astype ( float ) $ df_mas [ _STR_ ] = df_mas [ _STR_ ] . astype ( float )
+merged_data [ _STR_ ] = merged_data [ _STR_ ] . dt . day $ merged_data [ _STR_ ] = merged_data [ _STR_ ] . dt . month $ merged_data [ _STR_ ] = merged_data [ _STR_ ] . dt . year
+U M M
+df_drug_counts . dropna ( axis = 1 , thresh = 20 ) . plot ( kind = _STR_ , $ figsize = ( 10 , 6 ) )
+BallBerry_resistance_simulation_1 = BallBerry_ET_Combine [ _STR_ ] $ BallBerry_resistance_simulation_0_5 = BallBerry_ET_Combine [ _STR_ ] $ BallBerry_resistance_simulation_0_25 = BallBerry_ET_Combine [ _STR_ ]
+plt . legend ( handles = [ Precipitation ] , loc = _STR_ ) $ plt . savefig ( _STR_ )
+1 / np . exp ( - 0.0150 ) , np . exp ( 0.0506 ) , np . exp ( 0.0408 )
+print activity_df . loc [ _STR_ ]
+firewk18 = fire [ ( fire [ _STR_ ] . dt . year == 2018 ) & ( fire [ _STR_ ] . dt . month == 5 ) ] . groupby ( _STR_ ) [ _STR_ ] . agg ( { _STR_ : _STR_ } ) . reset_index ( ) $
+logit_mod = sm . Logit ( df_new [ _STR_ ] , df_new [ [ _STR_ , _STR_ , _STR_ , _STR_ ] ] ) $ results = logit_mod . fit ( )
+twitter_archive . rating_numerator . value_counts ( )
+sss = list ( spp . season . unique ( ) )
+df = pd . read_csv ( _STR_ ) $ df . head ( )
+grouped_df = xml_in . groupby ( [ _STR_ , _STR_ ] , as_index = False ) [ _STR_ ] . agg ( { _STR_ : _STR_ } )
+df_indices = df_sp_500 . unionAll ( df_nasdaq ) . unionAll ( df_russell_2k ) $ df_indices . sample ( False , 0.01 ) . show ( )
+turnstiles_daily . dropna ( subset = [ _STR_ ] , axis = 0 , inplace = True )
+control_conv_prob = df2 . loc [ ( df2 [ _STR_ ] == _STR_ ) , _STR_ ] . mean ( ) $ control_conv_prob
+sales_update_nan = sales_update . dropna ( ) $ sales_update_nan . isnull ( ) . sum ( )
+data_air_visit_data . loc [ : , [ _STR_ , _STR_ ] ] . groupby ( _STR_ ) . size ( ) $
+new_page_converted = np . random . choice ( [ 1 , 0 ] , size = n_new , p = [ p_new , ( 1 - p_new ) ] ) $ new_page_converted . mean ( )
+print ( _STR_ , injury_df . shape ) $ injury_df = injury_df [ ( injury_df [ _STR_ ] > _STR_ ) & ( injury_df [ _STR_ ] < _STR_ ) ] $ print ( _STR_ , injury_df . shape )
+lon_us = lon [ lon_li : lon_ui ] $ lat_us = lat [ lat_li : lat_ui ] $ print ( np . min ( lon_us ) , np . max ( lon_us ) , np . min ( lat_us ) , np . max ( lat_us ) )
+data1 . keys ( )
+fulldf [ _STR_ ] = np . array ( [ sentiment ( tweet ) for tweet in fulldf [ _STR_ ] ] )
+result [ _STR_ ] = result [ _STR_ ] . apply ( textsplitter ) $ result [ _STR_ ] = result [ _STR_ ] . apply ( reversetextsplitter ) $ result = result . rename ( index = str , columns = { _STR_ : _STR_ } )
+params = { _STR_ : _STR_ , _STR_ : _STR_ } $ gbm = xgboost . train ( dtrain = T_train_xgb , params = params )
+my_df [ _STR_ ] = my_df [ _STR_ ] . astype ( _STR_ ) $ print ( my_df [ _STR_ ] . describe ( ) )
+content_rec = graphlab . recommender . item_content_recommender . create ( sf_business , _STR_ )
+df_countries = pd . read_csv ( _STR_ )
+labelIndexer = StringIndexer ( inputCol = _STR_ , outputCol = _STR_ ) . fit ( df ) $
+lm2 = sm . Logit ( df_new [ _STR_ ] , df_new [ [ _STR_ , _STR_ , _STR_ ] ] ) $ results = lm2 . fit ( ) $ results . summary ( )
+ts = pd . Series ( np . random . randint ( 1 , 10 , len ( rng ) ) , index = rng ) $ ts . head ( 10 ) $
+df2 . query ( _STR_ ) . count ( ) [ 0 ] / len ( df2 )
+autos . columns $
+options_frame [ _STR_ ] = options_frame . apply ( _get_implied_vol_mid , axis = 1 )
+cig_data = pd . read_csv ( _STR_ , index_col = 0 , engine = _STR_ , sep = _STR_ ) $ cig_data
+data1 = pd . DataFrame ( data = df ) $ df = data1 [ [ _STR_ , _STR_ , _STR_ ] ] $ import os
+df2 . user_id [ df2 . user_id . duplicated ( ) == True ]
+df2 [ _STR_ ] = pd . get_dummies ( df2 [ _STR_ ] ) [ _STR_ ] $ df2 . head ( )
+avisos_detalles . drop ( _STR_ , axis = 1 , inplace = True ) $ avisos_detalles . drop ( _STR_ , axis = 1 , inplace = True ) $ avisos_detalles . head ( 1 )
+from sklearn . metrics import r2_score $ r2_score ( y_test , pred ) $
+forecast = prophet_model . predict ( future_dates )
+X2 . time_since_meas_years . hist ( )
+PFalseNegative = ( PNegativeFalse * PFalse ) / PNegative $ _STR_ % ( PFalseNegative * 100 ) + _STR_
+df_ad_airings_5 . isnull ( ) . any ( )
+logit_mod = sm . Logit ( df2 [ _STR_ ] , df2 [ [ _STR_ , _STR_ ] ] ) $ results = logit_mod . fit ( )
+df [ _STR_ ] . max ( ) - df [ _STR_ ] . min ( )
+air_rsrv . tail ( 10 )
+pd . merge ( left = user_s , right = session_s , how = _STR_ , left_on = [ _STR_ , _STR_ ] , right_on = [ _STR_ , _STR_ ] )
+faa = re . findall ( _STR_ , data [ 1 : ] )
+z_score , p_value = sm . stats . proportions_ztest ( [ convert_old , convert_new ] , [ n_old , n_new ] , alternative = _STR_ ) $ z_score , p_value
+lsi . save ( _STR_ ) $ lsi = models . LsiModel . load ( _STR_ )
+monthly_cov_matrix = monthly_gain_summary . cov ( )
+vars2 = [ x for x in dfa . ix [ : , 6 : 54 ] ] $ vars2
+X_copy [ _STR_ ] = X_copy [ _STR_ ] . apply ( lambda x : float ( x ) )
+df_tsv_clean = df_tsv . copy ( ) $ df_archive_csv_clean = df_archive_csv . copy ( ) $ df_json_tweets_clean = df_json_tweets . copy ( )
+ab_file . to_csv ( _STR_ , index = False )
+y_class_baseline = demo . get_class ( y_pred_baseline ) $ cm ( y_test , y_class_baseline , [ _STR_ , _STR_ ] )
+feature_cols = list ( train . columns [ 7 : - 1 ] ) $ feature_cols
+sp500 . at [ _STR_ , _STR_ ]
+plt . figure ( 0 ) $ source_counts = df [ _STR_ ] . value_counts ( ) . head ( 10 ) $ source_counts . plot . bar ( )
+response . headers [ _STR_ ]
+analysis . iloc [ 686 ] . Description $ analysis . iloc [ 686 ] . project_url $
+df = pd . read_table ( _STR_ , sep = _STR_ ) $ df . head ( )
+max_name_length = ( df [ _STR_ ] . map ( len ) . max ( ) ) $ print ( _STR_ , max_name_length )
+json_data = r . json ( ) $ json_data
+df = df . set_index ( _STR_ )
+columns = inspector . get_columns ( _STR_ ) $ for c in columns : $ print ( c [ _STR_ ] , c [ _STR_ ] )
+df_tsv [ _STR_ ] = df_tsv [ _STR_ ] . astype ( str ) $ df_tsv . info ( )
+df_new . country . value_counts ( )
+session . query ( Measurements . date ) . order_by ( Measurements . date . desc ( ) ) . first ( )
+logit = sm . Logit ( df3 [ _STR_ ] , df3 [ [ _STR_ , _STR_ ] ] ) $ result = logit . fit ( ) $
+infoExtractionRequest = requests . get ( information_extraction_pdf , stream = True ) $ print ( infoExtractionRequest . text [ : 1000 ] )
+df [ _STR_ ] = df . text . str . replace ( _STR_ , _STR_ ) $ df . text = df . text . apply ( removeEmoj )
+df2 = df [ df [ _STR_ ] . str . contains ( blacklist ) == False ] $ df2 = df2 . drop_duplicates ( subset = _STR_ , keep = False ) $ df2 = multi_manufacturer_designer ( df2 , _STR_ ) $
+df_schoo11 = df_schools . rename ( columns = { _STR_ : _STR_ } ) $ df_schoo11 . head ( )
+QUIDS_wide . drop ( labels = [ _STR_ , _STR_ ] , axis = 1 , inplace = True )
+cat_feats = [ _STR_ ] $ features = pd . get_dummies ( features , columns = cat_feats , drop_first = True ) $ features . head ( )
+all_sets . describe ( )
+doc_duration = doc_duration . resample ( _STR_ ) . sum ( ) $ RN_PA_duration = RN_PA_duration . resample ( _STR_ ) . sum ( ) $ therapist_duration = therapist_duration . resample ( _STR_ ) . sum ( )
+data . to_json ( _STR_ )
+cars . dtypes
+from sklearn . decomposition import PCA $ import sklearn
+Sales_per_customer = training . groupby ( by = _STR_ ) . Sales . mean ( ) / training . groupby ( by = _STR_ ) . Customers . mean ( ) $ store_info [ _STR_ ] = Sales_per_customer . values
+store_items = store_items . drop ( [ _STR_ ] , axis = 0 ) $ store_items
+non_cancel_df = data_df [ ~ ( data_df [ _STR_ ] == _STR_ ) ] . copy ( ) $ non_cancel_df [ _STR_ ] = non_cancel_df [ _STR_ ] . apply ( lambda x : float ( x ) >= 3.0 ) $ non_cancel_df = non_cancel_df . sort_values ( [ _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ ] , ascending = False )
+df = pd . read_csv ( _STR_ ) $ df . head ( )
+( taxiData2 . Tip_amount < 0 ) . any ( ) # This Returns True, meaning there are values that are negative
+dfq115 . groupby ( [ _STR_ , _STR_ , dfq115 [ _STR_ ] . dt . month ] ) . agg ( { _STR_ : [ _STR_ ] } )
+frames = [ NameEvents , ValidNameEvents ] $ TotalNameEvents = pd . concat ( frames )
+tweets . sort_values ( by = _STR_ , ascending = True ) . head ( )
+gene_df . drop ( _STR_ , axis = 1 , inplace = True ) $ gene_df . head ( )
+median_Task = sample [ _STR_ ] . median ( ) $ median_Task
+season07 = ALL [ ( ALL . index >= _STR_ ) & ( ALL . index <= _STR_ ) ] # This means every transaction between 9-6-07 and$
+store_items . insert ( 4 , _STR_ , [ 8 , 5 , 0 ] ) $ store_items
+countries_df = pd . read_csv ( _STR_ ) $ df_new = countries_df . set_index ( _STR_ ) . join ( df2 . set_index ( _STR_ ) , how = _STR_ ) $ df_new . head ( )
+new_model = gensim . models . Word2Vec . load ( _STR_ )
+imgp = pd . read_csv ( _STR_ , sep = _STR_ ) $ imgp . head ( ) $
+print df . set_index ( [ _STR_ , _STR_ ] ) $
+df2 [ _STR_ ] . nunique ( )
+tag_df = pd . get_dummies ( tag_df ) $ tag_df . head ( )
+df = table [ 0 ] $ df . columns = [ _STR_ , _STR_ ] $ df . head ( )
+df2 [ df2 . duplicated ( [ _STR_ ] , keep = False ) ]
+test_url = _STR_ + API_KEY $ test_data = requests . get ( url )
+df . info ( )
+halfrow = df . iloc [ 0 , : : 2 ] $ halfrow
+slope , intercept , r_value , p_value , std_err = stats . linregress ( data [ _STR_ ] , data [ _STR_ ] )
+autos = pd . read_csv ( _STR_ , encoding = _STR_ ) $
+total_ridepercity = pd . DataFrame ( ride_percity ) $ total_ridepercity = total_ridepercity . reset_index ( ) $ total_ridepercity
+r = requests . get ( _STR_ + API_KEY ) $
+df_geo = pd . DataFrame ( sub_data [ _STR_ ] ) . reset_index ( drop = True ) $ df_geo [ _STR_ ] = geo_countries $ df_geo . head ( )
+mean_abs_dev = lambda x : np . fabs ( x - x . mean ( ) ) . mean ( ) $ pd . rolling_apply ( hlw , 5 , mean_abs_dev ) . plot ( ) ;
+ab_diff = df [ df [ _STR_ ] == _STR_ ] [ _STR_ ] . mean ( ) - df [ df [ _STR_ ] == _STR_ ] [ _STR_ ] . mean ( ) $ ab_diff
+inspector . get_table_names ( )
+from sklearn . dummy import DummyClassifier $ dummy_majority = DummyClassifier ( strategy = _STR_ ) . fit ( X , y ) $ y_predict_dummy = dummy_majority . fit ( X , y )
+featured_img_url = _STR_ + current_img_url $ featured_img_url
+from scipy import stats $ stats . chisqprob = lambda chisq , df : stats . chi2 . sf ( chisq , df ) $ results = sm . Logit ( df2 [ _STR_ ] , df2 [ [ _STR_ , _STR_ ] ] ) . fit ( )
+explode = [ 0.1 , 0 , 0 ] $ colors = [ _STR_ , _STR_ , _STR_ ] $ labels = [ _STR_ , _STR_ , _STR_ ]
+spacy_a = nlp ( a ) $ spacy_b = nlp ( b ) $ return spacy_a . similarity ( spacy_b )
+pgh_311_data . resample ( _STR_ ) . count ( )
+df = df [ df . userTimezone . notnull ( ) ] $ len ( df )
+f = open ( _STR_ , _STR_ ) $ f . read ( )
+session = Session ( engine ) $ conn = engine . connect ( )
+df_new [ [ _STR_ , _STR_ ] ] = pd . get_dummies ( df_new [ _STR_ ] ) [ [ _STR_ , _STR_ ] ] $ df_new . head ( )
+df . plot ( ) $
+ride_data_df = pd . read_csv ( ride_data ) $ ride_data_df . head ( )
+merged = df2 . merge ( dfCountry , on = _STR_ ) $ merged . head ( )
+import tm_assignment_util as util $ myutilObj = util . util ( ) $ Osha_AccidentCases = util . accidentCases_Osha
+train . describe ( include = _STR_ )
+import random $ sample = movie1 [ _STR_ ] . tolist ( ) $ x = np . linspace ( 1 , 5 , 100 )
+df . drop ( df [ pd . isna ( df [ _STR_ ] ) ] . index , inplace = True ) $ df . isna ( ) . sum ( ) / len ( df ) * 100
+df [ _STR_ ] = df [ _STR_ ] . apply ( lambda x : x . split ( _STR_ ) [ 0 ] )
+s = [ 1 , 2 , 2 , 3 ] $ list ( map ( lambda x : ( s . count ( x ) ) , s ) )
+tips . columns
+regressor2 = sm . Logit ( df_new [ _STR_ ] , df_new [ [ _STR_ , _STR_ , _STR_ ] ] ) $ result2 = regressor2 . fit ( )
+p = table . find ( text = _STR_ ) . find_next ( _STR_ ) . text $ passengers = re . search ( _STR_ , p ) . group ( ) $ passengers
+score_summary = sns . countplot ( x = _STR_ , data = merge_df ) $ score_summary . set_title ( _STR_ )
+engine = create_engine ( _STR_ )
+df . shape $ df . shape [ 0 ]
+control_group = len ( df2 . query ( _STR_ ) ) / len ( df2 . query ( _STR_ ) ) $ control_group
+df_clean . info ( )
+Measurement = Base . classes . measurements
+unique_users = df . user_id . nunique ( ) $ print ( _STR_ . format ( unique_users ) )
+largest_collection_size = df_meta [ _STR_ ] . max ( ) $ largest_collection_size
+fsrq = np . where ( np . logical_or ( table [ _STR_ ] == _STR_ , table [ _STR_ ] == _STR_ ) )
+fig = df [ _STR_ ] . value_counts ( ) [ : 10 ] . plot ( _STR_ ) #title='Top Citations by Violation')$ plt.savefig("by_violation_desc.png")
+df . groupby ( [ df . index . month , df . index . day ] ) . size ( ) . plot ( ) $ plt . show ( )
+df_ad_airings_5 [ _STR_ ] [ 0 ] . split ( _STR_ )
+sqlContext . sql ( _STR_ ) . toPandas ( )
+df_new1 . shape [ 0 ] + df_new2 . shape [ 0 ] $ print ( _STR_ . format ( df_new1 . shape [ 0 ] + df_new2 . shape [ 0 ] ) )
+print ( df . info ( ) ) $ pd . isna ( df ) . sum ( ) $
+df_new = df_new . join ( pd . get_dummies ( df_new [ _STR_ ] ) )
+url_mars_facts = _STR_ $ browser . visit ( url_mars_facts )
+z_score , p_value = sm . stats . proportions_ztest ( [ convert_new , convert_old ] , [ n_new , n_old ] , alternative = _STR_ ) $ z_score
+month_year_crimes = crimes . groupby ( [ _STR_ , _STR_ ] ) . size ( )
+row_inf = df2 [ df2 . duplicated ( [ _STR_ ] , keep = False ) ] $ print ( _STR_ . format ( row_inf ) )
+df [ [ _STR_ , _STR_ , _STR_ ] ] [ ( df . brewery_name . str . contains ( _STR_ ) ) & ( df . beer_name . str . startswith ( _STR_ ) ) ]
+days_alive = ( datetime . datetime . today ( ) - datetime . datetime ( 1981 , 6 , 11 ) ) $ days_alive . days
+df . rating_denominator . value_counts ( )
+grid = sns . FacetGrid ( train_df , row = _STR_ , col = _STR_ , size = 2.2 , aspect = 1.6 ) $ grid . map ( plt . hist , _STR_ , alpha = .5 , bins = 20 ) $ grid . add_legend ( )
+df_MC_most_Convs = pd . concat ( [ year_month . transpose ( ) , df_MC_mostConvs ] , axis = 1 ) $ print _STR_ , df_MC_most_Convs . shape $ df_MC_most_Convs
+page_soup . body . div
+kick_projects_ip_copy = kick_projects_ip . copy ( )
+df . isnull ( ) . sum ( )
+m . plot ( forecast ) ;
+df_merge . columns
+n_new = df_new . shape [ 0 ] $ print ( n_new )
+temp [ _STR_ ] = temp [ _STR_ ] . str . split ( )
+predicted_probs_first_measure . hist ( bins = 50 )
+BBC = news_df . loc [ ( news_df [ _STR_ ] == _STR_ ) ] $ BBC . head ( 2 )
+r = requests . get ( _STR_ ) $ r . headers [ _STR_ ] #Type of data format queried for.  In this case, json. $ json_string=r.text  #Convert object to text so that it can be converted to a dictionary.
+% config InlineBackend . figure_format = _STR_ $ % config InlineBackend . figure_format = _STR_
+noTempNullDF = noTempNullDF [ noTempNullDF . TEMP_1 . notnull ( ) ] $ noTempNullDF . shape
+from_6_cdf . plot ( kind = _STR_ , x = _STR_ , y = _STR_ , figsize = ( 12 , 10 ) , title = _STR_ , label = _STR_ ) $ plt . gca ( ) . invert_yaxis ( ) $ plt . legend ( loc = 4 , borderpad = True )
+from ramutils . classifier . utils import reload_classifier $ classifier_container = reload_classifier ( _STR_ , _STR_ , 1 , mount_point = _STR_ ) $ classifier_container . features . shape # n_events x n_features power matrix
+df2 . converted . mean ( )
+findM = re . compile ( _STR_ , re . IGNORECASE ) $ for i in range ( 0 , len ( postsDF ) ) : $ print ( findM . findall ( postsDF . iloc [ i , 0 ] ) )
+base_date = dt . datetime . strptime ( _STR_ , _STR_ ) $ YrFrombd = base_date - dt . timedelta ( days = 365 ) $ print ( YrFrombd )
+aggdf = tweetdf [ [ _STR_ , _STR_ , _STR_ ] ] . loc [ ~ pd . isnull ( tweetdf [ _STR_ ] ) ] . groupby ( [ _STR_ , _STR_ ] ) . agg ( _STR_ ) . reset_index ( ) $
+import gensim , logging $ logging . basicConfig ( format = _STR_ , level = logging . INFO )
+print ( cons_df . head ( ) ) $ print ( cons_df . PCEC96 . head ( ) ) $ cons_df . PCEC96 . plot ( )
+! wget https : // download . pytorch . org / tutorial / faces . zip $   ! unzip faces . zip
+p_new = new_page_converted . mean ( ) $ p_old = old_page_converted . mean ( ) $ p_new - p_old $
+log_model = sm . Logit ( y , X )
+( taxiData2 . Tip_amount < 0 ) . any ( ) # This Returns True
+% matplotlib inline $ AAPL . plot ( )
+result = results [ 0 ] $ result . keys ( )
+station_df = pd . read_csv ( station , encoding = _STR_ , low_memory = False ) $ station_df . head ( )
+remove_index = treat_oldp . append ( ctrl_newp ) . index $ remove_index . shape
+x . drop ( [ 0 , 1 ] )
+apple = web . DataReader ( _STR_ , _STR_ , start , end )
+set_themes . head ( )
+with open ( os . path . expanduser ( _STR_ ) ) as f : $ creds = yaml . load ( f )
+n_old = df2 . query ( _STR_ ) [ _STR_ ] . count ( ) $ n_old
+columns = inspector . get_columns ( _STR_ ) $ for c in columns : $ print ( c [ _STR_ ] , c [ _STR_ ] ) $
+submit . to_csv ( _STR_ , index = False )
+df . info ( )
+df_new . head ( )
+tokens [ _STR_ ] = tokens . one_star + 1 $ tokens [ _STR_ ] = tokens . five_star + 1
+targetUsersRank [ _STR_ ] = ( targetUsersRank [ _STR_ ] - targetUsersRank [ _STR_ ] . min ( ) ) / ( targetUsersRank [ _STR_ ] . max ( ) - targetUsersRank [ _STR_ ] . min ( ) ) $ print targetUsersRank . shape $ targetUsersRank . head ( )
+excutable = _STR_ $ S_lumpedTopmodel . executable = excutable + _STR_
+df = df [ df [ _STR_ ] <= 1500 ] $ df . head ( )
+new_df = df . fillna ( method = _STR_ , axis = _STR_ ) $ new_df
+df . query ( _STR_ ) . user_id . nunique ( ) / df [ _STR_ ] . nunique ( ) $
+totmcap = mcap_mat . T . sum ( ) $ fund_fraq_mcap = fundmcap / totmcap
+( null_vals > act_diff ) . mean ( )
+pivoted . columns
+i = issues $ len ( i [ ( i . activity <= _STR_ ) & ( i . activity > _STR_ ) ] )
+len ( df [ ~ ( df . group_properties == { } ) ] )
+all_df = pd . read_pickle ( _STR_ ) $ all_df . head ( 2 )
+precision = float ( precision_score ( y , gbc . predict ( X ) ) ) $ recall = float ( recall_score ( y , gbc . predict ( X ) ) ) $ print ( _STR_ . format ( precision * 100 , recall * 100 ) )
+a = np . arange ( 0.5 , 10.5 , 0.5 ) $ a
+from sklearn . model_selection import train_test_split $ X , y = df . iloc [ : , 0 : 9 ] . values , df . iloc [ : , 9 ] . values $ X_train , X_test , y_train , y_test = train_test_split ( X , y , test_size = 0.2 , random_state = 42 )
+return isinstance ( node , dict ) and data_key in node . keys ( )
+example1_df . registerTempTable ( _STR_ )
+Station = Base . classes . stations
+df = pd . read_csv ( _STR_ ) $ df . head ( )
+pd . DataFrame ( population , columns = [ _STR_ ] )
+full_p_old = df2 . converted [ df2 . group == _STR_ ] . mean ( ) $ full_p_old
+gdf . sample ( 10 )
+from sqlalchemy . orm import Session $ session = Session ( bind = engine )
+df . to_csv ( _STR_ , index = False )
+df_expand [ _STR_ ] = df_expand . Game . map ( temp_final . Offset )
+cp311 . info ( )
+df . to_csv ( _STR_ , index = False ) $ df2 = pd . read_csv ( _STR_ )
+temps_df [ temps_df . Missoula > 82 ]
+s4 . unique ( )
+p_old = df2 . converted . mean ( ) $ p_old
+xlfile = os . path . join ( DATADIR , DATAFILE ) $ xl = pd . ExcelFile ( xlfile )                                 $ tmpdf = xl . parse ( xl . sheet_names [ 0 ] )
+cwd = os . getcwd ( ) $ cwd
+rf = RandomForestClassifier ( ) $ rf . fit ( X_train , y_train ) $ rf . score ( X_test , y_test )
+with tf . device ( _STR_ ) : $ history = model . fit ( X_train , Y_train , epochs = epochs_num , batch_size = 16 , validation_split = 0.1 , verbose = 1 , shuffle = True )
+f1_score ( Y_valid_lab , val_pred_svm , average = _STR_ , labels = np . unique ( val_pred_svm ) )
+data_mean = health_data . mean ( level = _STR_ ) $ data_mean
+kushy_prod_data_path = _STR_ $ kushy_prod_df = pd . read_csv ( kushy_prod_data_path , low_memory = False ) $ kushy_prod_df . head ( 10 )
+DF1 . describe ( )
+data_ar = np . array ( data_ls ) $ data_df = pd . DataFrame ( data_ar , columns = [ _STR_ , _STR_ , _STR_ , _STR_ ] )
+p_new_std = ( df2 [ _STR_ ] == 1 ) . std ( ) $ p_new_std
+fires . dtypes
+intervention_history . sort_values ( [ _STR_ , _STR_ , _STR_ ] , inplace = True )
+raw = pd . read_csv ( _STR_ , sep = _STR_ )
+sh_results = session . query ( Measurements . date , Measurements . tobs ) . \ $ filter ( Measurements . date >= pa_min_date ) . \ $ filter ( Measurements . station == station_max ) . all ( )
+vals2 = np . array ( [ 1 , np . nan , 3 , 4 ] ) $ vals2 . dtype $
+data_set_2 = pd . read_csv ( _STR_ )
+N_old = df2 . query ( _STR_ ) [ _STR_ ] . count ( ) $ print ( _STR_ . format ( N_old ) )
+y_pred_mdl7 = mdl . predict ( test_orders_prodfill )
+! convert materials - xy . ppm materials - xy . png $ Image ( filename = _STR_ )
+prophet_df = pd . DataFrame ( ) $ prophet_df [ _STR_ ] = df [ target_column ] $ prophet_df [ _STR_ ] = df [ _STR_ ]
+len ( df_enhanced . query ( _STR_ ) )
+new_log_m2 = sm . Logit ( df_new [ _STR_ ] , df_new [ [ _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ ] ] ) $ new_results2 = new_log_m2 . fit ( ) $ new_results2 . summary ( )
+Z = np . random . randint ( 0 , 10 , ( 3 , 3 ) ) $ print ( Z ) $ print ( Z [ Z [ : , 1 ] . argsort ( ) ] )
+df2 = pd . concat ( [ df [ ( df [ _STR_ ] == _STR_ ) & ( df [ _STR_ ] != _STR_ ) ] , df [ ( df [ _STR_ ] == _STR_ ) & ( df [ _STR_ ] == _STR_ ) ] ] ) $
+area_dict = { _STR_ : 23453 , _STR_ : 3456 , _STR_ : 234503409 , _STR_ : 23453634 , _STR_ : 2345342 } $ area = pd . Series ( area_dict ) $ area
+crimes . columns = crimes . columns . str . replace ( _STR_ , _STR_ ) $ crimes . columns
+events_filtered_1 = events_enriched_df [ events_enriched_df [ _STR_ ] > 50 ] $ events_filtered_2 = events_df [ ( events_df [ _STR_ ] > 50 ) & ( events_df [ _STR_ ] == _STR_ ) ]
+new_misalign = df . query ( _STR_ ) . count ( ) [ 0 ] $ old_misalign = df . query ( _STR_ ) . count ( ) [ 0 ] $ print ( new_misalign + old_misalign )
+URL = _STR_ $ res = requests . get ( URL , headers = { _STR_ : _STR_ } ) $ data = res . json ( )
+automl = pickle . load ( open ( filename , _STR_ ) )
+store_items . fillna ( 0 )
+df_all_wells_wKNN_DEPTHtoDEPT_KNN1PredTopMcM__NearTop_CurveF_20180726 = test5result $ pickle . dump ( df_all_wells_wKNN_DEPTHtoDEPT_KNN1PredTopMcM__NearTop_CurveF_20180726 , open ( _STR_ , _STR_ ) )
+query = _STR_ $ IBM2Column = sqlContext . sql ( query ) $ IBM2Column . toPandas ( ) . plot . line ( )
+df2a = df . loc [ _STR_ ] $ print ( df2a )
+model_data . to_hdf ( _STR_ , key = _STR_ , complib = _STR_ )
+df = df . dropna ( ) $ df = df . drop_duplicates ( ) $
+precip_data = session . query ( Measurements ) . first ( ) $ precip_data . __dict__
+fraq_volume_m_sel = b_mat . as_matrix ( ) * fraq_volume_m_coins $ fraq_fund_volume_m = fraq_volume_m_sel . sum ( axis = 1 ) $
+data = np . zeros ( 4 , dtype = { _STR_ : ( _STR_ , _STR_ , _STR_ ) , $ _STR_ : ( _STR_ , _STR_ , _STR_ ) } ) $ print ( data . dtype )
+LARGE_GRID . plot_accuracy ( raw_large_grid_df , option = _STR_ )
+print cust_data1 . columns $ cust_data1 = cust_data1 . rename ( columns = { _STR_ : _STR_ , _STR_ : _STR_ } ) . head ( 100 )
+! rm - rf models2 $   ! mrec_train - n4 - - input_format tsv - - train _STR_ - - outdir models2 - - model = knn
+text_noun = Osha_AccidentCases [ _STR_ ] . apply ( myutilObj . tag_noun_func_words )
+df_all = pd . merge ( df2 , df_countries , on = _STR_ ) $ df_all . head ( )
+df . to_csv ( _STR_ , index = False )
+pv1 = pd . pivot_table ( df_cod , values = _STR_ , index = _STR_ ) $ pv1
+xml_in [ _STR_ ] . nunique ( )
+df = df . drop ( [ _STR_ , _STR_ ] , axis = 1 , errors = _STR_ ) $ df . head ( 10 )
+history = model . fit ( train_X , train_Y , epochs = num_epochs , batch_size = 1 , verbose = 2 , shuffle = False )   $
+measurement = pd . read_csv ( _STR_ ) $ measurement . head ( ) $
+unique_users = df [ _STR_ ] . nunique ( ) $ unique_users
+df_data_1 . describe ( include = _STR_ )
+from ssbio . pipeline . gempro import GEMPRO
+archive_clean = pd . read_csv ( _STR_ ) $ images_clean = pd . read_csv ( _STR_ ) $ popularity_clean = pd . read_csv ( _STR_ )
+status_counts = merged_df [ _STR_ ] . value_counts ( ) $ status_counts
+from dateutil . tz import tzutc $ enrollment_start = datetime . datetime ( 2017 , 7 , 19 , 18 , 40 , tzinfo = tzutc ( ) ) $ assert ( enrollment_start . isoweekday ( ) == 3 )
+df_new . groupby ( _STR_ ) [ _STR_ ] . mean ( )
+df_ad_state_metro_1 [ _STR_ ] . unique ( )
+res = requests . get ( BASE ) $ status_object = res . json ( ) $ print ( json . dumps ( status_object , indent = 4 ) )
+A = pd . Series ( [ 2 , 4 , 6 ] , index = [ 0 , 1 , 2 ] ) $ B = pd . Series ( [ 1 , 3 , 5 ] , index = [ 1 , 2 , 3 ] ) $ A + B
+print ( _STR_ . format ( rcf . latest_training_job . job_name ) )
+df_t = df_new $ df_t [ _STR_ ] = pd . to_datetime ( df_t [ _STR_ ] ) $ df_t . head ( 3 )
+df = pd . read_csv ( _STR_ , skipinitialspace = True )
+retweeted_columns = [ _STR_ , _STR_ , _STR_ ] $ twitter_archive_clean = twitter_archive_clean [ twitter_archive_clean [ _STR_ ] . isnull ( ) ] $ twitter_archive_clean = twitter_archive_clean . drop ( columns = retweeted_columns )
+ds_info = ingest . upload_dataset ( database = db , $ dataset = test , $ type_map = { _STR_ : float } )
+df_final [ _STR_ ] = map ( lambda x : x . islower ( ) , df_final [ _STR_ ] ) $ df_final . loc [ df_final [ _STR_ ] == True ]   $
+df_columns [ df_columns [ _STR_ ] . str . contains ( _STR_ ) ] [ _STR_ ] . value_counts ( ) . head ( ) $
+spark_path = _STR_
+idx = pd . IndexSlice $ df . loc [ idx [ _STR_ , _STR_ , _STR_ ] , : ]
+r = requests . get ( _STR_ + API_KEY ) $ print ( r . json ( ) )
+df_c = df . query ( _STR_ )     $ df_cb = df_c . query ( _STR_ ) $ df_cb . nunique ( ) $
+stat_info_st = stat_info [ 0 ] . apply ( fix_space ) $ print ( stat_info_st )
+df . index = pd . PeriodIndex ( df . index , freq = _STR_ ) $ df . index
+print ( r . json ( ) [ _STR_ ] [ _STR_ ] )
+df = pd . read_csv ( _STR_ )
+player_total_inner . to_csv ( _STR_ ) $
+df_ct . drop ( [ _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ ] , axis = 1 , inplace = True )
+normalizedDf = finalDf $ normalizedDf = normalizedDf . drop ( _STR_ , axis = 1 ) ;
+import pandas as pd $ d = pd . read_json ( _STR_ ) $ d . head ( )
+merged_df1 = pd . merge ( merged_data , unique_org , left_on = _STR_ , right_on = _STR_ , how = _STR_ ) $
+results = session . query ( func . count ( Stations . Index ) ) . all ( ) $ station_count = results [ 0 ] [ 0 ] $ print ( _STR_ % station_count )
+train_x = encodedlist $ print np . asarray ( train_x ) . shape
+Station = Base . classes . station $ Measurement = Base . classes . measurement $
+store_items . fillna ( method = _STR_ , axis = 0 )
+sentiments_pd . to_excel ( _STR_ , encoding = _STR_ ) $
+tweet_freq = pd . DataFrame ( associations [ _STR_ ] . value_counts ( ) ) $ tweet_freq . columns = [ _STR_ ]
+user = raw [ _STR_ ] . apply ( pd . Series ) $ user . head ( 3 )
+elms_all_0604 = pd . read_excel ( cwd + _STR_ ) $ elms_all_0604 [ _STR_ ] = [ datetime . date ( int ( str ( x ) [ 0 : 4 ] ) , int ( str ( x ) [ 5 : 7 ] ) , int ( str ( x ) [ 8 : 10 ] ) ) $ for x in elms_all_0604 . ORIG_DATE . values ]
+df . resample ( _STR_ ) . mean ( )
+dup = df2 [ df2 . duplicated ( [ _STR_ ] , keep = False ) ] $ dup_id = dup [ _STR_ ] . unique ( ) $ print ( _STR_ , dup_id )
+cars . plot ( y = _STR_ , kind = _STR_ ) $ cars2 . plot ( y = _STR_ , kind = _STR_ ) $ plt . show ( )
+k = 3 $ neigh = KNeighborsClassifier ( n_neighbors = k ) . fit ( X_train , y_train )
+for f in potentialFeatures : $ related = df [ _STR_ ] . corr ( df [ f ] ) $ print ( _STR_ % ( f , related ) ) $
+df2 = pd . read_csv ( _STR_ )
+payment = pd . get_dummies ( auto_new . Payment_Option ) $ payment . head ( )
+url = _STR_ $ browser . visit ( url )
+cursor . execute ( _STR_ )
+number_of_commits = git_log [ _STR_ ] . count ( ) $ number_of_authors = len ( git_log [ _STR_ ] . dropna ( ) . unique ( ) . tolist ( ) ) $ print ( _STR_ % ( number_of_authors , number_of_commits ) )
+titanic . loc [ index_strong_outliers , : ] . head ( )
+dates = pd . date_range ( date . today ( ) , periods = 2 ) $ dates
+ans = df . groupby ( _STR_ ) . sum ( ) $ ans
+df_length = df . shape [ 0 ] $ print ( _STR_ + str ( df_length ) ) $
+engine = sql . create_engine ( _STR_ )
+query = _STR_ $ weather = read_gbq ( query = query , project_id = _STR_ , dialect = _STR_ )
+df2 . groupby ( _STR_ ) . count ( ) . sort_values ( by = _STR_ , ascending = False ) . head ( 1 )
+data [ _STR_ ] = np . array ( [ analize_sentiment ( tweet ) for tweet in data [ _STR_ ] ] ) $ SA1 = np . array ( [ analize_sentiment ( tweet ) for tweet in data [ _STR_ ] ] ) #store data in its own vector $ display(data.head(10))
+RMSE_list [ W . index ( 15 ) ]
+tempX = pd . concat ( [ X_trainfinal , X_testfinal ] ) $ tempy = pd . concat ( [ y_train , y_test ] ) $ print tempX . shape , tempy . shape
+predictions . show ( )
+news_sentiments = pd . DataFrame . from_dict ( sentiments ) $ news_sentiments . head ( )
+df . shape [ 0 ] $
+df = pd . merge ( df , tran_time_diff , on = _STR_ , how = _STR_ ) . drop_duplicates ( [ _STR_ , _STR_ ] )       $
+df [ _STR_ ] = pd . to_datetime ( df [ _STR_ ] , format = _STR_ )
+countries_df = pd . read_csv ( _STR_ ) $ df_new = countries_df . set_index ( _STR_ ) . join ( df2 . set_index ( _STR_ ) , how = _STR_ ) $ df_new . head ( 5 )
+url = _STR_ $ r = requests . get ( url ) $ afxdata = r . json ( ) [ _STR_ ]
+conn = _STR_ $ client = pymongo . MongoClient ( conn )
+display ( flight2 . show ( 5 ) ) $
+np . mean ( cross_val_score ( lgb1 , train_X , train_Y , scoring = _STR_ , cv = 5 , verbose = 5 ) )
+sales = pd . DataFrame ( sale2_table ) $ sales
+model = AuthorTopicModel . load ( _STR_ )
+pivoted_table = data . pivot_table ( _STR_ , index = data . index . time , columns = data . index . date ) $ pivoted_table . head ( )
+df2 . user_id . nunique ( )
+Measurements = Base . classes . hawaii_measurements $ Stations = Base . classes . hawaii_stations
+feedbacks_stress . loc [ feedbacks_stress [ _STR_ ] == 2 , [ _STR_ , _STR_ , _STR_ ] ] *= 2 $
+df = pd . DataFrame ( one_year_prcp , columns = [ _STR_ , _STR_ , _STR_ , _STR_ ] ) $ df . head ( )
+X [ _STR_ ] = X [ _STR_ ] . map ( lambda x : 1 if _STR_ in x else 0 ) $ X [ _STR_ ] = X [ _STR_ ] . map ( lambda x : 1 if _STR_ in x else 0 )
+df1 = pd . read_csv ( _STR_ )   $ df1 . head ( 2 )
+logit_mod = sm . Logit ( df3 [ _STR_ ] , df3 [ [ _STR_ , _STR_ , _STR_ ] ] ) $ results = logit_mod . fit ( ) $ results . summary ( ) $
+nu_fission_rates = fuel_rxn_rates . get_slice ( scores = [ _STR_ ] ) $ nu_fission_rates . get_pandas_dataframe ( )
+print ( autoData . reduce ( lambda x , y : x if len ( x ) < len ( y ) else y ) )
+tokens = nltk . word_tokenize ( content ) $ fdist = nltk . FreqDist ( tokens ) $ print ( fdist )
+collection . delete_item ( _STR_ )
+results = soup . find_all ( _STR_ , class_ = _STR_ ) $ print ( results )
+os . chdir ( root_dir + _STR_ ) $ df_fda_drugs_reported = pd . read_csv ( _STR_ , header = 0 )
+tmdb_movies . fillna ( method = _STR_ , axis = 0 ) . fillna ( 0 )
+events . where ( col ( _STR_ ) . isNull ( ) ) . show ( )
+autos = pd . read_csv ( _STR_ , encoding = _STR_ ) $ autos = pd . read_csv ( _STR_ , encoding = _STR_ ) $
+containers [ 0 ] . find ( _STR_ , { _STR_ : _STR_ } ) . a [ _STR_ ] . split ( ) [ 1 ] . replace ( _STR_ , _STR_ )
+response_df [ response_df . isnull ( ) . any ( axis = 1 ) ]
+csvFile = open ( _STR_ , _STR_ ) $ csvWriter = csv . writer ( csvFile )
+high12 = session . query ( Measurement . tobs ) . \ $ filter ( Measurement . station == _STR_ , Measurement . station == Station . station , Measurement . date >= _STR_ , Measurement . date <= _STR_ ) . \ $ all ( )
+% matplotlib inline $ commits_per_year . plot ( kind = _STR_ , title = _STR_ , legend = False )
+df . head ( ) . to_json ( _STR_ ) $   ! cat . . / . . / data / stocks . json
+countries_df = pd . read_csv ( _STR_ ) $ countries_df . head ( )
+flight_pd . to_csv ( _STR_ , sep = _STR_ )
+df . highlight
+tag_df = stories . tags . apply ( pd . Series ) $ tag_df . head ( )
+df2 [ ( ( df2 [ _STR_ ] == _STR_ ) == ( df2 [ _STR_ ] == _STR_ ) ) == False ] . shape [ 0 ]
+new_page_converted = np . random . binomial ( 1 , p_new , n_new ) $ new_page_converted
+dtc = DecisionTreeClassifier ( max_depth = 4 , random_state = 1 ) $ dtc . fit ( X_train , y_train ) $
+print ( svm_clf . support_vectors_ . shape ) $ print ( svm_clf . support_ . shape ) $ print ( svm_clf . n_support_ ) $
+media_user_results_df . to_csv ( _STR_ , encoding = _STR_ , index = False )
+jobs_data [ _STR_ ] . head ( 5 )
+challange_1 . shape
+start_df [ _STR_ ] = ( start_df . index . weekday < 6 ) * 1 $
+newPage_df = df2 . query ( _STR_ ) $ n_new = newPage_df . shape [ 0 ] $ n_new
+r . summary2 ( )
+pop_df_3 = df2 [ ( df2 . index >= _STR_ ) & ( df2 . index <= _STR_ ) ] $ pop_df_3 [ _STR_ ] . plot ( kind = _STR_ , color = _STR_ ) $ pop_df_3 [ _STR_ ] . plot ( kind = _STR_ , color = _STR_ )
+pickle . dump ( df_final_ , open ( _STR_ , _STR_ ) ) $
+npath = out_file2 $ resource_id = hs . addResourceFile ( _STR_ , npath )
+archive_df_clean [ _STR_ ] . replace ( [ _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ ] , [ _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ ] , inplace = True ) $
+rng = np . random . RandomState ( 42 ) $ ser = pd . Series ( rng . rand ( 5 ) ) $ ser
+df_ad_airings [ _STR_ ] . value_counts ( ) $
+url = _STR_ $ url_api = url + API_KEY $ r = requests . get ( url_api )
+! wget https : // raw . githubusercontent . com / sunilmallya / mxnet - notebooks / master / python / tutorials / data / p2 - east - 1 b . csv
+df4 . dtypes $
+mean_age = df . age . mean ( skipna = True ) $ median_age = df . age . median ( skipna = True ) $ print mean_age , median_age
+df . isnull ( ) . sum ( )
+returned_orders_data . describe ( )
+df2 [ _STR_ ] . nunique ( )
+dicttagger_price = DictionaryTagger ( [ _STR_ ] )
+bar_outlets = avgComp [ _STR_ ] $ bar_Compound = avgComp [ _STR_ ] $ x_axis = np . arange ( 0 , len ( bar_Compound ) , 1 )
+file3 = file2 . filter ( file2 . trans_start != file2 . meter_expire ) $ file3 . show ( 3 )
+y_newpage = df2 [ _STR_ ] . count ( ) $ prob_newpage = x_newpage / y_newpage $ prob_newpage $
+pandas . Series ( [ 1 , 2 , 3 ] , index = [ _STR_ , _STR_ , _STR_ ] )
+tweet_frame = toDataFrame ( results ) $ tweet_frame = tweet_frame . sort_values ( by = _STR_ , ascending = 0 ) $ print ( tweet_frame . shape )
+house = elec [ _STR_ ] #only one meter so any selection will do$ df = house.load().next() #load the first chunk of data into a dataframe$
+sorted_budget_biggest . groupby ( _STR_ ) [ _STR_ ] . mean ( )
+df_new [ _STR_ ] . value_counts ( )
+twitter_df [ _STR_ ] . value_counts ( )
+print ( _STR_ . format ( tweets [ _STR_ ] . min ( ) ) ) $ print ( _STR_ . format ( tweets [ _STR_ ] . max ( ) ) )
+station_columns = inspector . get_columns ( _STR_ ) $ for column in station_columns : $ print ( column [ _STR_ ] , column [ _STR_ ] )
+print cust_data [ - cust_data . duplicated ( ) ] . head ( 5 ) $
+df_final = df_final . replace ( _STR_ , _STR_ ) $
+sns . heatmap ( data . corr ( ) ) $ plt . show ( )
+scoring_url = client . deployments . get_scoring_url ( deployment_details ) $ print ( scoring_url )
+p_values = np . array ( p_values ) $ treatment_effects = np . array ( treatment_effects ) $ days = np . array ( days )
+round ( df [ _STR_ ] . sum ( ) , 2 )
+np . shape ( temp_fine )
+autos . columns
+engine = create_engine ( _STR_ )
+df_sorted_by_date . describe ( )
+games_df . head ( )
+df = pd . read_csv ( _STR_ )
+file4 = file4 . dropna ( ) $ file4 . count ( )
+plt . plot ( np . arange ( 10 , 50 ) , train_errors , _STR_ ) $ plt . plot ( np . arange ( 10 , 50 ) , test_errors , _STR_ ) $
+from scipy . stats import norm $ print ( norm . cdf ( z_score ) ) $ print ( norm . ppf ( 1 - ( 0.05 ) ) )
+bds = bds . rename ( columns = { _STR_ : _STR_ } ) $ bds . head ( 3 )
+df . sort_values ( _STR_ , ascending = True )
+model = model_simple_nmt ( len ( human_vocab ) , len ( machine_vocab ) , Tx ) $ model . compile ( optimizer = _STR_ , loss = _STR_ , metrics = [ _STR_ ] )
+df . median ( ) - 1.57 * ( df . quantile ( .75 ) - df . quantile ( .25 ) ) / np . sqrt ( df . count ( ) )
+twitter_Archive = twitter_Archive . merge ( df_tsv , left_on = _STR_ , right_on = _STR_ , how = _STR_ , left_index = True ) $ twitter_Archive . info ( )
+utils . add_coordinates ( data )
+df . groupby ( _STR_ ) [ _STR_ ] . min ( )
+from bson . objectid import ObjectId $ def get ( post_id ) : $ document = client . db . collection . find_one ( { _STR_ : ObjectId ( post_id ) } )
+fix_space_0 = lambda x : pd . Series ( [ i for i in reversed ( x . split ( _STR_ ) ) ] )
+new_style_url = _STR_ $ print ( _STR_ . format ( new_style_url ) )
+session . query ( Measurement . date ) . order_by ( Measurement . date . desc ( ) ) . first ( ) $
+daily_unit_df = all_turnstiles . groupby ( [ _STR_ , _STR_ , _STR_ , _STR_ ] , as_index = False ) . sum ( ) . drop ( [ _STR_ , _STR_ ] , axis = 1 ) $ daily_unit_df . sample ( 5 )
+from random import shuffle $ x = [ i for i in range ( len ( clean_reviews . index ) ) ] $ shuffle ( x )
+merged_df [ _STR_ ] = merged_df [ _STR_ ] - 1 $ merged_df . head ( )
+df2 . shape
+contractor_clean [ _STR_ ] = pd . to_datetime ( contractor_clean . last_updated ) $ contractor_clean [ _STR_ ] = contractor_clean [ _STR_ ] . dt . strftime ( _STR_ ) $ contractor_merge [ _STR_ ] = contractor_merge [ _STR_ ] . dt . to_period ( _STR_ )
+df . asfreq ( _STR_ , method = _STR_ ) $
+df_all . id . unique
+from scipy . stats import norm $ print ( norm . cdf ( z_score ) ) $ print ( norm . ppf ( 1 - ( 0.05 ) ) ) $
+logit_mod = sm . Logit ( df2 [ _STR_ ] , df2 [ [ _STR_ , _STR_ ] ] ) $ results = logit_mod . fit ( ) $ results . summary ( )
+scattering_to_total = scattering . xs_tally / total . xs_tally $ scattering_to_total . get_pandas_dataframe ( )
+group_brands = df2 . groupby ( _STR_ ) . agg ( { _STR_ : [ min , max , mean ] } )   $ group_brands . columns = [ _STR_ . join ( x ) for x in group_brands . columns . ravel ( ) ] $ group_brands
+validation . analysis ( observation_data , Jarvis_resistance_simulation_0_25 )
+url = _STR_ $ url_api = url + API_KEY $ r = requests . get ( url_api )
+tweet . author
+authors = EQCC ( git_index ) $ authors . get_cardinality ( _STR_ ) . by_period ( ) $ print ( pd . DataFrame ( authors . get_ts ( ) ) )
+rnd_reg . oob_score_
+trip_data_q5 [ _STR_ ] = trip_data_q5 . lpep_pickup_datetime . apply ( lambda x : pd . to_datetime ( x ) . date ( ) )
+plt . savefig ( _STR_ ) $ plt . show ( )
+intervention_train . isnull ( ) . sum ( )
+conn . execute ( sql )
+df . to_csv ( _STR_ + _STR_ , sep = _STR_ , encoding = _STR_ , index = False )
+DT_feature_impt = pd . DataFrame ( { _STR_ : features . columns , _STR_ : model_dt . feature_importances_ } ) . sort_values ( _STR_ , ascending = False ) $ DT_feature_impt . head ( 20 )
+df2 [ df2 . duplicated ( [ _STR_ ] ) ]
+p_old = df2 [ df2 [ _STR_ ] == _STR_ ] [ _STR_ ] . mean ( ) $ print ( _STR_ . format ( p_old ) )
+print ( len ( countdf [ _STR_ ] . unique ( ) ) ) $ print ( len ( countdf [ _STR_ ] . unique ( ) ) - len ( count1df [ _STR_ ] . unique ( ) ) ) $ print ( len ( countdf [ _STR_ ] . unique ( ) ) - len ( count6df [ _STR_ ] . unique ( ) ) )
+fNames = dfX . columns
+jobs_data . drop_duplicates ( subset = [ _STR_ , _STR_ ] , keep = _STR_ , inplace = True )
+news_organizations_df [ _STR_ ] = news_organizations_df [ _STR_ ] . map ( normalize_df )
+noise . head ( 2 )
+set ( user . columns ) . intersection ( raw . columns )
+StockData . count ( )
+openmc . plot_geometry ( output = False )
+sm . Logit ( df_new [ _STR_ ] , df_new [ [ _STR_ , _STR_ , _STR_ , _STR_ ] ] ) . fit ( ) . summary ( )
+df . query ( _STR_ ) . user_id . count ( ) $
+df . to_json ( _STR_ , orient = _STR_ ) $   ! cat json_data_format_index . json
+ds = tf . data . TFRecordDataset ( train_path ) $ ds = ds . map ( _parse_function ) $ ds
+lm . rsquared
+tweetering = pd . read_csv ( _STR_ , names = [ _STR_ , _STR_ ] ) $ tweetering . Text . replace ( { _STR_ : _STR_ } , regex = True , inplace = True )
+df . boxplot ( _STR_ , by = _STR_ ) ;
+old_converted = np . random . choice ( [ 1 , 0 ] , size = nold , p = [ pmean , ( 1 - pmean ) ] ) $ old_converted . mean ( )
+feature_col = ibm_hr_final . columns $ feature_col
+r . summary2 ( )
+df . user_id . nunique ( )
+for i in range ( len ( review_df . rate ) ) : $ review_df . iloc [ i , 4 ] = review_df . rate [ i ] [ : 3 ] $ review_df . iloc [ i , 6 ] = review_df . review_format [ i ] [ 7 : ]
+z_score , p_value = sm . stats . proportions_ztest ( [ convert_old , convert_new ] , [ n_old , n_new ] , alternative = _STR_ ) $ print ( _STR_ . format ( z_score , p_value ) ) $
+logit2_countries = sm . Logit ( newset [ _STR_ ] ,   $ newset [ [ _STR_ , _STR_ , _STR_ , _STR_ ] ] ) $ result_final = logit2_countries . fit ( )
+options_frame . info ( )
+print ( _STR_ . format ( len ( nba_df . loc [ ( nba_df . index . year == 2016 ) & ( nba_df . index . month == 1 ) , ] ) ) ) $ print ( _STR_ . format ( len ( nba_df . loc [ ( nba_df . index . year == 2017 ) & ( nba_df . index . month == 1 ) , ] ) ) )
+np . exp ( results . params )
+df2_conv = df2 . converted . mean ( ) $ df2_conv
+df2 = pd . read_csv ( _STR_ , index_col = _STR_ ) $
+for item in all_simband_data . subject_id . unique ( ) : $ if item not in proc_rxn_time . subject_id . unique ( ) : $ print ( item )
+autos . describe ( include = _STR_ )
+p_old_real = df2 . query ( _STR_ ) [ _STR_ ] . mean ( ) $ p_old = df2 . query ( _STR_ ) . count ( ) [ 0 ] / df2 . count ( ) [ 0 ] $ p_old
+br_pr = pd . Series ( brand_price ) $ br_mi = pd . Series ( brand_mileage )
+df2 [ df2 . duplicated ( _STR_ ) ]
+df_new [ [ _STR_ , _STR_ ] ] = pd . get_dummies ( df_new [ _STR_ ] ) [ [ _STR_ , _STR_ ] ]
+londonDFSubsetWithCounts [ _STR_ ] = londonDFSubsetWithCounts [ _STR_ ] . centroid $ londonDFSubsetWithCounts [ _STR_ ] = londonDFSubsetWithCounts [ _STR_ ] . map ( lambda x : x . xy [ 0 ] [ 0 ] ) $ londonDFSubsetWithCounts [ _STR_ ] = londonDFSubsetWithCounts [ _STR_ ] . map ( lambda x : x . xy [ 1 ] [ 0 ] )
+type ( t2 . tweet_id . iloc [ 2 ] )
+records3 = records . copy ( )
+model . compile ( loss = _STR_ , optimizer = _STR_ , metrics = [ _STR_ ] )
+% % time $ model = AlternatingLeastSquares ( use_gpu = False ) $ model . fit ( matrix_data )
+df2 [ _STR_ ] = 1 $ df2 [ [ _STR_ , _STR_ ] ] = pd . get_dummies ( df2 [ _STR_ ] ) $
+rain_df . describe ( )
+data . recommendation_id . nunique ( )
+malebydatenew = malebydate [ [ _STR_ , _STR_ ] ] . copy ( ) $ malebydatenew . head ( 3 )
+autos [ _STR_ ] = autos . price . str . replace ( _STR_ , _STR_ ) . str . replace ( _STR_ , _STR_ ) . astype ( float )
+twitter_url = _STR_ $ browser . visit ( twitter_url )
+print ( df2 [ ( ( df2 [ _STR_ ] == _STR_ ) == ( df2 [ _STR_ ] == _STR_ ) ) == False ] ) $ df2 [ ( ( df2 [ _STR_ ] == _STR_ ) == ( df2 [ _STR_ ] == _STR_ ) ) == False ] . shape [ 0 ]
+logodds . drop_duplicates ( ) . sort_values ( by = [ _STR_ ] ) . plot ( kind = _STR_ )
+df_gnis = pd . read_csv ( file_name + _STR_ , sep = _STR_ , encoding = _STR_ )
+z_score , p_value = sm . stats . proportions_ztest ( count = [ convert_new , convert_old ] , nobs = [ n_new , n_old ] , alternative = _STR_ ) $ print ( _STR_ + str ( z_score ) ) $ print ( _STR_ + str ( p_value ) )
+test [ [ _STR_ , _STR_ , _STR_ ] ] [ test [ _STR_ ] == 5563089830 ] [ test [ _STR_ ] == 11 ] . shape [ 0 ]
+iso_gdf . intersects ( iso_gdf_2 )
+autos = autos [ autos [ _STR_ ] . between ( 1000 , 350000 ) ] $ autos . sort_values ( _STR_ , ascending = False ) . tail ( )
+pc = pd . DataFrame ( tt1 . groupby ( _STR_ ) . size ( ) ) $ pc . columns = [ _STR_ ] $ pc_order = pc . sort ( _STR_ , ascending = False ) $
+import warnings $ warnings . simplefilter ( _STR_ )
+merged1 [ _STR_ ] . isnull ( ) . sum ( ) , merged1 [ _STR_ ] . notnull ( ) . sum ( )
+tl_2030 = pd . read_csv ( _STR_ , encoding = _STR_ , index_col = 0 )
+type ( t1 . tweet_id . iloc [ 3 ] ) $
+interpolated = bymin . resample ( _STR_ ) . interpolate ( ) $ interpolated
+for d in [ _STR_ , _STR_ ] : $ Train [ d ] = map ( date . toordinal , Train [ d ] ) $ Test [ d ] = map ( date . toordinal , Test [ d ] )
+data [ _STR_ ] . pct_change ( periods = 2 ) . max ( )
+y = dataframe1 [ _STR_ ] $ plt . plot ( y ) $ plt . show ( )
+new_page_converted = np . random . choice ( [ 0 , 1 ] , size = n_new , p = [ 1 - p_new , p_new ] ) $ new_page_converted
+df2 . index . get_loc ( 2893 )
+A = np . arange ( 25 ) . reshape ( 5 , 5 ) $ A [ [ 0 , 1 ] ] = A [ [ 1 , 0 ] ] $ print ( A )
+data = pd . DataFrame ( data = [ tweet . text for tweet in tweets ] , columns = [ _STR_ ] ) $ display ( data . head ( 10 ) )
+collab_df = pd . DataFrame ( $ collabs , columns = [ _STR_ , _STR_ , _STR_ , _STR_ , _STR_ ] ) . drop_duplicates ( ) $
+data = pd . read_csv ( _STR_ , parse_dates = [ 1 ] ) $
+data . describe ( include = [ _STR_ ] )
+pd . set_option ( _STR_ , _STR_ )
+sq83 = _STR_ $ sq84 = _STR_
+accuracy = 100 * metrics . accuracy_score ( y_test , y_hat ) $ print ( accuracy )
+df = pd . read_csv ( _STR_ ) $ df . head ( )
+cur = conn . cursor ( ) $ cur . execute ( _STR_ ) $
+df = pd . read_csv ( _STR_ ) $ df . head ( )
+cnx = sqlite3 . connect ( _STR_ ) $ df = pd . read_sql_query ( _STR_ , cnx )
+p_diffs = np . array ( p_diffs ) $ ( p_diffs > actual_diff ) . mean ( ) $
+beginDT = _STR_ $ endDT = _STR_ $
+namesarray = list ( df . index . values [ 0 : 20 ] )
+df = pd . concat ( [ df_en , df_other ] )
+s519397_df [ _STR_ ] . describe ( )
+logit_countries2 = sm . Logit ( df3 [ _STR_ ] ,   $ df3 [ [ _STR_ , _STR_ , _STR_ , _STR_ ] ] ) $ result2 = logit_countries2 . fit ( )
+df . converted . mean ( )
+df_estimates_false [ _STR_ ] . hist ( bins = 50 , figsize = ( 10 , 5 ) ) $ plt . show ( ) $
+archive_clean [ _STR_ ] = archive_clean . apply ( get_rating , axis = 1 )
+conn_b . commit ( )
+Tweet_DF1 [ _STR_ ] = pd . to_datetime ( Tweet_DF1 [ _STR_ ] )
+my_gempro . get_dssp_annotations ( )
+df . query ( _STR_ ) . count ( )
+df_cities = pd . read_csv ( _STR_ ) $ df_cities
+sns . factorplot ( _STR_ , data = titanic3 , hue = _STR_ , kind = _STR_ )
+e = Example ( ) $ print ( e . __dict__ ) $ print ( e . __dict__ . __class__ )
+df2 = df2 . drop ( df2 . index [ 2893 ] ) $ df2 . info ( )
+r = requests . get ( _STR_ ) $ json_sample = r . json ( )
+features = pd . merge ( features , form_btwn_teams . drop ( columns = [ _STR_ ] ) , on = [ _STR_ , _STR_ , _STR_ ] )
+len ( [ baby for baby in BDAY_PAIR_df . pair_age if baby < 3 ] )
+df2 [ df2 . duplicated ( [ _STR_ ] , keep = False ) ]
+avg_km_series = pd . Series ( avg_km_by_brand , dtype = int ) $ price_vs_km [ _STR_ ] = avg_km_series $ price_vs_km
+df [ _STR_ ] = ( ( df . group == _STR_ ) & ( df . landing_page == _STR_ ) ) | ( ( df . group == _STR_ ) & ( df . landing_page == _STR_ ) )
+import re $ df . loc [ : , _STR_ ] = df . message . apply ( lambda x : _STR_ . join ( re . findall ( _STR_ , x ) ) )   $
+hawaii_df = measure_df . merge ( station_df , left_on = _STR_ , right_on = _STR_ , how = _STR_ ) $ hawaii_df . head ( )
+auth = tweepy . AppAuthHandler ( consumer_key , consumer_secret ) $ auth . secure = True $ api = tweepy . API ( auth , wait_on_rate_limit = True , wait_on_rate_limit_notify = True )
+data . info ( )
+path = _STR_ $ mydata = pd . read_csv ( path , sep = _STR_ ) $ mydata . head ( 5 )
+df3_holidays = df3 . copy ( ) $ df3_holidays [ _STR_ ] = np . log ( df3_holidays [ _STR_ ] )
+gdax_trans_btc . plot ( kind = _STR_ , x = _STR_ , y = _STR_ , grid = True ) ;
+gf = open ( processed_path + _STR_ , _STR_ ) $ json . dump ( { _STR_ : gps_box , _STR_ : gdef } , gf ) $ gf . close ( )
+df_ad_state_metro_1 [ _STR_ ] . value_counts ( )
+my_zip = zipfile . ZipFile ( target_file_name , mode = _STR_ ) $ list_names = my_zip . namelist ( )
+print iowa . info ( ) $ iowa . describe ( ) $
+data . Likes . value_counts ( normalize = True )
+train [ _STR_ ] . fillna ( train [ _STR_ ] . median ( ) , inplace = True )
+corrected_log . sort_values ( _STR_ ) . describe ( )
+X_new = pd . DataFrame ( { _STR_ : [ data . TV . min ( ) , data . TV . max ( ) ] } ) $ X_new . head ( )
+norm . ppf ( 1 - 0.05 )
+rf = RandomForestClassifier ( labelCol = _STR_ , featuresCol = _STR_ ) $ labelConverter = IndexToString ( inputCol = _STR_ , outputCol = _STR_ , labels = labelIndexer . labels ) $ pipeline = Pipeline ( stages = [ SI1 , SI2 , SI3 , SI4 , labelIndexer , OH1 , OH2 , OH3 , OH4 , assembler , rf , labelConverter ] ) $
+surveys2001_df = pd . read_csv ( _STR_ , index_col = 0 , keep_default_na = False , na_values = [ _STR_ ] ) $ surveys2002_df = pd . read_csv ( _STR_ , index_col = 0 , keep_default_na = False , na_values = [ _STR_ ] )
+norm . ppf ( 1 - ( 0.05 / 2 ) ) $
+! wget https : // data - ppf . github . io / labs / lab4 / Residuals . jpeg $   ! wget https : // data - ppf . github . io / labs / lab4 / Star . obs . jpeg
+df . query ( _STR_ ) . count ( ) [ _STR_ ] + df . query ( _STR_ ) . count ( ) [ _STR_ ]
+df1_after_df2 = df2 . append ( df1 ) $ df1_after_df2
+max_calc = df . loc [ df [ _STR_ ] == _STR_ ] . groupby ( _STR_ ) . max ( ) $ min_calc = df . loc [ df [ _STR_ ] == _STR_ ] . groupby ( _STR_ ) . min ( ) $ mean_calc = df . loc [ df [ _STR_ ] == _STR_ ] . groupby ( _STR_ ) . mean ( ) $
+from bokeh . io import output_notebook $ output_notebook ( )
+titles_list = temp_df2 [ _STR_ ] . tolist ( )
+df2 [ _STR_ ] = 1 $ df2 [ [ _STR_ , _STR_ ] ] = pd . get_dummies ( df2 [ _STR_ ] ) $ df2 . head ( )
+example1_df . registerTempTable ( _STR_ )
+autos [ _STR_ ] . str [ : 10 ] . value_counts ( normalize = True , dropna = False ) . sort_index ( ascending = True )
+train , valid , test = covtype_df . split_frame ( [ 0.6 , 0.2 ] , seed = 1234 ) $ covtype_X = covtype_df . col_names [ : - 1 ] #last column is Cover_Type, our desired response variable $ covtype_y = covtype_df.col_names[-1]
+new_scores = [ x [ 1 ] - x [ 0 ] for x in scores_pairs_by_business [ _STR_ ] ] $ plt . hist ( new_scores , bins = np . arange ( - 25 , 30 , 2 ) )
+by_area [ _STR_ ] . plot ( ) ; plt . legend ( ) ;
+df2 = df2 [ df2 [ _STR_ ] != _STR_ ] $ sum ( df2 [ _STR_ ] . duplicated ( ) )
+df2 . head ( )
+import statsmodels . api as sm $ logit = sm . Logit ( df [ _STR_ ] , df [ [ _STR_ , _STR_ ] ] )
+df_all . describe ( )
+df3 . groupby ( [ _STR_ , _STR_ ] ) . sum ( )
+media = np . mean ( datos [ _STR_ ] ) $ print ( _STR_ . format ( media ) )
+s = pd . Series ( [ 1 , 2 , 3 , 4 , 5 ] , index = [ _STR_ , _STR_ , _STR_ , _STR_ , _STR_ ] ) $ s
+df . sort_values ( by = [ _STR_ , _STR_ ] , inplace = True ) $ df . head ( )
+( fit . shape , fit2 . shape , fit3 . shape , fit4 . shape )
+df . shape [ 0 ]
+station_splits = pd . read_csv ( _STR_ ) $ station_splits . fillna ( 0.0 , inplace = True ) $ station_splits
+url = _STR_
+a . iloc [ [ 3 ] ]
+from scipy . stats import norm
+from sqlalchemy . ext . automap import automap_base $ from sqlalchemy import create_engine
+import pandas as pd $ data = pd . read_csv ( _STR_ , error_bad_lines = False , header = None ) $
+df_sample = df . sample ( n = len ( df ) / 200 ) $ print _STR_ , len ( df ) $ print _STR_ , len ( df_sample )
+git_log [ _STR_ ] = pd . to_datetime ( git_log [ _STR_ ] , unit = _STR_ )
+tweet_image_clean . shape $
+weather = weather . drop ( [ _STR_ , _STR_ ] , 1 )
+r = requests . get ( _STR_ + key ) $ r . headers [ _STR_ ] $ r . json ( )
+dfX = data . drop ( [ _STR_ , _STR_ , _STR_ ] , axis = 1 ) $ dfY = data [ _STR_ ]
+df = pd . read_csv ( _STR_ , encoding = _STR_ ) $ print ( df . describe ( ) ) $
+twitter_archive_enhanced [ twitter_archive_enhanced . duplicated ( _STR_ ) ]
+with open ( _STR_ , _STR_ ) as fd : $ IMDB_dftouse_dict = json . load ( fd )
+jail_census . loc [ _STR_ ]
+data = pd . DataFrame ( tweets_clean_subset . groupby ( by = [ _STR_ ] ) [ _STR_ , _STR_ ] . mean ( ) ) . sort_values ( _STR_ , ascending = False ) $ data . head ( ) $
+brand_names = np . unique ( np . asarray ( data . brand [ : ] ) ) $ model_names = np . unique ( np . asarray ( data . model [ : ] ) )
+crime_data = crime_data [ crime_data [ _STR_ ] . dt . year == 2017 ] $ crime_data . shape
+percent_success = round ( kickstarters_2017 [ _STR_ ] . value_counts ( ) / len ( kickstarters_2017 [ _STR_ ] ) * 100 , 2 ) $ print ( _STR_ ) $ print ( percent_success )
+delay_delta [ _STR_ ] . astype ( _STR_ ) . hist ( bins = 20 ) $ plt . xlabel ( _STR_ ) $ plt . ylabel ( _STR_ )
+user = df_ts_alltype . groupby ( [ _STR_ , _STR_ , _STR_ ] ) [ _STR_ ] . count ( ) $ user . head ( 10 )
+p_diffs = np . array ( p_diffs ) $ p_diffs
+len ( df [ ( df . landing_page == _STR_ ) & ( df . group == _STR_ ) ] ) + len ( df [ ( df . landing_page == _STR_ ) & ( df . group == _STR_ ) ] )
+df . info ( )
+df_test_index = pd . DataFrame ( ) $
+google_stock . corr ( )
+print df . shape [ 0 ] + noloc_df . shape [ 0 ]
+df . isnull ( ) . values . any ( )
+df_l . loc [ : , [ _STR_ , _STR_ ] ] . drop_duplicates ( _STR_ ) . loc [ df_l [ _STR_ ] == _STR_ ] . sort_values ( _STR_ )       $
+path = _STR_ $ mydata = pd . read_csv ( path , sep = _STR_ ) $ mydata . head ( 5 ) $
+raw_data = pd . read_csv ( _STR_ ) #Example$ raw_data.head()$ print ("The provided data set consists of",raw_data.shape[0],"rows and",raw_data.shape[1],"columns (features.")
+psy_df2 = psy_hx . merge ( psy_df , on = _STR_ , how = _STR_ ) # I want to keep all Ss from psy_df$ psy_df2.shape
+df2 [ ( ( ( df2 [ _STR_ ] == _STR_ ) == ( df2 [ _STR_ ] == _STR_ ) ) ) == False ] . shape [ 0 ]
+X_top = X [ top_features ] $ model . fit ( X_top , y )
+df_transactions [ _STR_ ] = df_transactions . is_auto_renew . apply ( lambda x : 1 if x == 0 else 0 )
+max_tobs_station = session . query ( Measurement . tobs ) . \ $ filter ( Measurement . station == activate_station_id , ( Measurement . date < _STR_ ) , ( Measurement . date >= _STR_ ) ) . all ( ) $
+df2 . duplicated ( _STR_ ) . sum ( )
+print ( _STR_ . format ( plan [ _STR_ ] [ _STR_ ] ) ) $ print ( _STR_ . format ( time . strftime ( _STR_ , time . localtime ( plan [ _STR_ ] [ _STR_ ] / 1000 ) ) ) )
+data [ data . name == _STR_ ] . head ( )
+df = pd . read_csv ( _STR_ ) $ df . head ( 5 )
+logging . info ( _STR_ ) $ df_final . to_csv ( _STR_ )
+temp_df = df2 [ ( df2 [ _STR_ ] == _STR_ ) & ( df2 [ _STR_ ] == 773192 ) ] $ tdf2 = df2 $ df2 . drop ( temp_df . index , inplace = True )
+rejected . shape , approved . shape
+yhat_knn = neigh . predict ( X_test_knn ) $ yhat_knn [ 0 : 5 ]
+for c in ccc [ : 2 ] : $ for i in spp [ spp . columns [ spp . columns . str . contains ( c ) == True ] ] . columns : $ spp [ i ] /= spp [ i ] . max ( )
+planets . dropna ( ) . describe ( )
+Counter ( [ x [ _STR_ ] for x in snapshotted_posts ] )
+df7 . loc [ df7 [ _STR_ ] == _STR_ , _STR_ ] = np . nan $ df7 [ _STR_ ] . value_counts ( dropna = False )
+data . head ( ) $
+distance = pd . Series ( distance_list )
+print ( _STR_ , df2 [ _STR_ ] . nunique ( ) )
+grouped_publications_by_author . columns = grouped_publications_by_author . columns . droplevel ( 0 ) $ grouped_publications_by_author . columns = [ _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ ]
+pd . concat ( [ msftA [ : 3 ] , aaplA [ : 3 ] ] , ignore_index = True )
+cars = cars [ ( cars . price >= 500 ) & ( cars . price <= 160000 ) & ( cars . yearOfRegistration >= 1950 ) & ( cars . yearOfRegistration <= 2016 ) & ( cars . powerPS >= 10 ) & ( cars . powerPS <= 500 ) ] $ cars . info ( )
+% bash $ gsutil cat _STR_ | head
+crimes . columns = crimes . columns . str . replace ( _STR_ , _STR_ ) $ crimes . columns
+z_score , p_value = sm . stats . proportions_ztest ( [ convert_new , convert_old ] , [ n_new , n_old ] ) $ z_score , p_value
+if not os . path . exists ( _STR_ ) : $ os . mkdir ( _STR_ ) $ records . to_csv ( _STR_ )
+building_pa_prc = pd . read_csv ( _STR_ )
+p_old = df2 [ _STR_ ] . mean ( ) $ p_old
+file = _STR_ $ emoji_dict = gu . read_pickle_obj ( file )
+plt . plot ( weather [ _STR_ ] , weather [ _STR_ ] ) $ plt . xticks ( rotation = _STR_ )
+news_sentiment_df . to_csv ( _STR_ , sep = _STR_ )
+( df . isnull ( ) . sum ( ) / df . shape [ 0 ] ) . sort_values ( ascending = False ) # credit Ben shaver
+sp500 . loc [ _STR_ ]
+TripData_merged3 = TripData_merged2 . dropna ( how = _STR_ )
+df_students . columns . tolist ( )
+df_features2 . to_csv ( _STR_ , encoding = _STR_ , sep = _STR_ , index = False )
+trimmedDataFrame . columns = [ _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ ] $ trimmedDataFrame . head ( 10 )
+df . dtypes
+df2 . query ( _STR_ ) . count ( ) [ 3 ] / df2 . shape [ 0 ]
+autos [ _STR_ ] = autos [ _STR_ ] . str . replace ( _STR_ , _STR_ ) . str . replace ( _STR_ , _STR_ ) $ autos [ _STR_ ] = autos [ _STR_ ] . astype ( int ) $ autos [ _STR_ ] . head ( )
+contractor_merge [ _STR_ ] . head ( ) $
+merge_table = pd . merge ( ride_data_df , city_data_df , on = _STR_ ) $ merge_table . head ( )
+error_new_page = df . query ( _STR_ ) . count ( ) [ 0 ] $ error_treatment = df . query ( _STR_ ) . count ( ) [ 0 ] $ print ( error_new_page + error_treatment )
+from sklearn . model_selection import train_test_split $ X_train , X_test , y_train , y_test = train_test_split ( X , y , test_size = 0.1 , random_state = 0 )
+themes = _STR_ . join ( [ themes , _STR_ ] )
+print sqlContext . sql ( _STR_ ) . collect ( )
+% % time $ tcga_target_gtex_expression_hugo_tpm = tcga_target_gtex_expression_hugo   \ $ . apply ( np . exp2 ) . subtract ( 0.001 ) . groupby ( level = 0 ) . aggregate ( np . sum ) . add ( 0.001 ) . apply ( np . log2 )
+mask = percent_quarter . abs ( ) . apply ( lambda x : x > 1 ) $ percent_quarter [ mask ] . nlargest ( 4 )
+type . __new__ ( type , _STR_ , ( ) , { _STR_ : 1 } )
+print ( ( fit . shape , fit1_test . shape ) ) $ print ( ( fit2 . shape , fit2_test . shape ) ) $ print ( ( fit3 . shape , fit3_test . shape ) )
+temp_hist_data = pd . DataFrame ( session . query ( Measurement . tobs ) . filter ( Measurement . station == _STR_ ) . filter ( Measurement . date > _STR_ ) . all ( ) ) $ temp_hist_data . head ( )
+df_ncrs = pd . read_excel ( _STR_ , index = _STR_ ) $ df_ncrs . head ( )
+df_model = df [ [ _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ ] ] $ df_model . head ( )
+val_avg_preds2 = np . stack ( val_pred2 ) . mean ( axis = 0 ) $ print ( _STR_ , type ( val_avg_preds2 ) , val_avg_preds2 . shape ) $ print ( val_avg_preds2 [ 0 : 10 , : ] )
+dog_ratings . rating_numerator . value_counts ( )
+( p_diffs > prob_convert_given_treatment - prob_convert_given_control ) . mean ( ) $
+y_hat = nb . predict ( train_4 )
+cities_list = [ _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ ]
+current_weather = soup . find ( _STR_ , class_ = _STR_ ) . text $ current_weather
+project_assignments = pd . read_csv ( _STR_ , keep_default_na = False )
+metadata [ _STR_ ] = refl . attrs [ _STR_ ] $ metadata [ _STR_ ]
+rain_df . set_index ( _STR_ ) . head ( )
+user_df [ _STR_ ] . values
+df_new [ [ _STR_ , _STR_ , _STR_ ] ] = pd . get_dummies ( df_new [ _STR_ ] )   $ df_new = df_new . drop ( [ _STR_ ] , axis = 1 )
+station_281 = session . query ( Measurement . date , Measurement . tobs ) . filter ( Measurement . station == _STR_ ) \ $ . filter ( Measurement . date >= _STR_ ) . all ( )
+train_data . head ( ) $
+word2vec = Word2VecProvider ( ) $ word2vec . load ( _STR_ )
+raw_freeview_df , raw_fix_count_df = condition_df . get_condition_df ( data = ( etsamples_grid , etmsgs_grid , etevents_grid ) , condition = _STR_ )
+df_test_index . iloc [ 6260 , : ]
+results = sm . OLS ( gdp_cons_df . Delta_C1 [ : 140 ] , gdp_cons_df . Delta_Y1 [ : 140 ] ) . fit ( ) $ print ( results . summary ( ) )
+df2 [ df2 [ _STR_ ] . duplicated ( ) == True ]
+filename_2018 = os . path . join ( input_folder , string_2018 )
+df2 [ _STR_ ] = 1 $ df2 [ [ _STR_ , _STR_ ] ] = pd . get_dummies ( df2 [ _STR_ ] ) $
+p_diffs = np . array ( p_diffs ) $ ( p_diffs > diff ) . mean ( )
+rdd . map ( lambda x : x ** 2 + really_large_dataset . value ) . collect ( )
+station_data = session . query ( Stations ) . first ( ) $ station_data . __dict__
+df . drop ( [ _STR_ , _STR_ , _STR_ , _STR_ ] , axis = 1 , inplace = True ) $ df . drop ( [ _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ ] , axis = 1 , inplace = True )
+oz_stops [ _STR_ ] = oz_stops [ _STR_ ] . apply ( lambda x : str ( x ) )
+Bot_tweets = data . drop ( [ _STR_ , _STR_ ] , axis = 1 ) $ Bot_tweets . head ( )
+print ( tipsDF . groupby ( _STR_ ) . count ( ) )
+sorted_df = df . sort_values ( by = [ _STR_ ] ) $ sorted_df
+sample = list ( db . tweetcollection . find ( { _STR_ : 994759019909726208 } ) ) $ sample
+expenses_df . drop ( expenses_df . index [ - 1 ] , inplace = True ) $ expenses_df
+df1 . head ( 5 )
+Output_three = New_query . ss_get_results ( sport = _STR_ , league = _STR_ , ep = _STR_ , season_id = _STR_ , game_id = _STR_ ) $ Output_three
+DataSet . tail ( ) $
+my_columns = list ( data . columns )   $ my_columns
+waihee_tobs = session . query ( Measurement . tobs ) . \ $ filter ( Measurement . station == _STR_ , Measurement . station == Station . station , Measurement . date >= _STR_ , Measurement . date <= _STR_ ) . \ $ all ( )
+questions = pd . concat ( [ questions . drop ( _STR_ , axis = 1 ) , attend_with ] , axis = 1 )
+b_cal_q1 . loc [ : , _STR_ ] = pd . to_numeric ( b_cal_q1 [ _STR_ ] , errors = _STR_ )
+archive_df_clean = archive_df_clean . drop ( columns = [ _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ , _STR_ ] )
+input_col = [ _STR_ , _STR_ , _STR_ , _STR_ , ] $ transactions = utils . read_multiple_csv ( _STR_ , input_col )
+df . index
+Measurement = Base . classes . measurement $ Station = Base . classes . station $
+df2 [ [ _STR_ , _STR_ , _STR_ ] ] = pd . get_dummies ( df2 [ _STR_ ] ) $ df2 . head ( )
+df = pd . DataFrame ( np . random . randn ( 1000 , 4 ) , index = random_series . index , columns = list ( _STR_ ) ) $ df . head ( )
+! wget - nv https : // data . wprdc . org / datastore / dump / 40776043 - ad00 - 40 f5 - 9 dc8 - 1 fde865ff571 - O 311. csv
+pd . Series ( HAMD . min ( axis = 1 ) < 0 ) . value_counts ( ) # no
+df_survival_by_donor = df_survival [ [ _STR_ , _STR_ ] ] . groupby ( _STR_ ) $ mean_time_diff = df_survival_by_donor . apply ( lambda df : df [ _STR_ ] . diff ( ) . mean ( ) ) $
+df_daily4 = df_daily . groupby ( [ _STR_ , _STR_ , _STR_ ] ) . DAILY_ENTRIES . sum ( ) . reset_index ( ) $ df_daily4 . head ( 5 ) $
+print ( len ( distance_list ) ) $ station_distance . shape
+weather_all = create_dummy_weather ( [ weather_all ] , list ( weather_all . columns ) ) [ 0 ]
+logit_mod2 = sm . Logit ( df_new [ _STR_ ] , df_new [ [ _STR_ , _STR_ , _STR_ , _STR_ ] ] ) $ result2 = logit_mod2 . fit ( ) $ result2 . summary ( )
+print ( _STR_ ) $ model_source = gensim . models . Word2Vec . load ( _STR_ ) $ model_target = gensim . models . Word2Vec . load ( _STR_ )
+df2 . drop ( _STR_ , axis = 1 , inplace = True ) $ df2 . head ( )
+pd . date_range ( _STR_ , freq = _STR_ , periods = 10 )
+center_attendance_pandas . groupby ( _STR_ ) [ _STR_ ] . sum ( ) . sort_values ( ascending = False ) $
+records = pd . read_csv ( _STR_ ) $ records . head ( )
+walk . resample ( _STR_ ) . first ( )
+data . groupby ( _STR_ ) . mean ( ) $
+dfTemp = transactions . merge ( users , how = _STR_ , left_on = _STR_ , right_on = _STR_ ) $ dfTemp
+df2_treatment = df2 . query ( _STR_ )
+df_combined = pd . merge ( df_clean , df_predictions_clean , on = _STR_ , how = _STR_ ) $ df_combined = pd . merge ( df_combined , df_tweet_clean , on = _STR_ , how = _STR_ ) $
+result_df , total_count = search_scopus ( key , _STR_ ) $ from IPython . display import display , HTML $ display ( result_df ) $
+windfield_matched_array = windfield_matched . ReadAsArray ( ) $ print ( _STR_ + str ( shape ( windfield_matched_array ) ) ) $ print ( _STR_ + str ( shape ( ndvi_change . values ) ) )
+df [ df [ _STR_ ] == _STR_ ] [ _STR_ ] . median ( )
+logistic_reg = sm . Logit ( df3 [ _STR_ ] , df3 [ [ _STR_ , _STR_ ] ] ) $ results = logistic_reg . fit ( )
+df . head ( )
+story_sentence = _STR_ $ print ( story_sentence )
+fig , ax = plt . subplots ( ) $ df . groupby ( [ _STR_ , _STR_ ] ) . mean ( ) . plot ( ax = ax ) $ plt . show ( )
+class StdDev ( CustomFactor ) : $ def compute ( self , today , asset_ides , out , values ) : $ out [ : ] = np . nanstd ( values , axis = 0 )
+print ( _STR_ ) $ print ( _STR_ , loglikA ) $
+l_t = [ i for i in dummy_features_test if i not in train . columns . tolist ( ) ] $ print ( _STR_ % len ( l_t ) )
+save_filepath = os . path . expanduser ( _STR_ )
+summary_df = sentiments_df . groupby ( _STR_ , as_index = False ) . mean ( ) $ summary_df = summary_df [ [ _STR_ , _STR_ ] ] $ summary_df
+df2 = df2 . drop_duplicates ( subset = _STR_ )
+public_tweets = api . home_timeline ( ) $
+expiry = datetime . date ( 2015 , 1 , 5 ) $ msft_calls = Options ( _STR_ , _STR_ ) . get_call_data ( expiry = expiry ) $ msft_calls . iloc [ 0 : 5 , 0 : 5 ]
+df . drop ( df [ pd . isna ( df [ _STR_ ] ) ] . index , inplace = True ) $ assert pd . notna ( df [ _STR_ ] ) . all ( )
+df_new [ [ _STR_ , _STR_ , _STR_ ] ] = pd . get_dummies ( df_new [ _STR_ ] )
+print ( max ( sessions . groupby ( _STR_ ) . title . nunique ( ) ) )
+df . price_doc . hist ( bins = 100 ) $
+df . tail ( )
+df [ _STR_ ] = df [ _STR_ ] . astype ( _STR_ ) $ df [ _STR_ ] = df [ _STR_ ] . astype ( _STR_ )
+names = d [ d . name != _STR_ ]
+countries_df = pd . read_csv ( _STR_ ) $ countries_df . head ( )
+rating_and_retweet [ _STR_ ] . corr ( rating_and_retweet [ _STR_ ] )

@@ -1,0 +1,1807 @@
+#inspect station
+# extract features from new document using built vectorizer
+# ~ selects eveything not between the two numbers
+# get odds ratio for the age
+#find the standard deviation of p_old
+#checking contents of dataframe
+# Use the base url to create an absolute url
+#Upper code was used to produce a .csv file containing all parsed Twitter data #Was uploaded to Dropbox and made available via a public link, lower function downloads that file
+#Making a copy before modifying 
+#using RandomForestRegressor as the prediction model # Train the model using the training sets # Predict Output
+#df_meta = pd.read_csv('data/meta_data_modified.csv', encoding = 'ansi')
+#verifying the counts equal the amount of rows of the dataset
+# number of patients over time, new and existings
+# Add markers that are circles and of a certain size.
+# cisnwh8
+# Crate an instance of the d2ix post process class: # Post process for a specific scenario: model, scen, version
+# converting the timestamp column # summarizing the converted timestamp column
+# new crossed columns are added in model.py # see first 20 line on codes starting from "INPUT_COLUMNS
+# Understand the properties of loaded dataframe
+# after the execution of the above heuristics let's have a look at the total number of merges for all tickets collected
+# defind simulation data
+# ???? why this one does not work???
+#load second json object
+#df.query("(group == 'treatment') & (landing_page != 'new_page')").shape[0]
+# import a .csv file (data from blood testers usually exported as .csv or .txt) # bg2 = pd.read_csv('/home/hbada/BGdata/Libre2018-01-03.txt') # when using pythonanywhere.com # and the data is tab delimited!
+# proportion hypothesis test using statsmodels to calculate 
+# We can also delete elements using the drop method
+#melt stages of dog columns # this will give me a dataset back with many duplicates
+# get rid of the duplicate entries
+# Check dtypes again if ddate has changed
+# Load the President Trump's tweets
+# Create corpus matrix
+#for prophet to work, columns should be in teh format ds and y
+# they do intersect, so create an overlay with a 'union'
+# creating the `distance` data field # which denotes the distance from the # point specified by the coordinates to (0.5, 0.5)
+#df.dropna(inplace=True)
+#Write dataframe to csv file
+# Summary Statistics Average of all Stations HI, US
+# comparison to newer files (2017-10-15)
+# Quantity of outliers to be discarded
+# Inspect counts
+# It can be observed that maximum data points lie in the range 250-500 seconds of duration
+# We create a pandas dataframe as follows: # We display the first 10 elements of the dataframe:
+#coverting a csv file into a dataframe
+#create arima model
+# Calculations ## Probability of True Positive
+# Use the loc method for selection by label
+#Getting right time
+# check the frequency is BusinessDay
+# Show all tweets with decimals in the text
+# remove stop and other words, links
+# Double check all of the correct rows were removed - this should be 0
+# https://spark.apache.org/docs/latest/ml-classification-regression.html#multinomial-logistic-regression
+#df.index.names = ['timestamp_ix', 'rank_ix']
+# transactions DataFrame
+#convert data to PD, then get correct format, then save to JSON
+#Finding duplicated rows  #Finding repeated users -- 5549 repeated users
+# s3
+#Honolulu': 'c47c0bc571bf5427'
+#Dropping  columns with retweet infomation
+#Create a new value of the dictionary which has only DATETIME and INCR_ENTRIES and convert to list
+# analyze validtation between Simple resistance simulation and observation data.
+# calculating the probality of an individual converting # printing the probality of conversion
+# Perform scaling on the dataframe containing the features # Define number of clusters # Train a model
+# get the dataset we just uploaded
+# X will be a pandas dataframe of all columns except meantempm, feutures # y will be a pandas series of the meantempm, target
+# called the stats_diff function that gives us the difference
+#group["C"] # group['C'].shape # group.keys()
+# shape of coarse grid
+### Fit Your Linear Model And Obtain the Results # Ab_page is used, which means, new_page and treatment is the baseline
+#no aporta nada, solo tiene ids
+# Results
+# to 45 minute frequency and forward fill
+# df.loc[df['column_name'] == some_value] # Reset the index numbers
+from datetime import date, datetime$ def json_serial(obj):$     """JSON serializer for objects not serializable by default json code"""$
+#
+#Compute accuracy on our training set
+# Plot the daily normals as an area plot with `stacked=False`
+# Say we only want to compare fails and success, we can create a separate view of the dataset that # contains only those states
+#Summarize the MeanFlow_cfs data, using default outputs
+# RTs AND SENTIMENT
+#Save a references for the ff tables:
+# Shuffle the data set
+# My next task will be to vectorize the text, so I call up the stop  # words to add a few that are present in almost all legislation and  # which are no descriptive of our response variable.
+#Plot sites with an area > 25 sq mi
+# Store the map_info into a key of the same name
+# Now, call the Quandl API and pull out a small sample of the data (only one day) to get a glimpse # into the JSON structure that will be returned
+# Drop duplicates from table of latest inspections
+#drop the duplicated row
+# now split # default is 30%
+# Same effect using Pivot
+### read in IATTC csv file created by using Scrapy crawler spider (for Chinese vessels only)
+# Then merge each of them with the main DF
+### Create the necessary dummy variables
+#remove columns with identifing info
+#Clean the title and date data
+# get terms most similar to cantonese
+# there is a .500061 chance an individual received the new page
+# split and dummy bands column
+#p_new = df2.query('group == "treatment"')['converted'].mean()
+#check that data matched between 'IssuerId' and'IssuerId2' #drop one of them if match
+#missing value treatment # Check for nulls.
+# Few tests: This will print the odd word among them 
+#creat testset and  trainset
+# `make_pipeline` - credit goes to Harsha
+#using the nunique function to count unique users #check the result
+# We create a Pandas Series that stores a grocery list of just fruits # We display the fruits Pandas Series
+# Drop these cases
+#Remove unnecessary columns
+# Merge df2 with countries csv
+# find historical data for 2013
+#recall: (X_train, y_train), (X_test, y_test) = mnist.load_data()
+# map vip to 1's and 0's
+#find group == control and find probability of conversion
+# Load/Read in Player/Match Ratings
+# Lets create a copy of the dataframe so that we can run some tests on it
+# Create a new salary table, but use "name" instead of "employee" for the column index
+# Create a composite dataframe for plotting # ... Use custom function declared in customplot.py (which we imported at the beginning of this notebook)
+#calculating how many users were converted out  #of all the users who used the pages
+# slicing sample
+# people usually complain about loud parties on Sunday
+# Check out the distribution of days worn
+# .grep() allows you to search for string patterns within a column
+#Total Number of Drivers Per City Type
+# 14, 15, 16
+# A:
+# 0.90505831275902449 # Tells us how significant our z-score is # 1.959963984540054 # Tells us what our critical value at 95% confidence is
+# ranking according to every factor, descending #df_factors_PILOT.to_csv('./df_factors_PILOT_rank.csv')
+# merge duplicate 'Duplicate Request Exists' with 'Duplicate Request' 
+# Top 10 Restaurant Categories grouped by Neighbourhood 
+# create lookup key in crime dataset
+# Divide each number by each countries annual maximum
+# From the object 'report', list the most important features.
+#Note the as_index option will enable the datasets to be joined. The default behaviour of the groupby method is to make the groupby variable an index.
+# examine the coefficients
+# copy dataset from the existing dataframe # merge 2 datasets # df.merge approach: df3.merge(df_country, on= 'user_id')
+#air["reserve_visitors"].plot(figsize=(20,10), linewidth=5, fontsize=20) #plt.xlabel('reserve_datetime', fontsize=20); #plt.plot(air.index,air["reserve_visitors"])
+### Fit Your Linear Model And Obtain the Results
+#Creating a new variable "Week" #Converting the Week variable into categorical type #Looking at its summary statistics
+# limit the query using WHERE and LIMIT
+#if 5668 birthdays recorded, why only 5552 scn_age generated...oh, NaT #count/len(SCN_BDAY) users provide their baby's age
+# Create a new dataframe # Remove misaligned rows
+# now we can select ranges of items - lets get all records from adult to child  # without explicitly defining each level (adult, baby, child) - remember its alphabetically # sorted
+# Compute converted success rate, which equals to the converted success rate regardless of page # Display converted success rate
+#Set the index to be the bus names
+# Lets load the Concatenated DataFrame and the engine specification will help to delimit the outliers
+# President Obama's 8th state of the union address
+# df_2003
+# Now, call the Quandl API and pull out a small sample of the data (only one day) to get a glimpse # into the JSON structure that will be returned
+# calculate the critical value to compare to z-score using .05 error rate (95% confidence interval)
+#Seasonality calculation
+# Check the date range to see if anything is fishy there...
+# https://stackoverflow.com/questions/13035764/remove-rows-with-duplicate-indices-pandas-dataframe-and-timeseries
+# Sort by source and date to get latest tweets at top
+#df_concat_2["message_likes_dummy"] = pd.get_dummies(df_concat_2.message_likes_rel)
+# Getting rid of null values is easy too
+# Add a row to the DF # First create a new DF with those rows
+# number of rows and columns
+# write your code here
+# Specify multi-group cross section types to compute
+# To access a particular row, we can use the index name:
+# plt.bar(Daily_Price[0],Daily_Price[1]) # plt.show()
+### Creating the necessary dummy variables
+# fix random seed for reproducibility
+# compile model
+# Summary Statistics for Station - USC00519397 WAIKIKI 717.2, HI US
+# Third option - the cross-section - returns specific values
+# Repeating words like hurrrryyyyyy
+# Sort the dataframe by date
+# match column names (1st 11) : id columns and match resuts #match.columns[:11]
+# Export the regression model summary
+#searching for href
+# Create time series for data:
+#cek print head - zona waktu as index
+# Locais no dataset de postes
+# Creating dummy variables
+# Proportion of users converted
+#Function from docs at http://docs.tweepy.org/en/v3.6.0/api.html # Create list to store results # Create list to ctach errors as observed
+# add results to our data frame
+# treatment group user lands on old_page  # control group user lands on new_page #  number of times the new_page and treatment don't line up is sum of these two values
+#We have derived important features and now we will dropped the columns to reduce memory usage
+#merge image prediction dataset and twitter archive dataset
+# continue training with the loaded model!
+### doesn't want to join two tables based on user_id --- help needed #df3.join(countries, how='left',on='user_id',lsuffix='_l', rsuffix='_r', )
+#Create intercept column and dummy variables for treatment and control 
+# loading countries,csv into this file
+# The number of rows in ins # The number of unique IDs in ins. # What does this tell you?
+# filter only the required columns for analysis
+# split into training set and test set
+# Also, we need to check if there were any misrecorded values that may make a fare amount less than 0.
+## There are outliers in blurb count and backers count that may be confounding the finding of any correlation
+# import the package # instatiate the model and then assign to the variable results the fit model
+#info_final = pd.merge(info_final, avisos_detalles, on = 'idpostulante', how = 'inner')
+#Create dataframes for the other features so they are able to be merged
+# merged_left = pd.merge(left=survey_sub,right=species_sub, how='left', left_on='species_id', right_on='species_id') # yes!
+# connect to local
+# coins that are out of top 50 today
+# convert pandas column into matrix to use in ARIMA model
+#check the loaded file
+sql = """SELECT * FROM $     feed_fetcher_feeditem T1 LIMIT 100$     """$
+# number of iterations in simulation:  reccomended 20000
+# Ordered series , specify categories in low to high and have ordered flag as True
+#Method-1 #Creating new Columns variable No_of_30_Plus_DPD =  No_of_30_59_DPD + No_of_60_89_DPD + No_of_90_DPD
+#Testing % change calculations and trading logic
+#reorder+rename cols before saving
+# visualize the importance of features
+#Export the data in the DataFrame into a CSV file
+### Create the necessary dummy variables
+# Create a pandas dataframe from the model predictions (prev numpy array)
+#df= df.sort_values(['label'], ascending = True) #temp= df.sort_values(['label'])
+# Get all of the data values for the Results in the list created above # Call getResultValues, which returns a Pandas Data Frame with the data
+# Extract title text
+# Use list comprehension to create new DataFrame column 'Total Urban Population' # Plot urban population data
+# Language / culture can have a huge effect on NPS responses; does it here?
+# Generate version number for built
+#Save
+# Use `engine.execute` to select and display the first 10 rows from the station table
+#Create BeautifulSoup object; parse with 'html' or 'lxml'
+# summary
+#sample 1000 events at random
+# anchor random seed
+#69.3435% accuracy on test set
+#same result 0.995
+# notice the datatype has changed in our subset of the data
+# create the additional columns, one for each country
+# open file, read it, and tokenize:
+# Find station with the most precip data
+## identify second set of rows containing misaligned data
+# check no more missing values
+# Where would trades be if only bought when predicted return > 0.01% and sold when < -0.01%
+#load second json object
+#Vemos las cantidades sin repetir
+# train the RandomForestRegressor on our training data
+### peak hour for total post
+# fit the model to trainng data
+#https://chrisalbon.com/python/data_wrangling/pandas_join_merge_dataframe/ #An inner join is used as the API to download tweets have gone beyond the tweets in the provided dataset.  #By using the inner join only the tweets represented in both datasets will be merged.
+# Call the function with lambda_val 0.1, alpha 40, 30 iterations and 10 latent features
+#df_all_payments = df_all_payments.reset_index(drop=True)
+# Query for last 12 months of precipitation
+# Let's get back to the data frames we had before
+# Using colormap (cmap) to give color gradient to weekday number
+# This line is for a robust estimate of the sample mean. # 0.74 comes from interquatile range of a Gaussian distrivution # lets use a query method to filter out rows outside these values
+# now filter down to the presidential race only
+# What are the most active stations? # List the stations and the counts in descending order. \ # First, get the station's id for further use
+#Read the data into the notebook
+# Session 14 - Project by Sreedhara Jagatagar  Sreenivasa #13. Which transactions have a UserID not in users?  Second Solutions #Print Transactions' user ID whichs are not in Users table
+# stacking predicted probabilities by mean
+# Deleting rows for mismatched treatment groups # Deleting rows for mismatched control groups
+# import data
+# tempsApr and tempsMay are valid Series objects
+# Get the tweets stored in MongoDB
+#Number of unqiue user_ids in df
+# results are returned as an iterable list
+# Fitting the logistic regression model using country data
+#merge average fare and ride
+# check the country type
+# checking the proportion o users converted and storing it in the variable # printing the proportion of users converted
+# create the API
+# align train and test frames
+# Hint: Use the same : notation, but use the state names listed above # Your code here:
+#'Santa Ana': '0562e9e53cddf6ec'
+# Make columns for seasons and terms
+# Train Model on Training Set
+# simulate transactions using random.choice
+# Set the index to time, so when we save the data out we dont have an additional column with increasing numbers 
+# extract data values from datatable # add column names # view first couple rows
+# Print all of the classes mapped to the Base
+### Create the necessary dummy variables
+#keep the duplicate row that appears first
+# Export to csv
+# What are the most active stations? # List the stations and the counts in descending order.
+# get the first index
+# these are the important words in the title
+# df = pd.read_csv("../2016-17_teamBoxScore.csv")
+# Test to see if it works
+# read excel file # only reads first sheet
+# YOUR CODE HERE # raise NotImplementedError()
+#Set up logistic regression 
+# print top three (most consistent)
+# DATADIC contains 
+# Returns total number of rows and columns of a dataframe
+################################################## # Load   ##################################################
+#The table I created above on the nulls in the dataset let's us know that Completed Date has 101,709 null values, and Permit Number and Current Status do not have any null values. Let's confirm that here. 
+# Calculate difference in p under the null hypothesis
+# proportion of conversion
+# rename the values column
+# We assume the current directory is the course notebook folder in our JupyterHub server
+#remove links
+# extract precip array # check shape
+# Plot all columns as subplots
+#b = df.groupby(['group', 'landing_page']).count()
+#Average female reading score
+# column: true_class predict_class
+# monthly data
+# Make columns with country sums
+# Create needed merges in one command
+# Simulate conversion rates under null hypothesis
+################################################## # n = 7 ##################################################
+#Use Inspector to find the table names 
+# Run the model with training set 
+# dataset
+# Average weight by position, from heaviest to lighest
+#set up only display 10 rows c # can do this in environment
+#note the data has two columns and a time index
+### top 10 users for total posts
+# get header row from dataframe to see if it contains column names or values
+#Lists the unique 'Product' values within the table.
+# we're at a good stage to store the dataset
+#Conversion rate of old page
+# future = m.make_future_dataframe(periods=52*3, freq='w') # future_temp = np.random.uniform(df.TempC.min(), df.TempC.max(), size=future.shape) # future['TempC'] = future_temp
+#save new title in a variable
+# We create a column with the result of the analysis: # We display the updated dataframe with the new column:
+# find column names with nan values 
+# For finding all the links
+# Task C answer check
+# results = soup.find_all('div', class_='img')
+#df2['user_id'].count()
+#TEST #results = Geocoder.reverse_geocode(df['latitude'][0], df['longitude'][0]) #31.3372728, -109.5609559
+# masking
+#checking contents of dataframe
+# now it would be nice if they were assigned to a few different days and the usual three meals # aka a DataFrame with 3 columns, and 7 rows # NumPy's ndarray can be reshaped - here's how it's done with a pandas DataFrame
+# Let's say we want to focus on the Adj_Close cateogory:
+# determine the order of the AR(p) model w/ partial autocorrelation function, alpha=width of CI
+# We could change the date column to index
+# Inspect station data
+# Example on how to access and edit parameters manually if neccessary
+# 1. Regression model with interaction # 1-1. create new interaction variables between new page and country Canada and UK
+## median year in dataset
+# Note 1: This Notebook is an exercise by following Walker Rower tutorial at https://www.bmc.com/blogs/amazon-sagemaker/
+# instantiate model object
+# checking for unique user
+# Create a new DataFrame with an entry per sentence for the training set
+# how many users
+# Group by two keys
+# looks like there aren't any posts with this topic as the max
+# Create logger
+#GETTING THE NON UNIQUE USER INFO
+# save our crosstab
+#load data into pandas dataframe df1 #display first two rows from the dataframe df1
+# set appoinmtemnt duration column to hours
+# The zip codes dataset has quite a few missing values. Filling in what we need for now. # If this happens again, search for a different data source!!
+#create dataframe
+# Find total number of stations
+# Load dataset
+# first 5 rows
+#Which_Years_for_each_DRG.head()
+# reorder df_users
+# query for the available stomatal resistance parameterizations
+#stories.drop('tags', axis=1)
+#Create list of top10 topics
+#https://docs.python.org/3.6/library/datetime.html#strftime-strptime-behavior
+#From the data table above, create an index to return all rows for which the  #Phylum name ends in "bacteria" and the value is greater than 1000.
+# (target: Series type)
+# Identify game state # Call it a win for away if away has same or higher win percentage
+# build dataframe # view column information
+#[geolocator.reverse(x).address for x in train_df4['location-ll']]
+sql_query = """$ SHOW COLUMNS from sakila.address;$ """$
+# get the unique number of games Jimmy did not play in
+# drop the rows where the treatment group is incorrectly aligned with the old page
+#import data into a dataframe  #top 5 rows 
+#calculate number of queries when landing_page is equal to old_page #print n_old
+# Creating the term dictionary of our courpus, where every unique term is assigned an index. 
+# Apply the count function # Seeing what DummyDataframe look like
+#ax = plt.bar(temp_list,frequency,color='b',alpha=.05,align="center") #plt.bar(x_axis, users, color='r', alpha=0.5, align="center")
+# Mean of the two probabilities
+# combine lat and lon column to a shapely Point() object
+# Your Code Goes Here
+#remove the '$' sign from price #remove "," from price #convert to float type
+# cvec_4 top 10 words
+# fitting the model with intercept, ab_page and countries as response variables #showing the results
+# this is a cumulative sum along time axis
+# AUC for our recommender system
+# Remove "Unknown" hours from analysis
+# predicting the probability of a cancle/fail/success for a project not in the dataset
+# Number of dialogue
+# LOADING LIBRARIES WE MIGHT NEED... # # statistics
+# Let's scrape back two years to start # Write to csv
+# Saving references to each table
+#df_hi_temps.describe()
+# df_search_cate_dummies.iloc/[1]['user_id']
+# Check for NAs
+#YH_df["date"] = YH_df["created_at"].str.encode('utf-8').apply(parser.parse) #YH_df["date"] = pd.to_datetime(YH_df["date"])
+# removing retweet from dataframe
+# save the file to the output
+# Merging df_merge with image predictions dataframe
+# Least favorited 
+# fancy indexing creates a copy
+# 'y' for 1 and 'n' for 0
+#calculated null_vals as well for comparison.  Found the output to be very similar to the previous plot.
+# Show the size of status.csv file
+# we check number of values in each rows using info function # entry values denote if any column has missing values
+# converts the API string content to a Python dictionary using the json method ## list the first-level keys of the dictionary
+# Ok, so the number in the columns is not a dummy (1), but the year it was added to the dictionary. # We need to get a list of all the negative and positive words.
+# Simulating conversion rate times for NULL Hypothesis 
+#Reset the index from all the row dropping
+# Choose 1 column and save that image
+# Take a look at the source entries
+#First divide the countries into new columns
+# Describtive stats for tips
+# load dataset
+# Ploting mention count and the hashtag count against eachother
+# read from the appl worksheet
+#Do the same for male
+# df.apply(arg) will apply the function arg to each column in df, and return a DataFrame with the result # Recall that lambda x is an anonymous function accepting parameter x; in this case, x will be a pandas Series object
+# Split the Data to avoid Leakage #splitting into training and test sets
+# The mean of all the RateCodeID values
+#We see that people who get the loan at the end of the week dont pay it off, # so lets use Feature binarization to set a threshold values less then day 4
+#ii. How viral are my posts? #Ans. Get the sum of all the fav_cnt and group by users order by fav_cnt desc; #     The user with most counts has the most viral posts.
+# Observing the numeric details...
+# dummy all the subreddits
+# transactions where UserID not in users Dataframe
+# remove unwanted fields
+# Authentication
+# p_new is the mean of converted users over entire dataframe
+#Create dummy variables #Perform join #Check if join was correctly performed
+# attempt to pull out any duplicates based on text data
+#Find the highest number of returning stations
+# Cargamos hoja de calculo en un dataframe
+# Turn team_slug_df into key:value pairs
+#how many duplicates
+#load data into dataframe
+# Now, call the Quandl API and pull out a small sample of the data (only one day) to get a glimpse # into the JSON structure that will be returned
+# x is a date in string format e.g. 2/7/14, 12:08 PM
+# First option - the slice object # arr[slice(None), 1] is the same as arr[:, 1]
+# Pandas provides a simple way to create data sets using DatetimeIndex. # An easy way to create one is using the pd.date_range method
+# New dataframe for urban data
+#Displaying probability of an individual converting regardless of the page they receive
+#subset records in month 07, 08 into file2
+# make the new column the index for bitcoin prices
+# query for prcp data based on date range from most recent to a year before #make data from from sql query
+# Getting probs from logprobs #probs_test = softmax(log_preds_test); # trying this custom softmax. SAME RESULT.
+#confirm scns_created,associated scns_array in sequential order...should be null
+#Display the dataframe to view the output
+#Creating the dataframe
+#Test
+# Now, call the Quandl API and pull out a small sample of the data (only one day) to get a glimpse # into the JSON structure that will be returned
+# the names of the columns have become the index # they have been 'pivoted'
+# Reminder of DAU
+# Check what the indices are for the duplicated row.
+# Mars Facts
+# converting the timestamp column # summarizing the converted timestamp column
+# old page and new page shall be equal in the converted rate
+# Start to extract the number out of the Notes column. # Replace the hyphen in '15-day' with a space to help splitting and extracting digits.
+### Fit Your Linear Model And Obtain the Results
+#run a query to count the number of dates when the corresponding rank was above 30
+#remove duplicate rows
+# Drop any missing values. 
+# Instantiate a Materials collection and export to XML
+#Number of rows and columns in the original dataset
+#order_details_train = pd.read_csv('../data/raw/order_products__train.csv')
+#ARIMA model
+# Or using the series example, we can compute the correlation between # Series 1 and Series 2 : # The default method is pearson
+# Creating a document-term matrix
+#probs = clf.predict_proba(Xval)
+# import ab_data.csv and display first 5 rows
+#query tables to get count of daily report, all temp data is complete for each record, so the count #reflects a count of a station giving temp data, prcp data may or may not have been reported on that date
+# Add code here #my_model.fit(X_train, y_train)
+# First, read the dataset. Pandas can read from local files or URLs, and supports CSV and Excel. # A good place to start is to look at the data. head() shows the first few rows.
+# end month frequency from given quater
+# train the model using X_train_dtm
+# removing extra columns
+#Cochera, transporte publico, BALCON o terraza
+# we check number of  missing values in each rows 
+#Load crime data into pandas
+# Simulates one test for the average of n_old binomial flips with a convert rate of p_null:
+# find the rows with 0 conversions and print those rows to look at the data
+# reshape input to be [samples, time steps, features]
+# Double check if there are no more negative values in dataframe's "Tip_amount".
+# merging zipincome with zip_dest
+#using the count method to get the number of elements.
+# TO answer this let's check df2
+# Remove row using drop ... axis=0
+# device '43138fb09eb72a68108ab255b27b49fb9174d70d' shows the first event created in 1970.  # It's a impossiable date, so I removed this device.
+"""$ Test recover df pickle$ """$
+#show all the geometry levels we can use
+# break down specialty category by provider ID number
+# Number of tweets by company
+# Print percentages:
+# List the stations and observation counts in descending order
+# write your code here
+# How many learners had more than 100 interactions (>100) ?
+# Load the dataset
+#Task 7: Find the median trading volume
+# indexing and slicing with loc always uses explicit index
+# df3[pd.isnull(df3['groupby_filename'])]
+# use this cell for scratch work # consider using groupby or value_counts() on the 'name' or 'business_id' 
+#add dog stages column and delete original 4 columns 
+#### conda install -c anaconda statsmodels #### package-updating from 6.0 to 8.0
+# how about the other variables
+# Creatinng lambda function to map week number to datetime columns
+# Check for missing values?
+# load .csv files created by SCRAPING
+# Create a list of the unique usernames in order to see which users we need to retrieve friends for.
+# Rural cities ride totals
+#load data #resampling data
+# create pandas dataframe for conversion to arrow
+# Assert that there are no missing values
+# Clean up the dataset for viewing purposes
+#reciprocal for Canada
+#reading in countries.csv, assigning to countries_df and printing head
+'''$ Number of appointments by project$ '''$
+# remove spaces
+# get df 
+# Call function and retrieve data
+#merge columns on tweet_id 
+# Dropping the id column from test # Now we can verify that "train" and "test" have the same number of columns, as expected # We can also verify that the "submit" dataframe has the same number of rows as "test"
+#Cargamos las paradas de colectivos provistas desde data.buenosaires.gob.ar: #https://data.buenosaires.gob.ar/api/files/paradas-de-colectivo.csv/download/csv
+#Drop the redundant/useless columns
+#Changing string columns to an easier to use type
+### Create copy datasets to work on
+# Perform a query to retrieve the data and precipitation scores
+#MODEL SCORE WITH GRID SEARCH BEST PARAMS on 3CV folds/14 params {'C': 500, 'n_jobs': -1, 'penalty': 'l2'}
+# save as csv file
+#We cannot use rating, review and source hmm
+# aggregate on row
+### NOW WRITE RANKED POSTS TO FILE
+#linkNYC per 100 inhabitants
+# Use `engine.execute` to select and display the first 10 rows from the table
+#df = pd.read_csv('statcast_0817.csv') # using a csv of statcast events April 2015 - Aug. 2018
+# We create a column with the result of the analysis:
+# default DatetimeIndex and its Timestamps do not have # time zone information
+# Using the station id from the previous query, calculate the lowest temperature recorded,  # highest temperature recorded, and average temperature most active station?
+# load the trained model
+#use count to count the variable country
+# print min and max date
+# get api token and set authorization
+# number of rows in dataset
+#distribution under the null
+#Plot the results using the DataFrame plot method.
+# df.at['Row', 'Column'] = 10 #note the funky name is still present as Index
+# Instantiate the count vectorizer with an NGram Range from 1 to 3 and english for stop words. # Fit the text and transform it into a vector. This will return a sparse matrix.
+# Filter outliers in Max Capacity
+# List comprehension for reddit post timestamps
+#control should not be shown the new page, while treatment group should not be shown the old page
+# calculate the mean of the values in the Series
+# Create an engine for the `emoji.sqlite` database
+# Check if there are any NaN values in the Test DF
+# coordinates to a 2 dimension array # check dimensions
+# these columns tend to be set-dependent - for instance, the same card can have different borders in different # reprintings; all_cards is just a list of cards, so we remove these columns # casting the columns as sets makes writing the loc much easier, there could be a computational cost though? not sure
+#perc_df['24h_volume_usd'].map(two_digits)
+# file 2
+# Further EDA looking at the basic distribution of the target variable
+#df.dropna(how = 'all')
+# Likes vs retweets visualization
+# Shows the probability of new_pages in the dataset
+# Calculate the number of rows in the dataset
+# Merge does not care about the index # As in this example even though the  # index were different, it created only 4 rows
+# let's find the median and mode
+# it took the mean of the columns, then the mean of those means # however, s1 and s2 have a different number of terms
+# Convert to numpy array # Plot sampling distribution
+# Gradient Treee Boosting
+# What is the sample standard deviation?
+# after comparing other models with the previous ones, # it turns out that reducing the number of features did not improve the result
+# to 45 minute frequency and forward fill
+# fillna 
+# Construct and display pivot table
+#random forrest classifier
+# Scrape JPL Mars Space Images - Featured Image # URL of page to be scraped
+# This is its own cell because it takes a while to load this thing # takes a little bit. increase limit at own risk. # model = models.KeyedVectors.load_word2vec_format('./GoogleNews-vectors-negative300.bin', binary=True, limit=500000)  
+# tuna > 0 <=> next time user was active after D0
+# Now, call the Quandl API and pull out a small sample of the data (only one day) to get a glimpse # into the JSON structure that will be returned
+#reindex the DataFrame
+# Number of unique user ids: 290584
+# tweets_df = pd.read_csv(tweets_filename)
+#adding the intercept column # adding a new dummy variable column for the group
+# look to makes sure CA and US columns created 
+#changing the delta value to seconds so that we can plot easily
+# Authorize the repository client
+#https://plot.ly/python/linear-fits/
+#converts a list of JSON into Dataframe
+#Sharpe Ratio #Menor SD
+# Check if the word 'fell' exists in the vocabulary
+# Remove the columns we no longer need: #Test:
+#import crime data by Chicago wards
+# Load the data from the query into a dataframe
+# let's check unique count of contractor_number per name  #Display the contractor id which have more than one name.
+#datatype of the columns
+# Saving tweets_list to json file
+#see the values at those index # outliers values replace it with mean should be fine for now
+#start_time = timeit.default_timer() #create a copy of the dataframe to label encode
+#find the number of unique user_ids in df2
+# largest basket:
+# What are the most active stations? # List the stations and the counts in descending order. # This is Pandas way to do it. Obviously, we can pull out just the 'id' column if we want to
+# Step 10: Conduct PCA to limit features to 2 ## (optional) use svd_solver='dense'
+#The downloaded file is imported
+### Fit Your Linear Model And Obtain the Results
+# Binning into quantiles #pd.qcut(cust_data['MonthlyIncome'], 10).value_counts().plot.bar()
+# Fit our Linear Model And Obtain the Results
+### Checking if all 15 categories are represented 
+#check the dog_stages column
+#sort by CBS in order to create different color scatter plot
+# Save all postgame data.
+# Creating a Series is easy - just pass in a list of values
+# Fit linear model and generate the results
+# 4.
+# Separate response variables from predictors # Split the training data into training and validation sets for cross-validation
+#run for August users
+# review small df window after engineering lagged features/target vector(s)
+# Create gensim dictionary object
+# explore patterns and special cases
+# check that this code works as intended
+#Read in the dataset
+# Cleaning the speech text
+#Data from SERI report, table 3 #Difference between the SERI report and our values .
+# # data = pd.read_csv('xclara.csv') # print(data.shape)
+# numer of NaNs is sum of logical true
+# Encode y
+# Make directory if it doesn't already exist
+# Assign base classes to variables
+# Business day offset
+# view the entity pairs in descending order
+# Create engine using the `hawaii.sqlite` database file created in database_engineering steps
+# Load the results into a dataframe and set the index to the date
+# Create and display the first scatter plot
+# old page and new page shall be equal in the converted rate
+# treatment group receiving the new page # control group receiving the old page # total
+# Here i considered only the unique users.
+# Make a copy to work off # Set index to timestamps so that dates display correctly # Have a summary
+# Import Dependencies
+# Importe o arquivo survey.csv
+# Use our json to dataframe conversion class
+#create GeoDataFrame for Chicago wards
+#Load engine created in database_engineering
+#dropping unwanter junk column
+# Tells us how significant our z-score is # Tells us what our critical value at 95% confidence
+# convert p_diffs to numpy array # The proportion of the diffs greater than the actual diffs
+#separate numeric and object variables
+# Removing the MTU and MTU2 columns
+#New columns' name
+# Duration of experiment
+#Sampling Distribution
+#captializing the first letter of each word in the name columns
+# filters the columns with labels of array of 0s and 1s
+# testing if my functions work #they do!
+# 1 quarter changes regression: full sample
+# output2 = output.select('label', 'features').rdd
+#ensure column names do not have spaces
+#Show the first 5 rows of that array
+#get rid of companies that don't have fundings
+# read the contents of the file into a DataFrame
+# of unique users
+# For a quick check, let's also look at this where it is ascending # code here:
+# import libraries
+# plot basic histogram 
+# Total dates
+# Converting your dataframe to a matrix # Displaying rows 1-10 and all columns. Note: rows indices start at 0.
+# get sum of touchdowns by game day
+#Test for one entry just to check what I am doing
+# Example
+# Using logistic regression because it outputs values between 0 and 1
+#combining DayOfService and TripID into one column 
+# Remove data that will not help in this analysis
+# No. of rows after removing the duplicate 
+#Columns different in train and test data
+# Date range for whole dataset
+# pipeline / fit / score for lr & hvec
+# calculate the observed converted rate between new and old page type.
+#df2 = df2.drop(["Symbol"], axis = 1) #df2.set_index("Date", inplace = True)
+#term_freq_df .head()
+# Modify instance with multiple thermal distresses
+#payload = "water,id="+str(metric[0])+" value="+str(metric[2])+"\n"
+# Count tweets per time zone for the top 10 time zones
+# Tokenize tweet data in the dataframe
+# merge with QUIDS
+#count the number of positive words for each document #dtm_pos.drop('pos_count',axis=1, inplace=True)
+# convert timestamp to a time value
+### Fit Linear Model And Obtain the Results
+# Export CSV
+#count of users with new_page
+# We want mean absoulte error
+### To read the csv data into Data frame Variable
+#create session and initialize variables
+# croppedFrame = cumFrame[cumFrame.Date < '2016-01-21']
+# add in data for fare paid
+# users
+#join Shopify orders to Baby-camera Pair date 
+#Find duplicated user
+# Make a pivot table containing ratings indexed by user id and movie id
+# get a list of all data fields
+#Assign records collected before 1980 a status of "Before FL" #Assign records collection after 1984 a status of "After FL" #Show a random sample of the dataframe
+# Using stats models library functions to instantiate the model, and then fit the model.
+# Display the new number of thermal distesses
+## Test code on a reasonably small DF
+#data['new_claps'] = data.claps.rank(method='dense').astype(int)
+#create a column to indicate most recent measurements #where the current measurement is the max date, and there is more than one measurement for the wpdx_id
+# The proportion of users converted
+# peak at dump
+# Transform injury_df Date field to match the games_df date field:
+#url = "https://www.quandl.com/api/v3/datasets/FSE/AFX_X/data.json?&limit=1&api_key=" + API_KEY + "&start_date=2017-01-01&end_date=2017-12-31"
+# simulate values
+#This can be computed as:
+#Calculating the Range of the Outliers
+# From the above plot, we can there are two outliers in the rating ratio: 177.6 and 42.0
+### Create the necessary dummy variables
+#importing the libraries
+#In order to do an inner join, there must be a common key in both datasets.  Base the common key off of the school name. #This cell changes the name of the school column so that the inner join can be completed 
+## Q1. How to print out dictionary values using for loop?
+#print first 10 lines of first shard of train.csv
+# read-only subreddit instance
+# Convert test_age to series; set to new variable 'age' we add to df
+# So this is just simple pandas!
+# We create a pandas dataframe as follows: # We display the first 10 elements of the dataframe: # We display the last 10 elements of the dataframe:
+#Get rid of 2018, since its not a complete year
+# Check if users could be in calibration for only some days
+# What is this value called in scientific studies? # Simulate distribution under the null hypothesis # Plot the null distribution
+# lets find the number of rows we have now. We want to  # have a reasonable number to rows to train our deep learning model
+#propiedades entre 75 y 100 metros cuadrados
+#select a row
+# Fit the model
+#join countries_df to df2 on the 'user_id' column
+# Inspect numeric feature summary statistics 
+# # Getting back the objects:
+# Focus on the smallest prices in the dataset
+# The two columns after cleaning 
+# or timedelts by hour
+# drop rows from df2
+# Inspect the JSON structure of the object you created, and take note of how nested it is, # as well as the overall structure
+#from float to int code:
+### Location column is different -  unable to parse it like other three columns. ### Below works, however ### grab 'country', 'name' (city),  and 'state' (state)
+# Convert sold_date to datetime.
+# It can sometimes be useful to know which column contains the maximum value for each row. #
+# remove unessecary columns
+#change dtype to int64 #weird hack from H2o notebook
+#population = np.random.randint(2, size=(36, 10, 29)) # random population of 10 binary genetic strings
+# Dealing with missing data:
+# Transform Burgers vector to axes
+# info
+#Check via customer sample
+# as we can see from above, some old pages were given to treatment group # and some new pages are given to control group, which was wrong # so lets drop all these 3893 rows, which are wrongly aligned
+#Find all images in original features df where neither the hash nor the filename match anything in the new database
+# Finding a duplicated user_id
+# Create the hawaii sqlite engine created in database_engineering.ipynb file # Declare the base as automap_base # Use the Base class to reflect the database tables
+#sort index by date (earliest tweet to most recent tweet)
+#results = Geocoder.reverse_geocode(df['latitude'][0], df['longitude'][0])
+#Generating a histogram for the null values with observed difference marked with a red line
+# Create a dummy column that is 1 if the row represents an injury  # or a 0 if the row represents a player reactivated.
+# split the ratings into two columns
+#get large image
+# Gets historical data from the subscribed assets, the last 360 datapoints with daily resolution
+# We extract the mean of lenghts:
+# Get the length of the new page group
+# take only elements that belong to groups with a group sum greater than 100
+# Write to CSV
+# fit the logistic regression model to the data              
+#retrieve the new_page values and compared with the total number of landing_page  #in order to obtain the probability that an individual that received the  #new_page was converted
+# same as above
+# create a new DataFrame using the time frame above to select rows from the whole DataFrame
+# reorganize df
+## Find the stock with the maximum dividend yield
+# (a) 
+##   Creating data frames directly from CSV
+# Set the X and y
+# This will remove any year that has a missing value. Use how='all' to keep partial years
+#status: any includes archived orders
+# Find and click the full image button
+# Calculate the date 1 year ago from today # to get the last 12 months of data, last date - 365
+# Sundays that behave like weekdays
+# Examine applications here
+# minute based datetime # timezone set to local time on computer
+#Apply text cleaning function to data frame
+# Difference in p according to the null hypothesis
+# consider only loans that are fully paid, charged off or default.
+# Append topic codes to dataframe 
+# Data Dictionary of the incidents as they are from the publically available online 
+# contruct from dictionary
+# merge with council data #df7 = pd.merge(df6,df3,how='left',left_on='Date Closed',right_on='MEETING_DATE',suffixes=('_created','_closed'))
+# Unique values for user_id in df2
+# get compensation of employees: Wages and Salaries
+# responses
+# Load the data from CSV to data frame ... will be slow and memory dependent # How big is the full data? # Preview as a data frame
+##Load in officers data
+# remove the rows where the landing_page and group columns don't align and #  store the new dataframe as df2. 
+# Displaying all data from table "measures"
+#res4.text
+# In this previous case the positional index is the same as the name of the index # To see the difference, let's create a new dataframe with just the last 5 rows:
+# Concat the two dataframes together columnwise
+# Simulate distribution under the null hypothesis # Plot the null distribution
+# display the repeated user_id
+# document topic distributions
+#Birmingham
+#see how many counts are negative 
+#QUARTILES OF THE DATA
+# Calculate number of days and months since first row entry  # Note that the above use of 'to_period' results in the calculation of  # 'month_diff' calculated by only using the month value (regardless of day).
+# Check that new_stops table contains stops which were in stops but not in oz_stops
+# Use the Base class to reflect the database tables\n",
+# now with eval using a string expression
+# build the DOM Tree # print the parsed DOM Tree #print lxml.html.tostring(tree)
+# determine the probability of an individual of the treatment group converting
+# Save the data, overwriting the old 2018 file
+# Lets load the Concatenated DataFrame and the engine specification will help to delimit the outliers
+# Read CSV file into DataFrame 
+# Initialize dictionary # Create dictionary, with dates as the keys for the data in each column.
+# 1. Unique Users 2. Total Users 3. Does (1) equal (2)? 4. Does the contries dataframe has the same length as the df2 dataframe?
+# We print percentages:
+#checking unique values for contries
+# import seaborn as sns # sns.lmplot(x='hour', y='start', data=hours, aspect=1.5, scatter_kws={'alpha':0.2})
+# drop NaN values for purposes of analysis 
+# Create a new dataframe where the rows described above are removed
+# Look in the utils library to see how we implemented the solution.
+# Summary statistics
+# Series can also be created from a dictionary
+# Count number of missing values from each column
+# Transform all words to lower case
+# Create the Dataset object. # Map features and labels with the parse function.
+# Check if all cities are valid. # Select all cities that have less than five instances in the Data Frame.
+#Save figure
+# Wait, a tomato isn't a vegetable! # This method will replace all instances of 'tomato' with 'pea'.
+#create arima model
+# Put the data into HDFS - adjust path or filename if needed
+#Creo un nuevo dataframe vacio con esta estructura
+# Since 'Class' is a binary feature, will replace the classes with numerical values.
+# create a new dataframe with the indexes of the mismatched parings excluded from analysis
+#Peek into the data
+#import into python
+# get the trip_duration column using trip_end_date - trip_start_date
+#Creating new columns 
+# url to read # read it # examine a subset of the first table read
+# adding prefix VIP_ to column names
+# What are the most active stations? # List the stations and the counts in descending order.
+# Predictions for the first customer across the first 5 items
+# Create similarity measure object in tf-idf space
+## number of times each keyword is used ## maybe look at the top 100
+# Source: https://stackoverflow.com/questions/27474921/compare-two-columns-using-pandas
+# Creamos el dataframe con los tweets # Mostramos los primeros 5 tweets en nuestro dataframe
+#run ML flow
+# Edges files
+# Applying the lamba function on each row
+# Open the data file and read the contents into a dataframe #df=pd.read_csv("SFData5Users.csv")
+#Generate html table from df
+# Also, we need to check if there were any misrecorded values that may make a fare amount less than 0.
+#Selecting the input file to be read
+# create an array of alpha values
+# Checkout index 89. How many commas does it have?
+# Use the session to query Demographics table and display the first 5 locations
+# only 2 seconds to read the 
+# subset predictor X and y
+# Create a column for intercept
+# DEFAULT, MERGES ON ALL OVERLAPPING COLUMNS
+# are all values in each row less than 8?
+#Displaying number of rows in the dataset
+# Initialise with a list. #
+#ticket.value_counts()
+# Pulls the first 5 columns from the data
+# Location in asc and TotalSales in desc
+# Assign the classes to variables
+#Make nodes generator, i.e. convert each row of dataframe into a list
+# calculating or setting the year with the most commits to Linux
+#Finding the correlation
+#command to update number of columns
+# Retrieve page with the requests module # Create BeautifulSoup object; parse with 'lxml'
+### Fit Your Linear Model And Obtain the Results
+#here is the critical values tablel. Have you chosen your significance level yet?? you should do it first thing!
+#Make copy of the dataframe
+bulk_data = [(row['url'],row['title'],row['author'],row['tstamp']) for row in res]$ cur.executemany("""INSERT INTO coindesk VALUES (%s, %s, %s, %s)""", bulk_data)$
+# load up the data visualization libraries
+# n_old = old page count
+# fill values from backward
+# Now, call the Quandl API and pull out a small sample of the data (only one day) to get a glimpse # into the JSON structure that will be returned
+#'San Antonio': '3df4f427b5a60fea'
+# Simulating the conversion rates under null hypothesis - H_0 # Store it in new_page_converted
+# merging zipincome with zip_depart
+# Randomly choose from [0,1], with probability [(1-p_new), p_new] and size n_new
+#instatiating the model  #fit
+#just_coordinates = wash_parkdf.coordinates
+# String formatting, to be visited later
+#do a left join on the output table df_out from previous step with transactions table on the keys ['UserID','ProductID] #Groupby the table on ['UserID','ProductID] and calculate the sum of Qunatity entity for each group #reset index so that the index column will have consecutive default numbers and fill NAN values with 0
+#2018-04-03T23:53:00.726Z
+# Delete newline characters
+# Import Naives Bayes and 10-fold cross validation # Prepare the kfold model # Leave one out cross validation model
+#'Plano': '488da0de4c92ac8e'
+# creating a model
+# join advanced stats with basic stats
+#Simulated a random choice of 0's and 1's according to the probability under the null hypothesis , with size = n_old
+#lets authenticate with Twitter which means login via code
+#print(dir(np))
+# probability of an individual converting given that an individual was in the treatment group
+# Verifying that we have compatible shapes of correct dimensionality
+# Highest & Lowest opening price
+#Execute zhunt with the arguments windowsize, minsize, maxsize and datafile...
+#this is the plot for the full data range which is the default value so have not given the start and end 
+# Read in CSV data to a dataframe. Read the first few rows
+#Simulated a random choice of 0's and 1's according to the probability under the null hypothesis , with size = n_new
+# Drop any NaN values if it still exists # Now drop the NaN values, this will remove the last 35 columns from our data
+#date_splits
+# Loading avro-issues.csv
+# results 
+### split 'slug' by "/" into 'category' and 'sub-category' ### get rid off everything else
+# save df to csv
+# SECOND
+# Import Dependencies
+#Display head of df_students
+# Calculate gameless pregame ridership.
+#Use a lambda function to assign values to water_year2 based on datetime values
+# Give the chart a title, x label, and y label
+# Check if all values in the 'state' column are Washington. # Convert Washington to its abbreviation, 'WA'.
+#truck_recent_tweet=
+# Another sample text
+#to know what are the 3 countries
+# Export
+# Use Pandas to calculate the summary statistics for the precipitation data
+## Try combining a few of them together with punctuation too
+# calculate p-value and z-score using built-in
+# let's define a list # we will append a new number in the list
+#Buffalo
+#Split the data for training and test set 80/20
+# feature names are stored in array # taking the length of the array provides the count of features per observation
+# How many stations are available in this dataset?
+# Create a dictionary.
+# Need to change to API request to call for Franfurt Stock Exchange, FSE, AFX_X # Change response to readable JSON
+#gives you the class average
+# Creamos la columna nueva SA y guardamos los valores # Mostramos el dataframe actualizado
+# Query the last 12 months of temperature observation data for this station and plot the results as a histogram
+# tweet_id is int type instead of object type. # Capitalize the first letter of p1,p2,p3 columns to make it consistent # Remove underscores '_' between words in p1,p2,p3 columns 
+#for i in stopword_list: #   print (i)
+#converted probability
+#produce statistics for valid/invalid AC
+#LOOKING AT THE SHAPE
+#  toar() is for conversion to numpy array:
+# check the structure of the dataframe
+#Conversion rate for the control group
+#Use binomial because there are only two possible outcomes #Code = np.random.binomial(n, p, size) with n being possible outcomes, p being the convert rate of p_old under the null  #hypothesis and size the number of times an individual landed on the old page. 
+# Listing top 10 authors
+# Retrieving the last 12 months of precipitation data.
+# think the NaN value is making the grouping using if statements not work # so making new column called "Weatherstr" that makes sure all Events a string. 
+# let's consider US being our baseline, therefore, we drop US
+#Converted State Bottle Cost to float type and removed $
+# Reading csv file and specifying the index as column 0 of the file
+# read in the data using pandas # need to use Latin-1 encoding
+# Fit it Your Linear Model
+# Create dataframe with all control records # Compute the probability they converted # Display the probability they converted
+# wide to long # view head of final row-wise dataset
+# alternatively
+# Add interaction between the pages and countries
+# Concatenate Coinbase and GDAX BTC wallets
+#Pregnant(kittyIndexToOwner[_matronId], _matronId, _sireId, matron.cooldownEndBlock);
+# Delete Rows
+# Age mean for non-graduates
+# probability of recieving new page # probability of recieving old page
+# All columns except for 'label' will be considered as features
+#We parse the date to have a uniform 
+# Determine the probability that an individual in the control group converted
+# selecting data by col and inx:
+# The object type in the date column is a bunch of strings.  Or at least the first one is.
+#print lxml.html.tostring(item)
+# Use DataFrame.plot() and sub in the new dataframe containing predictions made by the model you used  # to generate a graphical comparison of the predicted prices. # YOUR CODE HERE
+# get dummy variables (and drop the UK value which will become our reference value)
+# Time for a quick description # 832 Episodes, Years 1975 thru 2017, Seasons 1 thru 42)
+# apply preprocessing.scale to your X variable # y has already been created, which is the label
+# From the previous (Problem 20), 
+# Now we can apply it to all our new releases
+# search for vendor number by name
+# Create logit_countries object # Fit
+# set timeseries data
+# raw_df = pd.concat([raw_df, pd.DataFrame(np.arange(avg_da).reshape(-1))], axis = 1)
+#autos = autos[(autos["price"] > 100) & (autos["price"] > 250000)]
+#check out the columns to see how they were importated and how NULL values are treated
+# Reformatting date/time column
+# Create one dataframe joining the tweets df with extended_tweets and ip # Test: # This is great! It looks like we got favorite counts and retweet counts for all 2097 tweets in our main dataframe!
+# drop any potential rows w/o valid Reorder_Interval_Group
+# Choose the station with the highest number of temperature observations. # Query the last 12 months of temperature observation data for this station and plot the results as a histogram
+# Assign reponse object to a variable r and check the data by calling method .json()
+#test scenario #no_of_rows that should remain after clean up
+# In order to answer question 3 we call .groupby and .sum on lgID 
+# Let's check the baseline accuracy for the model. 
+#Now replace na values by what you think is the best replacement
+# Create a Series
+# Retain the rows that are duplicates
+#sort dataframe values by "date"
+# drop repeated
+# simulate n_old transactions of the p_old  # proportion of the n_old transactions of the p_old 
+#task 6:  What was the average daily trading volume during this year? #Create an empty list named traded_volume to hold the 'Traded Volume' data for the whole year #Calculate the average daily trading volume #Calcula 
+# Calculate difference in p under the null hypothesis
+#print(pred) #print(clf.predict_proba(x_test))
+# Get information on role and school for everyone ; join on names, which is index
+#Want to check table names -- returns the same as above
+# Bayesian 0.71106382978723404 # Logistic 0.74416413373860191
+#Most recent date by descending.first
+#Drop the control column to keep matrix full rank
+# 0.9999999383005862 # Tells us how significant our z-score is # 1.959963984540054 # Tells us what our critical value at 95% confidence is
+# are they the same?
+# Find number of rows in the dataset.
+# returns no of Null values in each column
+#Retun time and sensor information
+#correlation between ab_page and country
+#12 Get the list from the df which excludes rows 5,12,23,56
+#Method 1 Using List # A cleaner one line solution
+#Dropping control column as we require ab_page only as per instructions in b.
+# mean
+# Check if columns are correct
+# How many stations are available in this dataset?
+# highest
+#Load the query results into a Pandas DataFrame and set the index to the date column.
+# Checking for any missing values
+# Data
+# What does the data look like?
+# select a strike to plot # get the call options # set the strike as the index so pandas plots nicely
+#We need to load only the stuff between the curly braces
+# Retrieving latest date available
+### read the csv file into a new dataframe ### preview tthe new dataframe
+# Days_missed mean for non-graduates
+# add feature for time between signup and purchase # convert to seconds #replace Nans and give codes to countries
+#Export Canadian Tire file to local machine # Get sentiment for walmart tweet
+# create a variable with the path/name of the file that will contain your unique address list
+#convert Registered & Cancelled columns to datetime as they are showing NaN instead of NaT
+###YOUR CODE HERE###
+# I will start from the .csv file that was handed to me # making sure it was imported properly in a df: # ok.
+#Tweets containing references to Donald Trump
+#using the nunique function to count unique users #check the result
+#probability of conversion for old page
+# Checking How big the Data set is
+# The ~same simple calculation in Tensorflow
+# GPA mean for non-graduates
+# Transmission 2050 [GWh], marathon
+#read the country csv file #find the unique countries to create dummy variables
+# Use Pandas to calcualte the summary statistics for the precipitation data # for the whole dataset of measurement
+# Use Pandas to calcualte the summary statistics for the precipitation data
+# users comments over 5 times
+# Show best score
+# planting_area-2mu	planting_area-2mu_4mu	planting_area-4mu_6mu	planting_area-6mu
+## First assess how many different targets items we're covering 
+# Drop created and time fetched columns - age takes their place 
+#delete duplicate receipts 80874 duplicate receipts
+#Get data from Quandl
+# Read the data.
+#Create Logit regression model for converted on intercept and ab-page
+#Missing value indicator for DOB
+# Create invalid data
+# import calendar # calendar.day_name['2016-01-13']
+#Find out number of unique users
+# We can also do a crosstab (not sure how much sense there is in this but...):
+#body.value_counts()
+#print the first five rows of theft data
+# Use Pandas to calcualte the summary statistics for the precipitation data
+# set seed for reproducibility
+# Create logit_countries object # Fit
+# Remove the bullet point # Save the first name as its own column # Save the last name as its own column
+# convert column of dataframe to categorical
+# The number of unique users in the dataset
+# Calculating the difference from ab_data.csv
+#Regardless of the page, compute the converted success rate
+# let's declare those files above as variables in Python.
+# Designed a query to retrieve the last 12 months of temperature observation data (tobs).
+# Calculate n_new and n_old
+# Tells us how significant our z-score is # Tells us what our critical value at 95% confidence is
+#setting value of url variable to an article about Trump
+# print min & max dates for each datetime column
+#Number of tweets vs length
+# row 2893 has been removed
+#Get index values of df
+#Drops the unneeded part of the URL in the feature "Date" 
+# number of active authors per month
+#verify if the column name in the original dataframe df if it has changed
+#Return select rows AND columns using loc
+# drop the rows for first date which does not have a previous date (for these one would need to get another mta file, one week further back)
+# We create a pandas dataframe as follows: # We display the first 10 elements of the dataframe:
+#Reading the data into python
+#remove retweet columns
+# Initialize Sentiment Analyzer
+# Merge the adj close pivot table with the adj_close table in order to grab the date of the Adj Close High (good to know).
+# clean price
+# Where are the "outliers"?
+##Creating a DataFrame object with two columns that contains two series objects temp1 and temp2
+# Simulate binomial of Nnew
+#Vemos las primeras filas y verificar que se hayan cargado bien los datos
+# 1-2 (3) check if the tsv file is successfully generated in the folder
+# read in the data from a file # display the table of data
+# Double Check all of the correct rows were removed - this should be 0
+# With a start point + number of periods
+# Size of new page samples
+#make sure query is up-to-date #query to match BABYID_BABYSN_CHANNELID_PAIRDATE for all channels # API_KEY = 'LcuoHqjZLvxaSPDrhv5VMhcrJUyPVb88RJR69REq'
+#Filter by station with the highest number of observations.
+#URL's of pages
+# monthly data #assert (fin_coins_r.index == fin_r_monthly[start_date:end_date].index).all()
+# Import top50 datasets # Remove URL form top50 (optional)
+#Categorical variables
+#normalize the continuous variables that will impact tripduration
+# Copy dataframe # Remove incriminating rows
+# Probability of treatment group converting
+# Locate a substring
+# favorite table # for row in table_rows: #     print(row.text)
+# there are 294,478 rows in the dataset
+# what percentage are not state failed [0]? 40% are successful, 60% failed
+# and to select ranges for both levels - in this case all  # rows that are adult through child, and in industry alcoholic beverage through # choc/cocoa products
+# Create a backup csv in case:
+# 'None' is treated as null here, so I'll remove all the records having 'None' in their 'userTimezone' column # Let's also check how many records are we left with now
+# Total number of data recorded
+# Frequency counts using bracket notation 
+# Timeline for the dataframe
+# these are the columns we'll base out calculations on.
+#Now, build the graph...
+# We print percentages:
+# project names included in both classification results and API
+# you can label the rows in the data frame
+# View all permutation scores
+#Saving the output to SampleRatings.csv in an Output folder
+# remove PAs with no event. these are probably PAs with pinch hitters.  (< 1% of observations)
+# This is where we break the json file to a dataframe with its individual cols
+# distribution plot of the data
+"""$ Check all shed words$ """$
+# group by user
+# Use NumPys binomial to simulate n_new transactions with a convert rate of p_new under the null
+# Copy dataframe # Remove mismatch records 
+# In jupyter notebooks you can prefice commands with a ! to run shell commands # here we remove any files with the name of the file we are going to download # then download the file
+# myclient = InfluxDBClient(host, port, user, password, dbname) # myclient.create_database(dbname) # myclient.create_retention_policy('inf_policy', 'INF', 1, default=True)
+# Test score is better than the train score - model generalizes well 
+# no avail_docks outliers to get rid of
+# defind simulation data
+# Of course we can aggregate the other way too
+#to see what the visititems methods does, type ? at the end:
+# Rearrange the columns in the name of order
+# find each of the inconsistent rows in this horrid table, which is now in a new place AGAIN # for row in table_rows: #     print(row.text)
+# open precip nc
+# Create one dimensional NumPy array from a list
+# 3. How many total unique Taskers are there in this data sample?
+# exception, we do not want that N0(i-) and N0(i+) become the same
+#find distance between element
+#df_TempJams['lineString'] = df_TempJams['lineString'].apply(lambda x: loads(x))
+#Create a new DataFrame with Country as first column #Remove the duplicate columns
+# use this cell for scratch work # consider using groupby or value_counts() on the 'name' or 'business_id' 
+#tweetdf.to_csv("tweets_w_lga.csv")
+# count = merge_table['S&P500 Open'].value_counts() # len(count)
+################################################## # Convert string to datetime format ##################################################
+# The structure function gives a good summary of important characteristics of the dataset like # missing values, nb_unique values, cst columns, types of the column ...
+#Convert 'date_time' into a date-time object
+# Read the filtered tweets from the .txt files
+# converting the timestamp column # summarizing the converted timestamp column
+# print(len(old_page_converted))  #code to check values
+# Use Inspector to print the column names and types
+# First, need to find the last date for which the precipitation happened and assign it to a variable.
+# Set your x and y limits
+# Calculate the total number of stations 
+# Only using data with labels # Splitting that subset into train and val
+# reading a file containing list of US cities, states and counties
+# The clipboard from Excel has the following:
+#Example
+# Plot graph of nrOfPictures
+# Unsurprisingly, they occur at the beginning of every year after the holiday season.
+# Under the assumption the p_new = p_old
+# Now we need to grab 1 year back, from the last data available (above).. # ... iE we need to get the last 12 months of data, last date - 365:
+#Verify data was populated into stations table within database
+# Categorize Gender Column by Sex # use map method
+### Create the necessary dummy variables
+#number of times the old page appears 
+# Logistic Regression on age and subreddit 
+# The same notation that can be used to select a subset of rows,columns with  # lists or arrays can be used with .iloc:
+# Keep only the 20 most recent
+# Build a classifier # k is chosen to be square root of number of training example
+#individual was in the control group, what is the probability they converted
+#check if duplicated values are deleted or not
+## Fit/train the model (x,y need to be matrices)
+#Creates Dummy from post likes at threshold 500.
+#sns.heatmap(corrmat, vmax=.8, square=True);
+# connect to twitter # write up about API object
+#compute the reciprocal for multiplicative change less than 1.  #This changes the unit increase to unit decrease
+#doing business as name
+# set image path
+# Continue clicking throught the comics
+#taking log of the column 
+# We create a DataFrame  and provide the row index # We display the DataFrame
+#Example3: Passing the sheetname method by their order
+# Merge with the clients dataframe
+# Common citation violations in residential over commercial areas
+# create connection with database
+#Shuffling the data
+#since values are 0s and 1s we can take the mean of the converted column to find the probability
+# Looking at the information saved within a gene
+# calculate daily percentage change
+#  Map number of ratings to 0 or 1
+# Find the probability of receiving new page for an individual
+#785 columns = 1 + 28*28 #reshape into numy array with shape (4199, 1, 28,28)
+## States imported from http://statetable.com/
+# Looks safe now
+# print(listings['price'])
+#Import plotting libraries
+#Proportion of users converted
+#Saving unique ratings into a numpy array
+# Veamos permit type y permit_type_definition
+# Drop unnecessary
+#### Work with dates
+#check the info again
+#split observations into set of 3 observations in the training set #and one in the validation set
+# When using a Datetime Indexed data set, you get some pretty cool  # new methods for calculating different 'rolling' statistics
+#By Quiz 2, we should remove rows we do not have confidence in, thus we will remove rows with misaligned data
+# results are returned as an iterable list
+# just checking how the DF looks for both measurement and station tables.
+# by accounts_provisioned # could possibly use the full df for this one, but it'd only include 6 more records anyway
+#most popular complaints of the HPD
+# use multi-index by specifying keys
+#deal with the duplicated data created by melting the dataframe
+# Just to get an idea of the number of null valules in each column
+#A DataFrame has a second index, representing the columns:
+# here's the index
+# Delete the collection
+# Create scatter plot here.
+# I doublechecked the results.
+#y_test_array = y_test.values.reshape(-1, 1)
+# cv_score = cross_val_score(rfc, features_class_norm, paid_status_transf, scoring='roc_auc', cv=5)
+#drop columns: ORG_ID, TABLE_NAME, EXPIRED_FLAG, DATE_EXPIRED, CREATED_BY, DATE_CREATED, MODIFIED_BY, DATE_MODIFIED, FEE_SETUP_ID, Unnamed:14
+# Adding ab_page column #The inv column is unnecessary and can be dropped
+# mapping from integer feature name to original token string
+q = """SELECT education, occupation, relationship FROM adultData """$
+# count the number of times each GPE appears
+# save model to a file and restore # with open('house_regressor.pkl', 'rb') as f: #    restore = pickle.load(f)
+# convert to p_diffs into a numpy array
+# Remove columns that are not needed - condition.
+#Create ridership dataframe that is grouped by STATION, keep only positive values
+# The tags field is another compound field.
+# Get sentiment for Costco tweet #Read costco tweets csv file
+# Conversion rate for control group: 0.1204
+##Create the dummy variables
+### unhide the strings in jupyter notebook #new_df.clean_text[new_df['clean_text']==997055707471003653]
+# convert 'Date' from object to datetime data type
+#new_page_converted = np.random.choice([0,1],nnew,convert_prob)
+# Use Pandas to calcualte the summary statistics for the precipitation data
+# Simulate conversion rates under null hypothesis
+# print min and max date
+#Remove na's
+#%%timeit ### %timeit seems to be having issues. no time to figure out why.
+#Female and crime only dataset
+# Downcast binary target column 
+# make a smaller dataframe, just the first 10 rows
+# a two year range of daily data in a Series # only select those in 2013
+# plot it out!
+#== Sorting by values of a column 
+#== By label: only one row -> dimension reduction 
+# what is conversion rate for Pold under the null
+# the names of the columns have become the index # they have been 'pivoted'
+# Time format x-axis to 12-o'clock time
+# How significant our z-score is # assumed at 95% confidence level, we calculate p_value 
+# let's check
+# histogram in pandas
+# First, import the relevant modules # only need json_normalize from pandas
+#df_unique_providers.drop('level_0',axis=1)
+# which values in the Missoula column are > 82?
+# a series to demonstrate alignment
+# Create a binary target variable (injured/not injured)
+# remove one of the duplicate rows (default is first duplicate occurance at row 2893)
+# And then you can customize these new coulmns using the same method as above. 
+#sns.violinplot(data=corr_df, palette="Set3", bw=.2, cut=1, linewidth=1)
+#print(len(new_page_converted)) #code to check values
+# un peu plus lisible : les CNI avant le 10 janvier, # en erreur ( status : False)
+# preserve
+#plt.show()
+# Get the MM-ENV01 data set, recorded at ICTP during the workshop
+# check inserted records
+# lets try and merge them without specifying what to merge on
+# take a quick look at the DataFrame that returned
+# Visualizing causes of death by year # This is hard to read because there are so many different causes of death, but left here for reference
+# write scenario from xlsx to data base and run the sceanrio in GAMS
+#probs=normalizer(probs) #print probs
+# send request # print status
+# selecting two columns
+# Step 2: Conduct Pivot Table on Data
+#14. Merge Transactions & Users Dfs using 'inner' to fetch the matching records 
+# p_new under null and p_old under null and p_mean
+#connecting to the sqlite table hawaii_hw that was created in data_engineering notebook, then connecting to it
+# How to scrape data from html page or web
+#convert to date format
+# How many misspell cinnamon as cinamon?
+# If you prefer sweets... setting "axis=1" tells the function to operate on columns. # "axis=0" is rows.
+#Checking for header information in df1
+#Creating another dataframe here... #We can use this same table for both parts.
+# Create copies for cleaning
+# Apply standardizing function to "Cause of death" column
+# Write to CSV
+#Memory error, try to improve code or do it in several slices
+# Create the Dataframe for storing the SQL query results for last 12 months of preceipitation data
+#this is a little on-off switch for my various long run-time operations that are behind a check. #go_no_go = 0  #GO #runtime items will be necessary once each time after the kernel is reset.
+#normalize = True means we use frequency instead of count #dropna means we also include missing values
+#calculate the converted users
+#version = 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:42.0) Gecko/20100101 Firefox/42.0'
+# x is the number of users who were labeled in the treatment group but did not receive the new page. # y is the number of users who were labeled in the control group but received the new page.
+#winter complaints
+# Deep copy 
+### Fit Your Linear Model And Obtain the Results
+#Verifying the DataSets Created
+#Using nunique with column defined
+#Fit Linear Model
+## Fit/train the model (x,y need to be matrices)
+# Which were the 3 most popular trainings? (Trainings with the most learners)
+# Use Pandas to calcualte the summary statistics for the precipitation data
+#keep = False | To Mark all of the duplicates as True.
+# boolean indexing: note that with .iloc we *must* take  # the .values # or iris.iloc[iris.iloc[:,0].values>7.5,4]
+#calculate the averga of the converted column 
+# create some noise
+#file_for_writing = open('life.txt','w',encoding='cp949') #file_for_appending = open('life.txt','a',encoding='cp949')
+# When looking at the names you can see that they are not sorted so performing sorting
+# write the fixed weather data in to weather_fixed.csv file
+# Performing a one tail test using statsmodel
+# new_messages.watermark = new_messages.watermark.map(lambda x: x.replace(second=0))
+#Find the amount of different countries
+# checking the first viewing in the experiment
+# write your code here
+# Save an image of the chart and print it to the screen
+#Create df with EC2 ProductName, BoxUsage, which eliminates 1 time RI charges, and then filter on TTE_DEV #df_ec2_instance_ri = df_ec2_instance[df_ec2_instance['ReservedInstance']=='Y']
+# I created a new dataframe with the values where any of the boolean columns is true  # to keep as many data as possible
+# get the information of the duplicated id
+# Run me
+## the dates are in reverse order, and therefore the graphs are reading right to left
+#IMPORTANT: Due to the formatting of fullVisitorId you must load the Id's as strings in order for all Id's to be properly unique!
+# run the grid search and examine the scores
+# Naive Bayes
+# Concatenating the two pd.series
+# 'engine' is connection to postgres database
+#result = cassession.upload('/home/viyauser/SamsViya/ViyaRace/hmeq.sas7bdat') #result
+# Fit your model using all of your training data
+# Obtain the source names for reference
+# We create a pandas dataframe as follows: # We display the first 10 elements of the dataframe:
+# listings.dtypes # listings.head(2)
+# create grid id 1 to 1534 and save as type string # head and tail
+# 17. Create a new Data Frame with columns named cat and score from your results in part (16),  # for the column with the largest score and the actual score respectively.
+# Task 1 : Collect data from the Franfurt Stock Exchange, for the ticker AFX_X, for the whole year 2017 (keep in mind that the date format is YYYY-MM-DD) #Collect data from the Frankfurt Stock Exchange, for the ticker AFX_X for the whole year 2017
+## datetime.now() is current date/time
+# From a dictionary, but only the specified keys
+# Unique Peaks
+# Use pandas to write the comma-separated output file
+#drop rows where the text is missing. I think there's only one row where it's missing, but check me on that. #view the dataframe
+#Example 2: If no header (title) in raw data file
+# save as parquet
+# uuc_new is the Number of unique users in the control group landed in new page # uut_old is the Number of unique users in the treatment group landed in old page
+# creating a dataframe with rows only for the evening viewing
+#split validation into 50% each of 10%
+# show first 5 rows of data frame
+# get summary output
+# determine number of unique users using nunique()
+# Need to convert the created_at to a time stamp
+#save as csv
+# First, import the relevant modules
+# #read windfield geotiff
+# Retrieve weekday and weekday name
+# Now, we can save the new data set that includes the headers
+# List stopwords
+# Looking at one tweet object, which has type Status: 
+#Prepare our data for plotting 
+# convert bytes to string!
+# reference: https://docs.scipy.org/doc/numpy/reference/generated/numpy.random.binomial.html
+# Get the tweets above. 
+# Export to csv
+# get the values in the Differences column in rows 1, 3, and 5 # using 0-based location
+# Column which is 1 when an individual receives the treatment and 0 if control
+# We display the correlation between columns
+#add birthdate for subscribed-babies
+# Call set_up_images
+# most common tags
+#there are a noticeable number of job titles with 'state farm agent team member' #this text should be removed as it is branding that reduces number of cases per job title
+#looks good; it looks like we also lost one of the unique 'ID' values #lets take a look at the unique values inside the 'ID' column
+# for test set, we just fill y values with zeros (they won't be used anyway)
+# drop flagged indices
+# We remove the watches and shoes columns # we display the modified DataFrame
+# integer index and .values field: the values proper (numpy array)
+# get the top level key for the nested dictionary containing max. daily change
+#8. Make country as the first column of the dataframe.
+# Create a cursor to do SQL queries. The cursor is the object that is used to do  # queries to the archive
+# Set the index to the date column for pandas df.plot()
+# Check all features in train is in test
+# frequency of chunk types/labels # from collections import Counter
+# Further increase confidence of accuracy score through cross-validation of X and y data
+# resample to weekly data
+#2a. You need to find the ID number, first name, and last name of an actor, of whom you know only the first name, "Joe." What is one query would you use to obtain this information?
+# using the same methodology, creating 'state' feature
+# Here sorted by using multiple column in ascending order
+#under the null, we assume there is no different between two groups. Therefore, we don't need to calculate the p in two groups.
+# merge two datasets by primary key
+#SAVING TO LOCAL DISK:
+# Moving on to the User Information csv file...
+# creating a new variable that id afternoon 1 else 0
+#all plan combinations in this set of users # plans,counts = np.unique(BID_PLANS_df['subs_array'],return_counts=True) #add 'Free-Month-Trial' to start of trial timeline 
+# Write the file
+# Example
+#Compute Area Under the Curve (AUC) from prediction scores #print "c-stat: ", roc_auc_score(y,y_oob)
+# Boxplots without logaritmic scale
+# The SUM produces the number of emails opened # The COUNT produces the total emails sent
+#empty becuse the duplicated row is dropped
+#take a look at the data- this is only first-level broken out json (note the _source column still contains many fields)
+#import data
+#So we do have some duplicated permit numbers. How many duplicates are there?
+#ANSWER TO THE QUESTION take two:
+# Write text column to text file to allow NLtk text analysis on reviews
+# Count the number of stations in the Measurement table
+# drop reply columns
+# set up a new dataframe
+#SQL Solution$ c.execute('''SELECT MAX(track_duration),artist_name, track_name from track_db''')$
+# Width # Color # Round values
+# count number of deaths in 2014:
+#language
+#replace interest_level with numerical values: #{'low':0, 'mediun':1, 'high':2}
+#adding an intercept column #Create dummy variable column
+# Information extraction from dataloader and model # vcf_to_region will generate a variant-centered regions when presented a VCF record.
+# arithmetic operations
+#After
+# Transform the text to a vector, with the same shape of the trained data.
+#creating home,Opp_Team,Win columns from Match_up
+# Let's see how data distributed along with quarter
+# Get the raw data values for the reflectance data
+# exist Net_Value_item_level = 0, delete them
+# Saving merged data to csv file
+#Constructing a model on a scaled dataset
+# convert date
+# What is with that NaNs?
+# Several different ways to delete columns
+# read in data to dataframe
+#creating a new column "date" with the datetime format
+#Calculate the percent change in vaccinations from month to month. #mergetotal.to_csv("NYVacc2015-17.csv")
+#import Twitter data
+# Prints only the number of rows # Prints on the number of columns
+# load back in the file # get data from loaded in array
+# load the data 
+#Since there are ads with varying duration, will have to include duration 
+### WCPFC list to start and try to merge IOTC list into it
+# Specify a start point and how many periods should come after.
+# Find the new_page and 
+#My local key:
+# Replace the API_KEY and API_SECRET with your application's key and secret. # Use AppAuthHandler instead of OAuthHandler to get higher limits.
+# INSERT SCREENSHOT OF JOB TRACKER UI COUNTERS
+# `hawaii.sqlite` database file created in database_engineering steps
+# average reading score of males 
+# print Consistency infos  # This function helps you to trakc potential consistency errors in the dataset # like duplicates columns, constant columns, full missing rows, full missing columns. 
+# subset temp to us
+# Append results to 'results_list'
+### use this to write the files back #code below will add a line break #filehandle.writelines("%s\n" % place for place in places_list)
+#this gives the columns to be dropped with mean etc close to  -- nrOfPictures
+# read data
+# Return dictionary entries, sorted by avg price in descending order
+# Get the maximum likely class
+#displaying n_new which is equal to the number of rows with treatment group
+#============================================================================== #==============================================================================
+# extract precip array # check shape
+# Left Join users to transactions (UserID)
+# What are the most active stations? # List the stations and the counts in descending order. # This is the SQL Alchemy way to do the same thing
+#need to conduct a Train/Test split before creating features
+#displaying the row info for the duplicated user
+# See "Special Case: Conversion to List" section for more.
+# if we want to drop the date and time now 
+# Load package # Instantiate and fit the classifier model
+#determine 200 most frequent job titles for use as predictors, counts by job title are n=30 or more #this is because kmeans clustering is not effective as dimensional reduction due to all of the noisy text
+# overall info
+# Propotion of user can be computed through true converted counts and total unique user counts. 
+# the unique user_id
+# Let's check the top 100 records in the Data Set
+# Check the current state of the CSV data.
+# count the numbers of unique values in the Category column
+# use a vectorized string operation over the email addresses
+#Percentage missed for each tip level #Negative means that actual > predicted: 80% of time, predicted tip was too low
+#set number of runs of random portfolio weights #set up array to hold results 
+# import a list of stop words from SpaCy
+#All sorted now!
+# Example
+#### Test ####
+# Q1
+# We'll start with LSI and a 100D vector
+# Create an intance of the class
+# Create and display the second scatter plot
+# dummies = pd.get_dummies(train_data_daily['Junction'],prefix='Junction')
+### check the results
+# It would be nicer if those states were capitalized. We can easily do that
+#select only that day
+### Create the necessary dummy variables
+# get the index of the high values in the data # get the index of the low values in the data # get the list of change in values of the stock (exclude entries that has either empty high values or empty low values)
+#find and drop 
+# Same for values in 'E' column 
+# Treehouse samples are prefixed with TH (prospective patient) or THR (pediatric research study) # so filter for only these excluding the TCGA and TARGET that are already in our other dataset
+# Cargamos hoja de calculo en un dataframe
+cur.execute("""CREATE OR REPLACE VIEW empvw_20$                 AS SELECT * FROM employees WHERE department_id=20""")$
+# worst 5 breweries - expanded to ignore the "garbage beer" breweries at the very bottom
+# adding prefix ATTEND_ to column names
+# LAST SEEN
+# Likes vs retweets visualization:
+# Confirm that you have 8 values for each column.
+'''Here we are creating a new column named old_page_converted with a length equal to the old_pages count$ calculated above and filling them with one's and zero's with the mean probability we calculated above for $ one's and remaing for zeros'''$
+#Fresno': '944c03c1d85ef480'
+#ignore all 2* tweets #positive sentiment = 4* tweets
+# set the index to date
+#above takes very long to run so I "cached" data here
+#Quandl_DF.drop(['Date_series'], axis = 1,  inplace = True)
+# format column names
+#range of cohorts
+# Print the first 10 most frequent words found in tweets that mention 'gender'
+#columns are gone!
+# converting date to datetime
+#Peaks are around 7am and 2pm
+#check for duplicates
+#Reading 1st data file
+# 6 blocks x 20s
+#Create the engine which is used to connect to the new 'hawaii' database that will be created 
+# TASK E ANSWER CHECK
+# Investigate records where group and landing_page values don't align with expectations:
+# Reflect Database into ORM class
+# This step is needed to get the date into the index # This is required if you want to easily plot the data
+# Show all characters belonging to the amount
+# Since we do not need the 'count' lets drop it from the dataframe
+'''Validating the Score with the training set'''$
+#Ouput for Q17 gives product purchased by each user #following code is to list the quantity of each product against it
+#Example2: Import File from URL
+# Find customerID 
+# logistic regression with tfidf #%%time
+# Import studies text file
+#deaths_liberia.head()
+# Use Pandas to calcualte the summary statistics for the precipitation data
+# Check data type and missing value for each column to make sure they meet constraint of destination table 
+# export latest elms_all
+## Paste for 'construction_year' and plot ## Paste for 'gps_height' and plot
+#dates_by_tweet_count
+# Show the resulting data frame from the XML file.
+# import data
+#============================================================================== #==============================================================================
+# df_2004
+#Read the dataset and take a look into first 3 rows of the dataset
+# Perform deep feature synthesis without specifying primitives
+# Strip/fix columns and index # Take a quick peek to make sure everything's fine
+# since df['converted'] is 1 and 0, we can use mean to calculate to probability
+# numpy evaluates each sub expression so the equavalent is:
+# Apply unix_to_datetime function to every row in the coinbase_btc_eur dataframe
+#Compute proportion of p_diffs > obs_diff
+# Due to memory issues, I'll work with a smaller dataset.
+# df2 = pd.read_feather('street_seg_id')
+#Make Canada the baseline
+# Count number of hashtags not in the official list
+# Converted = 1 | Total unique user_id
+# Session 14 - Project by Sreedhara Jagatagar  Sreenivasa # Read Data and store in Data a frame. #print top 5 rows
+# Use Pandas to calcualte the summary statistics for the precipitation data
+#Conversion rate
+# For finding all the texts enclosed by links
+#-------IMport Countries-------#
+#using pandas to_datetime function for converting from string to date time format
+#Get the median #age.value_counts()
+# Basic data exploration to see what other cleaning tasks need to be done
+#change the denominator and numerator as data type: floating point because these values are decimals
+# univariate plot
+# Replace missing values in "gearbox" column
+# Show a feature with a depth of 1
+# to stop TensorBoard
+# How many stations are available in this dataset? #session.query(func.count(Station.station)).all()
+# dropping NaN values
+#we observe that most expensive cars are porsche, land rover, jaguar, jeep,.  #then the next koghort is (merced, bmw, audi, mini) # then we ahve japanese cars
+#le asignamos el valor AR al campo place_country_code
+cur.execute("""INSERT INTO coindesk VALUES ('http://google.com', 'google', 'Ian Chen', '2018-11-11 11:11:11')""")$
+#term_freq_df.head()
+# We count the number of NaN values in store_items # We print x
+# Use Pandas to calcualte the summary statistics for the precipitation data
+# Merge the rural created data frames on the name of the city
+#test the counts #B4JAN17['Contact_ID'].value_counts().sum() #B4JAN18['Contact_ID'].value_counts().sum()
+# Create an array of 10 random integers between 1 and 100
+# Design a query to find the most active stations.
+# plot heatmap of predicted probability for fires
+#plt.scatter(x=posts.date_week,y=posts.postsCount)
+# NOTE: 'CASTestTmp' is now the active caslib. # Out[39]: + Elapsed: 0.000289s, mem: 0.0948mb
+#Save to csv
+# read in the advertising dataset
+# Now, call the Quandl API and pull out a small sample of the data (only one day) to get a glimpse # into the JSON structure that will be returned
+# import country data
+# Plot in Bar Chart the total number of issues closed every day for every Category
+# High install_rate in most cases
+## Check if there is 'None' in their 'userID' column ## Check how many tweets are we left with now
+#Read tweets approval ratings from csv file
+#3. Change the column name from any of the above file. #df.rename(columns={'Indicator':'indicator_id'}) #df.head()
+#Remember this RDD:
+### Write SAS datasets to local drive
+#resolve entity names to deduplicate
+# creating array for ARIMA modelling # ARIMA model #printing parameters
+# Calculate the rainfall per weather station for your trip dates using the previous year's matching dates. # Sort this in descending order by precipitation amount and list the station, name, latitude, longitude, and elevation
+# Save all pregame data.
+# Adding ab_page
+# builtins.uclresearch_topic = 'HAWKING' # 4828104 entries # builtins.uclresearch_topic = 'NYC' # builtins.uclresearch_topic = 'FLORIDA'
+# Histogram with the range of 10 ~ 20 miles
+# going to have an issue because there are NaN's -- cannot split NaN's -- going to get an error
+# Now, call the Quandl API and pull out a small sample of the data (only one day) to get a glimpse # into the JSON structure that will be returned
+#Save to a local file. First collect the RDD to the master  #and then save as local file. # creating a new file, writing contents to the file, and saving.
+# Remove characters and redundant whitespaces
+# 10-fold cross-validation with the best KNN model
+# export DataFrame - split option {dictionary of values}
+#Have a look at a few random records
+# load the string into a list, and remove duplcates by casting the list as a set.
+# Keep relevant columns only (23 columns of 49) #studies_a=pd.DataFrame(studies,columns=['nct_id','overall_status'])
+# Basic visualization to show that we are working with skewed data
+#doing a left outter join on transactions and user on the basis of UserID column #result stored in a dataframe df_merge_trans_users
+# start_time column was not sorted -- sorting here in ascending order
+#Review histrogram of customer activities
+#full window width
+# excluding the dates before 8/1/16 reduced the number of observations by 163,273 or ~45%
+# We create a column with the result of the analysis: # We display the updated dataframe with the new column:
+# Add calculated measure
+#rename the columns
+#works! returns shit for set add #all plans
+# read csv
+# What are the most active stations? # List the stations and the counts in descending order.
+# plot histogram with KDE curve
+# Saving data to csv file
+# First, import the relevant modules
+# 'itineraries' holds a lot more information, let's start with how many itineraries were returned # and list what keys exit for the first itinerary
+# I did this for the entire set of lead managers before losing all of my work
+### Fit Your Linear Model And Obtain the Results
+#df_sentiments_means.plot(kind='bar', legend=False)
+# Now let us see how to use excel file for reading and writing purpose # Note similarly we can use to_excel for writing the data from dataframe to excel file
+#calculate the actual diffrence in the data set #fit the p-value which is the probability of the #observing statistic if the null hypothesis is true 
+#Finding out number of times group and landing page are not in sync
+# convert a sequence of objects to a DatetimeIndex
+# read local csv
+# total number of datapoints
+# plt.plot(np.cumsum(pca.explained_variance_ratio_))  # plt.show() 
+# No values are missing
+# Get the rows where treatment group lands on old page # Get the rows where control group lands on new page # Print the number of times that the new_page and treatment don't line up
+#Launch Cluster from browser in Ipython
+#sort by CNN in order to create different color scatter plot
+#Simulated P_new - p_old 
+# merge datasets
+#show behaviour during sepcific time window #pdf.loc['2016-1-1':'2016-3-31',top_allocs[:10].columns].plot()
+# View dataframe basic info
+# Filtering only for successful and failed projects #converting 'successful' state to 1 and failed to 0
+# Create the logistic regression model # Calculate our results
+################# # Start here    # #################
+# Create a column that describes the type of injury based on the notes column using # the function I created: extract_injury, df['Injury_Type']
+#DEFINE :Rating numerator and denominator are different from that in the text # Get ratings and treat them depending to their situation
+# differ from ndarray
+# average the predictions, and then round to 0 or 1 # you can also do a weighted average, as long as the weight adds up to 1  # how accurate was the ensemble?
+# Create train and test variable, and cross validation
+# make index the datetime column for easier indexing
+#check
+# Step 11: Try fitting the two-dimensional X value
+#Most active users. These users may or may not be adopted users. 
+#URL's of pages to be scraped
+#mean conversion rate by country
+# month time period # freq M :: month
+filter_special_characters('Hi//)(&(/%( \n\n\t)))""""""!!!.')
+# Mean of the probabilities # Displaying the result
+# check timestamp datatype
+#import statsmodel
+#Save new df
+# remove multiindex # users with only one prediction got NaN and it's OK
+# Drop the rows with NAN values 
+# Now, call the Quandl API and pull out a small sample of the data (only one day) to get a glimpse # into the JSON structure that will be returned
+#treatment group user on old_page  #control group user on new_page #number of times the new_page and treatment don't line up is sum of above two values
+# Weekday
+# manually add the intercept #add a constant term for our Logistic Regression.  #The statsmodels function we're going to be using requires that intercepts/constants are specified explicitly.
+# you can add arithmatic operations between two defined periods # here we have 2 quaters defined and if you subtract q2-q # result is how many quaters between q2 and q
+#firebase = firebase.FirebaseApplication('', None)
+# import pyLDAvis # import pyLDAvis.gensim # import warnings
+#Conversion is 1.05 times likely in UK holding all else in constant
+# adding prefix RATE_ to column names
+#Checking states again
+# region from the red line to the extereme right side of the distribution # p-value = total shaded region
+# The two partitions have to be ordered by looking at the extra field in the first line: all A rows need to go before all B rows
+# Smoker descriptive statistics
+#The number of rows in the dataset if found
+# Save DF to a csv file.
+#Add a new columns that calculats the money per student ratio.
+# Stacking the lists column wise, so that they can fit in shape in the dataframe.
+# fire violation  # firevio.dtypes  
+# Tells us how significant our z-score is for our single-sides test, assumed at 95% confidence level # Tells us what our critical value at 95% confidence is 
+## read and print token
+# find historical data for 2012
+# We can also save the results of method or property to a variable
+# Drop or replace bad values
+## converts cleaned runtime from str to int
+# Create a dataframe named free_sub, consisting of the id, country, and y columns from free_data.
+# Design a query to calculate the total number of stations.
+#Need to convert to ordinals?
+#pickle.dump((features,target),open('preprocess_data.p', 'wb'))
+# inner merge of meager datasets
+# Plot the cumulative sum of each column
+# Bill_id fix
+# Find the index of this maximum 'yob' (year of birth) row
+# Resource location as URL # Pass it to Cytoscape
+#if '409' in str(d): #   print(properties)
+# Create our tokenizer # We will tokenize on character level! # We will NOT remove any characters
+# Load the President Trump's tweets
+#df['price'].map(normalizePrice)
+# read from google
+# the randomly generated data from the normal distribution with a mean of 1 # should have a mean that's almost equal to 0, hence no error occurs
+#'Riverside': '6ba08e404aed471f',
+#Challenge 2
+# 2. Each recommendation set shows from 1 to 15 Taskers, what is: # - average number of Taskers shown
+#Firstly we must group data by group #Since conversions are boolean values(0 and 1), we can find the proportions by having mean value of groups
+#join countries dataframe to df2
+# lets use the following Pandas Series for this section
+#16. Convert SessionDate to datetime
+# db_params = {'db_user': 'dwe-arcadia', 'db_name': 'DWE_ARCADIA_2015', #                  'db_port': '5432', 'db_pwd': 'VtJ5Cw3PKuOi4i3b', #                  'db_url': 'localhost'}
+#13. Merge Transactions & Users Dfs using 'inner' to fetch the matching records 
+# Requires GenePattern Notebook: pip install genepattern-notebook # Username and password removed for security reasons.
+# get the gene names # show to value of a random selection of the attribute column of 10 records
+# View your fold scores, and calculate the mean score across your folds
+# Using the station id from the previous query, calculate the lowest temperature recorded,  # highest temperature recorded, and average temperature most active station?
+# yet another data frame, for summary info
+#### Define #### # Convert tweet_id column from int obejects to string objects# #### Code ####
+# Examine Data details Objects and Numbers
+# show that types were conserved even through export
+# Fit linear model and generate the results
+# Chart above indicates a possible positive relationsship, we will check further with a calculated correlation  # calling .corr on the dataframe. 
+#to make all string lower case I will use lower() function on p1 ,p2 and p3 
+# ! cp -R keras-yolo3/model_data .
+#no need to do this step as created date and closed date are already in datetime format
+#printing first few lines of the datafram
+# reselect all the repos (accidentally chose repos with issuses not in english)
+# shape of league df
+# Saving our dataframe to file
+### read in IOTC csv file scraped from iccat site (for Chinese vessels only)
+#add it to the csv
+# deciding the cut off
+# Display of first 20 elements from dataframe:
+#This takes the combined dataframe we had from earlier and puts it into its own .csv file 
+# Replacing nulls with 0.
+# run the model giving the output the suffix "rootDistExp"
+# Getting logs of usre 1
+# use the logistic regression model # fit the model
+# check user_id dataset for duplicates using duplicated()
+# Critical value for a one tailed test at confidence level of 95%
+# distribution of tsla *given* tsla > 30 # Note: clipped at 180 # Note: seasonality corresponds to weekday and weekend effect
+# Let's now filter our data
+# Before we merge the two datasets, let's ensure there are no duplicate rows in the user information dataset
+#check name for consistency
+# the duplicated user_id is 773192
+#plt.ylim(200,400);
+# Design a query to retrieve the last 12 months of precipitation data # Calculate the date 1 year ago from today
+# Lets convert male to 0 and female to 1:
+## Request page ## See the html for the whole page # https://www.purdueexponent.org/
+# Calculate the date 1 year ago from today
+### Create the necessary dummy variables
+# Inspect the JSON structure of the object you created, and take note of how nested it is, # as well as the overall structure
+# Imports the methods needed to abstract classes into tables # Allow us to declare column types
+# find the duplicated user_id information repeated in df2
+#code below used to deal with special characters on the file path during read_csv()
+##### return numpy ndarray
+# R squared adjusted
+# Load a Cynthia Brewer palette.
+#Design a query to calculate the total number of stations.
+#'Milwaukee': '2a93711775303f90'
+# Object oriented approach
+# Use this cell for your explorations. q3c_answer = r"""$ The most addresses of businesses that have null post code are off the grid or approved private locations or approved locations."""$
+# CHECK features correlation
+# nuisance columns after groupby
+#add delay_time to dataframe since it was acting funny when  #we tried directly adding it to the dictionary earlier
+# Shows concise summary of dataframe and data columns associated with their types
+# Split dataset into training and testing sets
+# plot a scatter plot of all errors > 1.0e-4
+#Display the columns in the dataset
+# use cross_val_score() # ... #
+# Compute user activity # We are interested in how many playcounts each user has scored.
+### Create the necessary dummy variables (list them in alphabetical order to get correct results)
+# Retrieve latest full mars images
+#Aggregate Compound sentiments
+# Labels - row: 'CHARLOTTETOWN', column: 'Wind Spd (km/h)'
+# Create a legend for the chart
+# For some reason stats.percentileofscore() throws an error if it's not imported right before being called:
+# set SUMMA executable file
+#Creating another dataframe here... #We can use this same table for both parts.
+# Two sample Hypothesis test. We typically use a 't-test' when our number of samples is low (< 30). The t-test assumes a wider  #distribution (more spread). We typically use a 'z-test' when we have >= 30 samples. The 'z-test' assumes a narrower distribution #(less spread).----`proportions_ztest(count, nobs, value=None, alternative='two-sided', prop_var=False)`
+# Check the accuracy of the trained model
+# Create the necessary dummy variables
+# How many dog breeds are represented? # According to American Kennel Club, there are more than 170 breeds, so some are missing.
+# Lengths along time:
+#review saved data
+#arranging 'Year' column in ascending order #before sorting #after sorting
+# failed campaigns (sorted by counts)
+#check that we have removed one line in total
+# start_date = input('Vacation Start Date: Year-Date-Month format ') # end_date = input('Vacation End Date: Year-Date-Month format ')
+# We are joining the developing dataframe with the sp500 closes again, this time with the latest close for SP.
+# We can export that to Excel
+# specify a column as index
+# create start date column from period index
+# list of words, punctuation and emoticons to get rid of when tokenizing a tweet
+# data science tweets
+#precipitation descriptive statistics
+#CALCULATES THE PROPORTION of converted users within the control group reading old_page
+#### we have already seen iloc(); here is another example
+#Number of users who have been assigned with new page
+# convert to datetime objects
+# saving model
+# Create a pandas data frame # We create a pandas dataframe as follows: # We display the first 10 elements of the dataframe:
+#3  to carry forward previous day value for a NA value, we use ffill
+#try to random forest with text features
+# Tells us how significant our z-score is # Tells us what our critical value at 95% confidence is
+#df_users = pd.read_csv("df_users.csv", sep=",", header=1, names=["user_id", "class"])
+#CIA, ORGANISATION_CODE and L2_organization_id are the same
+#Save this model to a pickle file
+# index all variables in dictionary dataframe
+# Another way to plot the above
+#no of unique users in dataset
+#add create date in date format
+# compute the average age at booking by race
+# Save figure
+# Calculate h_theta -- Predictionof a row
+#'Modesto': 'e41805d7248dbf1e'
+# transform spark dataframe to pandas to print the image
+# Critical value at 95% confidence
+# retrieve stored API_KEY
+# Remove row with specific duplicate coulmn value
+#summary of model
+#Make 5 recommendations to 2093760 # construct set of recommended artists
+# Generate entries in column "technology" according to energy source "hydro"
+# What are the most active stations? # List the stations and the counts in descending order. #tobs temperature observations
+# 5.
+# TO BE CONTINUED...
+# Keep only unique play text, keep the first timestamp
+#convert list to dataframe  #check the df
+#final.loc[np.argmin(np.abs((final['RA0']-target15[0]))+np.abs((final['DEC0']-target15[1])))]
+#ignore any warnings
+# shift forward one day
+# split data into training set and a temporary set using sklearn.model_selection.traing_test_split
+#new page converted rate 
+# calculating the probability that individual received a the new page # printing the probality of receiving the new page
+#percentage
+# Proportion of invalid values 
+# Now, call the Quandl API and pull out a small sample of the data (only one day) to get a glimpse # into the JSON structure that will be returned # print(r.json())
+# Find one reinsurer-AIG treaty:
+# Display the graph for performance comparison
+### Fit Your Linear Model And Obtain the Results
+#type(rptdt)     pandas.core.series.Series
+# Need to Group up Zoning too

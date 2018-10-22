@@ -1,14 +1,16 @@
 #!/bin/sh
 
 vocab="data/vocab.bin"
-train_src="/home/anushap/Code-Generation/data/nl_train.txt"
-train_tgt="/home/anushap/Code-Generation/data/code_train.txt"
+train_src="/home/anushap/Code-Generation/nmt_model/data/nl_train.txt"
+train_tgt="/home/anushap/Code-Generation/nmt_model/data/code_train.txt"
 # train_src="data/valid.de-en.de"
 # train_tgt="data/valid.de-en.en"
-dev_src="/home/anushap/Code-Generation/data/nl_dev.txt"
-dev_tgt="/home/anushap/Code-Generation/data/code_dev.txt"
-test_src="/home/anushap/Code-Generation/data/nl_test.txt"
-test_tgt="/home/anushap/Code-Generation/data/code_test.txt"
+dev_src="/home/anushap/Code-Generation/nmt_model/data/nl_dev.txt"
+dev_tgt="/home/anushap/Code-Generation/nmt_model/data/code_dev.txt"
+test_src="/home/anushap/Code-Generation/nmt_model/data/nl_test.txt"
+test_tgt="/home/anushap/Code-Generation/nmt_model/data/code_test.txt"
+test_tgt_bleu="/home/anushap/Code-Generation/nmt_model/data/code_test_bleu.txt"
+dev_tgt_bleu="/home/anushap/Code-Generation/nmt_model/data/code_dev_bleu.txt"
 
 work_dir="work_dir"
 
@@ -42,4 +44,4 @@ python nmt.py \
    ${test_src} \
    ${work_dir}/decode.txt
 
-perl multi-bleu.perl ${test_tgt} < ${work_dir}/decode.txt
+perl multi-bleu.perl ${test_tgt_bleu} < ${work_dir}/decode.txt

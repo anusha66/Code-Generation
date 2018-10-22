@@ -114,8 +114,8 @@ if __name__ == '__main__':
     total_failed_ids = set(src_f_ids).union(tgt_f_ids)
     src_sents = [src_sents[i] for i in range(len(src_sents)) if i not in total_failed_ids]
     tgt_sents = [tgt_sents[i] for i in range(len(tgt_sents)) if i not in total_failed_ids]
-    
-    vocab = Vocab(src_sents, tgt_sents, 7000, freq_cutoff=2)
+    vocab = Vocab(src_sents, tgt_sents, int(args['--size']), int(args['--freq-cutoff']))    
+    #vocab = Vocab(src_sents, tgt_sents, 7000, freq_cutoff=2)
     print('generated vocabulary, source %d words, target %d words' % (len(vocab.src), len(vocab.tgt)))
 
     pickle.dump(vocab, open('data/vocab.bin', 'wb'))

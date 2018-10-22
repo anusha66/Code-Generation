@@ -8,12 +8,15 @@ def daterange(start_date, end_date):
     for n in range(int ((end_date - start_date).days)):
         yield start_date + timedelta(n)
 
-start_date = date(2017, 12, 1)
-end_date = date(2018, 9, 1)
+start_date = date(2016, 9, 1)
+end_date = date(2017, 9, 1)
 
-token = "3690b2d4b0ed487434b395cb9096ff7160ca6c7f"
+#start_date = date(2017, 12, 1)
+#end_date = date(2018, 9, 1)
 
-f = open('url_list.txt', 'a')
+token = "b0de4973dde0b2cd5564b73afa370b0f2d47c5c8"
+
+f = open('url_list_latest.txt', 'a')
 
 for single_date in daterange(start_date, end_date):
         print(single_date.strftime("%Y-%m-%d"))
@@ -40,10 +43,11 @@ for single_date in daterange(start_date, end_date):
                 break
             elif (var == -1):
                 #print("sleep")
-                if token == "3690b2d4b0ed487434b395cb9096ff7160ca6c7f":
-                    token = "4d32711a67a9c13f85e98468c8168ed505cd3983"
+                if token == "b0de4973dde0b2cd5564b73afa370b0f2d47c5c8":
+                    token = "9331ba708cd0b31a163804eb1611104808c65434"
                 else:
-                    token = "3690b2d4b0ed487434b395cb9096ff7160ca6c7f"
+                    token = "b0de4973dde0b2cd5564b73afa370b0f2d47c5c8"
+
                 time.sleep(3)
             else:
                 #print("data")
@@ -53,8 +57,6 @@ for single_date in daterange(start_date, end_date):
                     url_list.append(data_json['items'][i]['html_url'])
 
                 page = page + 1
-
-                pdb.set_trace()
 
         time.sleep(1.5)
 
