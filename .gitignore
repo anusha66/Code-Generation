@@ -2,3 +2,4 @@
 matplotlib/data/*
 pandas/data/*
 __pycache__/*
+data_processing/.ipynb_checkpoints/*
