@@ -1,3 +1,4 @@
 .idea/*
 matplotlib/data/*
 pandas/data/*
+__pycache__/*
