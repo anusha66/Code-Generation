@@ -85,15 +85,28 @@ def dump_pickle(filename, obj):
     with open(filename, 'wb') as fp:
         pickle.dump(obj, fp)
 
+def get_code_comments(data):
 
+		comments = []
+		code = []
+		begin = 0
+
+		for i in data:
+			val, begin = get_comments(i, begin)
+			if val[1] == 1:
+                                comments.append(val[0])
+			elif val[1] == 0:
+                                code.append(val[0])
+			else:
+                                continue
+		return code
 def main():
     dataset = []
-
-    path = '../data/*'
+    path = '/home/anushap/Code-Generation-Old/pandas/all_notebooks/*'
+    #path = '../data/*'
     files = glob.glob(path)
     # give context as argument 
     context = int(sys.argv[1])
-
     for file in files:
 
         print(file, " is being processed")
@@ -113,11 +126,9 @@ def main():
                         idx = item['prev_md'][-i]
                         prev_mark_up.extend(cell_info['cells'][idx]['source'])
 
-                dataset.append((item['code'], prev_code_lines, prev_mark_up))
-
+                dataset.append((get_code_comments(item['code']), get_code_comments(prev_code_lines), prev_mark_up))
         print('Finished ', file)
-
-    dump_pickle('matplotlib_dataset_2009.pkl', dataset)
+    dump_pickle('pandas_context_dataset_5years.pkl', dataset)
 
 
 if __name__ == '__main__':

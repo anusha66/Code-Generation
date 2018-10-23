@@ -7,7 +7,7 @@ Options:
     -h --help                  Show this screen.
     --train-src=<file>         File of training source sentences
     --train-tgt=<file>         File of training target sentences
-    --size=<int>               vocab size [default: 50000]
+    --size=<int>               vocab size [default: 2500]
     --freq-cutoff=<int>        frequency cutoff [default: 2]
 """
 
@@ -106,9 +106,18 @@ class Vocab(object):
 
 
 if __name__ == '__main__':
+    args = docopt(__doc__)
+
+    print('read in source sentences: %s' % args['--train-src'])
+    print('read in target sentences: %s' % args['--train-tgt'])
+
+    src_sents, src_f_ids = read_corpus(args['--train-src'], source='src')
+    tgt_sents, tgt_f_ids = read_corpus(args['--train-tgt'], source='tgt')
+
+   # vocab = Vocab.build(src_sents, tgt_sents, int(args['--size']), int(args['--freq-cutoff']))
     
-    src_sents, src_f_ids = read_corpus('/home/anushap/Code-Generation/data/nl_train.txt', source='src')
-    tgt_sents, tgt_f_ids  = read_corpus('/home/anushap/Code-Generation/data/code_train.txt', source='tgt')
+    #src_sents, src_f_ids = read_corpus('/home/anushap/Code-Generation/data/nl_train.txt', source='src')
+    #tgt_sents, tgt_f_ids  = read_corpus('/home/anushap/Code-Generation/data/code_train.txt', source='tgt')
 #     pdb.set_trace()
 
     total_failed_ids = set(src_f_ids).union(tgt_f_ids)
@@ -118,7 +127,7 @@ if __name__ == '__main__':
     #vocab = Vocab(src_sents, tgt_sents, 7000, freq_cutoff=2)
     print('generated vocabulary, source %d words, target %d words' % (len(vocab.src), len(vocab.tgt)))
 
-    pickle.dump(vocab, open('data/vocab.bin', 'wb'))
+    pickle.dump(vocab, open(args['VOCAB_FILE'], 'wb'))
     print('vocabulary saved to vocab.bin')
     
 #     args = docopt(__doc__)

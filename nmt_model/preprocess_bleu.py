@@ -1,7 +1,7 @@
 import utils
 
-data, fail = utils.read_corpus('/home/anushap/Code-Generation-Old/data/code_dev.txt','tgt')
-fout = open("/home/anushap/Code-Generation-Old/data/code_dev_bleu.txt", "w")
+data, fail = utils.read_corpus('/home/anushap/Code-Generation/nmt_model/data/nl2code/code_test.txt','tgt')
+fout = open("/home/anushap/Code-Generation/nmt_model/data/nl2code/code_test_bleu.txt", "w")
 
 for i in range(len(data)):
 

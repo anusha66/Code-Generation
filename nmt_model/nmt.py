@@ -464,11 +464,11 @@ def compute_corpus_level_bleu_score(references: List[List[str]], hypotheses: Lis
 
 def train(args: Dict):
     
-    train_data_src, failed_train_src_ids = read_corpus("data/nl_train.txt", source='src')
-    train_data_tgt, failed_train_tgt_ids = read_corpus("data/code_train.txt", source='tgt')
+    train_data_src, failed_train_src_ids = read_corpus(args['--train-src'], source='src')
+    train_data_tgt, failed_train_tgt_ids = read_corpus(args['--train-tgt'], source='tgt')
 
-    dev_data_src, failed_dev_src_ids = read_corpus("data/nl_dev.txt", source='src')
-    dev_data_tgt, failed_dev_tgt_ids = read_corpus("data/code_dev.txt", source='tgt')
+    dev_data_src, failed_dev_src_ids = read_corpus(args['--dev-src'], source='src')
+    dev_data_tgt, failed_dev_tgt_ids = read_corpus(args['--dev-tgt'], source='tgt')
     
     total_failed_ids = set(failed_train_src_ids).union(failed_train_tgt_ids)
     train_data_src = [train_data_src[i] for i in range(len(train_data_src)) if i not in total_failed_ids]
@@ -517,7 +517,6 @@ def train(args: Dict):
 
     model = model.to(device)
 #     model.cuda()
-    print ('Error line')
 
     optimizer = torch.optim.Adam(model.parameters(), lr=float(args['--lr']))
 
@@ -585,7 +584,7 @@ def train(args: Dict):
                 print('begin validation ...', file=sys.stderr)
 
                 # compute dev. ppl and bleu
-                dev_ppl = evaluate_ppl(model, dev_data, batch_size=128)   # dev batch size can be a bit larger
+                dev_ppl = evaluate_ppl(model, dev_data, batch_size=16)   # dev batch size can be a bit larger
                 valid_metric = -dev_ppl
 
                 print('validation: iter %d, dev. ppl %f' % (train_iter, dev_ppl), file=sys.stderr)
@@ -771,7 +770,7 @@ def train_mcmc_raml(args: Dict):
                 print('begin validation ...', file=sys.stderr)
 
                 # compute dev. ppl and bleu
-                dev_ppl = evaluate_ppl(model, dev_data, batch_size=128)   # dev batch size can be a bit larger
+                dev_ppl = evaluate_ppl(model, dev_data, batch_size=16)   # dev batch size can be a bit larger
                 valid_metric = -dev_ppl
 
                 print('validation: iter %d, dev. ppl %f' % (train_iter, dev_ppl), file=sys.stderr)
@@ -839,8 +838,10 @@ def beam_search(model: NMT, test_data_src: List[List[str]], beam_size: int, max_
 
 def decode(args: Dict[str, str]):
     
-    test_data_src, failed_ids_src = read_corpus('data/nl_test.txt', source='src')
-    test_data_tgt, failed_ids_tgt = read_corpus('data/code_test.txt', source='tgt')
+    test_data_src, failed_ids_src = read_corpus(args['TEST_SOURCE_FILE'], source='src')
+#read_corpus('data/nl_test.txt', source='src')
+    test_data_tgt, failed_ids_tgt = read_corpus(args['TEST_TARGET_FILE'], source='tgt')
+
     total_failed_ids = set(failed_ids_src).union(failed_ids_tgt)
     test_data_src = [test_data_src[i] for i in range(len(test_data_src)) if i not in total_failed_ids]
     test_data_tgt = [test_data_tgt[i] for i in range(len(test_data_tgt)) if i not in total_failed_ids]
