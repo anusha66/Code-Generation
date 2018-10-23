@@ -3,3 +3,5 @@ matplotlib/data/*
 pandas/data/*
 __pycache__/*
 data_processing/.ipynb_checkpoints/*
+custom_model/__pychache__/*
+custom_model/__pychache__/*.pyc
