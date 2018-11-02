@@ -22,7 +22,9 @@ def input_transpose(sents, pad_token):
 def read_corpus(file_path, source):
     data = []
     failed_ids = []
+    
     lines = open(file_path, 'r').readlines()
+    
     for i, line in enumerate(lines):
         try:
 #             sent = list(line)
@@ -34,8 +36,10 @@ def read_corpus(file_path, source):
                 sent = ['<s>'] + sent + ['</s>']
             data.append(sent)
         except:
+            
             data.append('DUMMY')
             failed_ids.append(i)
+            
 
     return data, failed_ids
 

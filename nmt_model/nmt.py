@@ -24,8 +24,8 @@ Options:
     --hidden-size=<int>                     hidden size [default: 256]
     --clip-grad=<float>                     gradient clipping [default: 5.0]
     --label-smoothing=<float>                  use label smoothing [default: 0.0]
-    --log-every=<int>                       log every [default: 10]
-    --max-epoch=<int>                       max epoch [default: 30]
+    --log-every=<int>                       log every [default: 50]
+    --max-epoch=<int>                       max epoch [default: 20]
     --input-feed                            use input feeding
     --patience=<int>                        wait for how many iterations to decay learning rate [default: 5]
     --max-num-trial=<int>                   terminate training after how many trials [default: 5]
@@ -68,7 +68,7 @@ Hypothesis = namedtuple('Hypothesis', ['value', 'score'])
 
 class NMT(nn.Module):
 
-    def __init__(self, embed_size, hidden_size, vocab, dropout_rate=0.2, input_feed=True, label_smoothing=0.):
+    def __init__(self, embed_size, hidden_size, vocab, dropout_rate=0.2, input_feed=True, label_smoothing=0., lm=False):
         super(NMT, self).__init__()
 
         self.embed_size = embed_size
@@ -76,6 +76,7 @@ class NMT(nn.Module):
         self.dropout_rate = dropout_rate
         self.vocab = vocab
         self.input_feed = input_feed
+        self.lm=lm
 
         self.src_embed = nn.Embedding(len(vocab.src), embed_size, padding_idx=vocab.src['<pad>'])
         self.tgt_embed = nn.Embedding(len(vocab.tgt), embed_size, padding_idx=vocab.tgt['<pad>'])
@@ -111,37 +112,87 @@ class NMT(nn.Module):
         return self.src_embed.weight.device
 
     def forward(self, src_sents: List[List[str]], tgt_sents: List[List[str]]) -> torch.Tensor:
-        # (src_sent_len, batch_size)
-        src_sents_var = self.vocab.src.to_input_tensor(src_sents, device=self.device)
-        # (tgt_sent_len, batch_size)
-        tgt_sents_var = self.vocab.tgt.to_input_tensor(tgt_sents, device=self.device)
-        src_sents_len = [len(s) for s in src_sents]
+        
+        
+        if self.lm:
+             # (tgt_sent_len, batch_size)
+            tgt_sents_var = self.vocab.tgt.to_input_tensor(tgt_sents, device=self.device)
+            
+            att_vecs = []
+            batch_size = len(tgt_sents)
+            h_t, cell_t = torch.zeros(batch_size, self.hidden_size, device=self.device), torch.zeros(batch_size, self.hidden_size, device=self.device)
+            
+            tgt_word_embeds = self.tgt_embed(tgt_sents_var[:-1])
+            
+            # start from y_0=`<s>`, iterate until y_{T-1}
+            for y_tm1_embed in tgt_word_embeds.split(split_size=1):
+                
+                y_tm1_embed = y_tm1_embed.squeeze(0)
+                
+                x = y_tm1_embed
 
-        src_encodings, decoder_init_vec = self.encode(src_sents_var, src_sents_len)
+                (h_t, cell_t) = self.decoder_lstm(x, (h_t, cell_t))
 
-        src_sent_masks = self.get_attention_mask(src_encodings, src_sents_len)
+       
+                att_vecs.append(h_t)
 
-        # (tgt_sent_len - 1, batch_size, hidden_size)
-        att_vecs = self.decode(src_encodings, src_sent_masks, decoder_init_vec, tgt_sents_var[:-1])
-
-        # (tgt_sent_len - 1, batch_size, tgt_vocab_size)
-        tgt_words_log_prob = F.log_softmax(self.readout(att_vecs), dim=-1)
-
-        if self.label_smoothing:
-            # (tgt_sent_len - 1, batch_size)
-            tgt_gold_words_log_prob = self.label_smoothing_loss(tgt_words_log_prob.view(-1, tgt_words_log_prob.size(-1)),
+            # (tgt_sent_len - 1, batch_size, tgt_vocab_size)
+            att_vecs = torch.stack(att_vecs)
+            
+            tgt_words_log_prob = F.log_softmax(self.readout(att_vecs), dim=-1)
+            
+            if self.label_smoothing:
+                # (tgt_sent_len - 1, batch_size)
+                tgt_gold_words_log_prob = self.label_smoothing_loss(tgt_words_log_prob.view(-1, tgt_words_log_prob.size(-1)),
                                                                 tgt_sents_var[1:].view(-1)).view(-1, len(tgt_sents))
+            
+            else:
+                # (tgt_sent_len, batch_size)
+                tgt_words_mask = (tgt_sents_var != self.vocab.tgt['<pad>']).float()
+
+                # (tgt_sent_len - 1, batch_size)
+                tgt_gold_words_log_prob = torch.gather(tgt_words_log_prob, index=tgt_sents_var[1:].unsqueeze(-1), dim=-1).squeeze(-1) * tgt_words_mask[1:]
+            
+            
+            scores = tgt_gold_words_log_prob.sum(dim=0)
+
+            return scores
+        
+        
+        
         else:
+            # (src_sent_len, batch_size)
+            src_sents_var = self.vocab.src.to_input_tensor(src_sents, device=self.device)
             # (tgt_sent_len, batch_size)
-            tgt_words_mask = (tgt_sents_var != self.vocab.tgt['<pad>']).float()
+            tgt_sents_var = self.vocab.tgt.to_input_tensor(tgt_sents, device=self.device)
+            src_sents_len = [len(s) for s in src_sents]
 
-            # (tgt_sent_len - 1, batch_size)
-            tgt_gold_words_log_prob = torch.gather(tgt_words_log_prob, index=tgt_sents_var[1:].unsqueeze(-1), dim=-1).squeeze(-1) * tgt_words_mask[1:]
+            src_encodings, decoder_init_vec = self.encode(src_sents_var, src_sents_len)
 
-        # (batch_size)
-        scores = tgt_gold_words_log_prob.sum(dim=0)
+            src_sent_masks = self.get_attention_mask(src_encodings, src_sents_len)
 
-        return scores
+            # (tgt_sent_len - 1, batch_size, hidden_size)
+            att_vecs = self.decode(src_encodings, src_sent_masks, decoder_init_vec, tgt_sents_var[:-1])
+
+            # (tgt_sent_len - 1, batch_size, tgt_vocab_size)
+            tgt_words_log_prob = F.log_softmax(self.readout(att_vecs), dim=-1)
+
+            if self.label_smoothing:
+                # (tgt_sent_len - 1, batch_size)
+                tgt_gold_words_log_prob = self.label_smoothing_loss(tgt_words_log_prob.view(-1, tgt_words_log_prob.size(-1)),
+                                                                tgt_sents_var[1:].view(-1)).view(-1, len(tgt_sents))
+            else:
+                # (tgt_sent_len, batch_size)
+                tgt_words_mask = (tgt_sents_var != self.vocab.tgt['<pad>']).float()
+
+                # (tgt_sent_len - 1, batch_size)
+                tgt_gold_words_log_prob = torch.gather(tgt_words_log_prob, index=tgt_sents_var[1:].unsqueeze(-1), dim=-1).squeeze(-1) * tgt_words_mask[1:]
+
+            # (batch_size)
+            scores = tgt_gold_words_log_prob.sum(dim=0)
+
+            return scores
+
 
     def get_attention_mask(self, src_encodings: torch.Tensor, src_sents_len: List[int]) -> torch.Tensor:
         src_sent_masks = torch.zeros(src_encodings.size(0), src_encodings.size(1), dtype=torch.float,
@@ -498,9 +549,10 @@ def train(args: Dict):
     model = NMT(embed_size=int(args['--embed-size']),
                 hidden_size=int(args['--hidden-size']),
                 dropout_rate=float(args['--dropout']),
-                input_feed=args['--input-feed'],
+                input_feed=False,
                 label_smoothing=float(args['--label-smoothing']),
-                vocab=vocab)
+                vocab=vocab,
+               lm=True)
     model.train()
 
     uniform_init = float(args['--uniform-init'])
@@ -839,13 +891,14 @@ def beam_search(model: NMT, test_data_src: List[List[str]], beam_size: int, max_
 def decode(args: Dict[str, str]):
     
     test_data_src, failed_ids_src = read_corpus(args['TEST_SOURCE_FILE'], source='src')
-#read_corpus('data/nl_test.txt', source='src')
+    
     test_data_tgt, failed_ids_tgt = read_corpus(args['TEST_TARGET_FILE'], source='tgt')
-
+    
     total_failed_ids = set(failed_ids_src).union(failed_ids_tgt)
     test_data_src = [test_data_src[i] for i in range(len(test_data_src)) if i not in total_failed_ids]
     test_data_tgt = [test_data_tgt[i] for i in range(len(test_data_tgt)) if i not in total_failed_ids]
-
+    
+    
     
 #     print(f"load test source sentences from [{args['TEST_SOURCE_FILE']}]", file=sys.stderr)
 #     test_data_src = read_corpus(args['TEST_SOURCE_FILE'], source='src')
