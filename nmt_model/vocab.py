@@ -19,7 +19,7 @@ import pickle
 import torch
 import pdb
 
-from utils import read_corpus, input_transpose
+from utils import read_corpus, input_transpose, article2ids, abstract2ids
 
 
 class VocabEntry(object):
@@ -75,6 +75,33 @@ class VocabEntry(object):
         sents_var = torch.tensor(sents_t, dtype=torch.long, device=device)
 
         return sents_var
+    
+    def to_input_tensor_tgt_extend(self, sents: List[List[str]], article_oovs: List[List[str]], device: torch.device) -> torch.Tensor:
+
+        sents_var = []
+        for i, sent in enumerate(sents):
+            ids = abstract2ids(sent, self, article_oovs[i])
+            sents_var.append(ids)
+
+        sents_var = input_transpose(sents_var, self['<pad>'])
+        sents_var = torch.tensor(sents_var, dtype=torch.long, device=device)
+
+        return sents_var
+
+    def to_input_tensor_extend(self, sents: List[List[str]], device: torch.device) -> torch.Tensor:
+
+        sents_var = []
+        oov_list = []
+
+        for sent in sents:
+            ids, oovs = article2ids(sent, self)
+            sents_var.append(ids)
+            oov_list.append(oovs)
+
+        sents_var = input_transpose(sents_var, self['<pad>'])
+        sents_var = torch.tensor(sents_var, dtype=torch.long, device=device)
+
+        return sents_var, oov_list
 
     @staticmethod
     def from_corpus(corpus, size, freq_cutoff=2):
