@@ -1,6 +1,6 @@
 #!/bin/sh
 
-vocab="data/vocab.bin"
+vocab="data/new_vocab.bin"
 train_src="data/nl_train.txt"
 train_tgt="data/code_train.txt"
 # train_src="data/nl2code/valid.de-en.de"
@@ -17,7 +17,7 @@ work_dir="work_dir"
 mkdir -p ${work_dir}
 echo save results to ${work_dir}
 
-python nmt.py \
+python nmt_copy.py \
     train \
     --cuda \
     --vocab ${vocab} \
@@ -35,14 +35,14 @@ python nmt.py \
     --clip-grad 5.0 \
     --lr-decay 0.5 2>${work_dir}/err.log
 
-python nmt.py \
-   decode \
-   --cuda \
-   --beam-size 5 \
-   --max-decoding-time-step 20 \
-   ${work_dir}/model.bin \
-   ${test_src} \
-   ${test_tgt} \
-   ${work_dir}/decode.txt
+# python nmt.py \
+#    decode \
+#    --cuda \
+#    --beam-size 5 \
+#    --max-decoding-time-step 20 \
+#    ${work_dir}/model.bin \
+#    ${test_src} \
+#    ${test_tgt} \
+#    ${work_dir}/decode.txt
 
 # perl multi-bleu.perl ${test_tgt_bleu} < ${work_dir}/decode.txt
