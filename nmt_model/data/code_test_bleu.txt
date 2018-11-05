@@ -1511,7 +1511,6 @@ df . columns
 sample_sizes . show ( )
 from calendar import day_name   $ pd . DataFrame ( { _STR_ : [ day_name [ i ] for i in range ( 7 ) ] ,   $ _STR_ : noaa_data [ _STR_ ] . groupby ( noaa_data . index . dayofweek ) . mean ( ) } ,   $ columns = [ _STR_ , _STR_ ]   $ ) . set_index ( _STR_ ) . T
 tips . sample ( 5 ) . reset_index ( drop = True )
-session . query (   $ Country . country_id , Country . country   $ ) . filter (   $ Country . country . in_ ( [ _STR_ , _STR_ , _STR_ ] )   $ ) . frame ( )
 snow . select ( _STR_ ) . to_excel ( _STR_ , index = False )
 print total . shape [ 0 ] , total . dropna ( ) . shape [ 0 ]   $ total . head ( )
 import statsmodels . api as sm   $ convert_old = df2 . query ( _STR_ ) . user_id . nunique ( ) #  we had this from part I Q4. $ convert_new = df2.query('group == "treatment" and converted == 1').user_id.nunique() # this one too. $ n_old = df2.query('group == "control"').user_id.nunique() $ n_new = df2.query('group == "treatment"').user_id.nunique()
@@ -1814,7 +1813,6 @@ sns . set ( )   $ sns . distplot ( np . log ( df_input_clean . toPandas ( ) . Re
 df . dropna ( axis = 0 , inplace = True )   $ df . reset_index ( inplace = True , drop = True )   $ df . shape
 from scripts . model import *
 new_page_converted = np . random . binomial ( n_new , p_new )
-U M M
 daily_sales . plot ( _STR_ , _STR_ , kind = _STR_ , color = _STR_ , figsize = ( 15 , 5 ) )
 link_pattern = _STR_
 daily_ret_b_mean = daily_ret_b . mean ( )   $ daily_ret_b_mean
@@ -1980,7 +1978,6 @@ df_ids . to_csv ( _STR_ )
 daily_df = all_turnstiles . groupby ( [ _STR_ , _STR_ , _STR_ , _STR_ , _STR_ ] , as_index = False ) . sum ( )   $ daily_df . head ( )
 data [ _STR_ ] . shape
 new_page_converted = np . random . choice ( [ 0 , 1 ] , size = n_new , p = [ ( 1 - p_new ) , p_new ] )
-U M M
 proportion = df [ df [ _STR_ ] == 1 ] . user_id . nunique ( ) / number_rows   $ print ( _STR_ . format ( proportion ) )
 df = gpd . GeoDataFrame ( df )
 with open ( os . path . expanduser ( _STR_ ) ) as f :   $ creds = yaml . load ( f )
@@ -2954,7 +2951,6 @@ engine = create_engine ( _STR_ )
 autos [ _STR_ ] . describe ( )
 session . query ( Measurement . station , func . count ( Measurement . tobs ) ) . \   $ group_by ( Measurement . station ) . \   $ order_by ( func . count ( Measurement . tobs ) . desc ( ) ) . all ( )   $
 zip_1_sns . Date = zip_1_sns . Date . str . replace ( _STR_ , _STR_ )   $ zip_1_sns . Date = pd . to_datetime ( zip_1_sns . Date , format = _STR_ )   $ zip_2_sns . Date = zip_2_sns . Date . str . replace ( _STR_ , _STR_ )   $ zip_2_sns . Date = pd . to_datetime ( zip_2_sns . Date , format = _STR_ )
-fin_coins_r . shape , fin_r_monthly . index . min ( ) , r_top10_mat_na . index . min ( ) , fundret . index . min ( )
 twitter_archive . info ( )
 weather . loc [ weather . NAME == _STR_ ] . boxplot ( column = _STR_ ) ;
 df4 [ df4 [ _STR_ ] == 1 ] . count ( ) [ 0 ] / df4 . count ( ) [ 0 ]
@@ -3321,7 +3317,6 @@ old_prob = gb . count ( ) . values / sum ( gb . count ( ) . values )
 from sklearn import tree   $ model = tree . DecisionTreeClassifier ( )   $ print ( _STR_ )   $ reg_analysis ( model , X_train , X_test , y_train , y_test )
 print ( _STR_ , data . created_at . max ( ) )   $ print ( _STR_ , data . created_at . min ( ) )
 countries = pd . read_csv ( _STR_ )   $ countries . head ( )
-U M M
 lasso2 = Lasso ( alpha = 0.0002 )   $ lasso2 . fit ( train_data , train_labels )
 all_indicators . ix [ : , 0 : 1 ]
 df . shape
@@ -3947,7 +3942,6 @@ brand_counts = autos [ _STR_ ] . value_counts ( normalize = True )   $ most_comm
 print ( _STR_ % ( ( 1. - freq_prob ) / freq_prob ) )
 compared_resuts . to_csv ( _STR_ )
 from sklearn . metrics import f1_score   $ from sklearn . neighbors import KNeighborsClassifier
-df [ df . msno == _STR_ ]
 rollrank_fxn = lambda x : x . rolling ( 200 , min_periods = 20 ) . apply ( lambda x : pd . Series ( x ) . rank ( pct = True ) [ 0 ] , raw = True )   $ features [ _STR_ ] = prices . groupby ( level = _STR_ ) . volume . apply ( rollrank_fxn )
 data = pd . Series ( [ 1 , np . nan , 2 , None , 3 ] , index = list ( _STR_ ) )   $ data
 plt . title ( _STR_ )   $ aggregated_content . plot ( kind = _STR_ , figsize = ( 15 , 7 ) )
