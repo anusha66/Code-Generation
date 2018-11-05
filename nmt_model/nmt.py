@@ -903,14 +903,7 @@ def decode(args: Dict[str, str]):
     total_failed_ids = set(failed_ids_src).union(failed_ids_tgt)
     test_data_src = [test_data_src[i] for i in range(len(test_data_src)) if i not in total_failed_ids]
     test_data_tgt = [test_data_tgt[i] for i in range(len(test_data_tgt)) if i not in total_failed_ids]
-    
-    
-    
-#     print(f"load test source sentences from [{args['TEST_SOURCE_FILE']}]", file=sys.stderr)
-#     test_data_src = read_corpus(args['TEST_SOURCE_FILE'], source='src')
-#     if args['TEST_TARGET_FILE']:
-#         print(f"load test target sentences from [{args['TEST_TARGET_FILE']}]", file=sys.stderr)
-#         test_data_tgt = read_corpus(args['TEST_TARGET_FILE'], source='tgt')
+   
 
     print(f"load model from {args['MODEL_PATH']}", file=sys.stderr)
     model = NMT.load(args['MODEL_PATH'])

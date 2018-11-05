@@ -6,9 +6,11 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import py_utils as ut
+import pdb
 
 
 def input_transpose(sents, pad_token):
+   
     max_len = max(len(s) for s in sents)
     batch_size = len(sents)
 
@@ -34,6 +36,8 @@ def read_corpus(file_path, source):
 #                 sent = list(line)
                 sent = ut.tokenize_code(line.strip(), mode='canonicalize')
                 sent = ['<s>'] + sent + ['</s>']
+            else:
+                sent = ut.tokenize_code(line.strip(), mode='canonicalize')
             data.append(sent)
         except:
             
