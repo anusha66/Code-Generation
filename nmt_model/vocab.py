@@ -7,7 +7,7 @@ Options:
     -h --help                  Show this screen.
     --train-src=<file>         File of training source sentences
     --train-tgt=<file>         File of training target sentences
-    --size=<int>               vocab size [default: 2500]
+    --size=<int>               vocab size [default: 10000]
     --freq-cutoff=<int>        frequency cutoff [default: 2]
 """
 

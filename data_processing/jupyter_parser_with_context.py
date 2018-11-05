@@ -101,6 +101,14 @@ def get_code_comments(data):
                                 continue
 		return code
 def main():
+    a = (['r= requests.get("https://www.quandl.com/api/v3/datasets/FSE/AFX_X/data.json")\n',
+  'json_data = r.json()\n',
+  'json_data["dataset_data"]["data"][0]'],
+ ['import requests\n',
+  'import json\n',
+  'import pandas as pd\n',
+  'import numpy as np'],
+["Keep in mind that the JSON responses you will be getting from the API map almost one-to-one to Python's dictionaries. Unfortunately, they can be very nested, so make sure you read up on indexing dictionaries in the documentation provided above."])
     dataset = []
     path = '/home/anushap/Code-Generation-Old/pandas/all_notebooks/*'
     #path = '../data/*'
@@ -108,7 +116,7 @@ def main():
     # give context as argument 
     context = int(sys.argv[1])
     for file in files:
-
+        #ttt = []
         print(file, " is being processed")
         cell_info = get_cell_data(file)
         data = get_content(cell_info)
@@ -125,8 +133,10 @@ def main():
                     if i <= len(item['prev_md']):
                         idx = item['prev_md'][-i]
                         prev_mark_up.extend(cell_info['cells'][idx]['source'])
-
+                #ttt = (get_code_comments(item['code']), get_code_comments(prev_code_lines), prev_mark_up)
                 dataset.append((get_code_comments(item['code']), get_code_comments(prev_code_lines), prev_mark_up))
+                #if ttt == a:
+                #	pdb.set_trace()
         print('Finished ', file)
     dump_pickle('pandas_context_dataset_5years.pkl', dataset)
 

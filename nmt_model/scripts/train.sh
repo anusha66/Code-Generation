@@ -42,6 +42,7 @@ python nmt.py \
    --max-decoding-time-step 20 \
    ${work_dir}/model.bin \
    ${test_src} \
+   ${test_tgt} \
    ${work_dir}/decode.txt
 
 perl multi-bleu.perl ${test_tgt_bleu} < ${work_dir}/decode.txt

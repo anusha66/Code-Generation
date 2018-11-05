@@ -197,10 +197,10 @@ class NMT(nn.Module):
             else:
                 x = y_tm1_embed
 
-            (h_t, cell_t), att_t, alpha_t = self.step(x, h_tm1, src_encodings, src_encoding_att_linear, src_sent_masks)
+            (cell_t, h_t), att_t, ctx_t = self.step(x, h_tm1, src_encodings, src_encoding_att_linear, src_sent_masks)
 
-            att_tm1 = att_t
-            h_tm1 = h_t, cell_t
+            att_tm1 = ctx_t
+            h_tm1 = (h_t, cell_t)
             att_ves.append(att_t)
 
         # (tgt_sent_len - 1, batch_size, tgt_vocab_size)
@@ -219,20 +219,21 @@ class NMT(nn.Module):
         att_t = torch.tanh(self.att_vec_linear(torch.cat([h_t, ctx_t], 1)))  # E.q. (5)
         att_t = self.dropout(att_t)
 
-        return (cell_t, h_t), att_t, alpha_t
+        return (cell_t, h_t), att_t, ctx_t
 
     def dot_prod_attention(self, h_t: torch.Tensor, src_encoding: torch.Tensor, src_encoding_att_linear: torch.Tensor,
                            mask: torch.Tensor=None) -> Tuple[torch.Tensor, torch.Tensor]:
-        # (batch_size, src_sent_len)
+        
+        # (batch_size, src_sent_len) - ENERGY - key, query
         att_weight = torch.bmm(src_encoding_att_linear, h_t.unsqueeze(2)).squeeze(2)
 
         if mask is not None:
             att_weight.data.masked_fill_(mask.byte(), -float('inf'))
-
+        # attention
         softmaxed_att_weight = F.softmax(att_weight, dim=-1)
 
         att_view = (att_weight.size(0), 1, att_weight.size(1))
-        # (batch_size, hidden_size)
+        # (batch_size, hidden_size) -  context, attention, valu -  context, attention, valuee
         ctx_vec = torch.bmm(softmaxed_att_weight.view(*att_view), src_encoding).squeeze(1)
 
         return ctx_vec, softmaxed_att_weight
@@ -273,8 +274,8 @@ class NMT(nn.Module):
             else:
                 x = y_tm1_embed
 
-            (h_t, cell_t), att_t, alpha_t = self.step(x, h_tm1,
-                                                      exp_src_encodings, exp_src_encodings_att_linear, src_sent_masks=None)
+            (cell_t, h_t), att_t, ctx_t = self.step(x, h_tm1,
+                                                     exp_src_encodings, exp_src_encodings_att_linear, src_sent_masks=None)
 
             # log probabilities over target words
             log_p_t = F.log_softmax(self.readout(att_t), dim=-1)
@@ -310,7 +311,7 @@ class NMT(nn.Module):
 
             live_hyp_ids = torch.tensor(live_hyp_ids, dtype=torch.long, device=self.device)
             h_tm1 = (h_t[live_hyp_ids], cell_t[live_hyp_ids])
-            att_tm1 = att_t[live_hyp_ids]
+            att_tm1 = ctx_t[live_hyp_ids]
 
             hypotheses = new_hypotheses
             hyp_scores = torch.tensor(new_hyp_scores, dtype=torch.float, device=self.device)
@@ -512,7 +513,7 @@ def train(args: Dict):
     vocab_mask = torch.ones(len(vocab.tgt))
     vocab_mask[vocab.tgt['<pad>']] = 0
 
-    device = torch.device("cuda:0" if args['--cuda'] else "cpu")
+    device = torch.device("cuda:2" if args['--cuda'] else "cpu")
     print('use device: %s' % device, file=sys.stderr)
 
     model = model.to(device)
@@ -673,7 +674,7 @@ def train_mcmc_raml(args: Dict):
     vocab_mask = torch.ones(len(vocab.tgt))
     vocab_mask[vocab.tgt['<pad>']] = 0
 
-    device = torch.device("cuda:0" if args['--cuda'] else "cpu")
+    device = torch.device("cuda:2" if args['--cuda'] else "cpu")
     print('use device: %s' % device, file=sys.stderr)
 
     model = model.to(device)
@@ -857,7 +858,7 @@ def decode(args: Dict[str, str]):
     model = NMT.load(args['MODEL_PATH'])
 
     if args['--cuda']:
-        model = model.to(torch.device("cuda:0"))
+        model = model.to(torch.device("cuda:2"))
 
     hypotheses = beam_search(model, test_data_src,
                              beam_size=int(args['--beam-size']),

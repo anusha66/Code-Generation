@@ -32,7 +32,18 @@ def read_corpus(file_path, source):
 #                 sent = list(line)
                 sent = ut.tokenize_code(line.strip(), mode='canonicalize')
                 sent = ['<s>'] + sent + ['</s>']
-            data.append(sent)
+                data.append(sent)
+            elif source == 'src':
+                
+                #sent = ut.tokenize_code(line.strip(), mode='canonicalize')
+                data.append(sent)
+            else:
+                print("WHAT")
+            #if source == 'src': #ocde2code
+            #    sent = ut.tokenize_code(line.strip(), mode='canonicalize')
+            #if source == 'src_code': #ocde2code
+            #    sent = ut.tokenize_code(line.strip(), mode='canonicalize')
+            #data.append(sent)
         except:
             data.append('DUMMY')
             failed_ids.append(i)
