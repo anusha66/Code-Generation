@@ -78,6 +78,7 @@ class NMT(nn.Module):
         self.input_feed = input_feed
         self.lm = lm
         self.copy = copy
+        self.eps = 1e-12
 
         self.src_embed = nn.Embedding(len(vocab.src), embed_size, padding_idx=vocab.src['<pad>'])
         self.tgt_embed = nn.Embedding(len(vocab.tgt), embed_size, padding_idx=vocab.tgt['<pad>'])
@@ -234,7 +235,7 @@ class NMT(nn.Module):
 
             final_dist_list = torch.stack(final_dist_list)
 
-            tgt_words_log_prob = torch.log(final_dist_list)
+            tgt_words_log_prob = torch.log(final_dist_list + self.eps)
             tgt_gold_words_log_prob = torch.gather(tgt_words_log_prob, index=tgt_sents_var_extended[1:].unsqueeze(-1),
                                                        dim=-1).squeeze(-1)
 
@@ -536,7 +537,7 @@ class NMT(nn.Module):
             final_dist = vocab_dist_.scatter_add(1, src_sents_extended.transpose(0, 1), attn_dist_)
 
             # log probabilities over target words
-            log_p_t = torch.log(final_dist)
+            log_p_t = torch.log(final_dist + self.eps)
 
             live_hyp_num = beam_size - len(completed_hypotheses)
             contiuating_hyp_scores = (hyp_scores.unsqueeze(1).expand_as(log_p_t) + log_p_t).view(-1)

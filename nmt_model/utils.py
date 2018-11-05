@@ -27,13 +27,14 @@ def read_corpus(file_path, source):
     
     for i, line in enumerate(lines):
         try:
-#             sent = list(line)
+
             sent = line.strip().split(' ')
             # only append <s> and </s> to the target sentence
             if source == 'tgt':
-#                 sent = list(line)
                 sent = ut.tokenize_code(line.strip(), mode='canonicalize')
                 sent = ['<s>'] + sent + ['</s>']
+            else:
+                sent = ut.tokenize_code(line.strip(), mode='canonicalize')
             data.append(sent)
         except:
             

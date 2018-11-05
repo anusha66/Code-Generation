@@ -133,7 +133,6 @@ class NMT(nn.Module):
 
                 (h_t, cell_t) = self.decoder_lstm(x, (h_t, cell_t))
 
-       
                 att_vecs.append(h_t)
 
             # (tgt_sent_len - 1, batch_size, tgt_vocab_size)
@@ -321,7 +320,7 @@ class NMT(nn.Module):
 
             if self.lm:
                 x = y_tm1_embed
-                (h_t, cell_t) = self.decoder_lstm(x, (h_t, cell_t))
+                (h_t, cell_t) = self.decoder_lstm(x, h_tm1)
                 att_t = h_t
             
             else:
@@ -380,90 +379,7 @@ class NMT(nn.Module):
 
         return completed_hypotheses
 
-    def sample(self, src_sents: List[List[str]], sample_size=5, max_decoding_time_step=100):
-        src_sents_var = self.vocab.src.to_input_tensor(src_sents, self.device)
-
-        src_encodings, dec_init_vec = self.encode(src_sents_var, [len(sent) for sent in src_sents])
-        src_encodings_att_linear = self.att_src_linear(src_encodings)
-
-        h_tm1 = dec_init_vec
-
-        batch_size = len(src_sents)
-        total_sample_size = sample_size * len(src_sents)
-
-        # (total_sample_size, max_src_len, src_encoding_size)
-        src_encodings = src_encodings.repeat(sample_size, 1, 1)
-        src_encodings_att_linear = src_encodings_att_linear.repeat(sample_size, 1, 1)
-
-        src_sent_masks = self.get_attention_mask(src_encodings, [len(sent) for _ in range(sample_size) for sent in src_sents])
-
-        h_tm1 = (h_tm1[0].repeat(sample_size, 1), h_tm1[1].repeat(sample_size, 1))
-
-        att_tm1 = torch.zeros(total_sample_size, self.hidden_size, device=self.device)
-
-        eos_id = self.vocab.tgt['</s>']
-        sample_ends = torch.zeros(total_sample_size, dtype=torch.uint8, device=self.device)
-        sample_scores = torch.zeros(total_sample_size, device=self.device)
-
-        samples = [torch.tensor([self.vocab.tgt['<s>']] * total_sample_size, dtype=torch.long, device=self.device)]
-
-        t = 0
-        while t < max_decoding_time_step:
-            t += 1
-
-            y_tm1 = samples[-1]
-
-            y_tm1_embed = self.tgt_embed(y_tm1)
-
-            if self.input_feed:
-                x = torch.cat([y_tm1_embed, att_tm1], 1)
-            else:
-                x = y_tm1_embed
-
-            (h_t, cell_t), att_t, alpha_t = self.step(x, h_tm1,
-                                                      src_encodings, src_encodings_att_linear,
-                                                      src_sent_masks=src_sent_masks)
-
-            # probabilities over target words
-            p_t = F.softmax(self.readout(att_t), dim=-1)
-            log_p_t = torch.log(p_t)
-
-            # (total_sample_size)
-            y_t = torch.multinomial(p_t, num_samples=1)
-            log_p_y_t = torch.gather(log_p_t, 1, y_t).squeeze(1)
-            y_t = y_t.squeeze(1)
-
-            samples.append(y_t)
-
-            sample_ends |= torch.eq(y_t, eos_id).byte()
-            sample_scores = sample_scores + log_p_y_t * (1. - sample_ends.float())
-
-            if torch.all(sample_ends):
-                break
-
-            att_tm1 = att_t
-            h_tm1 = (h_t, cell_t)
-
-        _completed_samples = [[[] for _1 in range(sample_size)] for _2 in range(batch_size)]
-        for t, y_t in enumerate(samples):
-            for i, sampled_word_id in enumerate(y_t):
-                sampled_word_id = sampled_word_id.cpu().item()
-                src_sent_id = i % batch_size
-                sample_id = i // batch_size
-
-                if t == 0 or _completed_samples[src_sent_id][sample_id][-1] != eos_id:
-                    _completed_samples[src_sent_id][sample_id].append(sampled_word_id)
-
-        completed_samples = [[None for _1 in range(sample_size)] for _2 in range(batch_size)]
-        for src_sent_id in range(batch_size):
-            for sample_id in range(sample_size):
-                offset = sample_id * batch_size + src_sent_id
-                hyp = Hypothesis(value=self.vocab.tgt.indices2words(_completed_samples[src_sent_id][sample_id])[:-1],
-                                 score=sample_scores[offset].item())
-                completed_samples[src_sent_id][sample_id] = hyp
-
-        return completed_samples
-
+ 
     @staticmethod
     def load(model_path: str):
         params = torch.load(model_path, map_location=lambda storage, loc: storage)
@@ -521,10 +437,10 @@ def compute_corpus_level_bleu_score(references: List[List[str]], hypotheses: Lis
 
 def train(args: Dict):
     
-    train_data_src, failed_train_src_ids = read_corpus(args['--train-src'], source='src')
+    train_data_src, failed_train_src_ids = read_corpus(args['--train-src'], source='tgt')
     train_data_tgt, failed_train_tgt_ids = read_corpus(args['--train-tgt'], source='tgt')
 
-    dev_data_src, failed_dev_src_ids = read_corpus(args['--dev-src'], source='src')
+    dev_data_src, failed_dev_src_ids = read_corpus(args['--dev-src'], source='tgt')
     dev_data_tgt, failed_dev_tgt_ids = read_corpus(args['--dev-tgt'], source='tgt')
     
     total_failed_ids = set(failed_train_src_ids).union(failed_train_tgt_ids)
@@ -534,12 +450,6 @@ def train(args: Dict):
     total_failed_ids = set(failed_dev_src_ids).union(failed_dev_tgt_ids)
     dev_data_src = [dev_data_src[i] for i in range(len(dev_data_src)) if i not in total_failed_ids]
     dev_data_tgt = [dev_data_tgt[i] for i in range(len(dev_data_tgt)) if i not in total_failed_ids]
-    
-#     train_data_src = read_corpus(args['--train-src'], source='src')
-#     train_data_tgt = read_corpus(args['--train-tgt'], source='tgt')
-
-#     dev_data_src = read_corpus(args['--dev-src'], source='src')
-#     dev_data_tgt = read_corpus(args['--dev-tgt'], source='tgt')
 
     train_data = list(zip(train_data_src, train_data_tgt))
     dev_data = list(zip(dev_data_src, dev_data_tgt))
@@ -558,7 +468,7 @@ def train(args: Dict):
                 input_feed=False,
                 label_smoothing=float(args['--label-smoothing']),
                 vocab=vocab,
-               lm=False)
+               lm=True)
     model.train()
 
     uniform_init = float(args['--uniform-init'])
@@ -570,12 +480,10 @@ def train(args: Dict):
     vocab_mask = torch.ones(len(vocab.tgt))
     vocab_mask[vocab.tgt['<pad>']] = 0
 
-    device = torch.device("cuda:0" if args['--cuda'] else "cpu")
+    device = torch.device("cuda:4" if args['--cuda'] else "cpu")
     print('use device: %s' % device, file=sys.stderr)
 
     model = model.to(device)
-#     model.cuda()
-
     optimizer = torch.optim.Adam(model.parameters(), lr=float(args['--lr']))
 
     num_trial = 0
@@ -692,192 +600,6 @@ def train(args: Dict):
                 exit(0)
 
 
-def train_mcmc_raml(args: Dict):
-    train_data_src = read_corpus(args['--train-src'], source='src')
-    train_data_tgt = read_corpus(args['--train-tgt'], source='tgt')
-
-    dev_data_src = read_corpus(args['--dev-src'], source='src')
-    dev_data_tgt = read_corpus(args['--dev-tgt'], source='tgt')
-
-    train_data = list(zip(train_data_src, train_data_tgt))
-    dev_data = list(zip(dev_data_src, dev_data_tgt))
-
-    train_batch_size = int(args['--batch-size'])
-    clip_grad = float(args['--clip-grad'])
-    valid_niter = int(args['--valid-niter'])
-    log_every = int(args['--log-every'])
-    model_save_path = args['--save-to']
-    sample_size = int(args['--sample-size'])
-
-    vocab = pickle.load(open(args['--vocab'], 'rb'))
-
-    print(f"load proposal model from {args['--proposal-model']}", file=sys.stderr)
-    proposal_model = NMT.load(args['--proposal-model'])
-    proposal_model.eval()
-
-    model = NMT(embed_size=int(args['--embed-size']),
-                hidden_size=int(args['--hidden-size']),
-                dropout_rate=float(args['--dropout']),
-                input_feed=args['--input-feed'],
-                vocab=vocab)
-    model.train()
-
-    uniform_init = float(args['--uniform-init'])
-    if np.abs(uniform_init) > 0.:
-        print('uniformly initialize parameters [-%f, +%f]' % (uniform_init, uniform_init), file=sys.stderr)
-        for p in model.parameters():
-            p.data.uniform_(-uniform_init, uniform_init)
-
-    vocab_mask = torch.ones(len(vocab.tgt))
-    vocab_mask[vocab.tgt['<pad>']] = 0
-
-    device = torch.device("cuda:0" if args['--cuda'] else "cpu")
-    print('use device: %s' % device, file=sys.stderr)
-
-    model = model.to(device)
-    proposal_model = proposal_model.to(device)
-
-    optimizer = torch.optim.Adam(model.parameters(), lr=float(args['--lr']))
-
-    num_trial = 0
-    train_iter = patience = cum_loss = report_loss = cum_tgt_words = report_tgt_words = 0
-    cum_examples = report_examples = epoch = valid_num = 0
-    hist_valid_scores = []
-    train_time = begin_time = time.time()
-    print('begin MCMC RAML training')
-
-    while True:
-        epoch += 1
-
-        for src_sents, tgt_sents in batch_iter(train_data, batch_size=train_batch_size, shuffle=True):
-            train_iter += 1
-
-            optimizer.zero_grad()
-
-            with torch.no_grad():
-                p_gold_ys = proposal_model(src_sents, tgt_sents).numpy()
-
-                # generate samples
-                samples = proposal_model.sample(src_sents, sample_size=sample_size)
-
-            valid_samples = []
-            for src_sent_id, src_sent in enumerate(src_sents):
-                tgt_sent = tgt_sents[src_sent_id][1:-1]
-                p_gold_y = p_gold_ys[src_sent_id]
-                for sample_id in range(sample_size):
-                    sample = samples[src_sent_id][sample_id]
-                    r_i = raml_utils.get_reward(tgt_sent, sample.value)
-
-                    if raml_utils.mcmc_accept(p_gold_y, 1., sample.score, r_i, tau=1.):
-                    # if True:
-                        valid_samples.append((src_sent, sample.value))
-
-            total_sample_num = len(valid_samples)
-            print(f'Num. samples={len(total_sample_num)}', file=sys.stderr)
-            if total_sample_num == 0:
-                continue
-
-            retained_src_sents, retained_tgt_sents = zip(*valid_samples)
-
-            # (batch_size)
-            example_losses = -model(retained_src_sents, retained_tgt_sents)
-            batch_loss = example_losses.sum()
-            loss = batch_loss / total_sample_num
-
-            loss.backward()
-
-            # clip gradient
-            grad_norm = torch.nn.utils.clip_grad_norm(model.parameters(), clip_grad)
-
-            optimizer.step()
-
-            batch_losses_val = batch_loss.item()
-            report_loss += batch_losses_val
-            cum_loss += batch_losses_val
-
-            del loss, batch_loss
-
-            tgt_words_num_to_predict = sum(len(s[1:]) for s in retained_tgt_sents)  # omitting leading `<s>`
-            report_tgt_words += tgt_words_num_to_predict
-            cum_tgt_words += tgt_words_num_to_predict
-            report_examples += total_sample_num
-            cum_examples += total_sample_num
-
-            if train_iter % log_every == 0:
-                print('epoch %d, iter %d, avg. loss %.2f, avg. ppl %.2f ' \
-                      'cum. examples %d, speed %.2f words/sec, time elapsed %.2f sec' % (epoch, train_iter,
-                                                                                         report_loss / report_examples,
-                                                                                         math.exp(report_loss / report_tgt_words),
-                                                                                         cum_examples,
-                                                                                         report_tgt_words / (time.time() - train_time),
-                                                                                         time.time() - begin_time), file=sys.stderr)
-
-                train_time = time.time()
-                report_loss = report_tgt_words = report_examples = 0.
-
-            # perform validation
-            if train_iter % valid_niter == 0:
-                print('epoch %d, iter %d, cum. loss %.2f, cum. ppl %.2f cum. examples %d' % (epoch, train_iter,
-                                                                                         cum_loss / cum_examples,
-                                                                                         np.exp(cum_loss / cum_tgt_words),
-                                                                                         cum_examples), file=sys.stderr)
-
-                cum_loss = cum_examples = cum_tgt_words = 0.
-                valid_num += 1
-
-                print('begin validation ...', file=sys.stderr)
-
-                # compute dev. ppl and bleu
-                dev_ppl = evaluate_ppl(model, dev_data, batch_size=16)   # dev batch size can be a bit larger
-                valid_metric = -dev_ppl
-
-                print('validation: iter %d, dev. ppl %f' % (train_iter, dev_ppl), file=sys.stderr)
-
-                is_better = len(hist_valid_scores) == 0 or valid_metric > max(hist_valid_scores)
-                hist_valid_scores.append(valid_metric)
-
-                if is_better:
-                    patience = 0
-                    print('save currently the best model to [%s]' % model_save_path, file=sys.stderr)
-                    model.save(model_save_path)
-
-                    # also save the optimizers' state
-                    torch.save(optimizer.state_dict(), model_save_path + '.optim')
-                elif patience < int(args['--patience']):
-                    patience += 1
-                    print('hit patience %d' % patience, file=sys.stderr)
-
-                    if patience == int(args['--patience']):
-                        num_trial += 1
-                        print('hit #%d trial' % num_trial, file=sys.stderr)
-                        if num_trial == int(args['--max-num-trial']):
-                            print('early stop!', file=sys.stderr)
-                            exit(0)
-
-                        # decay lr, and restore from previously best checkpoint
-                        lr = optimizer.param_groups[0]['lr'] * float(args['--lr-decay'])
-                        print('load previously best model and decay learning rate to %f' % lr, file=sys.stderr)
-
-                        # load model
-                        params = torch.load(model_save_path, map_location=lambda storage, loc: storage)
-                        model.load_state_dict(params['state_dict'])
-                        model = model.to(device)
-
-                        print('restore parameters of the optimizers', file=sys.stderr)
-                        optimizer.load_state_dict(torch.load(model_save_path + '.optim'))
-
-                        # set new lr
-                        for param_group in optimizer.param_groups:
-                            param_group['lr'] = lr
-
-                        # reset patience
-                        patience = 0
-
-            if epoch == int(args['--max-epoch']):
-                print('reached maximum number of epochs!', file=sys.stderr)
-                exit(0)
-
-
 def beam_search(model: NMT, test_data_src: List[List[str]], beam_size: int, max_decoding_time_step: int) -> List[List[Hypothesis]]:
     was_training = model.training
     model.eval()
@@ -896,27 +618,20 @@ def beam_search(model: NMT, test_data_src: List[List[str]], beam_size: int, max_
 
 def decode(args: Dict[str, str]):
     
-    test_data_src, failed_ids_src = read_corpus(args['TEST_SOURCE_FILE'], source='src')
+    test_data_src, failed_ids_src = read_corpus(args['TEST_SOURCE_FILE'], source='tgt')
     
     test_data_tgt, failed_ids_tgt = read_corpus(args['TEST_TARGET_FILE'], source='tgt')
     
     total_failed_ids = set(failed_ids_src).union(failed_ids_tgt)
     test_data_src = [test_data_src[i] for i in range(len(test_data_src)) if i not in total_failed_ids]
     test_data_tgt = [test_data_tgt[i] for i in range(len(test_data_tgt)) if i not in total_failed_ids]
-    
-    
-    
-#     print(f"load test source sentences from [{args['TEST_SOURCE_FILE']}]", file=sys.stderr)
-#     test_data_src = read_corpus(args['TEST_SOURCE_FILE'], source='src')
-#     if args['TEST_TARGET_FILE']:
-#         print(f"load test target sentences from [{args['TEST_TARGET_FILE']}]", file=sys.stderr)
-#         test_data_tgt = read_corpus(args['TEST_TARGET_FILE'], source='tgt')
+   
 
     print(f"load model from {args['MODEL_PATH']}", file=sys.stderr)
     model = NMT.load(args['MODEL_PATH'])
 
     if args['--cuda']:
-        model = model.to(torch.device("cuda:0"))
+        model = model.to(torch.device("cuda:4"))
 
     hypotheses = beam_search(model, test_data_src,
                              beam_size=int(args['--beam-size']),
@@ -936,7 +651,6 @@ def decode(args: Dict[str, str]):
 
 def main():
     args = docopt(__doc__)
-
     # seed the RNG
     seed = int(args['--seed'])
     torch.manual_seed(seed)
@@ -949,8 +663,6 @@ def main():
         train(args)
     elif args['decode']:
         decode(args)
-    elif args['train-mcmc-raml']:
-        train_mcmc_raml(args)
     else:
         raise RuntimeError(f'invalid run mode')
 

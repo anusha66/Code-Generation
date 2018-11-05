@@ -1,10 +1,8 @@
 #!/bin/sh
 
-vocab="data/new_vocab.bin"
+vocab="data/vocab.bin"
 train_src="data/nl_train.txt"
 train_tgt="data/code_train.txt"
-# train_src="data/nl2code/valid.de-en.de"
-# train_tgt="data/nl2code/valid.de-en.en"
 dev_src="data/nl_dev.txt"
 dev_tgt="data/code_dev.txt"
 test_src="data/nl_test.txt"
@@ -17,7 +15,7 @@ work_dir="work_dir"
 mkdir -p ${work_dir}
 echo save results to ${work_dir}
 
-python nmt_copy.py \
+python nmt.py \
     train \
     --cuda \
     --vocab ${vocab} \
@@ -27,7 +25,7 @@ python nmt_copy.py \
     --dev-tgt ${dev_tgt} \
     --save-to ${work_dir}/model.bin \
     --valid-niter 200 \
-    --batch-size 32 \
+    --batch-size 16 \
     --hidden-size 256 \
     --embed-size 256 \
     --uniform-init 0.1 \
@@ -35,14 +33,14 @@ python nmt_copy.py \
     --clip-grad 5.0 \
     --lr-decay 0.5 2>${work_dir}/err.log
 
-# python nmt.py \
-#    decode \
-#    --cuda \
-#    --beam-size 5 \
-#    --max-decoding-time-step 20 \
-#    ${work_dir}/model.bin \
-#    ${test_src} \
-#    ${test_tgt} \
-#    ${work_dir}/decode.txt
+python nmt.py \
+   decode \
+   --cuda \
+   --beam-size 5 \
+   --max-decoding-time-step 20 \
+   ${work_dir}/model.bin \
+   ${test_src} \
+   ${test_tgt} \
+   ${work_dir}/decode.txt
 
-# perl multi-bleu.perl ${test_tgt_bleu} < ${work_dir}/decode.txt
+perl multi-bleu.perl ${test_tgt_bleu} < ${work_dir}/decode.txt
