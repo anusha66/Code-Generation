@@ -91,7 +91,9 @@ class NMT(nn.Module):
 
         # transformation of decoder hidden states and context vectors before reading out target words
         # this produces the `attentional vector` in (Luong et al., 2015)
-        self.att_vec_linear = nn.Linear(hidden_size * 2 + hidden_size, hidden_size, bias=False)
+        self.att_vec_linear = nn.Linear(hidden_size, hidden_size, bias=False)
+        
+#         self.att_vec_linear = nn.Linear(hidden_size * 2 + hidden_size, hidden_size, bias=False)
 
         # prediction layer of the target vocabulary
         self.readout = nn.Linear(hidden_size, len(vocab.tgt), bias=False)
@@ -115,6 +117,7 @@ class NMT(nn.Module):
         
         
         if self.lm:
+            
              # (tgt_sent_len, batch_size)
             tgt_sents_var = self.vocab.tgt.to_input_tensor(tgt_sents, device=self.device)
             
@@ -130,10 +133,12 @@ class NMT(nn.Module):
                 y_tm1_embed = y_tm1_embed.squeeze(0)
                 
                 x = y_tm1_embed
-
                 (h_t, cell_t) = self.decoder_lstm(x, (h_t, cell_t))
-
-                att_vecs.append(h_t)
+                att_t = torch.tanh(self.att_vec_linear(h_t))
+                
+                att_t = self.dropout(att_t)
+                                   
+                att_vecs.append(att_t)
 
             # (tgt_sent_len - 1, batch_size, tgt_vocab_size)
             att_vecs = torch.stack(att_vecs)
@@ -318,19 +323,19 @@ class NMT(nn.Module):
             y_tm1 = torch.tensor([self.vocab.tgt[hyp[-1]] for hyp in hypotheses], dtype=torch.long, device=self.device)
             y_tm1_embed = self.tgt_embed(y_tm1)
 
-            if self.lm:
-                x = y_tm1_embed
-                (h_t, cell_t) = self.decoder_lstm(x, h_tm1)
-                att_t = h_t
+            x = y_tm1_embed
+            (h_t, cell_t) = self.decoder_lstm(x, h_tm1)
+            att_t = torch.tanh(self.att_vec_linear(h_t))  # E.q. (5)
+            att_t = self.dropout(att_t)
             
-            else:
-                if self.input_feed:
-                    x = torch.cat([y_tm1_embed, att_tm1], dim=-1)
-                else:
-                    x = y_tm1_embed
+#             else:
+#                 if self.input_feed:
+#                     x = torch.cat([y_tm1_embed, att_tm1], dim=-1)
+#                 else:
+#                     x = y_tm1_embed
 
-                (h_t, cell_t), att_t, alpha_t = self.step(x, h_tm1,
-                                                      exp_src_encodings, exp_src_encodings_att_linear, src_sent_masks=None)
+#                 (h_t, cell_t), att_t, alpha_t = self.step(x, h_tm1,
+#                                                       exp_src_encodings, exp_src_encodings_att_linear, src_sent_masks=None)
 
             # log probabilities over target words
             log_p_t = F.log_softmax(self.readout(att_t), dim=-1)
@@ -633,7 +638,7 @@ def decode(args: Dict[str, str]):
     if args['--cuda']:
         model = model.to(torch.device("cuda:4"))
 
-    hypotheses = beam_search(model, test_data_src,
+    hypotheses = beam_search(model, test_data_tgt,
                              beam_size=int(args['--beam-size']),
                              max_decoding_time_step=int(args['--max-decoding-time-step']))
 
