@@ -355,7 +355,11 @@ class NMT(nn.Module):
                 hyp_word = self.vocab.tgt.id2word[hyp_word_id]
                 new_hyp_sent = hypotheses[prev_hyp_id] + [hyp_word]
                 if hyp_word == '</s>':
-                    completed_hypotheses.append(Hypothesis(value=new_hyp_sent[1:-1],
+                    if len(new_hyp_sent[1:-1])!=0:
+                        completed_hypotheses.append(Hypothesis(value=new_hyp_sent[1:-1],
+                                                           score=cand_new_hyp_score/len(new_hyp_sent[1:-1])))
+                    else:
+                        completed_hypotheses.append(Hypothesis(value=new_hyp_sent[1:-1],
                                                            score=cand_new_hyp_score))
                 else:
                     new_hypotheses.append(new_hyp_sent)
@@ -373,8 +377,12 @@ class NMT(nn.Module):
             hyp_scores = torch.tensor(new_hyp_scores, dtype=torch.float, device=self.device)
 
         if len(completed_hypotheses) == 0:
-            completed_hypotheses.append(Hypothesis(value=hypotheses[0][1:],
+            if len((hypotheses[0][1:])) == 0:
+                completed_hypotheses.append(Hypothesis(value=hypotheses[0][1:],
                                                    score=hyp_scores[0].item()))
+            else:
+                completed_hypotheses.append(Hypothesis(value=hypotheses[0][1:],
+                                                   score=hyp_scores[0].item()/len(hypotheses[0][1:])))
 
         completed_hypotheses.sort(key=lambda hyp: hyp.score, reverse=True)
 
@@ -570,7 +578,7 @@ def train(args: Dict):
     vocab_mask = torch.ones(len(vocab.tgt))
     vocab_mask[vocab.tgt['<pad>']] = 0
 
-    device = torch.device("cuda:0" if args['--cuda'] else "cpu")
+    device = torch.device("cuda:3" if args['--cuda'] else "cpu")
     print('use device: %s' % device, file=sys.stderr)
 
     model = model.to(device)
@@ -909,7 +917,11 @@ def decode(args: Dict[str, str]):
     model = NMT.load(args['MODEL_PATH'])
 
     if args['--cuda']:
+<<<<<<< Updated upstream
         model = model.to(torch.device("cuda:0"))
+=======
+        model = model.to(torch.device("cuda:3"))
+>>>>>>> Stashed changes
 
     hypotheses = beam_search(model, test_data_src,
                              beam_size=int(args['--beam-size']),

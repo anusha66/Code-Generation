@@ -1,5 +1,6 @@
 #!/bin/sh
 
+
 # vocab="data/vocab.bin"
 # train_src="data/nl_train.txt"
 # train_tgt="data/code_train.txt"
@@ -11,7 +12,6 @@
 # test_tgt="data/code_test.txt"
 # test_tgt_bleu="data/code_test_bleu.txt"
 # dev_tgt_bleu="data/code_dev_bleu.txt"
-
 
 vocab="/home/anushap/Code-Generation/nmt_model/data/code2code/vocab.bin"
 train_src="/home/anushap/Code-Generation/nmt_model/data/code2code/nl_train.txt"
