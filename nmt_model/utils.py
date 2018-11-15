@@ -34,7 +34,8 @@ def read_corpus(file_path, source):
                 sent = ut.tokenize_code(line.strip(), mode='canonicalize')
                 sent = ['<s>'] + sent + ['</s>']
             else:
-                sent = ut.tokenize_code(line.strip(), mode='canonicalize')
+#                 sent = ut.tokenize_code(line.strip(), mode='canonicalize')
+                sent = line.strip().split(' ')
             data.append(sent)
         except:
             

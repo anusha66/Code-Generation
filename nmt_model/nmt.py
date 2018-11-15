@@ -359,8 +359,14 @@ class NMT(nn.Module):
                 hyp_word = self.vocab.tgt.id2word[hyp_word_id]
                 new_hyp_sent = hypotheses[prev_hyp_id] + [hyp_word]
                 if hyp_word == '</s>':
-                    completed_hypotheses.append(Hypothesis(value=new_hyp_sent[1:-1],
+                    if len(new_hyp_sent[1:-1])!=0:
+                        completed_hypotheses.append(Hypothesis(value=new_hyp_sent[1:-1],
+                                                           score=cand_new_hyp_score/len(new_hyp_sent[1:-1])))
+                    else:
+                        completed_hypotheses.append(Hypothesis(value=new_hyp_sent[1:-1],
                                                            score=cand_new_hyp_score))
+#                     completed_hypotheses.append(Hypothesis(value=new_hyp_sent[1:-1],
+#                                                            score=cand_new_hyp_score))
                 else:
                     new_hypotheses.append(new_hyp_sent)
                     live_hyp_ids.append(prev_hyp_id)
@@ -377,8 +383,14 @@ class NMT(nn.Module):
             hyp_scores = torch.tensor(new_hyp_scores, dtype=torch.float, device=self.device)
 
         if len(completed_hypotheses) == 0:
-            completed_hypotheses.append(Hypothesis(value=hypotheses[0][1:],
+            if len((hypotheses[0][1:])) == 0:
+                completed_hypotheses.append(Hypothesis(value=hypotheses[0][1:],
                                                    score=hyp_scores[0].item()))
+            else:
+                completed_hypotheses.append(Hypothesis(value=hypotheses[0][1:],
+                                                   score=hyp_scores[0].item()/len(hypotheses[0][1:])))
+#             completed_hypotheses.append(Hypothesis(value=hypotheses[0][1:],
+#                                                    score=hyp_scores[0].item()))
 
         completed_hypotheses.sort(key=lambda hyp: hyp.score, reverse=True)
 
@@ -442,10 +454,10 @@ def compute_corpus_level_bleu_score(references: List[List[str]], hypotheses: Lis
 
 def train(args: Dict):
     
-    train_data_src, failed_train_src_ids = read_corpus(args['--train-src'], source='tgt')
+    train_data_src, failed_train_src_ids = read_corpus(args['--train-src'], source='src')
     train_data_tgt, failed_train_tgt_ids = read_corpus(args['--train-tgt'], source='tgt')
 
-    dev_data_src, failed_dev_src_ids = read_corpus(args['--dev-src'], source='tgt')
+    dev_data_src, failed_dev_src_ids = read_corpus(args['--dev-src'], source='src')
     dev_data_tgt, failed_dev_tgt_ids = read_corpus(args['--dev-tgt'], source='tgt')
     
     total_failed_ids = set(failed_train_src_ids).union(failed_train_tgt_ids)
@@ -485,7 +497,7 @@ def train(args: Dict):
     vocab_mask = torch.ones(len(vocab.tgt))
     vocab_mask[vocab.tgt['<pad>']] = 0
 
-    device = torch.device("cuda:4" if args['--cuda'] else "cpu")
+    device = torch.device("cuda:0" if args['--cuda'] else "cpu")
     print('use device: %s' % device, file=sys.stderr)
 
     model = model.to(device)
@@ -623,7 +635,7 @@ def beam_search(model: NMT, test_data_src: List[List[str]], beam_size: int, max_
 
 def decode(args: Dict[str, str]):
     
-    test_data_src, failed_ids_src = read_corpus(args['TEST_SOURCE_FILE'], source='tgt')
+    test_data_src, failed_ids_src = read_corpus(args['TEST_SOURCE_FILE'], source='src')
     
     test_data_tgt, failed_ids_tgt = read_corpus(args['TEST_TARGET_FILE'], source='tgt')
     
@@ -636,7 +648,7 @@ def decode(args: Dict[str, str]):
     model = NMT.load(args['MODEL_PATH'])
 
     if args['--cuda']:
-        model = model.to(torch.device("cuda:4"))
+        model = model.to(torch.device("cuda:0"))
 
     hypotheses = beam_search(model, test_data_tgt,
                              beam_size=int(args['--beam-size']),
