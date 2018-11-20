@@ -39,6 +39,7 @@ def read_corpus(file_path, source):
                  sent = ut.tokenize_code(line.strip(), mode='canonicalize')
                  data.append(sent)
             elif source == 'src_nl':
+                #sent = ut.tokenize_code(line.strip(), mode='canonicalize')
                 data.append(sent)
             else:
                 print("WHAT")

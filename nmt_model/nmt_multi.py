@@ -132,7 +132,7 @@ class NMT(nn.Module):
         src_nl_sents_len = [len(s) for s in src_nl_sents_str]
 
         src_code_encodings, decoder_init_vec_code = self.encode_code(src_code_sents_var, src_code_sents_len)
-        src_nl_encodings, decoder_init_vec_nl = self.encode_nl(src_nl_sents_var, src_code_sents_order, src_nl_sents_order, src_nl_sents_len)
+        src_nl_encodings, src_nl_sents_len, decoder_init_vec_nl = self.encode_nl(src_nl_sents_var, src_code_sents_order, src_nl_sents_order, src_nl_sents_len)
         src_code_sent_masks = self.get_attention_mask(src_code_encodings, src_code_sents_len)
         src_nl_sent_masks = self.get_attention_mask(src_nl_encodings, src_nl_sents_len)
         # (tgt_sent_len - 1, batch_size, hidden_size)
@@ -202,11 +202,12 @@ class NMT(nn.Module):
 
         src_nl_encodings_new2 = torch.stack(src_nl_encodings_new1)
 
+        src_nl_sent_lens_new = [src_nl_sent_lens[e] for e in src_code_sents_order]
 
         dec_init_cell = self.decoder_cell_init(torch.cat([last_cell[0], last_cell[1]], dim=1))
         dec_init_state = torch.tanh(dec_init_cell)
 
-        return src_nl_encodings_new2, (dec_init_state, dec_init_cell)
+        return src_nl_encodings_new2, src_nl_sent_lens_new, (dec_init_state, dec_init_cell)
 
     def decode(self, src_code_encodings: torch.Tensor, src_code_sent_masks: torch.Tensor, src_nl_encodings: torch.Tensor, src_nl_sent_masks: torch.Tensor,
                decoder_init_vec_code: Tuple[torch.Tensor, torch.Tensor], decoder_init_vec_nl: Tuple[torch.Tensor, torch.Tensor], tgt_sents_var: torch.Tensor) -> torch.Tensor:
@@ -269,10 +270,8 @@ class NMT(nn.Module):
         
         # (batch_size, src_sent_len)
         att_weight = torch.bmm(src_encoding_att_linear, h_t.unsqueeze(2)).squeeze(2)
-
         if mask is not None:
             att_weight.data.masked_fill_(mask.byte(), -float('inf'))
-
         softmaxed_att_weight = F.softmax(att_weight, dim=-1)
 
         att_view = (att_weight.size(0), 1, att_weight.size(1))
@@ -291,8 +290,8 @@ class NMT(nn.Module):
         src_code_sents_var = self.vocab.src_code.to_input_tensor([src_code_sent_str], self.device)
         src_nl_sents_var = self.vocab.src_nl.to_input_tensor([src_nl_sent_str], self.device)
 
-        src_code_encodings, dec_init_vec_code = self.encode_code(src_code_sents_var, [len(src_code_sent)])
-        src_nl_encodings, dec_init_vec_nl = self.encode_nl(src_nl_sents_var, [src_code_sent_order], [src_nl_sent_order], [len(src_nl_sent)])
+        src_code_encodings, dec_init_vec_code = self.encode_code(src_code_sents_var, [len(src_code_sents_var)])
+        src_nl_encodings, src_nl_len, dec_init_vec_nl = self.encode_nl(src_nl_sents_var, [src_code_sent_order], [src_nl_sent_order], [len(src_nl_sents_var)])
 
         src_code_encodings_att_linear = self.att_src_code_linear(src_code_encodings)
         src_nl_encodings_att_linear = self.att_src_nl_linear(src_nl_encodings)
@@ -306,9 +305,8 @@ class NMT(nn.Module):
         hypotheses = [['<s>']]
         hyp_scores = torch.zeros(len(hypotheses), dtype=torch.float, device=self.device)
         completed_hypotheses = []
-
         t = 0
-        while len(completed_hypotheses) < beam_size and t < max_decoding_time_step:
+        while len(completed_hypotheses) < beam_size  and t < max_decoding_time_step:
             t += 1
             hyp_num = len(hypotheses)
 
@@ -340,7 +338,7 @@ class NMT(nn.Module):
 
             # log probabilities over target words
             log_p_t = F.log_softmax(self.readout(att_t), dim=-1)
-
+            
             live_hyp_num = beam_size - len(completed_hypotheses)
             contiuating_hyp_scores = (hyp_scores.unsqueeze(1).expand_as(log_p_t) + log_p_t).view(-1)
             top_cand_hyp_scores, top_cand_hyp_pos = torch.topk(contiuating_hyp_scores, k=live_hyp_num)
@@ -360,8 +358,17 @@ class NMT(nn.Module):
                 hyp_word = self.vocab.tgt.id2word[hyp_word_id]
                 new_hyp_sent = hypotheses[prev_hyp_id] + [hyp_word]
                 if hyp_word == '</s>':
-                    completed_hypotheses.append(Hypothesis(value=new_hyp_sent[1:-1],
+    
+                    #completed_hypotheses.append(Hypothesis(value=new_hyp_sent[1:-1],
+                    #                                       score=cand_new_hyp_score))
+                    
+                    if len(new_hyp_sent[1:-1])!=0:
+                        completed_hypotheses.append(Hypothesis(value=new_hyp_sent[1:-1],
+                                                           score=cand_new_hyp_score/len(new_hyp_sent[1:-1])))
+                    else:
+                        completed_hypotheses.append(Hypothesis(value=new_hyp_sent[1:-1],
                                                            score=cand_new_hyp_score))
+                   
                 else:
                     new_hypotheses.append(new_hyp_sent)
                     live_hyp_ids.append(prev_hyp_id)
@@ -378,9 +385,16 @@ class NMT(nn.Module):
             hyp_scores = torch.tensor(new_hyp_scores, dtype=torch.float, device=self.device)
 
         if len(completed_hypotheses) == 0:
-            completed_hypotheses.append(Hypothesis(value=hypotheses[0][1:],
+            #completed_hypotheses.append(Hypothesis(value=hypotheses[0][1:],
+            #                                       score=hyp_scores[0].item()))
+            
+            if len((hypotheses[0][1:])) == 0:
+               completed_hypotheses.append(Hypothesis(value=hypotheses[0][1:],
                                                    score=hyp_scores[0].item()))
-
+            else:
+               completed_hypotheses.append(Hypothesis(value=hypotheses[0][1:],
+                                                   score=hyp_scores[0].item()/len(hypotheses[0][1:])))
+             
         completed_hypotheses.sort(key=lambda hyp: hyp.score, reverse=True)
 
         return completed_hypotheses
@@ -579,7 +593,7 @@ def train(args: Dict):
     vocab_mask = torch.ones(len(vocab.tgt))
     vocab_mask[vocab.tgt['<pad>']] = 0
 
-    device = torch.device("cuda:2" if args['--cuda'] else "cpu")
+    device = torch.device("cuda:1" if args['--cuda'] else "cpu")
     print('use device: %s' % device, file=sys.stderr)
 
     model = model.to(device)
@@ -739,7 +753,7 @@ def train_mcmc_raml(args: Dict):
     vocab_mask = torch.ones(len(vocab.tgt))
     vocab_mask[vocab.tgt['<pad>']] = 0
 
-    device = torch.device("cuda:2" if args['--cuda'] else "cpu")
+    device = torch.device("cuda:1" if args['--cuda'] else "cpu")
     print('use device: %s' % device, file=sys.stderr)
 
     model = model.to(device)
@@ -930,8 +944,8 @@ def decode(args: Dict[str, str]):
     model = NMT.load(args['MODEL_PATH'])
 
     if args['--cuda']:
-        model = model.to(torch.device("cuda:2"))
-
+        model = model.to(torch.device("cuda:1"))
+    pdb.set_trace()
     hypotheses = beam_search(model, test_data_src_code, test_data_src_nl,
                               beam_size=int(args['--beam-size']),
                              max_decoding_time_step=int(args['--max-decoding-time-step']))

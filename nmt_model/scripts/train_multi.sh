@@ -18,8 +18,9 @@ test_tgt="/home/anushap/Code-Generation/nmt_model/data/2code/code_test.txt"
 test_tgt_bleu="/home/anushap/Code-Generation/nmt_model/data/2code/code_test_bleu.txt"
 dev_tgt_bleu="/home/anushap/Code-Generation/nmt_model/data/2code/code_dev_bleu.txt"
 
-work_dir="work_dir"
+work_dir="work_dir_2code"
 
+'''
 mkdir -p ${work_dir}
 echo save results to ${work_dir}
 
@@ -42,12 +43,12 @@ python nmt_multi.py \
     --dropout 0.2 \
     --clip-grad 5.0 \
     --lr-decay 0.5 2>${work_dir}/err.log
-
+'''
 python nmt_multi.py \
    decode \
    --cuda \
-   --beam-size 10 \
-   --max-decoding-time-step 20 \
+   --beam-size 5 \
+   --max-decoding-time-step 50 \
    ${work_dir}/model.bin \
    ${test_src_code} \
    ${test_src_nl} \

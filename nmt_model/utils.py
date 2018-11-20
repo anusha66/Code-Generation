@@ -30,7 +30,7 @@ def read_corpus(file_path, source):
             # only append <s> and </s> to the target sentence
             if source == 'tgt':
 #                 sent = list(line)
-                sent = ut.tokenize_code(line.strip(), mode='canonicalize')
+                #sent = ut.tokenize_code(line.strip(), mode='canonicalize')
                 sent = ['<s>'] + sent + ['</s>']
                 data.append(sent)
             elif source == 'src':
