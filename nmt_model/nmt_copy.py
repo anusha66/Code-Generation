@@ -57,11 +57,11 @@ import torch.nn.functional as F
 from torch.nn.utils.rnn import pad_packed_sequence, pack_padded_sequence
 import raml_utils
 from utils import read_corpus, batch_iter, LabelSmoothingLoss
-from vocab import Vocab, VocabEntry
+from vocab_copy import Vocab, VocabEntry
 from torch.autograd import Variable
 import pdb
 import sys, traceback
-
+torch.cuda.set_device(3)
 Hypothesis = namedtuple('Hypothesis', ['value', 'score'])
 
 
@@ -116,17 +116,10 @@ class NMT(nn.Module):
             
             # (src_sent_len, batch_size)
             src_sents_var = self.vocab.src.to_input_tensor(src_sents, device=self.device)
-            src_sents_extended, oovs = self.vocab.tgt.to_input_tensor_extend(src_sents, device=self.device)
-            max_art_oovs = max([len(ex) for ex in oovs])
             
-            extra_zeros = None
-            
-            if max_art_oovs > 0:
-                extra_zeros = Variable(torch.zeros((len(src_sents), max_art_oovs), device=self.device))
-
             # (tgt_sent_len, batch_size)
             tgt_sents_var = self.vocab.tgt.to_input_tensor(tgt_sents, device=self.device)
-            tgt_sents_var_extended = self.vocab.tgt.to_input_tensor_tgt_extend(tgt_sents, oovs, device=self.device)
+           
             src_sents_len = [len(s) for s in src_sents]
             
             src_encodings, decoder_init_vec = self.encode(src_sents_var, src_sents_len)
@@ -139,9 +132,9 @@ class NMT(nn.Module):
             tgt_word_embeds = self.tgt_embed(tgt_sents_var)
             h_decoder, c_decoder = decoder_init_vec
 
-            final_dist_list = []
+            custom_prob_list  = []
 
-            for y_tm1_embed in tgt_word_embeds.split(split_size=1)[:-1]:
+            for i, y_tm1_embed in enumerate(tgt_word_embeds.split(split_size=1)[:-1]):
                 y_tm1_embed = y_tm1_embed.squeeze(0)
                 
                 if self.input_feed:
@@ -164,30 +157,32 @@ class NMT(nn.Module):
 
                 vocab_dist_ = p_gen * vocab_dist
                 
-                if extra_zeros is not None:
-                    vocab_dist_ = torch.cat([vocab_dist_, extra_zeros], 1)
-
                 attn_dist_ = (1 - p_gen) * alpha_t
 
-                final_dist = vocab_dist_.scatter_add(1, src_sents_extended.transpose(0, 1), attn_dist_)
+                src_vocab_dist = Variable(torch.zeros(batch_size, len(self.vocab.src), device=self.device))
+                tgt_sents_src_vocab_var = self.vocab.src.to_input_tensor(tgt_sents, device=self.device)
 
-                final_dist_list.append(final_dist)
+                src_final_dist = src_vocab_dist.scatter_add(1, src_sents_var.transpose(0, 1), attn_dist_)
+
+                src_gold_probs = torch.gather(src_final_dist, index=tgt_sents_src_vocab_var[1:].transpose(0, 1)[:, i].unsqueeze(-1), dim=-1).squeeze(-1)
+                tgt_gold_probs = torch.gather(vocab_dist_, index=tgt_sents_var[1:].transpose(0, 1)[:, i].unsqueeze(-1), dim=-1).squeeze(-1)
+
+                custom_prob_list.append(src_gold_probs + tgt_gold_probs)
+
 
             tgt_words_mask = (tgt_sents_var != self.vocab.tgt['<pad>']).float()
 
-            final_dist_list = torch.stack(final_dist_list)
+            final_dist_list = torch.stack(custom_prob_list)
 
-            tgt_words_log_prob = torch.log(final_dist_list + 1e-12)
-            tgt_gold_words_log_prob = torch.gather(tgt_words_log_prob, index=tgt_sents_var_extended[1:].unsqueeze(-1),
-                                                       dim=-1).squeeze(-1)
-
+            tgt_gold_words_log_prob = torch.log(final_dist_list + 1e-12)
+         
             tgt_gold_words_log_prob = tgt_gold_words_log_prob * tgt_words_mask[1:]
 
             scores = tgt_gold_words_log_prob.sum(dim=0)
 
             return scores
 
-        
+
     def get_attention_mask(self, src_encodings: torch.Tensor, src_sents_len: List[int]) -> torch.Tensor:
         src_sent_masks = torch.zeros(src_encodings.size(0), src_encodings.size(1), dtype=torch.float,
                                      device=self.device)
@@ -249,14 +244,7 @@ class NMT(nn.Module):
         Hypothesis]:
        
         src_sents_var = self.vocab.src.to_input_tensor([src_sents], device=self.device)
-        src_sents_extended, oovs = self.vocab.tgt.to_input_tensor_extend([src_sents], device=self.device)
-            
-        max_art_oovs = max([len(ex) for ex in oovs])
-            
-        extra_zeros = None
-        if max_art_oovs > 0:
-            extra_zeros = Variable(torch.zeros((1, max_art_oovs), device=self.device))
-
+        
         src_sents_len = [len(src_sents)]
         src_encodings, decoder_init_vec = self.encode(src_sents_var, src_sents_len)
         src_sent_masks = self.get_attention_mask(src_encodings, src_sents_len)
@@ -272,6 +260,13 @@ class NMT(nn.Module):
         hypotheses = [['<s>']]
         hyp_scores = torch.zeros(len(hypotheses), dtype=torch.float, device=self.device)
         completed_hypotheses = []
+        
+        tgt_vocabulary_words  = [self.vocab.tgt.id2word[i] for i in range(len(self.vocab.tgt))]
+        tgt_vocabulary_words_encoded_all = [self.vocab.all.word2id.get(w, self.vocab.all.unk_id) for w in tgt_vocabulary_words]
+        
+        tgt_vocabulary_words_encoded_all_var = Variable(torch.LongTensor(tgt_vocabulary_words_encoded_all).cuda())
+        
+        src_sents_encoded_all_var = self.vocab.all.to_input_tensor([src_sents], device=self.device)      
 
         t = 0
         while len(completed_hypotheses) < beam_size and t < max_decoding_time_step:
@@ -283,10 +278,10 @@ class NMT(nn.Module):
             exp_src_encodings_att_linear = src_encodings_att_linear.expand(hyp_num,src_encodings_att_linear.size(1),
                                                                            src_encodings_att_linear.size(2))
             
-            if extra_zeros is not None:
-                exp_extra_zeros = extra_zeros.expand(hyp_num, extra_zeros.size(1))
-            
+         
             # TO DO fix oovs from y
+            
+            
             y_tm1 = torch.tensor([self.vocab.tgt[hyp[-1]] for hyp in hypotheses], dtype=torch.long, device=self.device)
             y_tm1_embed = self.tgt_embed(y_tm1)
 
@@ -309,13 +304,25 @@ class NMT(nn.Module):
             vocab_dist = torch.softmax(output, dim=1)
 
             vocab_dist_ = p_gen * vocab_dist
-            if extra_zeros is not None:
-                vocab_dist_ = torch.cat([vocab_dist_, exp_extra_zeros], 1)
-
+            
             attn_dist_ = (1 - p_gen) * alpha_t
-            expanded_indices = src_sents_extended.transpose(0, 1).expand(hyp_num, src_sents_extended.shape[0])
-            final_dist = vocab_dist_.scatter_add(1, expanded_indices, attn_dist_)
-
+            
+              
+            final_dist = Variable(torch.zeros(hyp_num, len(self.vocab.all), device=self.device))
+            
+#             pdb.set_trace()
+            
+            src_sents_encoded_all_var_expanded = src_sents_encoded_all_var.transpose(0, 1).expand(hyp_num, src_sents_encoded_all_var.size(0))
+            
+            final_dist = final_dist.scatter_add_(1, src_sents_encoded_all_var_expanded, attn_dist_)
+            
+            # to add vocab_dist to the final distribution
+            
+#             pdb.set_trace()
+            tgt_vocabulary_words_encoded_all_var_expanded = tgt_vocabulary_words_encoded_all_var.unsqueeze(0).expand(hyp_num,tgt_vocabulary_words_encoded_all_var.size(0) )
+    
+            final_dist = final_dist.scatter_add_(1, tgt_vocabulary_words_encoded_all_var_expanded, vocab_dist_)
+            
             # log probabilities over target words
             log_p_t = torch.log(final_dist + 1e-12)
             
@@ -324,30 +331,33 @@ class NMT(nn.Module):
             contiuating_hyp_scores = (hyp_scores.unsqueeze(1).expand_as(log_p_t) + log_p_t).view(-1)
             top_cand_hyp_scores, top_cand_hyp_pos = torch.topk(contiuating_hyp_scores, k=live_hyp_num)
 
-            prev_hyp_ids = top_cand_hyp_pos / ( len(self.vocab.tgt) + max_art_oovs)
-            hyp_word_ids = top_cand_hyp_pos % ( len(self.vocab.tgt) + max_art_oovs)
+            prev_hyp_ids = top_cand_hyp_pos / ( len(self.vocab.all) )
+            hyp_word_ids = top_cand_hyp_pos % ( len(self.vocab.all) )
 
             new_hypotheses = []
             live_hyp_ids = []
             new_hyp_scores = []
 
             for prev_hyp_id, hyp_word_id, cand_new_hyp_score in zip(prev_hyp_ids, hyp_word_ids, top_cand_hyp_scores):
-                try:
-                    prev_hyp_id = prev_hyp_id.item()
-                    hyp_word_id = hyp_word_id.item()
-                    cand_new_hyp_score = cand_new_hyp_score.item()
-                except:
-                    pdb.set_trace()
                 
-                if hyp_word_id >= len(self.vocab.tgt):
-                    hyp_word = oovs[0][hyp_word_id-len(self.vocab.tgt)]
-                else:
-                    hyp_word = self.vocab.tgt.id2word[hyp_word_id]
+                prev_hyp_id = prev_hyp_id.item()
+                hyp_word_id = hyp_word_id.item()
+                cand_new_hyp_score = cand_new_hyp_score.item()
+                
+                
+                hyp_word = self.vocab.all.id2word[hyp_word_id]
                     
                 new_hyp_sent = hypotheses[prev_hyp_id] + [hyp_word]
+                
                 if hyp_word == '</s>':
-                    completed_hypotheses.append(Hypothesis(value=new_hyp_sent[1:-1],
+                    
+                    if len(new_hyp_sent[1:-1])!=0:
+                        completed_hypotheses.append(Hypothesis(value=new_hyp_sent[1:-1],
+                                                           score=cand_new_hyp_score/len(new_hyp_sent[1:-1])))
+                    else:
+                        completed_hypotheses.append(Hypothesis(value=new_hyp_sent[1:-1],
                                                            score=cand_new_hyp_score))
+                 
                 else:
                     new_hypotheses.append(new_hyp_sent)
                     live_hyp_ids.append(prev_hyp_id)
@@ -364,8 +374,18 @@ class NMT(nn.Module):
             hyp_scores = torch.tensor(new_hyp_scores, dtype=torch.float, device=self.device)
 
         if len(completed_hypotheses) == 0:
-            completed_hypotheses.append(Hypothesis(value=hypotheses[0][1:],
-                                                   score=hyp_scores[0].item()))
+            
+            if len((hypotheses[0][1:])) == 0:
+                
+                completed_hypotheses.append(Hypothesis(value=hypotheses[0][1:],score=hyp_scores[0].item()))
+            else:
+                
+                completed_hypotheses.append(Hypothesis(value=hypotheses[0][1:],score=hyp_scores[0].item()/len(hypotheses[0][1:])))
+                        
+            
+            
+#             completed_hypotheses.append(Hypothesis(value=hypotheses[0][1:],
+#                                                    score=hyp_scores[0].item()))
 
         completed_hypotheses.sort(key=lambda hyp: hyp.score, reverse=True)
 

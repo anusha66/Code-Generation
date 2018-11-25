@@ -10,14 +10,15 @@ import pdb
 
 
 def input_transpose(sents, pad_token):
-   
+    
     max_len = max(len(s) for s in sents)
+     
     batch_size = len(sents)
 
     sents_t = []
     for i in range(max_len):
         sents_t.append([sents[k][i] if len(sents[k]) > i else pad_token for k in range(batch_size)])
-
+    
     return sents_t
 
 

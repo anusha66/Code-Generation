@@ -28,32 +28,32 @@ work_dir="work_dir"
 mkdir -p ${work_dir}
 echo save results to ${work_dir}
 
-# python nmt_copy.py \
-#     train \
-#     --cuda \
-#     --vocab ${vocab} \
-#     --train-src ${train_src} \
-#     --train-tgt ${train_tgt} \
-#     --dev-src ${dev_src} \
-#     --dev-tgt ${dev_tgt} \
-#     --save-to ${work_dir}/model.bin \
-#     --valid-niter 200 \
-#     --batch-size 32 \
-#     --hidden-size 256 \
-#     --embed-size 256 \
-#     --uniform-init 0.1 \
-#     --dropout 0.2 \
-#     --clip-grad 5.0 \
-#     --lr-decay 0.5 2>${work_dir}/err.log
+python nmt_copy.py \
+    train \
+    --cuda \
+    --vocab ${vocab} \
+    --train-src ${train_src} \
+    --train-tgt ${train_tgt} \
+    --dev-src ${dev_src} \
+    --dev-tgt ${dev_tgt} \
+    --save-to ${work_dir}/model.bin \
+    --valid-niter 200 \
+    --batch-size 16 \
+    --hidden-size 256 \
+    --embed-size 256 \
+    --uniform-init 0.1 \
+    --dropout 0.2 \
+    --clip-grad 5.0 \
+    --lr-decay 0.5 2>${work_dir}/err.log
 
 python nmt_copy.py \
    decode \
    --cuda \
-   --beam-size 5 \
+   --beam-size 10 \
    --max-decoding-time-step 20 \
    ${work_dir}/model.bin \
    ${test_src} \
    ${test_tgt} \
    ${work_dir}/decode.txt
 
-# perl multi-bleu.perl ${test_tgt_bleu} < ${work_dir}/decode.txt
+perl multi-bleu.perl ${test_tgt_bleu} < ${work_dir}/decode.txt
