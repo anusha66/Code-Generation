@@ -62,6 +62,7 @@ import raml_utils
 from utils_multi import batch_iter_beam, read_corpus, batch_iter, LabelSmoothingLoss
 from vocab_multi import Vocab, VocabEntry
 import pdb
+torch.cuda.set_device(0)
 
 Hypothesis = namedtuple('Hypothesis', ['value', 'score'])
 
@@ -74,7 +75,7 @@ class NMT(nn.Module):
         self.hidden_size = hidden_size
         self.dropout_rate = dropout_rate
         self.vocab = vocab
-        self.input_feed = input_feed
+        self.input_feed = True
 
         self.src_code_embed = nn.Embedding(len(vocab.src_code), embed_size, padding_idx=vocab.src_code['<pad>'])
         self.src_nl_embed = nn.Embedding(len(vocab.src_nl), embed_size, padding_idx=vocab.src_nl['<pad>'])
@@ -84,7 +85,7 @@ class NMT(nn.Module):
         self.code_encoder_lstm = nn.LSTM(embed_size, hidden_size, bidirectional=True)
         self.nl_encoder_lstm = nn.LSTM(embed_size, hidden_size, bidirectional=True)
 
-        decoder_lstm_input = embed_size + hidden_size + hidden_size if self.input_feed else embed_size
+        decoder_lstm_input = embed_size + (4 * hidden_size) if self.input_feed else embed_size
 
         self.decoder_lstm = nn.LSTMCell(decoder_lstm_input, hidden_size)
 
@@ -107,7 +108,7 @@ class NMT(nn.Module):
         self.decoder_cell_init = nn.Linear(hidden_size * 2, hidden_size)
 
         # copy related layers
-        self.p_gen_linear = nn.Linear(hidden_size * 5 + embed_size, 1)
+        self.p_gen_linear = nn.Linear(hidden_size * 9 + embed_size, 3)
 
         self.label_smoothing = label_smoothing
         if label_smoothing > 0.:
@@ -149,8 +150,8 @@ class NMT(nn.Module):
         src_nl_encoding_att_linear = self.att_src_nl_linear(src_nl_encodings)
 
         batch_size = src_code_encodings.size(0)
-        ctx_tm1 = (torch.zeros(batch_size, self.hidden_size, device=self.device),
-                   torch.zeros(batch_size, self.hidden_size, device=self.device))
+        ctx_tm1 = (torch.zeros(batch_size, 2 * self.hidden_size, device=self.device),
+                   torch.zeros(batch_size, 2 * self.hidden_size, device=self.device))
 
         h_tm1 = ((decoder_init_vec_code[0] + decoder_init_vec_nl[0]) / 2,
                  (decoder_init_vec_code[1] + decoder_init_vec_nl[1]) / 2)
@@ -176,7 +177,8 @@ class NMT(nn.Module):
             p_gen_input = torch.cat((h_t, ctx_t_code, ctx_t_nl, x), 1)
 
             p_gen = self.p_gen_linear(p_gen_input)
-            p_gen = torch.sigmoid(p_gen)
+            p_gen = F.softmax(p_gen, dim=-1)
+#             pdb.set_trace()
 
             output = self.readout(att_t)  # B x hidden_dim
 
@@ -184,30 +186,28 @@ class NMT(nn.Module):
             ctx_tm1 = (ctx_t_code, ctx_t_nl)
             h_tm1 = (h_t, cell_t)
 
-            vocab_dist_ = p_gen * vocab_dist
+            vocab_dist_ = p_gen[:, 0].unsqueeze(1) * vocab_dist
 
-            attn_dist_code = (1 - p_gen) * 0.5 * alpha_t_code
-            attn_dist_nl = (1 - p_gen) * 0.5 * alpha_t_nl
+            attn_dist_code = p_gen[:, 1].unsqueeze(1) * alpha_t_code
+            attn_dist_nl = p_gen[:, 2].unsqueeze(1) * alpha_t_nl
+            
+#             vocab_dist_ = p_gen * vocab_dist
 
-            src_code_dist = Variable(torch.zeros(batch_size, len(self.vocab.src_code), device=self.device))
-            src_nl_dist = Variable(torch.zeros(batch_size, len(self.vocab.src_nl), device=self.device))
+#             attn_dist_code = (1 - p_gen) * 0.5 * alpha_t_code
+#             attn_dist_nl = (1 - p_gen) * 0.5 * alpha_t_nl
+            
+            attn_masks_golden_code = self.get_golden_word_masks(src_code_sents, src_code_sents_var.size(0), tgt_sents, i)
+            attn_masks_golden_nl = self.get_golden_word_masks(src_nl_sents, src_nl_sents_var.size(0), tgt_sents, i)
+            
+            src_code_gold_probs = torch.sum(attn_dist_code * attn_masks_golden_code, dim=1)
+            src_nl_gold_probs = torch.sum(attn_dist_nl * attn_masks_golden_nl, dim=1)
 
-            tgt_sents_src_code_var = self.vocab.src_code.to_input_tensor(tgt_sents, device=self.device)
-            tgt_sents_src_nl_var = self.vocab.src_nl.to_input_tensor(tgt_sents, device=self.device)
-
-            src_final_code_dist = src_code_dist.scatter_add(1, src_code_sents_var.transpose(0, 1), attn_dist_code)
-            src_final_nl_dist = src_nl_dist.scatter_add(1, src_nl_sents_var.transpose(0, 1), attn_dist_nl)
-
-            src_code_gold_probs = torch.gather(src_final_code_dist,
-                                               index=tgt_sents_src_code_var[1:].transpose(0, 1)[:, i].unsqueeze(-1),
-                                               dim=-1).squeeze(-1)
-            src_nl_gold_probs = torch.gather(src_final_nl_dist,
-                                             index=tgt_sents_src_nl_var[1:].transpose(0, 1)[:, i].unsqueeze(-1),
-                                             dim=-1).squeeze(-1)
-
-            tgt_gold_probs = torch.gather(vocab_dist_, index=tgt_sents_var[1:].transpose(0, 1)[:, i].unsqueeze(-1),
-                                          dim=-1).squeeze(-1)
-
+            tgt_gold_probs = torch.gather(vocab_dist_, index=tgt_sents_var[1:].transpose(0, 1)[:, i].unsqueeze(-1), dim=-1).squeeze(-1)
+        
+            tgt_unk_masks = self.get_target_unk_masks(attn_masks_golden_code, attn_masks_golden_nl , tgt_sents_var[1:].transpose(0, 1)[:, i] )
+                
+            tgt_gold_probs = tgt_gold_probs * tgt_unk_masks
+            
             custom_prob_list.append(src_code_gold_probs + src_nl_gold_probs + tgt_gold_probs)
 
         tgt_words_mask = (tgt_sents_var != self.vocab.tgt['<pad>']).float()
@@ -221,6 +221,46 @@ class NMT(nn.Module):
         scores = tgt_gold_words_log_prob.sum(dim=0)
 
         return scores
+    
+    
+    def get_golden_word_masks(self, src_sents:List[List[str]], max_src_len, tgt_sents, t):
+        
+        batch_size = len(src_sents)
+
+        masks = np.zeros((batch_size, max_src_len))
+
+        for i, sent in enumerate(src_sents):
+
+            if t >= len(tgt_sents[i][1:]):
+                continue
+
+            word = tgt_sents[i][1:][t]
+            for j, w in enumerate(sent):
+                if w == word:
+                    masks[i][j] = 1
+        
+        masks = torch.FloatTensor(masks).cuda()
+      
+        return masks
+    
+    def get_target_unk_masks(self, attn_masks_golden_code, attn_masks_golden_nl, tgt_sents_timestep):
+        
+        summed_masks_code = torch.sum(attn_masks_golden_code, dim=1)
+        
+        summed_masks_nl = torch.sum(attn_masks_golden_nl, dim=1)
+        
+        summed_masks = summed_masks_code + summed_masks_nl
+        
+        masks = (summed_masks == 0).float() 
+        
+        unk_masks = (tgt_sents_timestep != self.vocab.tgt['unk']).float()
+        
+        # hack for bitwise OR
+        total_masks = unk_masks + masks
+        final_masks = (total_masks >= 1).float()
+        
+        return final_masks
+      
 
     def get_attention_mask(self, src_encodings: torch.Tensor, src_sents_len: List[int]) -> torch.Tensor:
         src_sent_masks = torch.zeros(src_encodings.size(0), src_encodings.size(1), dtype=torch.float,
@@ -333,8 +373,7 @@ class NMT(nn.Module):
 
         h_tm1 = ((dec_init_vec_code[0] + dec_init_vec_nl[0]) / 2, (dec_init_vec_code[1] + dec_init_vec_nl[1]) / 2)
 
-        ctx_tm1 = (
-        torch.zeros(1, self.hidden_size, device=self.device), torch.zeros(1, self.hidden_size, device=self.device))
+        ctx_tm1 = (torch.zeros(1, 2 * self.hidden_size, device=self.device), torch.zeros(1, 2 * self.hidden_size, device=self.device))
 
         eos_id = self.vocab.tgt['</s>']
 
@@ -342,16 +381,22 @@ class NMT(nn.Module):
         hyp_scores = torch.zeros(len(hypotheses), dtype=torch.float, device=self.device)
         completed_hypotheses = []
         t = 0
-
+        
         tgt_vocabulary_words = [self.vocab.tgt.id2word[i] for i in range(len(self.vocab.tgt))]
-        tgt_vocabulary_words_encoded_all = [self.vocab.all.word2id.get(w, self.vocab.all.unk_id) for w in
-                                            tgt_vocabulary_words]
 
+        extended_vocab = VocabEntry()
+        total_words = set(self.vocab.tgt.word2id.keys()).union(src_code_sent_str).union(src_nl_sent_str)
+
+        for word in total_words:
+            extended_vocab.add(word)
+            
+        src_code_sents_encoded_all_var = extended_vocab.to_input_tensor([src_code_sent_str], device=self.device)
+        src_nl_sents_encoded_all_var = extended_vocab.to_input_tensor([src_nl_sent_str], device=self.device)
+        
+        tgt_vocabulary_words_encoded_all = [extended_vocab.word2id.get(w, extended_vocab.unk_id) for w in tgt_vocabulary_words]
         tgt_vocabulary_words_encoded_all_var = Variable(torch.LongTensor(tgt_vocabulary_words_encoded_all).cuda())
-
-        src_code_sents_encoded_all_var = self.vocab.all.to_input_tensor([src_code_sent_str], device=self.device)
-        src_nl_sents_encoded_all_var = self.vocab.all.to_input_tensor([src_nl_sent_str], device=self.device)
-      
+        
+        
         while len(completed_hypotheses) < beam_size and t < max_decoding_time_step:
             t += 1
             hyp_num = len(hypotheses)
@@ -364,10 +409,8 @@ class NMT(nn.Module):
                                                            src_nl_encodings.size(2))
 
             exp_src_code_encodings_att_linear = src_code_encodings_att_linear.expand(hyp_num,
-                                                                                     src_code_encodings_att_linear.size(
-                                                                                         1),
-                                                                                     src_code_encodings_att_linear.size(
-                                                                                         2))
+                                                                                     src_code_encodings_att_linear.size(1),
+                                                                                     src_code_encodings_att_linear.size(2))
 
             exp_src_nl_encodings_att_linear = src_nl_encodings_att_linear.expand(hyp_num,
                                                                                  src_nl_encodings_att_linear.size(1),
@@ -381,38 +424,40 @@ class NMT(nn.Module):
             else:
                 x = y_tm1_embed
 
-#             pdb.set_trace()
+
             (h_t, cell_t), alpha_t_code, alpha_t_nl, ctx_t_code, ctx_t_nl, att_t = self.step(x, h_tm1, exp_src_code_encodings,
                                                                               exp_src_code_encodings_att_linear,
                                                                               exp_src_nl_encodings,
                                                                               exp_src_nl_encodings_att_linear, None,
                                                                               None)
             
-#             pdb.set_trace()
-
             p_gen_input = torch.cat((h_t, ctx_t_code, ctx_t_nl, x), 1)
 
             p_gen = self.p_gen_linear(p_gen_input)
-            p_gen = torch.sigmoid(p_gen)
+            p_gen = F.softmax(p_gen, dim=-1)
+#             pdb.set_trace()
 
             output = self.readout(att_t)  # B x hidden_dim
 
             vocab_dist = F.softmax(output, dim=1)
+            
+#             vocab_dist_ = p_gen * vocab_dist
 
-            vocab_dist_ = p_gen * vocab_dist
+#             attn_dist_code = (1 - p_gen) * 0.5 * alpha_t_code
+#             attn_dist_nl = (1 - p_gen) * 0.5 * alpha_t_nl
+            
 
-            attn_dist_code = (1 - p_gen) * 0.5 * alpha_t_code
-            attn_dist_nl = (1 - p_gen) * 0.5 * alpha_t_nl
-
-            final_dist = Variable(torch.zeros(hyp_num, len(self.vocab.all), device=self.device))
+            vocab_dist_ = p_gen[:, 0].unsqueeze(1) * vocab_dist
+            attn_dist_code = p_gen[:, 1].unsqueeze(1) * alpha_t_code
+            attn_dist_nl = p_gen[:, 2].unsqueeze(1) * alpha_t_nl
+            
+            final_dist = Variable(torch.zeros(hyp_num, len(total_words), device=self.device))
 
             src_code_sents_encoded_all_var_expanded = src_code_sents_encoded_all_var.transpose(0, 1).expand(hyp_num,
-                                                                                                            src_code_sents_encoded_all_var.size(
-                                                                                                                0))
+                                                                                                       src_code_sents_encoded_all_var.size(0))
 
             src_nl_sents_encoded_all_var_expanded = src_nl_sents_encoded_all_var.transpose(0, 1).expand(hyp_num,
-                                                                                                        src_nl_sents_encoded_all_var.size(
-                                                                                                            0))
+                                                                                                        src_nl_sents_encoded_all_var.size(0))
 
             final_dist = final_dist.scatter_add_(1, src_code_sents_encoded_all_var_expanded, attn_dist_code)
             final_dist = final_dist.scatter_add_(1, src_nl_sents_encoded_all_var_expanded, attn_dist_nl)
@@ -431,8 +476,8 @@ class NMT(nn.Module):
             contiuating_hyp_scores = (hyp_scores.unsqueeze(1).expand_as(log_p_t) + log_p_t).view(-1)
             top_cand_hyp_scores, top_cand_hyp_pos = torch.topk(contiuating_hyp_scores, k=live_hyp_num)
 
-            prev_hyp_ids = top_cand_hyp_pos / len(self.vocab.all)
-            hyp_word_ids = top_cand_hyp_pos % len(self.vocab.all)
+            prev_hyp_ids = top_cand_hyp_pos / ( len(total_words) )
+            hyp_word_ids = top_cand_hyp_pos % ( len(total_words) )
 
             new_hypotheses = []
             live_hyp_ids = []
@@ -443,7 +488,7 @@ class NMT(nn.Module):
                 hyp_word_id = hyp_word_id.item()
                 cand_new_hyp_score = cand_new_hyp_score.item()
 
-                hyp_word = self.vocab.all.id2word[hyp_word_id]
+                hyp_word = extended_vocab.id2word[hyp_word_id]
                 new_hyp_sent = hypotheses[prev_hyp_id] + [hyp_word]
                 if hyp_word == '</s>':
 
@@ -470,9 +515,6 @@ class NMT(nn.Module):
             hyp_scores = torch.tensor(new_hyp_scores, dtype=torch.float, device=self.device)
 
         if len(completed_hypotheses) == 0:
-            # completed_hypotheses.append(Hypothesis(value=hypotheses[0][1:],
-            #                                       score=hyp_scores[0].item()))
-
             if len((hypotheses[0][1:])) == 0:
                 completed_hypotheses.append(Hypothesis(value=hypotheses[0][1:],
                                                        score=hyp_scores[0].item()))
@@ -574,7 +616,7 @@ def train(args: Dict):
     model = NMT(embed_size=int(args['--embed-size']),
                 hidden_size=int(args['--hidden-size']),
                 dropout_rate=float(args['--dropout']),
-                input_feed=args['--input-feed'],
+                input_feed=True,
                 label_smoothing=float(args['--label-smoothing']),
                 vocab=vocab)
     model.train()
