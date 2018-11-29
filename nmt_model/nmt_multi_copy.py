@@ -468,7 +468,8 @@ class NMT(nn.Module):
                 hyp_num, tgt_vocabulary_words_encoded_all_var.size(0))
 
             final_dist = final_dist.scatter_add_(1, tgt_vocabulary_words_encoded_all_var_expanded, vocab_dist_)
-
+            
+            final_dist[:, 3] = 0
             # log probabilities over target words
             log_p_t = torch.log(final_dist + 1e-12)
 
