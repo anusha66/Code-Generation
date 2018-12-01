@@ -62,7 +62,7 @@ import raml_utils
 from utils_multi import batch_iter_beam, read_corpus, batch_iter, LabelSmoothingLoss
 from vocab_multi import Vocab, VocabEntry
 import pdb
-torch.cuda.set_device(0)
+torch.cuda.set_device(1)
 
 Hypothesis = namedtuple('Hypothesis', ['value', 'score'])
 
@@ -123,6 +123,7 @@ class NMT(nn.Module):
     def forward(self, src_code_sents: List[List[str]], src_nl_sents: List[List[str]],
                 tgt_sents: List[List[str]]) -> torch.Tensor:
         # (src_sent_len, batch_size)
+        
         src_code_sents_str = [e[1][0] for e in src_code_sents]
         src_code_sents_order = [e[0] for e in src_code_sents]
 
@@ -150,6 +151,7 @@ class NMT(nn.Module):
         src_nl_encoding_att_linear = self.att_src_nl_linear(src_nl_encodings)
 
         batch_size = src_code_encodings.size(0)
+        
         ctx_tm1 = (torch.zeros(batch_size, 2 * self.hidden_size, device=self.device),
                    torch.zeros(batch_size, 2 * self.hidden_size, device=self.device))
 
@@ -178,7 +180,6 @@ class NMT(nn.Module):
 
             p_gen = self.p_gen_linear(p_gen_input)
             p_gen = F.softmax(p_gen, dim=-1)
-#             pdb.set_trace()
 
             output = self.readout(att_t)  # B x hidden_dim
 
@@ -191,13 +192,9 @@ class NMT(nn.Module):
             attn_dist_code = p_gen[:, 1].unsqueeze(1) * alpha_t_code
             attn_dist_nl = p_gen[:, 2].unsqueeze(1) * alpha_t_nl
             
-#             vocab_dist_ = p_gen * vocab_dist
 
-#             attn_dist_code = (1 - p_gen) * 0.5 * alpha_t_code
-#             attn_dist_nl = (1 - p_gen) * 0.5 * alpha_t_nl
-            
-            attn_masks_golden_code = self.get_golden_word_masks(src_code_sents, src_code_sents_var.size(0), tgt_sents, i)
-            attn_masks_golden_nl = self.get_golden_word_masks(src_nl_sents, src_nl_sents_var.size(0), tgt_sents, i)
+            attn_masks_golden_code = self.get_golden_word_masks(src_code_sents_str, src_code_sents_var.size(0), tgt_sents, i)
+            attn_masks_golden_nl = self.get_golden_word_masks(src_nl_sents_str, src_nl_sents_var.size(0), tgt_sents, i)
             
             src_code_gold_probs = torch.sum(attn_dist_code * attn_masks_golden_code, dim=1)
             src_nl_gold_probs = torch.sum(attn_dist_nl * attn_masks_golden_nl, dim=1)
@@ -435,17 +432,10 @@ class NMT(nn.Module):
 
             p_gen = self.p_gen_linear(p_gen_input)
             p_gen = F.softmax(p_gen, dim=-1)
-#             pdb.set_trace()
 
             output = self.readout(att_t)  # B x hidden_dim
 
             vocab_dist = F.softmax(output, dim=1)
-            
-#             vocab_dist_ = p_gen * vocab_dist
-
-#             attn_dist_code = (1 - p_gen) * 0.5 * alpha_t_code
-#             attn_dist_nl = (1 - p_gen) * 0.5 * alpha_t_nl
-            
 
             vocab_dist_ = p_gen[:, 0].unsqueeze(1) * vocab_dist
             attn_dist_code = p_gen[:, 1].unsqueeze(1) * alpha_t_code
@@ -469,7 +459,6 @@ class NMT(nn.Module):
 
             final_dist = final_dist.scatter_add_(1, tgt_vocabulary_words_encoded_all_var_expanded, vocab_dist_)
             
-            final_dist[:, 3] = 0
             # log probabilities over target words
             log_p_t = torch.log(final_dist + 1e-12)
 
@@ -631,7 +620,7 @@ def train(args: Dict):
     vocab_mask = torch.ones(len(vocab.tgt))
     vocab_mask[vocab.tgt['<pad>']] = 0
 
-    device = torch.device("cuda:0" if args['--cuda'] else "cpu")
+    device = torch.device("cuda:1" if args['--cuda'] else "cpu")
     print('use device: %s' % device, file=sys.stderr)
 
     model = model.to(device)
@@ -797,7 +786,7 @@ def decode(args: Dict[str, str]):
     # model.vocab = pickle.load(open("vocab_all_multi.bin", 'rb'))
 
     if args['--cuda']:
-        model = model.to(torch.device("cuda:0"))
+        model = model.to(torch.device("cuda:1"))
     
     
     hypotheses = beam_search(model, test_data_src_code, test_data_src_nl,
