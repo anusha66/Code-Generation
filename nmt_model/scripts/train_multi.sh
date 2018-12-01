@@ -1,26 +1,23 @@
 #!/bin/sh
 
-vocab="data/2code/vocab.bin"
-train_src_code="/home/anushap/Code-Generation/nmt_model/data/2code/src_code_train.txt"
-train_src_nl="/home/anushap/Code-Generation/nmt_model/data/2code/nl_train.txt"
-train_tgt="/home/anushap/Code-Generation/nmt_model/data/2code/code_train.txt"
-# train_src="data/2code/valid.de-en.de"
-# train_tgt="data/2code/valid.de-en.en"
+vocab="/home/anushap/Code-Generation-lm/nmt_model/data/2code/vocab_src_tgt.bin"
 
-dev_src_code="/home/anushap/Code-Generation/nmt_model/data/2code/src_code_dev.txt"
-dev_src_nl="/home/anushap/Code-Generation/nmt_model/data/2code/nl_dev.txt"
-dev_tgt="/home/anushap/Code-Generation/nmt_model/data/2code/code_dev.txt"
+train_src_code="/home/anushap/Code-Generation-lm/nmt_model/data/2code/src_code_train.txt"
+train_src_nl="/home/anushap/Code-Generation-lm/nmt_model/data/2code/nl_train.txt"
+train_tgt="/home/anushap/Code-Generation-lm/nmt_model/data/2code/code_train.txt"
 
-test_src_code="/home/anushap/Code-Generation/nmt_model/data/2code/src_code_test.txt"
-test_src_nl="/home/anushap/Code-Generation/nmt_model/data/2code/nl_test.txt"
-test_tgt="/home/anushap/Code-Generation/nmt_model/data/2code/code_test.txt"
+dev_src_code="/home/anushap/Code-Generation-lm/nmt_model/data/2code/src_code_dev.txt"
+dev_src_nl="/home/anushap/Code-Generation-lm/nmt_model/data/2code/nl_dev.txt"
+dev_tgt="/home/anushap/Code-Generation-lm/nmt_model/data/2code/code_dev.txt"
 
-test_tgt_bleu="/home/anushap/Code-Generation/nmt_model/data/2code/code_test_bleu.txt"
-dev_tgt_bleu="/home/anushap/Code-Generation/nmt_model/data/2code/code_dev_bleu.txt"
+test_src_code="/home/anushap/Code-Generation-lm/nmt_model/data/2code/src_code_test.txt"
+test_src_nl="/home/anushap/Code-Generation-lm/nmt_model/data/2code/nl_test.txt"
+test_tgt="/home/anushap/Code-Generation-lm/nmt_model/data/2code/code_test.txt"
+
+test_tgt_bleu="/home/anushap/Code-Generation-lm/nmt_model/data/2code/code_test_bleu.txt"
 
 work_dir="work_dir_2code"
 
-'''
 mkdir -p ${work_dir}
 echo save results to ${work_dir}
 
@@ -43,7 +40,7 @@ python nmt_multi.py \
     --dropout 0.2 \
     --clip-grad 5.0 \
     --lr-decay 0.5 2>${work_dir}/err.log
-'''
+
 python nmt_multi.py \
    decode \
    --cuda \

@@ -23,28 +23,28 @@ def read_corpus(file_path, source):
     data = []
     failed_ids = []
     lines = open(file_path, 'r').readlines()
+
     for i, line in enumerate(lines):
         try:
-#             sent = list(line)
             sent = line.strip().split(' ')
+            
             # only append <s> and </s> to the target sentence
             if source == 'tgt':
-#                 sent = list(line)
-                #sent = ut.tokenize_code(line.strip(), mode='canonicalize')
+                
+                sent = ut.tokenize_code(line.strip(), mode='canonicalize') 
                 sent = ['<s>'] + sent + ['</s>']
+                
                 data.append(sent)
+
             elif source == 'src':
                 
-                #sent = ut.tokenize_code(line.strip(), mode='canonicalize')
+                sent = ut.tokenize_code(line.strip(), mode='canonicalize')
                 data.append(sent)
             else:
-                print("WHAT")
-            #if source == 'src': #ocde2code
-            #    sent = ut.tokenize_code(line.strip(), mode='canonicalize')
-            #if source == 'src_code': #ocde2code
-            #    sent = ut.tokenize_code(line.strip(), mode='canonicalize')
-            #data.append(sent)
+                print("Utils Read Corpus Error")
+)
         except:
+        
             data.append('DUMMY')
             failed_ids.append(i)
 

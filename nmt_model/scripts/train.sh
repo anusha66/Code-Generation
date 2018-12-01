@@ -1,19 +1,19 @@
 #!/bin/sh
 
-vocab="data/code2code/vocab.bin"
-train_src="/home/anushap/Code-Generation/nmt_model/data/code2code/nl_train.txt"
-train_tgt="/home/anushap/Code-Generation/nmt_model/data/code2code/code_train.txt"
-# train_src="data/code2code/valid.de-en.de"
-# train_tgt="data/code2code/valid.de-en.en"
-dev_src="/home/anushap/Code-Generation/nmt_model/data/code2code/nl_dev.txt"
-dev_tgt="/home/anushap/Code-Generation/nmt_model/data/code2code/code_dev.txt"
-test_src="/home/anushap/Code-Generation/nmt_model/data/code2code/nl_test.txt"
-test_tgt="/home/anushap/Code-Generation/nmt_model/data/code2code/code_test.txt"
-test_tgt_bleu="/home/anushap/Code-Generation/nmt_model/data/code2code/code_test_bleu.txt"
-dev_tgt_bleu="/home/anushap/Code-Generation/nmt_model/data/code2code/code_dev_bleu.txt"
+vocab="/home/anushap/Code-Generation-lm/nmt_model/data/code2code/vocab_src_tgt.bin"
+train_src="/home/anushap/Code-Generation-lm/nmt_model/data/code2code/nl_train.txt"
+train_tgt="/home/anushap/Code-Generation-lm/nmt_model/data/code2code/code_train.txt"
+
+dev_src="/home/anushap/Code-Generation-lm/nmt_model/data/code2code/nl_dev.txt"
+dev_tgt="/home/anushap/Code-Generation-lm/nmt_model/data/code2code/code_dev.txt"
+
+test_src="/home/anushap/Code-Generation-lm/nmt_model/data/code2code/nl_test.txt"
+test_tgt="/home/anushap/Code-Generation-lm/nmt_model/data/code2code/code_test.txt"
+
+test_tgt_bleu="/home/anushap/Code-Generation-lm/nmt_model/data/code2code/code_test_bleu.txt"
 
 work_dir="work_dir_code2code"
-'''
+
 mkdir -p ${work_dir}
 echo save results to ${work_dir}
 
@@ -34,12 +34,13 @@ python nmt.py \
     --dropout 0.2 \
     --clip-grad 5.0 \
     --lr-decay 0.5 2>${work_dir}/err.log
-'''
+
+
 python nmt.py \
    decode \
    --cuda \
-   --beam-size 10 \
-   --max-decoding-time-step 20 \
+   --beam-size 5 \
+   --max-decoding-time-step 50 \
    ${work_dir}/model.bin \
    ${test_src} \
    ${test_tgt} \

@@ -23,28 +23,28 @@ def read_corpus(file_path, source):
     data = []
     failed_ids = []
     lines = open(file_path, 'r').readlines()
+    
     for i, line in enumerate(lines):
         try:
-#             sent = list(line)
             sent = line.strip().split(' ')
             # only append <s> and </s> to the target sentence
+    
             if source == 'tgt':
-#                 sent = list(line)
+                
                 sent = ut.tokenize_code(line.strip(), mode='canonicalize')
                 sent = ['<s>'] + sent + ['</s>']
                 data.append(sent)
-            elif source == 'src_code': #ocde2code
+
+            elif source == 'src_code':
                  
-                # data.append(sent)
                  sent = ut.tokenize_code(line.strip(), mode='canonicalize')
                  data.append(sent)
+            
             elif source == 'src_nl':
-                #sent = ut.tokenize_code(line.strip(), mode='canonicalize')
-                data.append(sent)
+                
+                 data.append(sent)
             else:
-                print("WHAT")
-                #data.append(sent)
-            #data.append(sent)
+                print("Utils Read Corpus Error")
         except:
             data.append('DUMMY')
             failed_ids.append(i)
@@ -54,21 +54,18 @@ def read_corpus(file_path, source):
 def batch_iter(data, batch_size, shuffle=False):
     batch_num = math.ceil(len(data) / batch_size)
     index_array = list(range(len(data)))
+    
     if shuffle:
 
         np.random.shuffle(index_array)
+    
     for i in range(batch_num):
         indices = index_array[i * batch_size: (i + 1) * batch_size]
         examples = [data[idx] for idx in indices]
 
-        examples_code = sorted(examples, key=lambda e: len(e[0]), reverse=True)
-        examples_nl = sorted(examples, key=lambda e: len(e[1]), reverse=True)
-
         examples_code = sorted(((i,e) for i,e in enumerate(examples)), key=lambda e: len(e[1][0]), reverse=True)
         examples_nl = sorted(((i,e) for i,e in enumerate(examples)), key=lambda e: len(e[1][1]), reverse=True)
 
-       #code = [e[0] for e in examples_code]
-       # nl = [e[1] for e in examples_nl]
         temp = [e[1] for e in examples_code]
 
         tgt_sents = [e[2] for e in temp]
@@ -78,22 +75,18 @@ def batch_iter(data, batch_size, shuffle=False):
 def batch_iter_beam(data, batch_size, shuffle=False):
     batch_num = math.ceil(len(data) / batch_size)
     index_array = list(range(len(data)))
+
     if shuffle:
 
         np.random.shuffle(index_array)
+
     for i in range(batch_num):
         indices = index_array[i * batch_size: (i + 1) * batch_size]
         examples = [data[idx] for idx in indices]
 
-        examples_code = sorted(examples, key=lambda e: len(e[0]), reverse=True)
-        examples_nl = sorted(examples, key=lambda e: len(e[1]), reverse=True)
 
         examples_code = sorted(((i,e) for i,e in enumerate(examples)), key=lambda e: len(e[1][0]), reverse=True)
         examples_nl = sorted(((i,e) for i,e in enumerate(examples)), key=lambda e: len(e[1][1]), reverse=True)
-
-       #code = [e[0] for e in examples_code]
-       # nl = [e[1] for e in examples_nl]
-
 
         yield examples_code, examples_nl
 
