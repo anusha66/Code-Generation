@@ -114,32 +114,13 @@ if __name__ == '__main__':
     src_sents, src_f_ids = read_corpus(args['--train-src'], source='src')
     tgt_sents, tgt_f_ids = read_corpus(args['--train-tgt'], source='tgt')
 
-   # vocab = Vocab.build(src_sents, tgt_sents, int(args['--size']), int(args['--freq-cutoff']))
-    
-    #src_sents, src_f_ids = read_corpus('/home/anushap/Code-Generation/data/nl_train.txt', source='src')
-    #tgt_sents, tgt_f_ids  = read_corpus('/home/anushap/Code-Generation/data/code_train.txt', source='tgt')
-#     pdb.set_trace()
-
     total_failed_ids = set(src_f_ids).union(tgt_f_ids)
+    
     src_sents = [src_sents[i] for i in range(len(src_sents)) if i not in total_failed_ids]
     tgt_sents = [tgt_sents[i] for i in range(len(tgt_sents)) if i not in total_failed_ids]
     vocab = Vocab(src_sents, tgt_sents, int(args['--size']), int(args['--freq-cutoff']))    
-    #vocab = Vocab(src_sents, tgt_sents, 7000, freq_cutoff=2)
+  
     print('generated vocabulary, source %d words, target %d words' % (len(vocab.src), len(vocab.tgt)))
 
     pickle.dump(vocab, open(args['VOCAB_FILE'], 'wb'))
     print('vocabulary saved to vocab.bin')
-    
-#     args = docopt(__doc__)
-
-#     print('read in source sentences: %s' % args['--train-src'])
-#     print('read in target sentences: %s' % args['--train-tgt'])
-
-#     src_sents = read_corpus(args['--train-src'], source='src')
-#     tgt_sents = read_corpus(args['--train-tgt'], source='tgt')
-
-#     vocab = Vocab(src_sents, tgt_sents, int(args['--size']), int(args['--freq-cutoff']))
-#     print('generated vocabulary, source %d words, target %d words' % (len(vocab.src), len(vocab.tgt)))
-
-#     pickle.dump(vocab, open(args['VOCAB_FILE'], 'wb'))
-#     print('vocabulary saved to %s' % args['VOCAB_FILE'])
