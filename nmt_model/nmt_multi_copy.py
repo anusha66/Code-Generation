@@ -122,7 +122,6 @@ class NMT(nn.Module):
 
     def forward(self, src_code_sents: List[List[str]], src_nl_sents: List[List[str]],
                 tgt_sents: List[List[str]]) -> torch.Tensor:
-        # (src_sent_len, batch_size)
         
         src_code_sents_str = [e[1][0] for e in src_code_sents]
         src_code_sents_order = [e[0] for e in src_code_sents]
@@ -133,16 +132,8 @@ class NMT(nn.Module):
         src_code_sents_var = self.vocab.src_code.to_input_tensor(src_code_sents_str, device=self.device)
         src_nl_sents_var = self.vocab.src_nl.to_input_tensor(src_nl_sents_str, device=self.device)
 
-        # (tgt_sent_len, batch_size)
         tgt_sents_var = self.vocab.tgt.to_input_tensor(tgt_sents, device=self.device)
         tgt_word_embeds = self.tgt_embed(tgt_sents_var)
-
-        src_code_sents_len = [len(s) for s in src_code_sents_str]
-        src_nl_sents_len = [len(s) for s in src_nl_sents_str]
-
-        src_code_encodings, decoder_init_vec_code = self.encode_code(src_code_sents_var, src_code_sents_len)
-        src_nl_encodings, src_nl_sents_len, decoder_init_vec_nl = self.encode_nl(src_nl_sents_var, src_code_sents_order,
-                                                                                 src_nl_sents_order, src_nl_sents_len)
 
         src_code_sent_masks = self.get_attention_mask(src_code_encodings, src_code_sents_len)
         src_nl_sent_masks = self.get_attention_mask(src_nl_encodings, src_nl_sents_len)
@@ -181,7 +172,7 @@ class NMT(nn.Module):
             p_gen = self.p_gen_linear(p_gen_input)
             p_gen = F.softmax(p_gen, dim=-1)
 
-            output = self.readout(att_t)  # B x hidden_dim
+            output = self.readout(att_t) 
 
             vocab_dist = F.softmax(output, dim=1)
             ctx_tm1 = (ctx_t_code, ctx_t_nl)
@@ -232,6 +223,7 @@ class NMT(nn.Module):
                 continue
 
             word = tgt_sents[i][1:][t]
+            
             for j, w in enumerate(sent):
                 if w == word:
                     masks[i][j] = 1
@@ -262,21 +254,21 @@ class NMT(nn.Module):
     def get_attention_mask(self, src_encodings: torch.Tensor, src_sents_len: List[int]) -> torch.Tensor:
         src_sent_masks = torch.zeros(src_encodings.size(0), src_encodings.size(1), dtype=torch.float,
                                      device=self.device)
+        
         for e_id, src_len in enumerate(src_sents_len):
             src_sent_masks[e_id, src_len:] = 1
+        
         return src_sent_masks
 
     def encode_code(self, src_code_sents_var: torch.Tensor, src_code_sent_lens: List[int]) -> Tuple[
         torch.Tensor, Tuple[torch.Tensor, torch.Tensor]]:
-        # (src_sent_len, batch_size, embed_size)
+        
         src_code_word_embeds = self.src_code_embed(src_code_sents_var)
+        
         packed_src_code_embed = pack_padded_sequence(src_code_word_embeds, src_code_sent_lens)
-
-        # src_encodings: (src_sent_len, batch_size, hidden_size * 2)
         src_code_encodings, (last_state, last_cell) = self.code_encoder_lstm(packed_src_code_embed)
         src_code_encodings, _ = pad_packed_sequence(src_code_encodings)
 
-        # (batch_size, src_sent_len, hidden_size * 2)
         src_code_encodings = src_code_encodings.permute(1, 0, 2)
 
         dec_init_cell = self.decoder_cell_init(torch.cat([last_cell[0], last_cell[1]], dim=1))
@@ -286,15 +278,12 @@ class NMT(nn.Module):
 
     def encode_nl(self, src_nl_sents_var: torch.Tensor, src_code_sents_order: List[int], src_nl_sents_order: List[int],
                   src_nl_sent_lens: List[int]) -> Tuple[torch.Tensor, Tuple[torch.Tensor, torch.Tensor]]:
-        # (src_sent_len, batch_size, embed_size)
         src_nl_word_embeds = self.src_nl_embed(src_nl_sents_var)
+        
         packed_src_nl_embed = pack_padded_sequence(src_nl_word_embeds, src_nl_sent_lens)
-
-        # src_encodings: (src_sent_len, batch_size, hidden_size * 2)
         src_nl_encodings, (last_state, last_cell) = self.nl_encoder_lstm(packed_src_nl_embed)
         src_nl_encodings, _ = pad_packed_sequence(src_nl_encodings)
 
-        # (batch_size, src_sent_len, hidden_size * 2)
         src_nl_encodings = src_nl_encodings.permute(1, 0, 2)
 
         src_nl_encodings_orig = sorted(list(zip(src_nl_encodings, src_nl_sents_order)), key=lambda e: e[1])
@@ -319,16 +308,16 @@ class NMT(nn.Module):
              src_nl_encodings: torch.Tensor, src_nl_encoding_att_linear: torch.Tensor,
              src_code_sent_masks: torch.Tensor, src_nl_sent_masks: torch.Tensor) -> Tuple[
         Tuple, torch.Tensor, torch.Tensor]:
-        # h_t: (batch_size, hidden_size)
+        
         h_t, cell_t = self.decoder_lstm(x, h_tm1)
-        # context, attention
+        
         ctx_t_code, alpha_t_code = self.dot_prod_attention(h_t, src_code_encodings, src_code_encoding_att_linear,
                                                            src_code_sent_masks)
 
         ctx_t_nl, alpha_t_nl = self.dot_prod_attention(h_t, src_nl_encodings, src_nl_encoding_att_linear,
                                                        src_nl_sent_masks)
 
-        att_t = torch.tanh(self.att_vec_linear(torch.cat([h_t, ctx_t_code, ctx_t_nl], 1)))  # E.q. (5)
+        att_t = torch.tanh(self.att_vec_linear(torch.cat([h_t, ctx_t_code, ctx_t_nl], 1)))
         att_t = self.dropout(att_t)
 
         return (h_t, cell_t), alpha_t_code, alpha_t_nl, ctx_t_code, ctx_t_nl, att_t
@@ -336,16 +325,16 @@ class NMT(nn.Module):
     def dot_prod_attention(self, h_t: torch.Tensor, src_encoding: torch.Tensor, src_encoding_att_linear: torch.Tensor,
                            mask: torch.Tensor = None) -> Tuple[torch.Tensor, torch.Tensor]:
 
-        # (batch_size, src_sent_len)
         att_weight = torch.bmm(src_encoding_att_linear, h_t.unsqueeze(2)).squeeze(2)
+        
         if mask is not None:
             att_weight.data.masked_fill_(mask.byte(), -float('inf'))
 
         softmaxed_att_weight = F.softmax(att_weight, dim=-1)
 
         att_view = (att_weight.size(0), 1, att_weight.size(1))
-        # (batch_size, hidden_size)
         ctx_vec = torch.bmm(softmaxed_att_weight.view(*att_view), src_encoding).squeeze(1)
+        
         return ctx_vec, softmaxed_att_weight
 
     def beam_search(self, src_code_sent: List[Tuple[List[int], Tuple[List[str], List[str]]]],
@@ -377,6 +366,7 @@ class NMT(nn.Module):
         hypotheses = [['<s>']]
         hyp_scores = torch.zeros(len(hypotheses), dtype=torch.float, device=self.device)
         completed_hypotheses = []
+        
         t = 0
         
         tgt_vocabulary_words = [self.vocab.tgt.id2word[i] for i in range(len(self.vocab.tgt))]
@@ -395,6 +385,7 @@ class NMT(nn.Module):
         
         
         while len(completed_hypotheses) < beam_size and t < max_decoding_time_step:
+        
             t += 1
             hyp_num = len(hypotheses)
 
@@ -433,7 +424,7 @@ class NMT(nn.Module):
             p_gen = self.p_gen_linear(p_gen_input)
             p_gen = F.softmax(p_gen, dim=-1)
 
-            output = self.readout(att_t)  # B x hidden_dim
+            output = self.readout(att_t)  
 
             vocab_dist = F.softmax(output, dim=1)
 
@@ -572,6 +563,7 @@ def compute_corpus_level_bleu_score(references: List[List[str]], hypotheses: Lis
 
 
 def train(args: Dict):
+
     train_data_src_code, failed_train_src_code_ids = read_corpus(args['--train-src-code'], source='src_code')
     train_data_src_nl, failed_train_src_nl_ids = read_corpus(args['--train-src-nl'], source='src_nl')
     train_data_tgt, failed_train_tgt_ids = read_corpus(args['--train-tgt'], source='tgt')
@@ -587,8 +579,8 @@ def train(args: Dict):
     train_data_tgt = [train_data_tgt[i] for i in range(len(train_data_tgt)) if i not in total_failed_ids]
 
     total_failed_ids = set(failed_dev_src_nl_ids).union(failed_dev_tgt_ids).union(failed_dev_src_code_ids)
-    dev_data_src_code = [dev_data_src_code[i] for i in range(len(dev_data_src_code)) if i not in total_failed_ids]
 
+    dev_data_src_code = [dev_data_src_code[i] for i in range(len(dev_data_src_code)) if i not in total_failed_ids]
     dev_data_src_nl = [dev_data_src_nl[i] for i in range(len(dev_data_src_nl)) if i not in total_failed_ids]
     dev_data_tgt = [dev_data_tgt[i] for i in range(len(dev_data_tgt)) if i not in total_failed_ids]
 
@@ -636,7 +628,7 @@ def train(args: Dict):
 
     while True:
         epoch += 1
-        print("epoch", epoch)
+        
         for src_code_sents, src_nl_sents, tgt_sents in batch_iter(train_data, batch_size=train_batch_size,
                                                                   shuffle=True):
             train_iter += 1
@@ -644,7 +636,6 @@ def train(args: Dict):
             optimizer.zero_grad()
 
             batch_size = len(src_code_sents)
-            # (batch_size)
             example_losses = -model(src_code_sents, src_nl_sents, tgt_sents)
             batch_loss = example_losses.sum()
             loss = batch_loss / batch_size
@@ -769,6 +760,7 @@ def beam_search(model: NMT, test_data_src_code: List[List[str]], test_data_src_n
 
 
 def decode(args: Dict[str, str]):
+   
     test_data_src_code, failed_ids_src_code = read_corpus(args['TEST_SOURCE_CODE_FILE'], source='src_code')
     test_data_src_nl, failed_ids_src_nl = read_corpus(args['TEST_SOURCE_NL_FILE'], source='src_nl')
 
@@ -783,7 +775,6 @@ def decode(args: Dict[str, str]):
     print(f"load model from {args['MODEL_PATH']}", file=sys.stderr)
 
     model = NMT.load(args['MODEL_PATH'])
-    # model.vocab = pickle.load(open("vocab_all_multi.bin", 'rb'))
 
     if args['--cuda']:
         model = model.to(torch.device("cuda:1"))
