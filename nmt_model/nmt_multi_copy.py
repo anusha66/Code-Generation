@@ -135,6 +135,13 @@ class NMT(nn.Module):
         tgt_sents_var = self.vocab.tgt.to_input_tensor(tgt_sents, device=self.device)
         tgt_word_embeds = self.tgt_embed(tgt_sents_var)
 
+        src_code_sents_len = [len(s) for s in src_code_sents_str]
+        src_nl_sents_len = [len(s) for s in src_nl_sents_str]
+ 
+        src_code_encodings, decoder_init_vec_code = self.encode_code(src_code_sents_var, src_code_sents_len)
+        src_nl_encodings, src_nl_sents_len, decoder_init_vec_nl = self.encode_nl(src_nl_sents_var, src_code_sents_order,
+                                                                                  src_nl_sents_order, src_nl_sents_len)
+        
         src_code_sent_masks = self.get_attention_mask(src_code_encodings, src_code_sents_len)
         src_nl_sent_masks = self.get_attention_mask(src_nl_encodings, src_nl_sents_len)
 
