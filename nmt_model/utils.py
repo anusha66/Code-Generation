@@ -36,11 +36,17 @@ def read_corpus(file_path, source):
                 
                 data.append(sent)
 
-            elif source == 'src':
+            elif source == 'src_code':
+                 
+                 sent = ut.tokenize_code(line.strip(), mode='canonicalize')
+                 data.append(sent)
+            
+            elif source == 'src_nl':
                 
-                sent = ut.tokenize_code(line.strip(), mode='canonicalize')
-                data.append(sent)
+                 data.append(sent)
+
             else:
+
                 print("Utils Read Corpus Error")
 )
         except:
