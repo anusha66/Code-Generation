@@ -212,8 +212,12 @@ class NMT(nn.Module):
     
     
     def get_golden_word_masks(self, src_sents:List[List[str]], max_src_len, tgt_sents, t):
+
         
         batch_size = len(src_sents)
+
+        # shape of [BS, max_src_len] where max_src_len is max src sentence length in batch
+        # 1 implies that the golden token is present at that position
 
         masks = np.zeros((batch_size, max_src_len))
 
@@ -222,32 +226,43 @@ class NMT(nn.Module):
             if t >= len(tgt_sents[i][1:]):
                 continue
 
-            word = tgt_sents[i][1:][t]
+            word = tgt_sents[i][1:][t] # golden token at that timestep
             
             for j, w in enumerate(sent):
                 if w == word:
                     masks[i][j] = 1
         
         masks = torch.FloatTensor(masks).cuda()
-      
+
         return masks
     
     def get_target_unk_masks(self, attn_masks_golden_code, attn_masks_golden_nl, tgt_sents_timestep):
+
+        # attn_masks_golden_code : shape (BS, max_src_code_len) where max_src_code_len is max src_code length in batch
+        # attn_masks_golden_nl : shape (BS, max_src_nl_len) where max_src_nl_len is max src_nl length in batch
         
         summed_masks_code = torch.sum(attn_masks_golden_code, dim=1)
         
         summed_masks_nl = torch.sum(attn_masks_golden_nl, dim=1)
         
         summed_masks = summed_masks_code + summed_masks_nl
+
+        # masks is of shape [BS] where 1 represents that golden tgt token at (tgt_sents_timestep) is not present
+        # in either src_code or src_nl
         
-        masks = (summed_masks == 0).float() 
-        
+        masks = (summed_masks == 0).float()
+
+        # unk_masks is of shape [BS] where a 1 implies that the golden token is present in tgt vocabulary
         unk_masks = (tgt_sents_timestep != self.vocab.tgt['unk']).float()
         
         # hack for bitwise OR
         total_masks = unk_masks + masks
         final_masks = (total_masks >= 1).float()
-        
+
+        # final_masks is of shape [BS] where a 1 represents
+        # 1. If the golden tgt token is not present in either src_code or src_nl or tgt vocabulary
+        # 2. If the word is present in tgt vocabulary
+
         return final_masks
       
 
