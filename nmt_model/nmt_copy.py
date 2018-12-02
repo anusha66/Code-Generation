@@ -314,8 +314,6 @@ class NMT(nn.Module):
             exp_src_encodings_att_linear = src_encodings_att_linear.expand(hyp_num, src_encodings_att_linear.size(1),
                                                                            src_encodings_att_linear.size(2))
 
-            # TO DO fix oovs from y
-
             y_tm1 = torch.tensor([self.vocab.tgt[hyp[-1]] for hyp in hypotheses], dtype=torch.long, device=self.device)
             y_tm1_embed = self.tgt_embed(y_tm1)
 
