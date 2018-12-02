@@ -16,12 +16,12 @@ test_tgt="/home/anushap/Code-Generation/nmt_model/data/2code/code_test.txt"
 
 test_tgt_bleu="/home/anushap/Code-Generation/nmt_model/data/2code/code_test_bleu.txt"
 
-work_dir="work_dir_2code"
+work_dir="work_dir_2code_copy"
 
 mkdir -p ${work_dir}
 echo save results to ${work_dir}
 
-python nmt_multi.py \
+python nmt_multi_copy.py \
     train \
     --cuda \
     --vocab ${vocab} \
@@ -41,7 +41,7 @@ python nmt_multi.py \
     --clip-grad 5.0 \
     --lr-decay 0.5 2>${work_dir}/err.log
 
-python nmt_multi.py \
+python nmt_multi_copy.py \
    decode \
    --cuda \
    --beam-size 5 \
