@@ -32,12 +32,12 @@ dev_tgt_bleu="/home/anushap/Code-Generation-lm/nmt_model/data/code2code/code_dev
 # dev_tgt_bleu="/home/anushap/Code-Generation-lm/nmt_model/data/nl2code/code_dev_bleu.txt"
 
 
-work_dir="work_dir_lm_orig_all"
-'''
+work_dir="rerun_work_dir_lm_orig_all"
+
 mkdir -p ${work_dir}
 echo save results to ${work_dir}
 
-python nmt_lm_orig.py \
+python nmt_lm_orig_all.py \
     train \
     --cuda \
     --vocab ${vocab} \
@@ -54,7 +54,6 @@ python nmt_lm_orig.py \
     --dropout 0.2 \
     --clip-grad 5.0 \
     --lr-decay 0.5 2>${work_dir}/err.log
-'''
 python nmt_lm_orig_all.py \
    decode \
    --cuda \

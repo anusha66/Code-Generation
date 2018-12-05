@@ -32,12 +32,12 @@ dev_tgt_bleu="/home/anushap/Code-Generation-lm/nmt_model/data/code2code/code_dev
 # dev_tgt_bleu="/home/anushap/Code-Generation-lm/nmt_model/data/nl2code/code_dev_bleu.txt"
 
 
-work_dir="work_dir_lm_pointer_all"
-'''
+work_dir="rerun_work_dir_lm_pointer_tgt"
+
 mkdir -p ${work_dir}
 echo save results to ${work_dir}
 
-python nmt_lm_pointer_all.py \
+python nmt_lm_pointer_tgt.py \
     train \
     --cuda \
     --vocab ${vocab} \
@@ -55,7 +55,7 @@ python nmt_lm_pointer_all.py \
     --clip-grad 5.0 \
     --lr-decay 0.5 2>${work_dir}/err.log
 
-python nmt_lm_pointer_all.py \
+python nmt_lm_pointer_tgt.py \
    decode \
    --cuda \
    --beam-size 5 \
@@ -64,5 +64,5 @@ python nmt_lm_pointer_all.py \
    ${test_src} \
    ${test_tgt} \
    ${work_dir}/decode.txt
-'''
+
 perl multi-bleu.perl ${test_tgt_bleu} < ${work_dir}/decode.txt

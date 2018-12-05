@@ -81,7 +81,7 @@ class NMT(nn.Module):
         self.lm=lm
         self.use_cuda = True
         self.src_embed = nn.Embedding(len(vocab.src), embed_size, padding_idx=vocab.src['<pad>'])
-        self.tgt_embed = nn.Embedding(len(vocab.all), embed_size, padding_idx=vocab.all['<pad>'])
+        self.tgt_embed = nn.Embedding(len(vocab.tgt), embed_size, padding_idx=vocab.tgt['<pad>'])
 
         self.encoder_lstm = nn.LSTM(embed_size, hidden_size, bidirectional=True)
         decoder_lstm_input = embed_size + hidden_size if self.input_feed else embed_size
@@ -102,7 +102,7 @@ class NMT(nn.Module):
 #         self.att_vec_linear = nn.Linear(hidden_size * 2 + hidden_size, hidden_size, bias=False)
 
         # prediction layer of the target vocabulary
-        self.readout = nn.Linear(hidden_size, len(vocab.all), bias=False)
+        self.readout = nn.Linear(hidden_size, len(vocab.tgt), bias=False)
 
         # dropout layer
         self.dropout = nn.Dropout(self.dropout_rate)
@@ -113,7 +113,7 @@ class NMT(nn.Module):
         self.label_smoothing = label_smoothing
         if label_smoothing > 0.:
             self.label_smoothing_loss = LabelSmoothingLoss(label_smoothing,
-                                                           tgt_vocab_size=len(vocab.all), padding_idx=vocab.all['<pad>'])
+                                                           tgt_vocab_size=len(vocab.tgt), padding_idx=vocab.tgt['<pad>'])
 
     @property
     def device(self) -> torch.device:
@@ -125,12 +125,12 @@ class NMT(nn.Module):
         if self.lm:
 
              # (tgt_sent_len, batch_size)
-            tgt_sents_var = self.vocab.all.to_input_tensor(tgt_sents, device=self.device)
+            tgt_sents_var = self.vocab.tgt.to_input_tensor(tgt_sents, device=self.device)
             #print(tgt_sents_var.shape[0]) 
             att_vecs = []
             batch_size = len(tgt_sents)
             h_t, cell_t = torch.zeros(batch_size, self.hidden_size, device=self.device), torch.zeros(batch_size, self.hidden_size, device=self.device)
-            cumulate_matrix = torch.zeros((tgt_sents_var.size(0), batch_size, len(self.vocab.all)))
+            cumulate_matrix = torch.zeros((tgt_sents_var.size(0), batch_size, len(self.vocab.tgt)))
             if self.use_cuda:
                cumulate_matrix = cumulate_matrix.cuda(1)
 
@@ -187,7 +187,7 @@ class NMT(nn.Module):
             
             else:
                 # (tgt_sent_len, batch_size)
-                tgt_words_mask = (tgt_sents_var != self.vocab.all['<pad>']).float()
+                tgt_words_mask = (tgt_sents_var != self.vocab.tgt['<pad>']).float()
 
                 # (tgt_sent_len - 1, batch_size)
                 tgt_gold_words_log_prob = torch.gather(torch.log(torch.stack(probs)), index=tgt_sents_var[1:].unsqueeze(-1), dim=-1).squeeze(-1) * tgt_words_mask[1:]            
@@ -197,11 +197,11 @@ class NMT(nn.Module):
             scores = tgt_gold_words_log_prob.sum(dim=0)
             #temp = torch.log(torch.stack(probs))
             #temp2 = temp * tgt_words_mask[1:].unsqueeze(2)
-            #t = temp2.view(-1,  len(self.vocab.all))
+            #t = temp2.view(-1,  len(self.vocab.tgt))
             ptr_loss = tgt_gold_ptr_log_prob.sum(dim=0)
             #torch.log(torch.cat(ptr_scores).view(-1, self.vocab_size))
 
-            #t = torch.log(torch.cat(probs).view(-1, len(self.vocab.all)))
+            #t = torch.log(torch.cat(probs).view(-1, len(self.vocab.tgt)))
             return scores, ptr_loss
         
         
@@ -210,7 +210,7 @@ class NMT(nn.Module):
             # (src_sent_len, batch_size)
             src_sents_var = self.vocab.src.to_input_tensor(src_sents, device=self.device)
             # (tgt_sent_len, batch_size)
-            tgt_sents_var = self.vocab.all.to_input_tensor(tgt_sents, device=self.device)
+            tgt_sents_var = self.vocab.tgt.to_input_tensor(tgt_sents, device=self.device)
             src_sents_len = [len(s) for s in src_sents]
 
             src_encodings, decoder_init_vec = self.encode(src_sents_var, src_sents_len)
@@ -229,7 +229,7 @@ class NMT(nn.Module):
                                                                 tgt_sents_var[1:].view(-1)).view(-1, len(tgt_sents))
             else:
                 # (tgt_sent_len, batch_size)
-                tgt_words_mask = (tgt_sents_var != self.vocab.all['<pad>']).float()
+                tgt_words_mask = (tgt_sents_var != self.vocab.tgt['<pad>']).float()
 
                 # (tgt_sent_len - 1, batch_size)
                 tgt_gold_words_log_prob = torch.gather(tgt_words_log_prob, index=tgt_sents_var[1:].unsqueeze(-1), dim=-1).squeeze(-1) * tgt_words_mask[1:]
@@ -338,7 +338,7 @@ class NMT(nn.Module):
 
        
         h_tm1 = (torch.zeros(1, self.hidden_size, device=self.device), torch.zeros(1, self.hidden_size, device=self.device))
-        eos_id = self.vocab.all['</s>']
+        eos_id = self.vocab.tgt['</s>']
 
         hypotheses = [['<s>']]
         hyp_scores = torch.zeros(len(hypotheses), dtype=torch.float, device=self.device)
@@ -347,7 +347,7 @@ class NMT(nn.Module):
         t = 0
     
         prefix_matrix_tgt_list = []
-        cumulate_matrix_tgt = torch.zeros((1, 1, len(self.vocab.all)))
+        cumulate_matrix_tgt = torch.zeros((1, 1, len(self.vocab.tgt)))
         if self.use_cuda:
                   cumulate_matrix_tgt = cumulate_matrix_tgt.cuda(1)
         while len(completed_hypotheses) < beam_size and t < max_decoding_time_step:
@@ -355,7 +355,7 @@ class NMT(nn.Module):
             t += 1
             hyp_num = len(hypotheses)
 
-            y_tm1 = torch.tensor([self.vocab.all[hyp[-1]] for hyp in hypotheses], dtype=torch.long, device=self.device)
+            y_tm1 = torch.tensor([self.vocab.tgt[hyp[-1]] for hyp in hypotheses], dtype=torch.long, device=self.device)
             y_tm1_embed = self.tgt_embed(y_tm1)
 
             x = y_tm1_embed
@@ -374,7 +374,7 @@ class NMT(nn.Module):
             prefix_matrix_tgt_list = []
 
             for k in range(len(hypotheses[0])):
-                   y_tm1 = torch.tensor([self.vocab.all[hyp[k]] for hyp in hypotheses], dtype=torch.long, device=self.device)
+                   y_tm1 = torch.tensor([self.vocab.tgt[hyp[k]] for hyp in hypotheses], dtype=torch.long, device=self.device)
                    temp = y_tm1.expand_as(torch.zeros(1, cumulate_matrix_tgt.shape[1]))
                    temp2 = cumulate_matrix_tgt.clone()
                    temp2.scatter_(2, temp.unsqueeze(2), 1.0)
@@ -431,8 +431,8 @@ class NMT(nn.Module):
             contiuating_hyp_scores = (hyp_scores.unsqueeze(1).expand_as(log_p_t) + log_p_t).view(-1)
             top_cand_hyp_scores, top_cand_hyp_pos = torch.topk(contiuating_hyp_scores, k=live_hyp_num)
           
-            prev_hyp_ids = top_cand_hyp_pos / len(self.vocab.all)
-            hyp_word_ids = top_cand_hyp_pos % len(self.vocab.all)
+            prev_hyp_ids = top_cand_hyp_pos / len(self.vocab.tgt)
+            hyp_word_ids = top_cand_hyp_pos % len(self.vocab.tgt)
 
             new_hypotheses = []
             live_hyp_ids = []
@@ -443,7 +443,7 @@ class NMT(nn.Module):
                 hyp_word_id = hyp_word_id.item()
                 cand_new_hyp_score = cand_new_hyp_score.item()
 
-                hyp_word = self.vocab.all.id2word[hyp_word_id]
+                hyp_word = self.vocab.tgt.id2word[hyp_word_id]
                 new_hyp_sent = hypotheses[prev_hyp_id] + [hyp_word]
                 if hyp_word == '</s>':
                     if len(new_hyp_sent[1:-1])!=0:
@@ -462,7 +462,7 @@ class NMT(nn.Module):
             if len(completed_hypotheses) == beam_size:
                 break
 
-            cumulate_matrix_tgt = torch.zeros((1, beam_size - len(completed_hypotheses), len(self.vocab.all)))
+            cumulate_matrix_tgt = torch.zeros((1, beam_size - len(completed_hypotheses), len(self.vocab.tgt)))
             if self.use_cuda:
                   cumulate_matrix_tgt = cumulate_matrix_tgt.cuda(1)
            
@@ -589,8 +589,8 @@ def train(args: Dict):
         for p in model.parameters():
             p.data.uniform_(-uniform_init, uniform_init)
 
-    vocab_mask = torch.ones(len(vocab.all))
-    vocab_mask[vocab.all['<pad>']] = 0
+    vocab_mask = torch.ones(len(vocab.tgt))
+    vocab_mask[vocab.tgt['<pad>']] = 0
 
     device = torch.device("cuda:1" if args['--cuda'] else "cpu")
     #print('use device: %s' % device, file=sys.stderr)

@@ -33,9 +33,12 @@ def read_corpus(file_path, source):
             if source == 'tgt':
                 sent = ut.tokenize_code(line.strip(), mode='canonicalize')
                 sent = ['<s>'] + sent + ['</s>']
+            elif  source == 'src':
+                
+                sent = ut.tokenize_code(line.strip(), mode='canonicalize')
             else:
-#                 sent = ut.tokenize_code(line.strip(), mode='canonicalize')
-                sent = line.strip().split(' ')
+                pass
+                #sent = line.strip().split(' ')
             data.append(sent)
         except:
             
@@ -44,7 +47,6 @@ def read_corpus(file_path, source):
             
 
     return data, failed_ids
-
 
 def article2ids(article_words, vocab):
     ids = []
